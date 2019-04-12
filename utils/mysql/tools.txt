@@ -1,0 +1,1 @@
+./xorm shell mysql root:root@tcp(123.59.40.19:13306)/sailcraft_platform_set?charset=utf8
