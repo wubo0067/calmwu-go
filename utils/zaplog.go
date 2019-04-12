@@ -66,12 +66,12 @@ func CreateZapLog(logFullName string, maxSize int, maxAge int, maxBackups int, c
 	})
 
 	cfg := zapcore.EncoderConfig{
-		MessageKey:     "msg",
-		LevelKey:       "level",
-		NameKey:        "name",
-		TimeKey:        "ts",
-		CallerKey:      "caller",
-		StacktraceKey:  "stacktrace",
+		MessageKey:     "M",
+		LevelKey:       "L",
+		NameKey:        "N",
+		TimeKey:        "T",
+		CallerKey:      "C",
+		StacktraceKey:  "S",
 		LineEnding:     "\n",
 		EncodeTime:     zapcore.ISO8601TimeEncoder,
 		EncodeLevel:    zapcore.LowercaseLevelEncoder,
