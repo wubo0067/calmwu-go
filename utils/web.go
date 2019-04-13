@@ -15,8 +15,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-//WebModuleItfInfo web接口方法的描述
-type WebModuleItfInfo struct {
+//WebInterfaceInfo web接口方法的描述
+type WebInterfaceInfo struct {
 	HttpMethodType int
 	HandlerFunc    func(*gin.Context)
 }
@@ -24,13 +24,12 @@ type WebModuleItfInfo struct {
 //InterfacePath 接口路径
 type InterfacePath string
 
-//WebModuleItfMap 接口集合
-type WebModuleItfMap map[InterfacePath]*WebModuleItfInfo
+//WebIterfaceMap 接口集合
+type WebIterfaceMap map[InterfacePath]*WebInterfaceInfo
 
 const (
-	// WEBModeuleMetas 标识
-	WEBModeuleMetas = "ModuleMetas"
-
+	// WEBModeuleItfs 成员变量名
+	WebInterfaces = "WebInterfaces"
 	// HTTPMethodGet get方法
 	HTTPMethodGet = 0x0001
 	// HTTPMethodPost post
@@ -59,7 +58,7 @@ func GinRegisterWebModule(router *gin.Engine, webModule interface{}) error {
 	t := v.Type()
 
 	if t.Kind() == reflect.Struct {
-		moduleMetaInfos := v.FieldByName(WEBModeuleMetas)
+		moduleMetaInfos := v.FieldByName(WebInterfaces)
 		if !moduleMetaInfos.IsNil() {
 			if moduleMetaInfos.Type().Kind() == reflect.Map {
 				interfacePaths := moduleMetaInfos.MapKeys()
