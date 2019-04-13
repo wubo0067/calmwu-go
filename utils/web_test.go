@@ -16,11 +16,11 @@ import (
 )
 
 type TestWebModule struct {
-	ModuleMetas WebModuleMetas
+	ModuleMetas WebModuleItfMap
 }
 
 func (wm *TestWebModule) Init() {
-	wm.ModuleMetas = make(WebModuleMetas)
+	wm.ModuleMetas = make(WebModuleItfMap)
 	RegisterModuleInterface("/api/v1/test/Add", HTTP_METHOD_GET, wm.Add1, wm.ModuleMetas)
 	RegisterModuleInterface("/api/v2/test/Add", HTTP_METHOD_GET, wm.Add2, wm.ModuleMetas)
 	RegisterModuleInterface("/api/v2/test/Update", HTTP_METHOD_POST, wm.Update, wm.ModuleMetas)

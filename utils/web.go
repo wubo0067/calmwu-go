@@ -16,14 +16,14 @@ import (
 )
 
 // web接口方法的描述
-type WebModuleInterfaceMeta struct {
+type WebModuleItfInfo struct {
 	HttpMethodType int
 	HandlerFunc    func(*gin.Context)
 }
 
 // web模块的描述集合
 type InterfacePath string
-type WebModuleMetas map[InterfacePath]*WebModuleInterfaceMeta
+type WebModuleItfMap map[InterfacePath]*WebModuleItfInfo
 
 const (
 	WEBMODULE_METAS    = "ModuleMetas"
@@ -36,9 +36,9 @@ const (
 var (
 	ErrModuleKindIsNotStruct   = errors.New("Module kind is not struct")
 	ErrModuleMetaInfosNotExist = errors.New("Module Interface Metainfos not exist")
-	ErrModuleMetaTypeInvalid   = errors.New("Module meta type is not WebModuleInterfaceMeta")
+	ErrModuleMetaTypeInvalid   = errors.New("Module meta type is not WebModuleItfInfo")
 
-	c_978_WebModuleInterfaceMeta_Default = new(WebModuleInterfaceMeta)
+	c_978_WebModuleInterfaceMeta_Default = new(WebModuleItfInfo)
 	WebModuleInterfaceMetaType           = reflect.TypeOf(c_978_WebModuleInterfaceMeta_Default)
 )
 
@@ -61,7 +61,7 @@ func GinRegisterWebModule(router *gin.Engine, webModule interface{}) error {
 					//fmt.Println(WebModuleInterfaceMetaType)
 
 					if interfaceMetaV.Type().ConvertibleTo(WebModuleInterfaceMetaType) {
-						interfaceMeta := interfaceMetaV.Convert(WebModuleInterfaceMetaType).Interface().(*WebModuleInterfaceMeta)
+						interfaceMeta := interfaceMetaV.Convert(WebModuleInterfaceMetaType).Interface().(*WebModuleItfInfo)
 
 						if (interfaceMeta.HttpMethodType & HTTP_METHOD_GET) != 0 {
 							router.GET(interfacePath, interfaceMeta.HandlerFunc)
@@ -100,9 +100,9 @@ func GinRegisterWebModule(router *gin.Engine, webModule interface{}) error {
 }
 
 func RegisterModuleInterface(interfacePath InterfacePath, httpMethodType int, handlerFunc func(*gin.Context),
-	moduleMetas WebModuleMetas) {
+	moduleMetas WebModuleItfMap) {
 	if _, ok := moduleMetas[interfacePath]; !ok {
-		webModuleInterfaceMeta := &WebModuleInterfaceMeta{
+		webModuleInterfaceMeta := &WebModuleItfInfo{
 			HttpMethodType: httpMethodType,
 			HandlerFunc:    handlerFunc,
 		}
