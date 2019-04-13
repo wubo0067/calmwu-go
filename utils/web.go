@@ -15,28 +15,39 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// web接口方法的描述
+//WebModuleItfInfo web接口方法的描述
 type WebModuleItfInfo struct {
 	HttpMethodType int
 	HandlerFunc    func(*gin.Context)
 }
 
-// web模块的描述集合
+//InterfacePath 接口路径
 type InterfacePath string
+
+//WebModuleItfMap 接口集合
 type WebModuleItfMap map[InterfacePath]*WebModuleItfInfo
 
 const (
-	WEBMODULE_METAS    = "ModuleMetas"
-	HTTP_METHOD_GET    = 0x0001
-	HTTP_METHOD_POST   = 0x0002
-	HTTP_METHOD_PUT    = 0x0004
-	HTTP_METHOD_DELETE = 0x0008
+	// WEBModeuleMetas 标识
+	WEBModeuleMetas = "ModuleMetas"
+
+	// HTTPMethodGet get方法
+	HTTPMethodGet = 0x0001
+	// HTTPMethodPost post
+	HTTPMethodPost = 0x0002
+	// HTTPMethodPut put
+	HTTPMethodPut = 0x0004
+	// HTTPMethodDelete delete
+	HTTPMethodDelete = 0x0008
 )
 
 var (
-	ErrModuleKindIsNotStruct   = errors.New("Module kind is not struct")
+	//ErrModuleKindIsNotStruct 。。。
+	ErrModuleKindIsNotStruct = errors.New("Module kind is not struct")
+	//ErrModuleMetaInfosNotExist 。。。
 	ErrModuleMetaInfosNotExist = errors.New("Module Interface Metainfos not exist")
-	ErrModuleMetaTypeInvalid   = errors.New("Module meta type is not WebModuleItfInfo")
+	//ErrModuleMetaTypeInvalid 。。。
+	ErrModuleMetaTypeInvalid = errors.New("Module meta type is not WebModuleItfInfo")
 
 	c_978_WebModuleInterfaceMeta_Default = new(WebModuleItfInfo)
 	WebModuleInterfaceMetaType           = reflect.TypeOf(c_978_WebModuleInterfaceMeta_Default)
@@ -48,7 +59,7 @@ func GinRegisterWebModule(router *gin.Engine, webModule interface{}) error {
 	t := v.Type()
 
 	if t.Kind() == reflect.Struct {
-		moduleMetaInfos := v.FieldByName(WEBMODULE_METAS)
+		moduleMetaInfos := v.FieldByName(WEBModeuleMetas)
 		if !moduleMetaInfos.IsNil() {
 			if moduleMetaInfos.Type().Kind() == reflect.Map {
 				interfacePaths := moduleMetaInfos.MapKeys()
@@ -63,22 +74,22 @@ func GinRegisterWebModule(router *gin.Engine, webModule interface{}) error {
 					if interfaceMetaV.Type().ConvertibleTo(WebModuleInterfaceMetaType) {
 						interfaceMeta := interfaceMetaV.Convert(WebModuleInterfaceMetaType).Interface().(*WebModuleItfInfo)
 
-						if (interfaceMeta.HttpMethodType & HTTP_METHOD_GET) != 0 {
+						if (interfaceMeta.HttpMethodType & HttpMethodGet) != 0 {
 							router.GET(interfacePath, interfaceMeta.HandlerFunc)
 							ZLog.Info("GET apiURL[%s] registered successed!", interfacePath)
 						}
 
-						if (interfaceMeta.HttpMethodType & HTTP_METHOD_POST) != 0 {
+						if (interfaceMeta.HttpMethodType & HttpMethodPost) != 0 {
 							router.POST(interfacePath, interfaceMeta.HandlerFunc)
 							ZLog.Info("POST apiURL[%s] registered successed!", interfacePath)
 						}
 
-						if (interfaceMeta.HttpMethodType & HTTP_METHOD_PUT) != 0 {
+						if (interfaceMeta.HttpMethodType & HTTPMethodPut) != 0 {
 							router.PUT(interfacePath, interfaceMeta.HandlerFunc)
 							ZLog.Info("PUT apiURL[%s] registered successed!", interfacePath)
 						}
 
-						if (interfaceMeta.HttpMethodType & HTTP_METHOD_DELETE) != 0 {
+						if (interfaceMeta.HttpMethodType & HTTPMethodDelete) != 0 {
 							router.DELETE(interfacePath, interfaceMeta.HandlerFunc)
 							ZLog.Info("DELETE apiURL[%s] registered successed!", interfacePath)
 							fmt.Printf("DELETE apiURL[%s] registered successed!\n", interfacePath)

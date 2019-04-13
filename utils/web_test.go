@@ -21,10 +21,10 @@ type TestWebModule struct {
 
 func (wm *TestWebModule) Init() {
 	wm.ModuleMetas = make(WebModuleItfMap)
-	RegisterModuleInterface("/api/v1/test/Add", HTTP_METHOD_GET, wm.Add1, wm.ModuleMetas)
-	RegisterModuleInterface("/api/v2/test/Add", HTTP_METHOD_GET, wm.Add2, wm.ModuleMetas)
-	RegisterModuleInterface("/api/v2/test/Update", HTTP_METHOD_POST, wm.Update, wm.ModuleMetas)
-	RegisterModuleInterface("/api/v3/test/Delete", HTTP_METHOD_DELETE, wm.Delete, wm.ModuleMetas)
+	RegisterModuleInterface("/api/v1/test/Add", HttpMethodGet, wm.Add1, wm.ModuleMetas)
+	RegisterModuleInterface("/api/v2/test/Add", HttpMethodGet, wm.Add2, wm.ModuleMetas)
+	RegisterModuleInterface("/api/v2/test/Update", HttpMethodPost, wm.Update, wm.ModuleMetas)
+	RegisterModuleInterface("/api/v3/test/Delete", HTTPMethodDelete, wm.Delete, wm.ModuleMetas)
 	fmt.Printf("ModuleMetas:%v\n", wm.ModuleMetas)
 }
 
