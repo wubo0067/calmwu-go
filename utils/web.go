@@ -13,7 +13,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-
 //WebInterfaceInfo web接口方法的描述
 type WebInterfaceInfo struct {
 	HTTPMethodType string
@@ -25,7 +24,7 @@ type WebItfMap map[string]*WebInterfaceInfo
 
 // RegisterWebItfsToGin 注册到gin
 func RegisterWebItfsToGin(router *gin.Engine, webItfMap WebItfMap) {
-	var ginHandlerFunc func(string, ...gin.HandlerFunc)
+	var ginHandlerFunc func(string, ...gin.HandlerFunc) gin.IRoutes
 
 	for webItfPath, webItfInfo := range webItfMap {
 		switch webItfInfo.HTTPMethodType {
@@ -38,12 +37,12 @@ func RegisterWebItfsToGin(router *gin.Engine, webItfMap WebItfMap) {
 		case http.MethodDelete:
 			ginHandlerFunc = router.DELETE
 		default:
-			ZLog.Errorf("ItfPath:%s MethodType:%s not support!", webItfPath, wetItfInfo.HTTPMethodType)
+			ZLog.Errorf("ItfPath:%s MethodType:%s not support!", webItfPath, webItfInfo.HTTPMethodType)
 			continue
 		}
 
 		ginHandlerFunc(webItfPath, webItfInfo.HandlerFunc)
-		ZLog.Infof("Register ItfPath:%s MethodType:%s to GinRouter", webItfPath, wetItfInfo.HTTPMethodType)
+		ZLog.Infof("Register ItfPath:%s MethodType:%s to GinRouter", webItfPath, webItfInfo.HTTPMethodType)
 	}
 }
 
