@@ -48,8 +48,9 @@ var (
 	//ErrModuleMetaTypeInvalid 。。。
 	ErrModuleMetaTypeInvalid = errors.New("Module meta type is not WebModuleItfInfo")
 
-	c_978_WebModuleInterfaceMeta_Default = new(WebModuleItfInfo)
-	WebModuleInterfaceMetaType           = reflect.TypeOf(c_978_WebModuleInterfaceMeta_Default)
+	c978WebInterfaceInfoDefault = new(WebInterfaceInfo)
+	// WebInterfaceInfoType 默认类型
+	WebInterfaceInfoType = reflect.TypeOf(c978WebInterfaceInfoDefault)
 )
 
 //
@@ -70,8 +71,8 @@ func GinRegisterWebModule(router *gin.Engine, webModule interface{}) error {
 					//fmt.Println(interfaceMetaV.Type())
 					//fmt.Println(WebModuleInterfaceMetaType)
 
-					if interfaceMetaV.Type().ConvertibleTo(WebModuleInterfaceMetaType) {
-						interfaceMeta := interfaceMetaV.Convert(WebModuleInterfaceMetaType).Interface().(*WebModuleItfInfo)
+					if interfaceMetaV.Type().ConvertibleTo(WebInterfaceInfoType) {
+						interfaceMeta := interfaceMetaV.Convert(WebInterfaceInfoType).Interface().(*WebModuleItfInfo)
 
 						if (interfaceMeta.HttpMethodType & HttpMethodGet) != 0 {
 							router.GET(interfacePath, interfaceMeta.HandlerFunc)
