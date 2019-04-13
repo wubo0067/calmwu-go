@@ -8,115 +8,53 @@
 package utils
 
 import (
-	"errors"
-	"fmt"
-	"reflect"
+	"github.com/wubo0067/calmwu-go/utils"
+	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
 
+
 //WebInterfaceInfo web接口方法的描述
 type WebInterfaceInfo struct {
-	HttpMethodType int
-	HandlerFunc    func(*gin.Context)
+	HTTPMethodType string
+	HandlerFunc    gin.HandlerFunc
 }
 
-//InterfacePath 接口路径
-type InterfacePath string
+//WebItfMap 接口集合
+type WebItfMap map[string]*WebInterfaceInfo
 
-//WebIterfaceMap 接口集合
-type WebIterfaceMap map[InterfacePath]*WebInterfaceInfo
+// RegisterWebItfsToGin 注册到gin
+func RegisterWebItfsToGin(router *gin.Engine, webItfMap WebItfMap) {
+	var ginHandlerFunc func(string, ...gin.HandlerFunc)
 
-const (
-	// WEBModeuleItfs 成员变量名
-	WebInterfaces = "WebInterfaces"
-	// HTTPMethodGet get方法
-	HTTPMethodGet = 0x0001
-	// HTTPMethodPost post
-	HTTPMethodPost = 0x0002
-	// HTTPMethodPut put
-	HTTPMethodPut = 0x0004
-	// HTTPMethodDelete delete
-	HTTPMethodDelete = 0x0008
-)
-
-var (
-	//ErrModuleKindIsNotStruct 。。。
-	ErrModuleKindIsNotStruct = errors.New("Module kind is not struct")
-	//ErrModuleMetaInfosNotExist 。。。
-	ErrModuleMetaInfosNotExist = errors.New("Module Interface Metainfos not exist")
-	//ErrModuleMetaTypeInvalid 。。。
-	ErrModuleMetaTypeInvalid = errors.New("Module meta type is not WebModuleItfInfo")
-
-	c978WebInterfaceInfoDefault = new(WebInterfaceInfo)
-	// WebInterfaceInfoType 默认类型
-	WebInterfaceInfoType = reflect.TypeOf(c978WebInterfaceInfoDefault)
-)
-
-//
-func GinRegisterWebModule(router *gin.Engine, webModule interface{}) error {
-	v := reflect.Indirect(reflect.ValueOf(webModule))
-	t := v.Type()
-
-	if t.Kind() == reflect.Struct {
-		moduleMetaInfos := v.FieldByName(WebInterfaces)
-		if !moduleMetaInfos.IsNil() {
-			if moduleMetaInfos.Type().Kind() == reflect.Map {
-				interfacePaths := moduleMetaInfos.MapKeys()
-				for index := range interfacePaths {
-					interfacePath := interfacePaths[index].String()
-					fmt.Println(interfacePath)
-					interfaceMetaV := moduleMetaInfos.MapIndex(interfacePaths[index])
-
-					//fmt.Println(interfaceMetaV.Type())
-					//fmt.Println(WebModuleInterfaceMetaType)
-
-					if interfaceMetaV.Type().ConvertibleTo(WebInterfaceInfoType) {
-						interfaceMeta := interfaceMetaV.Convert(WebInterfaceInfoType).Interface().(*WebModuleItfInfo)
-
-						if (interfaceMeta.HttpMethodType & HttpMethodGet) != 0 {
-							router.GET(interfacePath, interfaceMeta.HandlerFunc)
-							ZLog.Info("GET apiURL[%s] registered successed!", interfacePath)
-						}
-
-						if (interfaceMeta.HttpMethodType & HttpMethodPost) != 0 {
-							router.POST(interfacePath, interfaceMeta.HandlerFunc)
-							ZLog.Info("POST apiURL[%s] registered successed!", interfacePath)
-						}
-
-						if (interfaceMeta.HttpMethodType & HTTPMethodPut) != 0 {
-							router.PUT(interfacePath, interfaceMeta.HandlerFunc)
-							ZLog.Info("PUT apiURL[%s] registered successed!", interfacePath)
-						}
-
-						if (interfaceMeta.HttpMethodType & HTTPMethodDelete) != 0 {
-							router.DELETE(interfacePath, interfaceMeta.HandlerFunc)
-							ZLog.Info("DELETE apiURL[%s] registered successed!", interfacePath)
-							fmt.Printf("DELETE apiURL[%s] registered successed!\n", interfacePath)
-						}
-					} else {
-						return ErrModuleMetaTypeInvalid
-					}
-				}
-			} else {
-				return ErrModuleMetaInfosNotExist
-			}
-		} else {
-			return ErrModuleMetaInfosNotExist
+	for webItfPath, webItfInfo := range webItfMap {
+		switch webItfInfo.HTTPMethodType {
+		case http.MethodGet:
+			ginHandlerFunc = router.GET
+		case http.MethodPost:
+			ginHandlerFunc = router.POST
+		case http.MethodPut:
+			ginHandlerFunc = router.PUT
+		case http.MethodDelete:
+			ginHandlerFunc = router.DELETE
+		default:
+			utils.ZLog.Errorf("ItfPath:%s MethodType:%s not support!", webItfPath, wetItfInfo.HTTPMethodType)
+			continue
 		}
-	} else {
-		return ErrModuleKindIsNotStruct
+
+		ginHandlerFunc(webItfPath, webItfInfo.HandlerFunc)
+		utils.ZLog.Infof("Register ItfPath:%s MethodType:%s to GinRouter", webItfPath, wetItfInfo.HTTPMethodType)
 	}
-	return nil
 }
 
-func RegisterModuleInterface(interfacePath InterfacePath, httpMethodType int, handlerFunc func(*gin.Context),
-	moduleMetas WebModuleItfMap) {
-	if _, ok := moduleMetas[interfacePath]; !ok {
-		webModuleInterfaceMeta := &WebModuleItfInfo{
-			HttpMethodType: httpMethodType,
+// RegisterWebItf 接口注册
+func RegisterWebItf(webItfPath string, httpMethodType string, handlerFunc gin.HandlerFunc, webItfMap WebItfMap) {
+	if _, ok := webItfMap[webItfPath]; !ok {
+		webItfInfo := &WebInterfaceInfo{
+			HTTPMethodType: httpMethodType,
 			HandlerFunc:    handlerFunc,
 		}
-		moduleMetas[interfacePath] = webModuleInterfaceMeta
+		webItfMap[webItfPath] = webItfInfo
 	}
 }
