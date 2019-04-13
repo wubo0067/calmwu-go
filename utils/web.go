@@ -8,7 +8,6 @@
 package utils
 
 import (
-	"github.com/wubo0067/calmwu-go/utils"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -39,12 +38,12 @@ func RegisterWebItfsToGin(router *gin.Engine, webItfMap WebItfMap) {
 		case http.MethodDelete:
 			ginHandlerFunc = router.DELETE
 		default:
-			utils.ZLog.Errorf("ItfPath:%s MethodType:%s not support!", webItfPath, wetItfInfo.HTTPMethodType)
+			ZLog.Errorf("ItfPath:%s MethodType:%s not support!", webItfPath, wetItfInfo.HTTPMethodType)
 			continue
 		}
 
 		ginHandlerFunc(webItfPath, webItfInfo.HandlerFunc)
-		utils.ZLog.Infof("Register ItfPath:%s MethodType:%s to GinRouter", webItfPath, wetItfInfo.HTTPMethodType)
+		ZLog.Infof("Register ItfPath:%s MethodType:%s to GinRouter", webItfPath, wetItfInfo.HTTPMethodType)
 	}
 }
 
