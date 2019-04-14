@@ -17,7 +17,6 @@ import (
 	"crypto/x509"
 	"encoding/json"
 	"encoding/pem"
-	"fmt"
 	"io/ioutil"
 	"math/big"
 	"net"
@@ -49,16 +48,12 @@ func UnpackRequest(c *gin.Context) *ProtoRequestS {
 	return &req
 }
 
-func SendResponse(c *gin.Context, res *ProtoResponseS) {
-	response, err := json.Marshal(res)
-	if err == nil {
-		ZLog.Debugf("send respone to %s\nResponse Data:\n%s", c.Request.RemoteAddr, response)
-		c.Data(http.StatusOK, "text/plain; charset=utf-8", response)
-	} else {
-		ZLog.Errorf("Json Marshal ProtoResponseS failed! reason[%s]", err.Error())
-	}
+// SendResponse 回应
+func SendResponse(c *gin.Context, data []byte) {
+	c.Data(http.StatusOK, "text/plain; charset=utf-8", data)
 }
 
+// GetClientAddrFromGin 得到客户端地址
 func GetClientAddrFromGin(c *gin.Context) string {
 	var remoteAddr string
 	remoteAddrLst, ok := c.Request.Header["X-Real-Ip"]
@@ -86,15 +81,9 @@ func SendResponseToClient(c *gin.Context, res *ProtoResponseS) {
 	c.Data(http.StatusOK, "text/plain; charset=utf-8", compressBuf.Bytes())
 }
 
-func PostRequest(url string, req *ProtoRequestS) (*ProtoResponseS, error) {
-	serialData, err := json.Marshal(req)
-	if err != nil {
-		ZLog.Errorf("PostRequest to url[%s] Marshal failed! reason[%s]",
-			url, err.Error())
-		return nil, err
-	}
-
-	res, err := http.Post(url, "text/plain; charset=utf-8", strings.NewReader(string(serialData)))
+// PostRequest post请求返回回应
+func PostRequest(url string, data []byte) ([]byte, error) {
+	res, err := http.Post(url, "text/plain; charset=utf-8", strings.NewReader(Bytes2String(data)))
 	if err != nil {
 		ZLog.Errorf("PostRequest to url[%s] Post failed! reason[%s]",
 			url, err.Error())
@@ -105,21 +94,12 @@ func PostRequest(url string, req *ProtoRequestS) (*ProtoResponseS, error) {
 		defer res.Body.Close()
 	}
 
-	bodyData, err := ioutil.ReadAll(res.Body)
+	resBody, err := ioutil.ReadAll(res.Body)
 	if err != nil {
 		ZLog.Errorf("Read body failed! reason[%s]", err.Error())
 		return nil, err
 	}
-
-	ZLog.Debugf("Response Data:\n%s", bodyData)
-
-	var protoRes ProtoResponseS
-	err = json.Unmarshal(bodyData, &protoRes)
-	if err != nil {
-		ZLog.Errorf("decode ProtoResponseS failed! reason[%s]", err.Error())
-		return nil, err
-	}
-	return &protoRes, nil
+	return resBody, nil
 }
 
 func MapstructUnPackByJsonTag(m interface{}, rawVal interface{}) error {
@@ -139,50 +119,6 @@ func MapstructUnPackByJsonTag(m interface{}, rawVal interface{}) error {
 		return err
 	}
 	return nil
-}
-
-type WebItfResData struct {
-	Param   interface{}
-	RetCode int
-}
-
-type webItfResponseFunc func()
-
-func RequestPretreatment(c *gin.Context, interfaceName string, realReqPtr interface{}) (*WebItfResData, webItfResponseFunc, error) {
-	var err error
-	req := UnpackRequest(c)
-	if req == nil {
-		err = fmt.Errorf("unpack interface[%s] request failed!", interfaceName)
-		ZLog.Errorf(err.Error())
-		return nil, nil, err
-	}
-
-	err = MapstructUnPackByJsonTag(req.ReqData.Params, realReqPtr)
-	if err != nil {
-		err = fmt.Errorf("Uin[%d] Decode %s failed! reason[%s]",
-			req.Uin, reflect.Indirect(reflect.ValueOf(realReqPtr)).Type().String(), err.Error())
-		ZLog.Errorf(err.Error())
-		return nil, nil, err
-	}
-
-	webItfResData := new(WebItfResData)
-
-	return webItfResData, func() {
-		if req != nil {
-			var res ProtoResponseS
-			res.Version = req.Version
-			res.EventId = req.EventId
-			res.ReturnCode = ProtoReturnCode(webItfResData.RetCode)
-			res.TimeStamp = time.Now().UTC().Unix()
-			res.ResData.InterfaceName = req.ReqData.InterfaceName
-			if err != nil {
-				res.ResData.Params = err.Error()
-			} else {
-				res.ResData.Params = webItfResData.Param
-			}
-			SendResponse(c, &res)
-		}
-	}, nil
 }
 
 // reference: https://gist.github.com/dmichael/5710968
