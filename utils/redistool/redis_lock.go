@@ -8,10 +8,11 @@
 package redistool
 
 import (
-	utils "calmwu-go/utils"
 	"errors"
 	"fmt"
 	"time"
+
+	utils "github.com/wubo0067/calmwu-go/utils"
 
 	"github.com/go-redis/redis"
 	uuid "github.com/satori/go.uuid"

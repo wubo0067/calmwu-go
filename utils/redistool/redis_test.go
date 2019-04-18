@@ -8,11 +8,12 @@
 package redistool
 
 import (
-	utils "calmwu-go/utils"
 	"fmt"
 	"strings"
 	"testing"
 	"time"
+
+	utils "github.com/wubo0067/calmwu-go/utils"
 
 	"github.com/go-redis/redis"
 	"go.uber.org/zap/zapcore"

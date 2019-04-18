@@ -9,13 +9,13 @@
 package redistool
 
 import (
-	utils "calmwu-go/utils"
 	"fmt"
 	"strconv"
 	"sync"
 	"time"
 
 	"github.com/go-redis/redis"
+	utils "github.com/wubo0067/calmwu-go/utils"
 )
 
 type RedisMgr struct {
