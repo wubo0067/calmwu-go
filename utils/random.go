@@ -33,6 +33,11 @@ func RandomBytes(size int) ([]byte, error) {
 	return bytes, err
 }
 
+// RandomRangeIn  trying to generate 8 digit numbers, the range would be (10000000, 99999999)
+func RandomRangeIn(low, hi int) int {
+	return low + rand.Intn(hi-low)
+}
+
 // 设置随机种子
 func SeedMathRand() {
 	once.Do(func() {
