@@ -1,8 +1,8 @@
 /*
  * @Author: calmwu
  * @Date: 2017-11-14 14:24:32
- * @Last Modified by: calmwu
- * @Last Modified time: 2017-11-14 15:30:44
+ * @Last Modified by: calm.wu
+ * @Last Modified time: 2019-04-22 15:32:18
  * @Comment:
  */
 package utils
@@ -16,15 +16,15 @@ import (
 )
 
 type TestWebModule struct {
-	ModuleMetas WebModuleItfMap
+	ModuleMetas WebItfMap
 }
 
 func (wm *TestWebModule) Init() {
-	wm.ModuleMetas = make(WebModuleItfMap)
-	RegisterModuleInterface("/api/v1/test/Add", HttpMethodGet, wm.Add1, wm.ModuleMetas)
-	RegisterModuleInterface("/api/v2/test/Add", HttpMethodGet, wm.Add2, wm.ModuleMetas)
-	RegisterModuleInterface("/api/v2/test/Update", HttpMethodPost, wm.Update, wm.ModuleMetas)
-	RegisterModuleInterface("/api/v3/test/Delete", HTTPMethodDelete, wm.Delete, wm.ModuleMetas)
+	wm.ModuleMetas = make(WebItfMap)
+	RegisterWebItf("/api/v1/test/Add", http.MethodGet, wm.Add1, wm.ModuleMetas)
+	RegisterWebItf("/api/v2/test/Add", http.MethodGet, wm.Add2, wm.ModuleMetas)
+	RegisterWebItf("/api/v2/test/Update", http.MethodPost, wm.Update, wm.ModuleMetas)
+	RegisterWebItf("/api/v3/test/Delete", http.MethodDelete, wm.Delete, wm.ModuleMetas)
 	fmt.Printf("ModuleMetas:%v\n", wm.ModuleMetas)
 }
 
@@ -59,12 +59,7 @@ func TestRegisterWebModule(t *testing.T) {
 	testWebModule := new(TestWebModule)
 	testWebModule.Init()
 
-	err := GinRegisterWebModule(ginRouter, testWebModule)
-	if err != nil {
-		t.Error(err.Error())
-	} else {
-		t.Log("TestRegisterWebModule test ok!")
-	}
+	RegisterWebItfsToGin(ginRouter, testWebModule.ModuleMetas)
 
 	servAddr := fmt.Sprintf("%s:%d", "127.0.0.1", 8008)
 	ginRouter.Run(servAddr)

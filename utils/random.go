@@ -2,9 +2,12 @@ package utils
 
 import (
 	crand "crypto/rand"
+	"encoding/hex"
+	"io"
 	"math"
 	"math/big"
 	"math/rand"
+	"strconv"
 	"sync"
 	"time"
 )
@@ -67,4 +70,25 @@ func RandStringBytesMaskImpr(n int) string {
 	}
 
 	return string(b)
+}
+
+func generateID(r io.Reader) string {
+	b := make([]byte, 32)
+	for {
+		if _, err := io.ReadFull(r, b); err != nil {
+			panic(err) // This shouldn't happen
+		}
+		id := hex.EncodeToString(b)
+		// if we try to parse the truncated for as an int and we don't have
+		// an error then the value is all numeric and causes issues when
+		// used as a hostname. ref #3869
+		if _, err := strconv.ParseInt(TruncateID(id), 10, 64); err == nil {
+			continue
+		}
+		return id
+	}
+}
+
+func GenerateRandomID() string {
+	return generateID(crand.Reader)
 }
