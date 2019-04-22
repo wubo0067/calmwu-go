@@ -55,7 +55,7 @@ type epoll struct {
 }
 
 func NewEpoll() (*epoll, error) {
-	fd, err := unix.EpollCreate1(0)
+	fd, err := unix.EpollCreate1(unix.EPOLL_CLOEXEC)
 	if err != nil {
 		return nil, err
 	}
@@ -91,7 +91,21 @@ func (ep *epoll) Add(conn, connArg interface{}) (int, error) {
 	econn.ConnHolder = conn
 	econn.ConnArg = connArg
 
-	err := unix.EpollCtl(ep.fd, syscall.EPOLL_CTL_ADD, socketFD, &unix.EpollEvent{Events: unix.POLLIN | unix.POLLHUP, Fd: int32(socketFD)})
+	/*
+	EPOLLIN:表示关联的fd可以进行读操作了。
+	EPOLLOUT:表示关联的fd可以进行写操作了。
+	EPOLLRDHUP(since Linux 2.6.17):表示套接字关闭了连接，或者关闭了正写一半的连接。
+	EPOLLPRI:表示关联的fd有紧急优先事件可以进行读操作了。
+	EPOLLERR:表示关联的fd发生了错误，epoll_wait会一直等待这个事件，所以一般没必要设置这个属性。
+	EPOLLHUP:表示关联的fd挂起了，epoll_wait会一直等待这个事件，所以一般没必要设置这个属性。
+	EPOLLET:设置关联的fd为ET的工作方式，epoll的默认工作方式是LT。
+	EPOLLONESHOT (since Linux 2.6.2):设置关联的fd为one-shot的工作方式。表示只监听一次事件，如果要再次监听，需要把socket放入到epoll队列中。	
+	*/
+	err := unix.EpollCtl(ep.fd, syscall.EPOLL_CTL_ADD, socketFD, 
+		&unix.EpollEvent{
+			Events: unix.POLLIN | unix.POLLHUP | unix.EPOLLRDHUP | unix.EPOLLERR, 
+			Fd: int32(socketFD)
+		})
 	if err != nil {
 		return -1, err
 	}
