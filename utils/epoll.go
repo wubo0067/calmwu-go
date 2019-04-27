@@ -46,11 +46,12 @@ type EpollConn struct {
 	ConnArg       interface{}   // 附加参数
 	ConnType      EpollConnType // 连接类型
 	TriggerEvents uint32        // EpollEvent返回的事件类型
+	SocketFD      int32
 }
 
 type Epoll struct {
-	fd          int
-	connections map[int]*EpollConn
+	fd          int32
+	connections map[int32]*EpollConn
 	lock        *sync.RWMutex
 }
 
@@ -62,34 +63,33 @@ func NewEpoll() (*Epoll, error) {
 	return &Epoll{
 		fd:          fd,
 		lock:        &sync.RWMutex{},
-		connections: make(map[int]*EpollConn),
+		connections: make(map[int32]*EpollConn),
 	}, nil
 }
 
-func (ep *Epoll) Add(conn, connArg interface{}) (int, error) {
+func (ep *Epoll) Add(conn, connArg interface{}) (int32, error) {
 	//ConnType := reflect.Indirect(reflect.ValueOf(conn)).Type()
-	var socketFD int
-	var econn EpollConn
+	econn := &EpollConn{
+		ConnHolder: conn,
+		ConnArg:    connArg,
+	}
 
 	switch realConn := conn.(type) {
 	case *net.TCPConn:
-		socketFD = TcpConnSocketFD(realConn)
+		econn.SocketFD = TcpConnSocketFD(realConn)
 		econn.ConnType = EPOLLConnTypeTCPCONN
 	case *net.TCPListener:
-		socketFD = TcpListenerSocketFD(realConn)
+		econn.SocketFD = TcpListenerSocketFD(realConn)
 		econn.ConnType = EPOLLConnTypeTCPLISTENER
 	case *net.UDPConn:
-		socketFD = UdpConnSocketFD(realConn)
+		econn.SocketFD = UdpConnSocketFD(realConn)
 		econn.ConnType = EPOLLConnTypeUDP
 	case *websocket.Conn:
-		socketFD = GorillaConnSocketFD(realConn)
+		econn.SocketFD = GorillaConnSocketFD(realConn)
 		econn.ConnType = EPOLLConnTypeWEBSOCKET
 	default:
 		return -1, errors.New(fmt.Sprintf("conn type:%s is not support\n", reflect.Indirect(reflect.ValueOf(conn)).Type().Name()))
 	}
-
-	econn.ConnHolder = conn
-	econn.ConnArg = connArg
 
 	/*
 		EPOLLIN:表示关联的fd可以进行读操作了。
@@ -111,11 +111,11 @@ func (ep *Epoll) Add(conn, connArg interface{}) (int, error) {
 	}
 	ep.lock.Lock()
 	defer ep.lock.Unlock()
-	ep.connections[socketFD] = &econn
-	return socketFD, nil
+	ep.connections[socketFD] = econn
+	return econn.SocketFD, nil
 }
 
-func (ep *Epoll) Remove(socketFD int) error {
+func (ep *Epoll) Remove(socketFD int32) error {
 	err := unix.EpollCtl(ep.fd, syscall.EPOLL_CTL_DEL, socketFD, nil)
 	if err != nil {
 		return err
@@ -164,27 +164,27 @@ func TcpConnSocketFD(conn *net.TCPConn) int {
 	tcpConn := reflect.Indirect(reflect.ValueOf(conn)).FieldByName("conn")
 	fdVal := tcpConn.FieldByName("fd")
 	pfdVal := reflect.Indirect(fdVal).FieldByName("pfd")
-	return int(pfdVal.FieldByName("Sysfd").Int())
+	return int32(pfdVal.FieldByName("Sysfd").Int())
 }
 
-func UdpConnSocketFD(conn *net.UDPConn) int {
+func UdpConnSocketFD(conn *net.UDPConn) int32 {
 	tcpConn := reflect.Indirect(reflect.ValueOf(conn)).FieldByName("conn")
 	fdVal := tcpConn.FieldByName("fd")
 	pfdVal := reflect.Indirect(fdVal).FieldByName("pfd")
-	return int(pfdVal.FieldByName("Sysfd").Int())
+	return int32(pfdVal.FieldByName("Sysfd").Int())
 }
 
-func TcpListenerSocketFD(listener *net.TCPListener) int {
+func TcpListenerSocketFD(listener *net.TCPListener) int32 {
 	fdVal := reflect.Indirect(reflect.ValueOf(listener)).FieldByName("fd")
 	pfdVal := reflect.Indirect(fdVal).FieldByName("pfd")
-	return int(pfdVal.FieldByName("Sysfd").Int())
+	return int32(pfdVal.FieldByName("Sysfd").Int())
 }
 
-func GorillaConnSocketFD(conn *websocket.Conn) int {
+func GorillaConnSocketFD(conn *websocket.Conn) int32 {
 	// Elem()从返回的interface中获取真实的对象
 	connVal := reflect.Indirect(reflect.ValueOf(conn)).FieldByName("conn").Elem()
 	tcpConn := reflect.Indirect(connVal).FieldByName("conn")
 	fdVal := tcpConn.FieldByName("fd")
 	pfdVal := reflect.Indirect(fdVal).FieldByName("pfd")
-	return int(pfdVal.FieldByName("Sysfd").Int())
+	return int32(pfdVal.FieldByName("Sysfd").Int())
 }
