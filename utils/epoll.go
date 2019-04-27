@@ -48,13 +48,13 @@ type EpollConn struct {
 	TriggerEvents uint32        // EpollEvent返回的事件类型
 }
 
-type epoll struct {
+type Epoll struct {
 	fd          int
 	connections map[int]*EpollConn
 	lock        *sync.RWMutex
 }
 
-func NewEpoll() (*epoll, error) {
+func NewEpoll() (*Epoll, error) {
 	fd, err := unix.EpollCreate1(unix.EPOLL_CLOEXEC)
 	if err != nil {
 		return nil, err
@@ -66,7 +66,7 @@ func NewEpoll() (*epoll, error) {
 	}, nil
 }
 
-func (ep *epoll) Add(conn, connArg interface{}) (int, error) {
+func (ep *Epoll) Add(conn, connArg interface{}) (int, error) {
 	//connType := reflect.Indirect(reflect.ValueOf(conn)).Type()
 	var socketFD int
 	var econn EpollConn
@@ -115,7 +115,7 @@ func (ep *epoll) Add(conn, connArg interface{}) (int, error) {
 	return socketFD, nil
 }
 
-func (ep *epoll) Remove(socketFD int) error {
+func (ep *Epoll) Remove(socketFD int) error {
 	err := unix.EpollCtl(ep.fd, syscall.EPOLL_CTL_DEL, socketFD, nil)
 	if err != nil {
 		return err
@@ -127,7 +127,7 @@ func (ep *epoll) Remove(socketFD int) error {
 	return nil
 }
 
-func (ep *epoll) Wait(milliseconds int) ([]*EpollConn, error) {
+func (ep *Epoll) Wait(milliseconds int) ([]*EpollConn, error) {
 	events := make([]unix.EpollEvent, 1024)
 
 	var n int
