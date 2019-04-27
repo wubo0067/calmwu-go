@@ -104,7 +104,7 @@ func (ep *Epoll) Add(conn, connArg interface{}) (int, error) {
 	err := unix.EpollCtl(ep.fd, syscall.EPOLL_CTL_ADD, socketFD, 
 		&unix.EpollEvent{
 			Events: unix.POLLIN | unix.POLLHUP | unix.EPOLLRDHUP | unix.EPOLLERR, 
-			Fd: int32(socketFD)
+			Fd: int32(socketFD),
 		})
 	if err != nil {
 		return -1, err
