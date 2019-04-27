@@ -82,7 +82,7 @@ func generateID(r io.Reader) string {
 		// if we try to parse the truncated for as an int and we don't have
 		// an error then the value is all numeric and causes issues when
 		// used as a hostname. ref #3869
-		if _, err := strconv.ParseInt(TruncateID(id), 10, 64); err == nil {
+		if _, err := strconv.ParseInt(id, 10, 64); err == nil {
 			continue
 		}
 		return id
