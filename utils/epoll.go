@@ -91,6 +91,9 @@ func (ep *Epoll) Add(conn, connArg interface{}) (int32, error) {
 		return -1, errors.New(fmt.Sprintf("conn type:%s is not support\n", reflect.Indirect(reflect.ValueOf(conn)).Type().Name()))
 	}
 
+	// 设置为nonblock
+	unix.SetNonblock(econn.SocketFD, true)
+
 	/*
 		EPOLLIN:表示关联的fd可以进行读操作了。
 		EPOLLOUT:表示关联的fd可以进行写操作了。
