@@ -59,7 +59,7 @@ func NewEpoll() (*Epoll, error) {
 	if err != nil {
 		return nil, err
 	}
-	return &epoll{
+	return &Epoll{
 		fd:          fd,
 		lock:        &sync.RWMutex{},
 		connections: make(map[int]*EpollConn),
