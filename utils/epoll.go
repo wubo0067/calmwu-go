@@ -24,10 +24,10 @@ import (
 type EpollConnType int
 
 const (
-	EPOLL_ConnType_TCPCONN EpollConnType = iota
-	EPOLL_ConnType_TCPLISTENER
-	EPOLL_ConnType_UDP
-	EPOLL_ConnType_WEBSOCKET
+	EPOLLConnTypeTCPCONN EpollConnType = iota
+	EPOLLConnTypeTCPLISTENER
+	EPOLLConnTypeUDP
+	EPOLLConnTypeWEBSOCKET
 )
 
 /*
@@ -44,7 +44,7 @@ const (
 type EpollConn struct {
 	ConnHolder    interface{}   // golang各种连接对象
 	ConnArg       interface{}   // 附加参数
-	ConnType   EpollConnType  // 连接类型
+	ConnType      EpollConnType // 连接类型
 	TriggerEvents uint32        // EpollEvent返回的事件类型
 }
 
@@ -74,16 +74,16 @@ func (ep *Epoll) Add(conn, connArg interface{}) (int, error) {
 	switch realConn := conn.(type) {
 	case *net.TCPConn:
 		socketFD = TcpConnSocketFD(realConn)
-		econn.ConnType = EPOLL_ConnType_TCPCONN
+		econn.ConnType = EPOLLConnTypeTCPCONN
 	case *net.TCPListener:
 		socketFD = TcpListenerSocketFD(realConn)
-		econn.ConnType = EPOLL_ConnType_TCPLISTENER
+		econn.ConnType = EPOLLConnTypeTCPLISTENER
 	case *net.UDPConn:
 		socketFD = UdpConnSocketFD(realConn)
-		econn.ConnType = EPOLL_ConnType_UDP
+		econn.ConnType = EPOLLConnTypeUDP
 	case *websocket.Conn:
 		socketFD = GorillaConnSocketFD(realConn)
-		econn.ConnType = EPOLL_ConnType_WEBSOCKET
+		econn.ConnType = EPOLLConnTypeWEBSOCKET
 	default:
 		return -1, errors.New(fmt.Sprintf("conn type:%s is not support\n", reflect.Indirect(reflect.ValueOf(conn)).Type().Name()))
 	}
@@ -92,19 +92,19 @@ func (ep *Epoll) Add(conn, connArg interface{}) (int, error) {
 	econn.ConnArg = connArg
 
 	/*
-	EPOLLIN:表示关联的fd可以进行读操作了。
-	EPOLLOUT:表示关联的fd可以进行写操作了。
-	EPOLLRDHUP(since Linux 2.6.17):表示套接字关闭了连接，或者关闭了正写一半的连接。
-	EPOLLPRI:表示关联的fd有紧急优先事件可以进行读操作了。
-	EPOLLERR:表示关联的fd发生了错误，epoll_wait会一直等待这个事件，所以一般没必要设置这个属性。
-	EPOLLHUP:表示关联的fd挂起了，epoll_wait会一直等待这个事件，所以一般没必要设置这个属性。
-	EPOLLET:设置关联的fd为ET的工作方式，epoll的默认工作方式是LT。
-	EPOLLONESHOT (since Linux 2.6.2):设置关联的fd为one-shot的工作方式。表示只监听一次事件，如果要再次监听，需要把socket放入到epoll队列中。	
+		EPOLLIN:表示关联的fd可以进行读操作了。
+		EPOLLOUT:表示关联的fd可以进行写操作了。
+		EPOLLRDHUP(since Linux 2.6.17):表示套接字关闭了连接，或者关闭了正写一半的连接。
+		EPOLLPRI:表示关联的fd有紧急优先事件可以进行读操作了。
+		EPOLLERR:表示关联的fd发生了错误，epoll_wait会一直等待这个事件，所以一般没必要设置这个属性。
+		EPOLLHUP:表示关联的fd挂起了，epoll_wait会一直等待这个事件，所以一般没必要设置这个属性。
+		EPOLLET:设置关联的fd为ET的工作方式，epoll的默认工作方式是LT。
+		EPOLLONESHOT (since Linux 2.6.2):设置关联的fd为one-shot的工作方式。表示只监听一次事件，如果要再次监听，需要把socket放入到epoll队列中。
 	*/
-	err := unix.EpollCtl(ep.fd, syscall.EPOLL_CTL_ADD, socketFD, 
+	err := unix.EpollCtl(ep.fd, syscall.EPOLL_CTL_ADD, socketFD,
 		&unix.EpollEvent{
-			Events: unix.POLLIN | unix.POLLHUP | unix.EPOLLRDHUP | unix.EPOLLERR, 
-			Fd: int32(socketFD),
+			Events: unix.POLLIN | unix.POLLHUP | unix.EPOLLRDHUP | unix.EPOLLERR,
+			Fd:     int32(socketFD),
 		})
 	if err != nil {
 		return -1, err

@@ -69,7 +69,7 @@ func TestEpollEcho(t *testing.T) {
 		}
 
 		for _, conn := range conns {
-			if conn.ConnType == EPOLL_ConnType_TCPLISTENER {
+			if conn.ConnType == EPOLLConnTypeTCPLISTENER {
 				listener := conn.ConnHolder.(*net.TCPListener)
 				client, err := listener.AcceptTCP()
 				if err != nil {
@@ -79,7 +79,7 @@ func TestEpollEcho(t *testing.T) {
 
 				// 将client加入epoll
 				epoll.Add(client, nil)
-			} else if conn.ConnType == EPOLL_ConnType_TCPCONN {
+			} else if conn.ConnType == EPOLLConnTypeTCPCONN {
 				clientConn := conn.ConnHolder.(*net.TCPConn)
 
 				// 读取
