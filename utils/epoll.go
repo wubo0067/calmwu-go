@@ -21,13 +21,13 @@ import (
 	"golang.org/x/sys/unix"
 )
 
-type epollConnType int
+type EpollConnEvtType int
 
 const (
-	EPOLL_CONNTYPE_TCPCONN epollConnType = iota
-	EPOLL_CONNTYPE_TCPLISTENER
-	EPOLL_CONNTYPE_UDP
-	EPOLL_CONNTYPE_WEBSOCKET
+	EPOLL_ConnEvtType_TCPCONN EpollConnEvtType = iota
+	EPOLL_ConnEvtType_TCPLISTENER
+	EPOLL_ConnEvtType_UDP
+	EPOLL_ConnEvtType_WEBSOCKET
 )
 
 /*
@@ -44,7 +44,7 @@ const (
 type EpollConn struct {
 	ConnHolder    interface{}   // golang各种连接对象
 	ConnArg       interface{}   // 附加参数
-	connType      epollConnType // 连接类型
+	ConnEvtType   EpollConnEvtType  // 连接类型
 	TriggerEvents uint32        // EpollEvent返回的事件类型
 }
 
@@ -67,23 +67,23 @@ func NewEpoll() (*Epoll, error) {
 }
 
 func (ep *Epoll) Add(conn, connArg interface{}) (int, error) {
-	//connType := reflect.Indirect(reflect.ValueOf(conn)).Type()
+	//ConnEvtType := reflect.Indirect(reflect.ValueOf(conn)).Type()
 	var socketFD int
 	var econn EpollConn
 
 	switch realConn := conn.(type) {
 	case *net.TCPConn:
 		socketFD = TcpConnSocketFD(realConn)
-		econn.connType = EPOLL_CONNTYPE_TCPCONN
+		econn.ConnEvtType = EPOLL_ConnEvtType_TCPCONN
 	case *net.TCPListener:
 		socketFD = TcpListenerSocketFD(realConn)
-		econn.connType = EPOLL_CONNTYPE_TCPLISTENER
+		econn.ConnEvtType = EPOLL_ConnEvtType_TCPLISTENER
 	case *net.UDPConn:
 		socketFD = UdpConnSocketFD(realConn)
-		econn.connType = EPOLL_CONNTYPE_UDP
+		econn.ConnEvtType = EPOLL_ConnEvtType_UDP
 	case *websocket.Conn:
 		socketFD = GorillaConnSocketFD(realConn)
-		econn.connType = EPOLL_CONNTYPE_WEBSOCKET
+		econn.ConnEvtType = EPOLL_ConnEvtType_WEBSOCKET
 	default:
 		return -1, errors.New(fmt.Sprintf("conn type:%s is not support\n", reflect.Indirect(reflect.ValueOf(conn)).Type().Name()))
 	}
