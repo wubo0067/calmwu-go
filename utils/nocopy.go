@@ -5,7 +5,7 @@ package utils
 //
 // See https://github.com/golang/go/issues/8005#issuecomment-190753527 for details.
 // and also: https://stackoverflow.com/questions/52494458/nocopy-minimal-example
-type noCopy struct{}
+type NoCopy struct{}
 
-func (*noCopy) Lock()   {}
-func (*noCopy) Unlock() {}
+func (*NoCopy) Lock()   {}
+func (*NoCopy) Unlock() {}
