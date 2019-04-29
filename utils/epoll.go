@@ -63,7 +63,7 @@ func NewEpoll() (*Epoll, error) {
 	return &Epoll{
 		fd:          fd,
 		lock:        &sync.RWMutex{},
-		connections: make(map[int32]*EpollConn),
+		connections: make(map[int]*EpollConn),
 	}, nil
 }
 
@@ -167,7 +167,7 @@ func TcpConnSocketFD(conn *net.TCPConn) int {
 	tcpConn := reflect.Indirect(reflect.ValueOf(conn)).FieldByName("conn")
 	fdVal := tcpConn.FieldByName("fd")
 	pfdVal := reflect.Indirect(fdVal).FieldByName("pfd")
-	return int32(pfdVal.FieldByName("Sysfd").Int())
+	return int(pfdVal.FieldByName("Sysfd").Int())
 }
 
 func UdpConnSocketFD(conn *net.UDPConn) int32 {
@@ -177,17 +177,17 @@ func UdpConnSocketFD(conn *net.UDPConn) int32 {
 	return int32(pfdVal.FieldByName("Sysfd").Int())
 }
 
-func TcpListenerSocketFD(listener *net.TCPListener) int32 {
+func TcpListenerSocketFD(listener *net.TCPListener) int {
 	fdVal := reflect.Indirect(reflect.ValueOf(listener)).FieldByName("fd")
 	pfdVal := reflect.Indirect(fdVal).FieldByName("pfd")
-	return int32(pfdVal.FieldByName("Sysfd").Int())
+	return int(pfdVal.FieldByName("Sysfd").Int())
 }
 
-func GorillaConnSocketFD(conn *websocket.Conn) int32 {
+func GorillaConnSocketFD(conn *websocket.Conn) int {
 	// Elem()从返回的interface中获取真实的对象
 	connVal := reflect.Indirect(reflect.ValueOf(conn)).FieldByName("conn").Elem()
 	tcpConn := reflect.Indirect(connVal).FieldByName("conn")
 	fdVal := tcpConn.FieldByName("fd")
 	pfdVal := reflect.Indirect(fdVal).FieldByName("pfd")
-	return int32(pfdVal.FieldByName("Sysfd").Int())
+	return int(pfdVal.FieldByName("Sysfd").Int())
 }
