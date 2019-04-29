@@ -91,7 +91,7 @@ func (ep *Epoll) Add(conn, connArg interface{}) (int, error) {
 		return -1, errors.New(fmt.Sprintf("conn type:%s is not support\n", reflect.Indirect(reflect.ValueOf(conn)).Type().Name()))
 	}
 
-	// 设置为nonblock
+	// nonblock
 	unix.SetNonblock(econn.SocketFD, true)
 
 	/*
