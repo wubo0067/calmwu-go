@@ -45,7 +45,7 @@ func TestEpollAdd(t *testing.T) {
 }
 
 func TestEpollEcho(t *testing.T) {
-	ip := net.ParseIP("192.168.2.104")
+	ip := net.ParseIP("0.0.0.0")
 	tcpAddr := &net.TCPAddr{IP: ip, Port: 8887}
 	tcpListener, _ := net.ListenTCP("tcp", tcpAddr)
 
