@@ -174,7 +174,7 @@ func UdpConnSocketFD(conn *net.UDPConn) int {
 	tcpConn := reflect.Indirect(reflect.ValueOf(conn)).FieldByName("conn")
 	fdVal := tcpConn.FieldByName("fd")
 	pfdVal := reflect.Indirect(fdVal).FieldByName("pfd")
-	return int32(pfdVal.FieldByName("Sysfd").Int())
+	return int(pfdVal.FieldByName("Sysfd").Int())
 }
 
 func TcpListenerSocketFD(listener *net.TCPListener) int {
