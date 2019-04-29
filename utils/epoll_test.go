@@ -76,7 +76,7 @@ func TestEpollEcho(t *testing.T) {
 					fmt.Fprintf(os.Stderr, "AcceptTCP failed! err:%s\n", err.Error())
 					return
 				}
-
+				fmt.Printf("accept new connect, %s\n", client.RemoteAddr().String())
 				// 将client加入epoll
 				epoll.Add(client, nil)
 			} else if conn.ConnType == EPOLLConnTypeTCPCONN {
@@ -88,8 +88,16 @@ func TestEpollEcho(t *testing.T) {
 				if err != nil {
 					fmt.Fprintf(os.Stderr, "Read failed! err:%s\n", err.Error())
 					return
+				} else {
+					fmt.Printf("Read %d bytes\n", n)
 				}
-				clientConn.Write(buffer[:n])
+
+				n, err = clientConn.Write(buffer[:n])
+				if err != nil {
+					fmt.Fprintf(os.Stderr, "Write failed! err:%s\n", err.Error())
+				} else {
+					fmt.Printf("Write %d bytes\n", n)
+				}
 			}
 		}
 	}
