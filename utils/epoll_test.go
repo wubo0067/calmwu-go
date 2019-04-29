@@ -36,7 +36,7 @@ func TestEpollAdd(t *testing.T) {
 		return
 	}
 
-	err = epoll.Add(tcpListener, nil)
+	_, err = epoll.Add(tcpListener, nil)
 	if err != nil {
 		t.Error(err.Error())
 		return
@@ -55,7 +55,7 @@ func TestEpollEcho(t *testing.T) {
 		return
 	}
 
-	socketFd, err := epoll.Add(tcpListener, nil)
+	_, err := epoll.Add(tcpListener, nil)
 	if err != nil {
 		t.Error(err.Error())
 		return
