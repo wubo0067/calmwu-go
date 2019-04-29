@@ -46,12 +46,12 @@ type EpollConn struct {
 	ConnArg       interface{}   // 附加参数
 	ConnType      EpollConnType // 连接类型
 	TriggerEvents uint32        // EpollEvent返回的事件类型
-	SocketFD      int32
+	SocketFD      int
 }
 
 type Epoll struct {
-	fd          int32
-	connections map[int32]*EpollConn
+	fd          int
+	connections map[int]*EpollConn
 	lock        *sync.RWMutex
 }
 
@@ -67,7 +67,7 @@ func NewEpoll() (*Epoll, error) {
 	}, nil
 }
 
-func (ep *Epoll) Add(conn, connArg interface{}) (int32, error) {
+func (ep *Epoll) Add(conn, connArg interface{}) (int, error) {
 	//ConnType := reflect.Indirect(reflect.ValueOf(conn)).Type()
 	econn := &EpollConn{
 		ConnHolder: conn,
@@ -104,21 +104,21 @@ func (ep *Epoll) Add(conn, connArg interface{}) (int32, error) {
 		EPOLLET:设置关联的fd为ET的工作方式，epoll的默认工作方式是LT。
 		EPOLLONESHOT (since Linux 2.6.2):设置关联的fd为one-shot的工作方式。表示只监听一次事件，如果要再次监听，需要把socket放入到epoll队列中。
 	*/
-	err := unix.EpollCtl(ep.fd, syscall.EPOLL_CTL_ADD, socketFD,
+	err := unix.EpollCtl(ep.fd, syscall.EPOLL_CTL_ADD, econn.SocketFD,
 		&unix.EpollEvent{
 			Events: unix.POLLIN | unix.POLLHUP | unix.EPOLLRDHUP | unix.EPOLLERR,
-			Fd:     int32(socketFD),
+			Fd:     int32(econn.SocketFD),
 		})
 	if err != nil {
 		return -1, err
 	}
 	ep.lock.Lock()
 	defer ep.lock.Unlock()
-	ep.connections[socketFD] = econn
+	ep.connections[econn.SocketFD] = econn
 	return econn.SocketFD, nil
 }
 
-func (ep *Epoll) Remove(socketFD int32) error {
+func (ep *Epoll) Remove(socketFD int) error {
 	err := unix.EpollCtl(ep.fd, syscall.EPOLL_CTL_DEL, socketFD, nil)
 	if err != nil {
 		return err
