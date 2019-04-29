@@ -170,7 +170,7 @@ func TcpConnSocketFD(conn *net.TCPConn) int {
 	return int(pfdVal.FieldByName("Sysfd").Int())
 }
 
-func UdpConnSocketFD(conn *net.UDPConn) int32 {
+func UdpConnSocketFD(conn *net.UDPConn) int {
 	tcpConn := reflect.Indirect(reflect.ValueOf(conn)).FieldByName("conn")
 	fdVal := tcpConn.FieldByName("fd")
 	pfdVal := reflect.Indirect(fdVal).FieldByName("pfd")
