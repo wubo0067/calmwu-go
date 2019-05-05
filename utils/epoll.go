@@ -95,14 +95,16 @@ func (ep *Epoll) Add(conn, connArg interface{}) (int, error) {
 	unix.SetNonblock(econn.SocketFD, true)
 
 	/*
-		EPOLLIN:表示关联的fd可以进行读操作了。
-		EPOLLOUT:表示关联的fd可以进行写操作了。
-		EPOLLRDHUP(since Linux 2.6.17):表示套接字关闭了连接，或者关闭了正写一半的连接。
-		EPOLLPRI:表示关联的fd有紧急优先事件可以进行读操作了。
-		EPOLLERR:表示关联的fd发生了错误，epoll_wait会一直等待这个事件，所以一般没必要设置这个属性。
-		EPOLLHUP:表示关联的fd挂起了，epoll_wait会一直等待这个事件，所以一般没必要设置这个属性。
-		EPOLLET:设置关联的fd为ET的工作方式，epoll的默认工作方式是LT。
-		EPOLLONESHOT (since Linux 2.6.2):设置关联的fd为one-shot的工作方式。表示只监听一次事件，如果要再次监听，需要把socket放入到epoll队列中。
+		2.6.17 版本内核中增加了 EPOLLRDHUP 事件，代表对端断开连接，关于添加这个事件的理由可以参见 “[Patch][RFC] epoll and half closed TCP connections”。
+		在使用 2.6.17 之后版本内核的服务器系统中，对端连接断开触发的 epoll 事件会包含 EPOLLIN | EPOLLRDHUP，即 0x2001。有了这个事件，对端断开连接的异常就可以在底层进行处理了，不用再移交到上层。
+			EPOLLIN:表示关联的fd可以进行读操作了。
+			EPOLLOUT:表示关联的fd可以进行写操作了。
+			EPOLLRDHUP(since Linux 2.6.17):表示套接字关闭了连接，或者关闭了正写一半的连接。
+			EPOLLPRI:表示关联的fd有紧急优先事件可以进行读操作了。
+			EPOLLERR:表示关联的fd发生了错误，epoll_wait会一直等待这个事件，所以一般没必要设置这个属性。
+			EPOLLHUP:表示关联的fd挂起了，epoll_wait会一直等待这个事件，所以一般没必要设置这个属性。
+			EPOLLET:设置关联的fd为ET的工作方式，epoll的默认工作方式是LT。
+			EPOLLONESHOT (since Linux 2.6.2):设置关联的fd为one-shot的工作方式。表示只监听一次事件，如果要再次监听，需要把socket放入到epoll队列中。
 	*/
 	err := unix.EpollCtl(ep.fd, syscall.EPOLL_CTL_ADD, econn.SocketFD,
 		&unix.EpollEvent{

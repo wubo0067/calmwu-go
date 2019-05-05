@@ -212,9 +212,9 @@ L:
 					if err != nil {
 						utils.ZLog.Errorf("Pipelined failed! reason:%s", err.Error())
 					}
-					if cmds != nil && len(cmds) > 0 {
-						utils.ZLog.Debugf("Pipelined cmds:%v", cmds)
-					}
+					// if cmds != nil && len(cmds) > 0 {
+					// 	utils.ZLog.Debugf("Pipelined cmds:%v", cmds)
+					// }
 					// 如果部分成功pipelined会返回err，这里外部去检查每个具体的cmd结果
 					redisCmdData.replyChan <- &RedisResultS{Ok: true, Result: cmds}
 				case REDIS_EXISTS:
