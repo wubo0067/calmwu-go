@@ -20,6 +20,18 @@ import (
 	"syscall"
 )
 
+type NetErrorType int
+
+const (
+	NETERR_TYPE_NO                  NetErrorType = iota //
+	NETERR_TYPE_DNSERROR                                // *net.DNSError
+	NETERR_TYPE_INVALIDADDERROR                         // *net.InvalidAddrError
+	NETERR_TYPE_UNKNOWNNETWORKERROR                     // *net.UnknownNetworkError
+	NETERR_TYPE_ADDERROR                                // *net.AddrError
+	NETERR_TYPE_DNSCONFIGERROR                          // *net.DNSConfigError
+	NETERR_TYPE_OS_SYSCALLERROR                         // *os.SyscallError--->syscall.Errno syscall.ECONNREFUSED syscall.ETIMEDOUT
+)
+
 var reusePort = 0x0F
 
 func GetIPByIfname(ifname string) (string, error) {
@@ -149,4 +161,30 @@ func SockaddrToAddr(sa syscall.Sockaddr) net.Addr {
 		a = &net.UnixAddr{Net: "unix", Name: sa.Name}
 	}
 	return a
+}
+
+// https://liudanking.com/network/go-%E4%B8%AD%E5%A6%82%E4%BD%95%E5%87%86%E7%A1%AE%E5%9C%B0%E5%88%A4%E6%96%AD%E5%92%8C%E8%AF%86%E5%88%AB%E5%90%84%E7%A7%8D%E7%BD%91%E7%BB%9C%E9%94%99%E8%AF%AF/
+func NetErrorCheck(err error) (isNetError bool, netErrEnum NetErrorType, netErr interface{}) {
+	if netErr, ok := err.(net.Error); ok {
+		if opErr, ok := netErr.(*net.OpError); ok {
+			switch t := opErr.Err.(type) {
+			case *net.DNSError:
+				return true, NETERR_TYPE_DNSERROR, t
+			case *net.InvalidAddrError:
+				return true, NETERR_TYPE_INVALIDADDERROR, t
+			case *net.UnknownNetworkError:
+				return true, NETERR_TYPE_UNKNOWNNETWORKERROR, t
+			case *net.AddrError:
+				return true, NETERR_TYPE_ADDERROR, t
+			case *net.DNSConfigError:
+				return true, NETERR_TYPE_DNSCONFIGERROR, t
+			case *os.SyscallError:
+				if sysErr, ok := t.Err.(syscall.Errno); ok {
+					// https://golang.org/pkg/syscall/#Errno
+					return true, NETERR_TYPE_OS_SYSCALLERROR, sysErr
+				}
+			}
+		}
+	}
+	return false, NETERR_TYPE_NO, nil
 }
