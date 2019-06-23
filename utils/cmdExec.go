@@ -42,6 +42,7 @@ func CmdExec(args ...string) (outStr string, errStr string, err error) {
 	return
 }
 
+// 输出
 func CmdExecCaptureAndShow(args ...string) (outStr string, errStr string, err error) {
 	baseCmd := args[0]
 	cmdArgs := args[1:]
@@ -50,6 +51,7 @@ func CmdExecCaptureAndShow(args ...string) (outStr string, errStr string, err er
 
 	var stdoutBuf, stderrBuf bytes.Buffer
 	cmd := exec.Command(baseCmd, cmdArgs...)
+	// 标准输出
 	stdoutIn, _ := cmd.StdoutPipe()
 	stderrIn, _ := cmd.StderrPipe()
 
