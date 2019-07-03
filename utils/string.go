@@ -88,4 +88,3 @@ func BytesPointer(b []byte) unsafe.Pointer {
 	bh := (*reflect.SliceHeader)(unsafe.Pointer(&b))
 	return unsafe.Pointer(bh.Data)
 }
-}
