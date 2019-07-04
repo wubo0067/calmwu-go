@@ -13,6 +13,7 @@ import (
 	"os"
 	"runtime"
 	"strings"
+	"time"
 
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
@@ -34,6 +35,10 @@ func ShortCallerWithClassFunctionEncoder(caller zapcore.EntryCaller, enc zapcore
 		path += " " + name[i+j+2:]
 	}
 	enc.AppendString(path)
+}
+
+func timeEncoder(t time.Time, enc zapcore.PrimitiveArrayEncoder) {
+	enc.AppendString(t.Format("2006-01-02 15:04:05.000"))
 }
 
 // logFullName: dir/dir/dir/test.log
@@ -73,7 +78,7 @@ func CreateZapLog(logFullName string, maxSize int, maxAge int, maxBackups int, c
 		CallerKey:      "C",
 		StacktraceKey:  "S",
 		LineEnding:     zapcore.DefaultLineEnding,
-		EncodeTime:     zapcore.ISO8601TimeEncoder,
+		EncodeTime:     timeEncoder, //zapcore.ISO8601TimeEncoder,
 		EncodeLevel:    zapcore.CapitalColorLevelEncoder,
 		EncodeDuration: zapcore.SecondsDurationEncoder,
 		EncodeCaller:   zapcore.ShortCallerEncoder, //ShortCallerWithClassFunctionEncoder
