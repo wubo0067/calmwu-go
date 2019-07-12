@@ -68,12 +68,13 @@ func Bytes2String(b []byte) string {
 }
 
 func String2Bytes(s string) []byte {
-	sh := (*reflect.StringHeader)(unsafe.Pointer(&s))
-	bh := reflect.SliceHeader{
-		Data: sh.Data,
-		Len:  sh.Len,
-		Cap:  sh.Len,
-	}
+	sh := (*[2]uintptr)(unsafe.Pointer(&s))
+	// bh := reflect.SliceHeader{
+	// 	Data: sh.Data,
+	// 	Len:  sh.Len,
+	// 	Cap:  sh.Len,
+	// }
+	bh := [3]uintptr{sh[0], sh[1], sh[1]}
 	return *(*[]byte)(unsafe.Pointer(&bh))
 }
 
