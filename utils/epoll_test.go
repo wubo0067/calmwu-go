@@ -1,3 +1,5 @@
+// +build linux
+
 /*
  * @Author: calmwu
  * @Date: 2019-02-22 14:57:01
@@ -61,6 +63,7 @@ func TestEpollEcho(t *testing.T) {
 		return
 	}
 
+	// 这个放在独立的goroutine中
 	for {
 		conns, err := epoll.Wait(100)
 		if err != nil {
@@ -71,6 +74,7 @@ func TestEpollEcho(t *testing.T) {
 		for _, conn := range conns {
 			if conn.ConnType == EPOLLConnTypeTCPLISTENER {
 				listener := conn.ConnHolder.(*net.TCPListener)
+				// 做个改进，listener不用放到epoll中，独立在一个goroutine中。
 				client, err := listener.AcceptTCP()
 				if err != nil {
 					fmt.Fprintf(os.Stderr, "AcceptTCP failed! err:%s\n", err.Error())
