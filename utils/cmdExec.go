@@ -68,6 +68,7 @@ func CmdExecCaptureAndShow(args ...string) (outStr string, errStr string, err er
 	var wg sync.WaitGroup
 	wg.Add(1)
 
+	// 启动routine做标准输出的拷贝
 	go func() {
 		_, errStdout = io.Copy(stdout, stdoutIn)
 		wg.Done()
