@@ -90,7 +90,7 @@ func function(pc uintptr) []byte {
 	return name
 }
 
-func CallStack(skip int) []byte {
+func CallStack(skip int) string {
 	buf := new(bytes.Buffer) // the returned data
 	// As we loop, we open files and read them. These variables record the currently
 	// loaded file.
@@ -113,5 +113,5 @@ func CallStack(skip int) []byte {
 		}
 		fmt.Fprintf(buf, "\t%s: %s\n", function(pc), source(lines, line))
 	}
-	return buf.Bytes()
+	return Bytes2String(buf.Bytes())
 }
