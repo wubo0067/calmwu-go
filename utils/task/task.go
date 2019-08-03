@@ -2,7 +2,7 @@
  * @Author: calm.wu
  * @Date: 2019-08-03 15:10:35
  * @Last Modified by: calm.wu
- * @Last Modified time: 2019-08-03 18:02:14
+ * @Last Modified time: 2019-08-03 19:28:24
  */
 
 package task
@@ -27,9 +27,9 @@ type Step interface {
 	// Step 名字
 	Name() string
 	// 执行
-	Do(index int, ctx context.Context, task Task) *StepResult
+	Do(stepIndex int, ctx context.Context, taskObj Task) *StepResult
 	// 回滚
-	Cancel(task Task) error
+	Cancel(stepIndex int, taskObj Task) error
 }
 
 // TaskResult 任务执行的结果
@@ -58,7 +58,7 @@ type Task interface {
 	// 得到运行参数
 	GetTaskArgs() interface{}
 	//
-	GetPrevStepResult(prevStepIndex int) *StepResult
+	GetStepResult(stepIndex int) *StepResult
 }
 
 var _ Task = &ConcreteTask{}
@@ -128,7 +128,7 @@ func (ti *ConcreteTask) Rollback() {
 	for i := cancelStepLstLen - 1; i >= 0; i-- {
 		step := ti.cancelStepLst[i]
 		ti.notifyObserver(fmt.Sprintf("Task:%s step:%s start rollback operation", ti.name, step.Name()))
-		step.Cancel(ti)
+		step.Cancel(i, ti)
 		ti.notifyObserver(fmt.Sprintf("Task:%s step:%s rollback operation completed", ti.name, step.Name()))
 	}
 }
@@ -152,9 +152,9 @@ func (ti *ConcreteTask) notifyObserver(info string) {
 }
 
 // GetPrevStepResult 得到前面一步的结果
-func (ti *ConcreteTask) GetPrevStepResult(prevStepIndex int) *StepResult {
-	if prevStepIndex < 0 {
+func (ti *ConcreteTask) GetStepResult(stepIndex int) *StepResult {
+	if stepIndex < 0 {
 		return nil
 	}
-	return ti.taskResult.Result[prevStepIndex]
+	return ti.taskResult.Result[stepIndex]
 }
