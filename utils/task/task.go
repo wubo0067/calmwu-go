@@ -2,7 +2,7 @@
  * @Author: calm.wu
  * @Date: 2019-08-03 15:10:35
  * @Last Modified by: calm.wu
- * @Last Modified time: 2019-08-03 19:28:24
+ * @Last Modified time: 2019-08-03 19:47:58
  */
 
 package task
@@ -84,6 +84,7 @@ func MakeTask(name string, observer TaskObserver, taskArg interface{}, steps ...
 
 	ctx, cancel := context.WithCancel(context.Background())
 	taskObj := &ConcreteTask{
+		name:     name,
 		ctx:      ctx,
 		observer: observer,
 		cancel:   cancel,
