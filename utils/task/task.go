@@ -2,7 +2,7 @@
  * @Author: calm.wu
  * @Date: 2019-08-03 15:10:35
  * @Last Modified by: calm.wu
- * @Last Modified time: 2019-08-03 19:47:58
+ * @Last Modified time: 2019-08-03 22:02:04
  */
 
 package task
@@ -61,10 +61,10 @@ type Task interface {
 	GetStepResult(stepIndex int) *StepResult
 }
 
-var _ Task = &ConcreteTask{}
+var _ Task = &concreteTask{}
 
 // ConcreteTask 具体的任务对象
-type ConcreteTask struct {
+type concreteTask struct {
 	name          string             // 任务名字
 	observer      TaskObserver       // 观察对象
 	ctx           context.Context    // 控制对象
@@ -83,7 +83,7 @@ func MakeTask(name string, observer TaskObserver, taskArg interface{}, steps ...
 	}
 
 	ctx, cancel := context.WithCancel(context.Background())
-	taskObj := &ConcreteTask{
+	taskObj := &concreteTask{
 		name:     name,
 		ctx:      ctx,
 		observer: observer,
@@ -95,7 +95,7 @@ func MakeTask(name string, observer TaskObserver, taskArg interface{}, steps ...
 }
 
 // Run 运行任务
-func (ti *ConcreteTask) Run() (*TaskResult, error) {
+func (ti *concreteTask) Run() (*TaskResult, error) {
 	ti.notifyObserver(fmt.Sprintf("Task:%s start running", ti.name))
 
 	for i, step := range ti.stepLst {
@@ -120,7 +120,7 @@ func (ti *ConcreteTask) Run() (*TaskResult, error) {
 }
 
 // Rollback 任务回滚
-func (ti *ConcreteTask) Rollback() {
+func (ti *concreteTask) Rollback() {
 	ti.notifyObserver(fmt.Sprintf("Task:%s start rollback", ti.name))
 	cancelStepLstLen := len(ti.cancelStepLst)
 	if cancelStepLstLen == 0 {
@@ -135,16 +135,16 @@ func (ti *ConcreteTask) Rollback() {
 }
 
 // Stop 停止任务
-func (ti *ConcreteTask) Stop() {
+func (ti *concreteTask) Stop() {
 	ti.cancel()
 }
 
 // GetTaskArgs 得到运行参数
-func (ti *ConcreteTask) GetTaskArgs() interface{} {
+func (ti *concreteTask) GetTaskArgs() interface{} {
 	return ti.taskArg
 }
 
-func (ti *ConcreteTask) notifyObserver(info string) {
+func (ti *concreteTask) notifyObserver(info string) {
 	if ti.observer != nil {
 		ti.observer.OnNotify(&TaskEvent{
 			Info: info,
@@ -152,8 +152,8 @@ func (ti *ConcreteTask) notifyObserver(info string) {
 	}
 }
 
-// GetPrevStepResult 得到前面一步的结果
-func (ti *ConcreteTask) GetStepResult(stepIndex int) *StepResult {
+// GetStepResult 得到前面一步的结果
+func (ti *concreteTask) GetStepResult(stepIndex int) *StepResult {
 	if stepIndex < 0 {
 		return nil
 	}
