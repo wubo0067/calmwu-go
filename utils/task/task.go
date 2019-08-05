@@ -2,16 +2,17 @@
  * @Author: calm.wu
  * @Date: 2019-08-03 15:10:35
  * @Last Modified by: calm.wu
- * @Last Modified time: 2019-08-03 22:02:04
+ * @Last Modified time: 2019-08-05 16:47:50
  */
 
 package task
 
 import (
 	"context"
-	"errors"
 	"fmt"
 	"sync"
+
+	"github.com/pkg/errors"
 
 	"github.com/wubo0067/calmwu-go/utils"
 )
@@ -97,8 +98,16 @@ func MakeTask(name string, observer TaskObserver, taskArg interface{}, steps ...
 }
 
 // Run 运行任务
-func (ti *concreteTask) Run() (*TaskResult, error) {
+func (ti *concreteTask) Run() (result *TaskResult, taskErr error) {
+	result = nil
 	ti.notifyObserver(fmt.Sprintf("Task:%s start running", ti.name))
+
+	defer func() {
+		if err := recover(); err != nil {
+			stackInfo := utils.GetCallStack()
+			taskErr = errors.Errorf("Panic! err:%v stack:%s", err, stackInfo)
+		}
+	}()
 
 	for i, step := range ti.stepLst {
 		stepResult := step.Do(ti.ctx, i, ti)
