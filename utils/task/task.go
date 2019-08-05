@@ -11,6 +11,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"sync"
 
 	"github.com/wubo0067/calmwu-go/utils"
 )
@@ -73,6 +74,7 @@ type concreteTask struct {
 	cancelStepLst []Step             // 回滚步骤列表
 	taskArg       interface{}        // 任务的参数
 	taskResult    TaskResult         // 任务执行的结果
+	mutex         sync.Mutex         // 锁
 	nc            utils.NoCopy
 }
 
@@ -154,6 +156,8 @@ func (ti *concreteTask) notifyObserver(info string) {
 
 // GetStepResult 得到前面一步的结果
 func (ti *concreteTask) GetStepResult(stepIndex int) *StepResult {
+	ti.mutex.Lock()
+	defer ti.mutex.Unlock()
 	if stepIndex < 0 {
 		return nil
 	}
