@@ -27,7 +27,7 @@ type Step interface {
 	// Step 名字
 	Name() string
 	// 执行
-	Do(stepIndex int, ctx context.Context, taskObj Task) *StepResult
+	Do(ctx context.Context, stepIndex int, taskObj Task) *StepResult
 	// 回滚
 	Cancel(stepIndex int, taskObj Task) error
 }
@@ -99,7 +99,7 @@ func (ti *concreteTask) Run() (*TaskResult, error) {
 	ti.notifyObserver(fmt.Sprintf("Task:%s start running", ti.name))
 
 	for i, step := range ti.stepLst {
-		stepResult := step.Do(i, ti.ctx, ti)
+		stepResult := step.Do(ti.ctx, i, ti)
 		if stepResult.Err != nil {
 			ti.notifyObserver(fmt.Sprintf("Task:%s step:%d name:%s execution failed", ti.name, i, step.Name()))
 			return nil, stepResult.Err
@@ -123,7 +123,7 @@ func (ti *concreteTask) Run() (*TaskResult, error) {
 func (ti *concreteTask) Rollback() {
 	ti.notifyObserver(fmt.Sprintf("Task:%s start rollback", ti.name))
 	cancelStepLstLen := len(ti.cancelStepLst)
-	if cancelStepLstLen == 0 {
+	if cancelStepLstLen < 1 {
 		return
 	}
 	for i := cancelStepLstLen - 1; i >= 0; i-- {
