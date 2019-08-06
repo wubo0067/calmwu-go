@@ -55,8 +55,6 @@ type Task interface {
 	Run() (*TaskResult, error)
 	// Rollback 任务回滚
 	Rollback()
-	// Stop 停止执行任务
-	Stop()
 	// 得到运行参数
 	GetTaskArgs() interface{}
 	//
@@ -67,30 +65,27 @@ var _ Task = &concreteTask{}
 
 // ConcreteTask 具体的任务对象
 type concreteTask struct {
-	name          string             // 任务名字
-	observer      TaskObserver       // 观察对象
-	ctx           context.Context    // 控制对象
-	cancel        context.CancelFunc // 取消方法
-	stepLst       []Step             // 步骤列表
-	cancelStepLst []Step             // 回滚步骤列表
-	taskArg       interface{}        // 任务的参数
-	taskResult    TaskResult         // 任务执行的结果
-	mutex         sync.Mutex         // 锁
+	name          string          // 任务名字
+	observer      TaskObserver    // 观察对象
+	ctx           context.Context // 控制对象
+	stepLst       []Step          // 步骤列表
+	cancelStepLst []Step          // 回滚步骤列表
+	taskArg       interface{}     // 任务的参数
+	taskResult    TaskResult      // 任务执行的结果
+	mutex         sync.Mutex      // 锁
 	nc            utils.NoCopy
 }
 
 // MakeTask 构造一个Task对象
-func MakeTask(name string, observer TaskObserver, taskArg interface{}, steps ...Step) (Task, error) {
+func MakeTask(ctx context.Context, name string, observer TaskObserver, taskArg interface{}, steps ...Step) (Task, error) {
 	if taskArg == nil || len(steps) == 0 {
 		return nil, errors.New("input parameters is invalid")
 	}
 
-	ctx, cancel := context.WithCancel(context.Background())
 	taskObj := &concreteTask{
 		name:     name,
 		ctx:      ctx,
 		observer: observer,
-		cancel:   cancel,
 		taskArg:  taskArg,
 		stepLst:  steps,
 	}
@@ -145,11 +140,6 @@ func (ti *concreteTask) Rollback() {
 	}
 }
 
-// Stop 停止任务
-func (ti *concreteTask) Stop() {
-	ti.cancel()
-}
-
 // GetTaskArgs 得到运行参数
 func (ti *concreteTask) GetTaskArgs() interface{} {
 	return ti.taskArg
@@ -167,7 +157,7 @@ func (ti *concreteTask) notifyObserver(info string) {
 func (ti *concreteTask) GetStepResult(stepIndex int) *StepResult {
 	ti.mutex.Lock()
 	defer ti.mutex.Unlock()
-	if stepIndex < 0 {
+	if stepIndex < 0 || stepIndex >= len(ti.taskResult.Result) {
 		return nil
 	}
 	return ti.taskResult.Result[stepIndex]
