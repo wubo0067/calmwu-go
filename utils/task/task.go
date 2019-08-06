@@ -51,6 +51,8 @@ type TaskObserver interface {
 
 // Task 任务对象，管理Step
 type Task interface {
+	// Name 任务名
+	Name() string
 	// Run 执行任务
 	Run() (*TaskResult, error)
 	// Rollback 任务回滚
@@ -90,6 +92,11 @@ func MakeTask(ctx context.Context, name string, observer TaskObserver, taskArg i
 		stepLst:  steps,
 	}
 	return taskObj, nil
+}
+
+// Name 任务名
+func (ti *concreteTask) Name() string {
+	return ti.name
 }
 
 // Run 运行任务
