@@ -31,7 +31,7 @@ type Step interface {
 	// 执行
 	Do(ctx context.Context, stepIndex int, taskObj Task) *StepResult
 	// 回滚
-	Cancel(stepIndex int, taskObj Task) error
+	Cancel(ctx context.Context, stepIndex int, taskObj Task) error
 }
 
 // TaskResult 任务执行的结果
@@ -135,7 +135,7 @@ func (ti *concreteTask) Rollback() {
 	for i := cancelStepLstLen - 1; i >= 0; i-- {
 		step := ti.cancelStepLst[i]
 		ti.notifyObserver(fmt.Sprintf("Task:%s step:%s start rollback operation", ti.name, step.Name()))
-		step.Cancel(i, ti)
+		step.Cancel(ti.ctx, i, ti)
 		ti.notifyObserver(fmt.Sprintf("Task:%s step:%s rollback operation completed", ti.name, step.Name()))
 	}
 }
