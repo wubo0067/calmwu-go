@@ -86,12 +86,12 @@ func CreateZapLog(logFullName string, maxSize int, maxAge int, maxBackups int, c
 	}
 
 	core := zapcore.NewCore(
-		zapcore.NewJSONEncoder(cfg),
+		zapcore.NewConsoleEncoder(cfg),
 		w,
 		logLevel,
 	)
 
-	logger := zap.New(core, zap.AddCaller(), zap.AddStacktrace(zap.ErrorLevel), zap.AddCallerSkip(callSkip))
+	logger := zap.New(core, zap.AddCaller(), zap.AddStacktrace(zap.ErrorLevel), zap.AddCallerSkip(callSkip), zap.Development())
 	suger := logger.Sugar()
 	return suger
 }
@@ -108,4 +108,3 @@ func NewSimpleLog(out io.Writer) *log.Logger {
 
 	return log.New(logOutput, "", log.Ldate|log.Lmicroseconds|log.Lshortfile)
 }
-
