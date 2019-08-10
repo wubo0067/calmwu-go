@@ -48,7 +48,7 @@ func timeEncoder(t time.Time, enc zapcore.PrimitiveArrayEncoder) {
 // compress: old file是否压缩tgz
 // logLevel: zapcore.DebugLevel
 func CreateZapLog(logFullName string, maxSize int, maxAge int, maxBackups int, compress bool,
-	logLevel zapcore.Level) *zap.SugaredLogger {
+	logLevel zapcore.Level, callSkip int) *zap.SugaredLogger {
 
 	if maxSize < 100 {
 		maxSize = 100
@@ -91,13 +91,13 @@ func CreateZapLog(logFullName string, maxSize int, maxAge int, maxBackups int, c
 		logLevel,
 	)
 
-	logger := zap.New(core, zap.AddCaller(), zap.AddStacktrace(zap.ErrorLevel))
+	logger := zap.New(core, zap.AddCaller(), zap.AddStacktrace(zap.ErrorLevel), zap.AddCallerSkip(callSkip))
 	suger := logger.Sugar()
 	return suger
 }
 
-func InitDefaultZapLog(logFullName string, logLevel zapcore.Level) {
-	ZLog = CreateZapLog(logFullName, 100, 7, 7, true, logLevel)
+func InitDefaultZapLog(logFullName string, logLevel zapcore.Level, callSkip int) {
+	ZLog = CreateZapLog(logFullName, 100, 7, 7, true, logLevel, callSkip)
 }
 
 func NewSimpleLog(out io.Writer) *log.Logger {
@@ -108,3 +108,4 @@ func NewSimpleLog(out io.Writer) *log.Logger {
 
 	return log.New(logOutput, "", log.Ldate|log.Lmicroseconds|log.Lshortfile)
 }
+

@@ -27,7 +27,7 @@ func processFunc(arg interface{}) error {
 }
 
 func TestWokerPool(t *testing.T) {
-	InitDefaultZapLog("workpool.log", zapcore.DebugLevel)
+	InitDefaultZapLog("workpool.log", zapcore.DebugLevel, 0)
 
 	wp, err := StartWorkerPool(processFunc, 100, 3*time.Second)
 	if err != nil {

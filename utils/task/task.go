@@ -106,7 +106,7 @@ func (ti *concreteTask) Run() (result *TaskResult, taskErr error) {
 
 	defer func() {
 		if err := recover(); err != nil {
-			stackInfo := utils.GetCallStack()
+			stackInfo := utils.CallStack(3)
 			taskErr = errors.Errorf("Panic! err:%v stack:%s", err, stackInfo)
 		}
 	}()
