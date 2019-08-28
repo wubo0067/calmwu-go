@@ -49,11 +49,12 @@ func GetCallStack() string {
 	return result
 }
 
+// DumpStacks 输出所有的goroutine的stack
 func DumpStacks() {
 	buf := make([]byte, 262144)
 	buf = buf[:runtime.Stack(buf, true)]
 
-	fmt.Printf("=== BEGIN goroutine stack dump ===\n%s\n=== END goroutine stack dump ===", buf)
+	fmt.Printf("=== BEGIN goroutine stack dump ===\n%s\n=== END goroutine stack dump ===\n", buf)
 }
 
 // source returns a space-trimmed slice of the n'th line.
