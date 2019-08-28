@@ -96,10 +96,12 @@ func CreateZapLog(logFullName string, maxSize int, maxAge int, maxBackups int, c
 	return suger
 }
 
+// InitDefaultZapLog 初始化Zap log
 func InitDefaultZapLog(logFullName string, logLevel zapcore.Level, callSkip int) {
 	ZLog = CreateZapLog(logFullName, 100, 7, 7, true, logLevel, callSkip)
 }
 
+// NewSimpleLog 简化一个logger对象
 func NewSimpleLog(out io.Writer) *log.Logger {
 	logOutput := out
 	if out == nil {
@@ -107,4 +109,102 @@ func NewSimpleLog(out io.Writer) *log.Logger {
 	}
 
 	return log.New(logOutput, "", log.Ldate|log.Lmicroseconds|log.Lshortfile)
+}
+
+// Debug 封装
+func Debug(args ...interface{}) {
+	if ZLog != nil {
+		ZLog.Debug(args...)
+	}
+}
+
+// Debugf 封装
+func Debugf(template string, args ...interface{}) {
+	if ZLog != nil {
+		ZLog.Debugf(template, args...)
+	}
+}
+
+// Info 封装
+func Info(args ...interface{}) {
+	if ZLog != nil {
+		ZLog.Info(args...)
+	}
+}
+
+// Infof 封装
+func Infof(template string, args ...interface{}) {
+	if ZLog != nil {
+		ZLog.Infof(template, args...)
+	}
+}
+
+// Warn 封装
+func Warn(args ...interface{}) {
+	if ZLog != nil {
+		ZLog.Warn(args...)
+	}
+}
+
+// Warnf 封装
+func Warnf(template string, args ...interface{}) {
+	if ZLog != nil {
+		ZLog.Warnf(template, args...)
+	}
+}
+
+// Error 封装
+func Error(args ...interface{}) {
+	if ZLog != nil {
+		ZLog.Error(args...)
+	}
+}
+
+// Errorf 封装
+func Errorf(template string, args ...interface{}) {
+	if ZLog != nil {
+		ZLog.Errorf(template, args...)
+	}
+}
+
+// DPanic 封装
+func DPanic(args ...interface{}) {
+	if ZLog != nil {
+		ZLog.DPanic(args...)
+	}
+}
+
+// DPanicf 封装
+func DPanicf(template string, args ...interface{}) {
+	if ZLog != nil {
+		ZLog.DPanicf(template, args...)
+	}
+}
+
+// Panic 封装
+func Panic(args ...interface{}) {
+	if ZLog != nil {
+		ZLog.Panic(args...)
+	}
+}
+
+// Panicf 封装
+func Panicf(template string, args ...interface{}) {
+	if ZLog != nil {
+		ZLog.Panicf(template, args...)
+	}
+}
+
+// Fatal 封装
+func Fatal(args ...interface{}) {
+	if ZLog != nil {
+		ZLog.Fatal(args...)
+	}
+}
+
+// Fatalf 封装
+func Fatalf(template string, args ...interface{}) {
+	if ZLog != nil {
+		ZLog.Fatalf(template, args...)
+	}
 }
