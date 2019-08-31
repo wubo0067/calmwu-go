@@ -91,7 +91,7 @@ func CreateZapLog(logFullName string, maxSize int, maxAge int, maxBackups int, c
 		logLevel,
 	)
 
-	logger := zap.New(core, zap.AddCaller(), zap.AddStacktrace(zap.ErrorLevel), zap.AddCallerSkip(callSkip), zap.Development())
+	logger := zap.New(core, zap.AddCaller(), zap.AddStacktrace(zap.DPanicLevel), zap.AddCallerSkip(callSkip), zap.Development())
 	suger := logger.Sugar()
 	return suger
 }
