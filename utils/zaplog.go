@@ -81,7 +81,7 @@ func CreateZapLog(logFullName string, maxSize int, maxAge int, maxBackups int, c
 		EncodeTime:     timeEncoder, //zapcore.ISO8601TimeEncoder,
 		EncodeLevel:    zapcore.CapitalLevelEncoder,
 		EncodeDuration: zapcore.SecondsDurationEncoder,
-		EncodeCaller:   zapcore.ShortCallerEncoder, //ShortCallerWithClassFunctionEncoder
+		EncodeCaller:   ShortCallerWithClassFunctionEncoder, //zapcore.ShortCallerEncoder, //
 		EncodeName:     zapcore.FullNameEncoder,
 	}
 
