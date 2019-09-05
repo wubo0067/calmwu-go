@@ -147,8 +147,8 @@ func NewTimeoutHttpClient(connectTimeout time.Duration, readWritetimeout time.Du
 
 // https://colobu.com/2016/07/01/the-complete-guide-to-golang-net-http-timeouts/
 // https://stackoverflow.com/questions/36773837/best-way-to-use-http-client-in-a-concurrent-application
-// Clients are safe for concurrent use by multiple goroutines.
-func NewBaseHttpClient() *http.Client {
+// NewBaseHttpClient Clients are safe for concurrent use by multiple goroutines.
+func NewBaseHttpClient(maxIdleConns, maxIdleConnsPerHost int) *http.Client {
 	return &http.Client{
 		Transport: &http.Transport{
 			Dial: (&net.Dialer{
@@ -159,8 +159,8 @@ func NewBaseHttpClient() *http.Client {
 			TLSHandshakeTimeout:   10 * time.Second, // 限制TLS握手使用的时间
 			ResponseHeaderTimeout: 10 * time.Second, // 限制读取response header的时间
 			IdleConnTimeout:       90 * time.Second, // 连接最大空闲时间，超过这个时间就会被关闭。
-			MaxIdleConns:          100,
-			MaxIdleConnsPerHost:   10,
+			MaxIdleConns:          maxIdleConns,
+			MaxIdleConnsPerHost:   maxIdleConnsPerHost,
 			ExpectContinueTimeout: 1 * time.Second, // 限制client在发送包含 Expect: 100-continue的header到收到继续发送body的response之间的时间等待。注意在1.6中设置这个值会禁用HTTP/2
 		},
 	}
