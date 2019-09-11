@@ -7,6 +7,7 @@ import (
 	"math"
 	"math/big"
 	"math/rand"
+	"net"
 	"strconv"
 	"sync"
 	"time"
@@ -20,16 +21,19 @@ const (
 )
 
 var (
-	once           sync.Once
+	once sync.Once
+	// SeededSecurely 变量
 	SeededSecurely bool
 )
 
+// RandomInt 生成随机整数
 func RandomInt(n int) int {
 	rand.Seed(time.Now().Unix())
 	rnd := rand.Intn(n)
 	return rnd
 }
 
+// RandomBytes 随机生成字节数组
 func RandomBytes(size int) ([]byte, error) {
 	bytes := make([]byte, size)
 	_, err := crand.Read(bytes)
@@ -41,7 +45,7 @@ func RandomRangeIn(low, hi int) int {
 	return low + rand.Intn(hi-low)
 }
 
-// 设置随机种子
+// SeedMathRand 设置随机种子
 func SeedMathRand() {
 	once.Do(func() {
 		n, err := crand.Int(crand.Reader, big.NewInt(math.MaxInt64))
@@ -54,6 +58,7 @@ func SeedMathRand() {
 	})
 }
 
+// RandStringBytesMaskImpr 根据掩码生成随机字符串
 func RandStringBytesMaskImpr(n int) string {
 	b := make([]byte, n)
 	// A rand.Int63() generates 63 random bits, enough for letterIdxMax letters!
@@ -89,6 +94,24 @@ func generateID(r io.Reader) string {
 	}
 }
 
+// GenerateRandomID 生成随机uuid
 func GenerateRandomID() string {
 	return generateID(crand.Reader)
+}
+
+// GenerateRandomPrivateMacAddr 生成随机的mac地址
+func GenerateRandomPrivateMacAddr() (string, error) {
+	buf := make([]byte, 6)
+	_, err := crand.Read(buf)
+	if err != nil {
+		return "", err
+	}
+
+	// Set the local bit for local addresses
+	// Addresses in this range are local mac addresses:
+	// x2-xx-xx-xx-xx-xx , x6-xx-xx-xx-xx-xx , xA-xx-xx-xx-xx-xx , xE-xx-xx-xx-xx-xx
+	buf[0] = (buf[0] | 2) & 0xfe
+
+	hardAddr := net.HardwareAddr(buf)
+	return hardAddr.String(), nil
 }
