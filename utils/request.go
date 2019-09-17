@@ -81,13 +81,13 @@ func SendResponseToClient(c *gin.Context, res *ProtoResponseS) {
 	c.Data(http.StatusOK, "text/plain; charset=utf-8", compressBuf.Bytes())
 }
 
-// PostRequest post请求返回回应
-func PostRequest(url string, data []byte) ([]byte, error) {
+// PostRequest post请求返回回应，返回body数据，httpcode，错误
+func PostRequest(url string, data []byte) ([]byte, int, error) {
 	res, err := http.Post(url, "text/plain; charset=utf-8", strings.NewReader(Bytes2String(data)))
 	if err != nil {
 		ZLog.Errorf("PostRequest to url[%s] Post failed! reason[%s]",
 			url, err.Error())
-		return nil, err
+		return nil, 0, err
 	}
 
 	if res != nil {
@@ -97,9 +97,9 @@ func PostRequest(url string, data []byte) ([]byte, error) {
 	resBody, err := ioutil.ReadAll(res.Body)
 	if err != nil {
 		ZLog.Errorf("Read body failed! reason[%s]", err.Error())
-		return nil, err
+		return nil, 0, err
 	}
-	return resBody, nil
+	return resBody, res.StatusCode, nil
 }
 
 func MapstructUnPackByJsonTag(m interface{}, rawVal interface{}) error {

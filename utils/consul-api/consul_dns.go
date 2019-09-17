@@ -81,7 +81,8 @@ func PostRequstByConsulDns(uin uint64, interfaceName string, realReq interface{}
 			Params:        realReq,
 		},
 	}
-	return utils.PostRequest(url, &req)
+	bodyData, _, err := utils.PostRequest(url, &req)
+	return bodyData, err
 }
 
 func PostBaseRequstByConsulDns(interfaceName string, req *utils.ProtoRequestS, client *api.Client, svrName string) (*utils.ProtoResponseS, error) {
@@ -107,5 +108,6 @@ func PostBaseRequstByConsulDns(interfaceName string, req *utils.ProtoRequestS, c
 		servInsts[0].IP, servInsts[0].Port, svrName, interfaceName)
 	utils.ZLog.Debugf("Dispatch url[%s]", url)
 
-	return utils.PostRequest(url, req)
+	bodyData, _, err := utils.PostRequest(url, &req)
+	return bodyData, err
 }
