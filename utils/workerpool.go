@@ -13,8 +13,10 @@ import (
 	"time"
 )
 
+// WorkerHandler 回调函数类型定义
 type WorkerHandler func(interface{}) error
 
+// WorkerPool 协程池对象
 type WorkerPool struct {
 	workerHandler WorkerHandler
 
