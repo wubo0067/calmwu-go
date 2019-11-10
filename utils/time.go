@@ -92,6 +92,7 @@ func TimeName(t time.Time) string {
 	return t.Format("2006-01-02 15:04:05 -0700")
 }
 
+// PrintPerformTimeConsuming 打印消费时间
 func PrintPerformTimeConsuming(funcName string, startTime time.Time) {
 	timeConumeSeconds := time.Now().Sub(startTime).Seconds()
 	ZLog.Debugf("function[%s] using [%f] seconds", funcName, timeConumeSeconds)

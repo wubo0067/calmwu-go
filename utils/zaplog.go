@@ -105,7 +105,7 @@ func InitDefaultZapLog(logFullName string, logLevel zapcore.Level, callSkip int)
 func NewSimpleLog(out io.Writer) *log.Logger {
 	logOutput := out
 	if out == nil {
-		logOutput = os.Stderr
+		logOutput = os.Stdout
 	}
 
 	return log.New(logOutput, "", log.Ldate|log.Lmicroseconds|log.Lshortfile)
