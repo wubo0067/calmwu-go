@@ -22,7 +22,7 @@ func GinRecovery() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		defer func() {
 			if err := recover(); err != nil {
-				stack := CallStack(3)
+				stack := CallStack(2)
 				httprequest, _ := httputil.DumpRequest(c.Request, false)
 				Errorf("[Recovery] panic recovered:\n%s\n%s\n%s", Bytes2String(httprequest), err, stack)
 				c.AbortWithStatus(500)
