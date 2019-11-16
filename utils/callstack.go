@@ -117,4 +117,3 @@ func CallStack(skip int) string {
 	}
 	return Bytes2String(buf.Bytes())
 }
-}
