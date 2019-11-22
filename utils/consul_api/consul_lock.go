@@ -5,7 +5,7 @@
  * @Last Modified time: 2018-11-30 17:25:57
  * @Comment:
  */
-package consul-api
+package consul_api
 
 import (
 	utils "calmwu-go/utils"
@@ -18,9 +18,9 @@ import (
 /*
 client:			consul api对象
 lockName:		锁名字
-watiLockTime:	得到锁的等待时间，如果超时都没有获得，返回报错 "10s" "100ms"，永久等待就用""
+waitLockTime:	得到锁的等待时间，如果超时都没有获得，返回报错 "10s" "100ms"，永久等待就用""
 */
-func ConsulGlobalLock(client *api.Client, lockName string, watiLockTime string) (*api.Lock, error) {
+func ConsulGlobalLock(client *api.Client, lockName string, waitLockTime string) (*api.Lock, error) {
 	if client == nil {
 		return nil, fmt.Errorf("CAPI: Consul client is nil")
 	}
@@ -33,8 +33,8 @@ func ConsulGlobalLock(client *api.Client, lockName string, watiLockTime string) 
 		Key: lockName,
 	}
 
-	if len(watiLockTime) > 0 {
-		lockWaitDuration, err := time.ParseDuration(watiLockTime)
+	if len(waitLockTime) > 0 {
+		lockWaitDuration, err := time.ParseDuration(waitLockTime)
 		if err != nil {
 			return nil, err
 		}
@@ -49,7 +49,7 @@ func ConsulGlobalLock(client *api.Client, lockName string, watiLockTime string) 
 		return nil, err
 	}
 
-	utils.ZLog.Debugf("lockName[%s] watiLockTime[%s]", lockName, watiLockTime)
+	utils.ZLog.Debugf("lockName[%s] waitLockTime[%s]", lockName, waitLockTime)
 
 	// 加锁
 	leaderCh, err := lock.Lock(nil)

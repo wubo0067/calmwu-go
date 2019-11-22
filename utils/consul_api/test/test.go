@@ -9,7 +9,7 @@ package main
 
 import (
 	utils "calmwu-go/utils"
-	"doyo-server-go/doyo-base-go/consul-api"
+	"doyo-server-go/doyo-base-go/consul_api"
 	"fmt"
 	"log"
 	"sync"
@@ -66,7 +66,7 @@ func competitiveLock(c *api.Client, lockHeldSecs uint32, id int) {
 
 func main() {
 	logger = utils.NewSimpleLog(nil)
-	consolClient, err := consul-api.NewConsulClient("192.168.2.104")
+	consolClient, err := consul_api.NewConsulClient("192.168.2.104")
 	if err != nil {
 		logger.Printf("New consul client failed! error:%s\n", err.Error())
 	}

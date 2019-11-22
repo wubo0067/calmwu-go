@@ -13,8 +13,10 @@ import (
 	"time"
 )
 
+// WorkerHandler 回调函数类型定义
 type WorkerHandler func(interface{}) error
 
+// WorkerPool 协程池对象
 type WorkerPool struct {
 	workerHandler WorkerHandler
 
@@ -39,8 +41,10 @@ type workerChan struct {
 	ch          chan interface{}
 }
 
+// DefaultConcurrency 默认的并发数量
 const DefaultConcurrency = 256 * 1024
 
+// StartWorkerPool 启动协程池
 func StartWorkerPool(workerFunc WorkerHandler, maxWorkersCount int, maxIdelWorkerDuration time.Duration) (*WorkerPool, error) {
 	wp := &WorkerPool{
 		workerHandler:         workerFunc,
@@ -67,7 +71,7 @@ func (wp *WorkerPool) start() error {
 			wp.clean(&scratch)
 			select {
 			case <-wp.stopCh:
-				ZLog.Info("WorkPool clean routine exit!")
+				Info("WorkPool clean routine exit!")
 				return
 			default:
 				time.Sleep(wp.getMaxIdleWorkerDuration())
@@ -78,9 +82,10 @@ func (wp *WorkerPool) start() error {
 	return nil
 }
 
+// Stop 停止协程池
 func (wp *WorkerPool) Stop() {
 	if wp.stopCh == nil {
-		ZLog.Error("WorkerPool wasn't started")
+		Error("WorkerPool wasn't started")
 		return
 	}
 
@@ -91,7 +96,7 @@ func (wp *WorkerPool) Stop() {
 	ready := wp.ready
 
 	// 清晰的标识出释放的对象
-	ZLog.Infof("WorkerPool stop %d workerChan", len(ready))
+	Infof("WorkerPool stop %d workerChan", len(ready))
 	for i, ch := range ready {
 		// 给所有工作中的routine退出，close(ch.ch)
 		ch.ch <- nil
@@ -109,10 +114,11 @@ func (wp *WorkerPool) getMaxIdleWorkerDuration() time.Duration {
 	return wp.maxIdleWorkerDuration
 }
 
+// Serve 调用
 func (wp *WorkerPool) Serve(arg interface{}) bool {
 	wch := wp.getWorkerChan()
 	if wch == nil {
-		ZLog.Error("WorkerPool get workerChan failed!")
+		Error("WorkerPool get workerChan failed!")
 		return false
 	}
 	wch.ch <- arg
@@ -134,7 +140,7 @@ func (wp *WorkerPool) getWorkerChan() *workerChan {
 			createWorker = true
 			wp.workersCount++
 		} else {
-			ZLog.Warnf("WorkerPool wokersCount reach limit:%d", wp.workersCount)
+			Warnf("WorkerPool wokersCount reach limit:%d", wp.workersCount)
 		}
 	} else {
 		// 从末尾取
@@ -173,12 +179,12 @@ func (wp *WorkerPool) workerFunc(wch *workerChan) {
 	// 读取通道数据
 	for c := range wch.ch {
 		if c == nil {
-			ZLog.Info("workerFunc receive exit notify!")
+			Info("workerFunc receive exit notify!")
 			break
 		}
 
 		if err = wp.workerHandler(c); err != nil {
-			ZLog.Errorf("workerHandler error:%s", err.Error())
+			Errorf("workerHandler error:%s", err.Error())
 		}
 
 		if !wp.release(wch) {
@@ -198,7 +204,7 @@ func (wp *WorkerPool) release(wch *workerChan) bool {
 	wch.lastUseTime = time.Now()
 	wp.lock.Lock()
 	if wp.mustStop {
-		ZLog.Info("WorkerPool worker must stop")
+		Info("WorkerPool worker must stop")
 		wp.lock.Unlock()
 		return false
 	}
@@ -236,7 +242,7 @@ func (wp *WorkerPool) clean(scratch *[]*workerChan) {
 	wp.lock.Unlock()
 
 	tmp := *scratch
-	ZLog.Debugf("WorkerPool release %d wokerChan", len(tmp))
+	Debugf("WorkerPool release %d wokerChan", len(tmp))
 	for i, ch := range tmp {
 		// 通知routine结束
 		ch.ch <- nil

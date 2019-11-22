@@ -5,7 +5,7 @@
  * @Last Modified time: 2018-11-29 15:18:20
  */
 
-package consul-api
+package consul_api
 
 import (
 	utils "calmwu-go/utils"

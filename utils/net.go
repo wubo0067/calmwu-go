@@ -10,7 +10,6 @@ package utils
 
 import (
 	"bufio"
-	cryptoRand "crypto/rand"
 	"net"
 	"os"
 	"strconv"

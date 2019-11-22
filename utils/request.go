@@ -81,13 +81,13 @@ func SendResponseToClient(c *gin.Context, res *ProtoResponseS) {
 	c.Data(http.StatusOK, "text/plain; charset=utf-8", compressBuf.Bytes())
 }
 
-// PostRequest post请求返回回应
-func PostRequest(url string, data []byte) ([]byte, error) {
+// PostRequest post请求返回回应，返回body数据，httpcode，错误
+func PostRequest(url string, data []byte) ([]byte, int, error) {
 	res, err := http.Post(url, "text/plain; charset=utf-8", strings.NewReader(Bytes2String(data)))
 	if err != nil {
 		ZLog.Errorf("PostRequest to url[%s] Post failed! reason[%s]",
 			url, err.Error())
-		return nil, err
+		return nil, 0, err
 	}
 
 	if res != nil {
@@ -97,9 +97,9 @@ func PostRequest(url string, data []byte) ([]byte, error) {
 	resBody, err := ioutil.ReadAll(res.Body)
 	if err != nil {
 		ZLog.Errorf("Read body failed! reason[%s]", err.Error())
-		return nil, err
+		return nil, 0, err
 	}
-	return resBody, nil
+	return resBody, res.StatusCode, nil
 }
 
 func MapstructUnPackByJsonTag(m interface{}, rawVal interface{}) error {
@@ -147,8 +147,8 @@ func NewTimeoutHttpClient(connectTimeout time.Duration, readWritetimeout time.Du
 
 // https://colobu.com/2016/07/01/the-complete-guide-to-golang-net-http-timeouts/
 // https://stackoverflow.com/questions/36773837/best-way-to-use-http-client-in-a-concurrent-application
-// Clients are safe for concurrent use by multiple goroutines.
-func NewBaseHttpClient() *http.Client {
+// NewBaseHttpClient Clients are safe for concurrent use by multiple goroutines.
+func NewBaseHttpClient(maxIdleConns, maxIdleConnsPerHost int) *http.Client {
 	return &http.Client{
 		Transport: &http.Transport{
 			Dial: (&net.Dialer{
@@ -159,8 +159,8 @@ func NewBaseHttpClient() *http.Client {
 			TLSHandshakeTimeout:   10 * time.Second, // 限制TLS握手使用的时间
 			ResponseHeaderTimeout: 10 * time.Second, // 限制读取response header的时间
 			IdleConnTimeout:       90 * time.Second, // 连接最大空闲时间，超过这个时间就会被关闭。
-			MaxIdleConns:          100,
-			MaxIdleConnsPerHost:   10,
+			MaxIdleConns:          maxIdleConns,
+			MaxIdleConnsPerHost:   maxIdleConnsPerHost,
 			ExpectContinueTimeout: 1 * time.Second, // 限制client在发送包含 Expect: 100-continue的header到收到继续发送body的response之间的时间等待。注意在1.6中设置这个值会禁用HTTP/2
 		},
 	}
