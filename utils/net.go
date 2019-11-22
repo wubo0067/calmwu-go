@@ -1,5 +1,3 @@
-// +build linux
-
 /*
  * @Author: calmwu
  * @Date: 2017-09-18 10:37:19
@@ -20,6 +18,7 @@ import (
 	"syscall"
 )
 
+// NetErrorType 网络错类型
 type NetErrorType int
 
 const (
@@ -34,15 +33,16 @@ const (
 
 var reusePort = 0x0F
 
+// GetIPByIfname 即通过接口名字获取IP
 func GetIPByIfname(ifname string) (string, error) {
-	local_ip := string("UnknownIP")
-	iface_lst, err := net.Interfaces()
+	localIP := "UnknownIP"
+	ifaceLst, err := net.Interfaces()
 	if err == nil {
 		for _, iface := range iface_lst {
 			if iface.Name == ifname {
 				//得到地址
-				local_addrs, _ := iface.Addrs()
-				local_ip = local_addrs[0].String()
+				localAddrs, _ := iface.Addrs()
+				localIP = local_addrs[0].String()
 
 				temp := strings.Split(local_ip, "/")
 				return temp[0], nil
@@ -52,6 +52,7 @@ func GetIPByIfname(ifname string) (string, error) {
 	return "", err
 }
 
+// SetRecvBuf 设置接收缓冲区
 func SetRecvBuf(c *net.TCPConn, recvBufSize int) error {
 	size := recvBufSize
 	var err error
@@ -64,6 +65,7 @@ func SetRecvBuf(c *net.TCPConn, recvBufSize int) error {
 	return err
 }
 
+// SetKeepAlive 设置KeepAlive
 func SetKeepAlive(fd, secs int) error {
 	if err := syscall.SetsockoptInt(fd, syscall.SOL_SOCKET, syscall.SO_KEEPALIVE, 1); err != nil {
 		return err
@@ -74,6 +76,7 @@ func SetKeepAlive(fd, secs int) error {
 	return syscall.SetsockoptInt(fd, syscall.IPPROTO_TCP, syscall.TCP_KEEPIDLE, secs)
 }
 
+// SetReuseAddrAndPort 设置SO_REUSEADDR 和reusePort
 func SetReuseAddrAndPort(socketFD int) error {
 	var err error
 	if err = syscall.SetsockoptInt(socketFD, syscall.SOL_SOCKET, syscall.SO_REUSEADDR, 1); err != nil {
@@ -86,6 +89,7 @@ func SetReuseAddrAndPort(socketFD int) error {
 	return nil
 }
 
+// MaxListenerBacklog 设置Listen队列长度
 func MaxListenerBacklog() int {
 	fd, err := os.Open("/proc/sys/net/core/somaxconn")
 	if err != nil {
@@ -119,6 +123,7 @@ func MaxListenerBacklog() int {
 	return n
 }
 
+// GenerateRandomPrivateMacAddr 生成mac地址
 func GenerateRandomPrivateMacAddr() (string, error) {
 	buf := make([]byte, 6)
 	_, err := cryptoRand.Read(buf)
@@ -135,6 +140,7 @@ func GenerateRandomPrivateMacAddr() (string, error) {
 	return hardAddr.String(), nil
 }
 
+// SockaddrToAddr 地址类型转换
 func SockaddrToAddr(sa syscall.Sockaddr) net.Addr {
 	var a net.Addr
 	switch sa := sa.(type) {
@@ -163,7 +169,7 @@ func SockaddrToAddr(sa syscall.Sockaddr) net.Addr {
 	return a
 }
 
-// https://liudanking.com/network/go-%E4%B8%AD%E5%A6%82%E4%BD%95%E5%87%86%E7%A1%AE%E5%9C%B0%E5%88%A4%E6%96%AD%E5%92%8C%E8%AF%86%E5%88%AB%E5%90%84%E7%A7%8D%E7%BD%91%E7%BB%9C%E9%94%99%E8%AF%AF/
+// NetErrorCheck https://liudanking.com/network/go-%E4%B8%AD%E5%A6%82%E4%BD%95%E5%87%86%E7%A1%AE%E5%9C%B0%E5%88%A4%E6%96%AD%E5%92%8C%E8%AF%86%E5%88%AB%E5%90%84%E7%A7%8D%E7%BD%91%E7%BB%9C%E9%94%99%E8%AF%AF/
 func NetErrorCheck(err error) (isNetError bool, netErrEnum NetErrorType, netErr interface{}) {
 	if netErr, ok := err.(net.Error); ok {
 		if opErr, ok := netErr.(*net.OpError); ok {
