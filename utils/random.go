@@ -7,7 +7,6 @@ import (
 	"math"
 	"math/big"
 	"math/rand"
-	"net"
 	"strconv"
 	"sync"
 	"time"
