@@ -5,6 +5,7 @@
  * @Last Modified time: 2019-03-14 20:58:00
  * @Comment:
  */
+// +build aix darwin dragonfly freebsd linux netbsd openbsd solaris
 
 package utils
 
@@ -37,13 +38,13 @@ func GetIPByIfname(ifname string) (string, error) {
 	localIP := "UnknownIP"
 	ifaceLst, err := net.Interfaces()
 	if err == nil {
-		for _, iface := range iface_lst {
+		for _, iface := range ifaceLst {
 			if iface.Name == ifname {
 				//得到地址
 				localAddrs, _ := iface.Addrs()
-				localIP = local_addrs[0].String()
+				localIP = localAddrs[0].String()
 
-				temp := strings.Split(local_ip, "/")
+				temp := strings.Split(localIP, "/")
 				return temp[0], nil
 			}
 		}

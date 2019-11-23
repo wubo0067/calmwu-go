@@ -98,20 +98,3 @@ func generateID(r io.Reader) string {
 func GenerateRandomID() string {
 	return generateID(crand.Reader)
 }
-
-// GenerateRandomPrivateMacAddr 生成随机的mac地址
-func GenerateRandomPrivateMacAddr() (string, error) {
-	buf := make([]byte, 6)
-	_, err := crand.Read(buf)
-	if err != nil {
-		return "", err
-	}
-
-	// Set the local bit for local addresses
-	// Addresses in this range are local mac addresses:
-	// x2-xx-xx-xx-xx-xx , x6-xx-xx-xx-xx-xx , xA-xx-xx-xx-xx-xx , xE-xx-xx-xx-xx-xx
-	buf[0] = (buf[0] | 2) & 0xfe
-
-	hardAddr := net.HardwareAddr(buf)
-	return hardAddr.String(), nil
-}
