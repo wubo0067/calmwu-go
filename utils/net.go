@@ -2,7 +2,7 @@
  * @Author: calmwu
  * @Date: 2017-09-18 10:37:19
  * @Last Modified by: calmwu
- * @Last Modified time: 2019-03-14 20:58:00
+ * @Last Modified time: 2019-11-24 18:14:09
  * @Comment:
  */
 // +build aix darwin dragonfly freebsd linux netbsd openbsd solaris
@@ -65,15 +65,23 @@ func SetRecvBuf(c *net.TCPConn, recvBufSize int) error {
 	return err
 }
 
-// SetKeepAlive 设置KeepAlive
+/*
+SetKeepAlive 设置KeepAlive
+tcp_keepalive_time：间隔多久没有发送数据后，就发送一个心跳包
+tcp_keepalive_intvl：发送的心跳包如果没有收到ack，间隔多久后，重新发送
+tcp_keepalive_probes：最多发送多少个心跳包没有收到回复后，认为对方挂掉了
+https://mcll.top/2019/07/20/tcp-keepalive-in-go/
+*/
 func SetKeepAlive(fd, secs int) error {
 	if err := syscall.SetsockoptInt(fd, syscall.SOL_SOCKET, syscall.SO_KEEPALIVE, 1); err != nil {
 		return err
 	}
+	// 设置tcp_keepalive_intvl
 	if err := syscall.SetsockoptInt(fd, syscall.IPPROTO_TCP, syscall.TCP_KEEPINTVL, secs); err != nil {
 		return err
 	}
-	return syscall.SetsockoptInt(fd, syscall.IPPROTO_TCP, syscall.TCP_KEEPIDLE, secs)
+	// 设置tcp_keepalive_probes
+	return syscall.SetsockoptInt(fd, syscall.IPPROTO_TCP, syscall.TCP_KEEPCNT, secs)
 }
 
 // SetReuseAddrAndPort 设置SO_REUSEADDR 和reusePort
