@@ -2,7 +2,7 @@
  * @Author: calmwu
  * @Date: 2017-09-19 16:27:11
  * @Last Modified by: calmwu
- * @Last Modified time: 2019-02-23 20:31:28
+ * @Last Modified time: 2019-11-30 10:54:08
  * @Comment:
  */
 package utils
@@ -31,7 +31,7 @@ func HashStr2Uint64(s string) uint64 {
 http://arxiv.org/abs/1406.2294
 */
 
-// Hash consistently chooses a hash bucket number in the range [0, numBuckets) for the given key. numBuckets must be >= 1.
+// JumpHash Hash consistently chooses a hash bucket number in the range [0, numBuckets) for the given key. numBuckets must >= 1.
 func JumpHash(key uint64, numBuckets int) int32 {
 	var b int64 = -1
 	var j int64
