@@ -1,8 +1,8 @@
 /*
  * @Author: calmwu
  * @Date: 2019-01-02 14:02:34
- * @Last Modified by: calm.wu
- * @Last Modified time: 2019-03-22 15:45:50
+ * @Last Modified by: calmwu
+ * @Last Modified time: 2019-12-02 19:38:39
  */
 
 // timer的封装，解决复用问题
@@ -32,26 +32,32 @@ func (t *Timer) Chan() <-chan time.Time {
 	return t.t.C
 }
 
-func (t *Timer) Reset(deadline time.Time) {
-	if deadline.Equal(deadline) && !t.read {
+func (t *Timer) Reset(d time.Duration) {
+	tempDeadline := time.Now().Add(d)
+	if t.deadline.Equal(tempDeadline) && !t.read {
 		// 如果deadline和设置的相同，且C没有读取
 		return
 	}
 
+	//
 	if !t.t.Stop() && !t.read {
 		// 如果已经超时，且C没有读取过，需要手工排干
 		<-t.t.C
 	}
 
-	if !deadline.IsZero() {
+	if !tempDeadline.IsZero() {
 		// 如果绝对超时时间不为0，计算超时的时间间隔，timer重新使用
-		t.t.Reset(time.Until(deadline))
+		t.t.Reset(d)
 	}
 
 	t.read = false
-	t.deadline = deadline
+	t.deadline = tempDeadline
 }
 
 func (t *Timer) SetRead() {
 	t.read = true
+}
+
+func (t *Timer) Stop() bool {
+	return t.t.Stop()
 }
