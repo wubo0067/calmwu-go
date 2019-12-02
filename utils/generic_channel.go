@@ -93,7 +93,6 @@ func (cc *ChannelCustomNameChannel) Read(block bool) (val ChannelCustomType, ok 
 			}
 		default:
 			ok = false
-			val = nil
 		}
 	}
 	return
