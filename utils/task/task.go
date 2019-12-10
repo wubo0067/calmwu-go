@@ -112,6 +112,8 @@ func (ti *concreteTask) Run() (result *TaskResult, taskErr error) {
 	}()
 
 	for i, step := range ti.stepLst {
+		// 执行到自己，回滚也从自己开始
+		ti.cancelStepLst = append(ti.cancelStepLst, step)
 		stepResult := step.Do(ti.ctx, i, ti)
 		if stepResult.Err != nil {
 			ti.notifyObserver(fmt.Sprintf("Task:%s step:%d name:%s execution failed", ti.name, i, step.Name()))
@@ -120,7 +122,6 @@ func (ti *concreteTask) Run() (result *TaskResult, taskErr error) {
 		ti.notifyObserver(fmt.Sprintf("Task:%s step:%d name:%s execution successed", ti.name, i, step.Name()))
 
 		ti.taskResult.Result = append(ti.taskResult.Result, stepResult)
-		ti.cancelStepLst = append(ti.cancelStepLst, step)
 		select {
 		case <-ti.ctx.Done():
 			ti.notifyObserver(fmt.Sprintf("Task:%s was cancelled after step:%d name:%s", ti.name, i, step.Name()))
