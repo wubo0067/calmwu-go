@@ -1,3 +1,4 @@
+// +build !windows
 /*
  * @Author: calmwu
  * @Date: 2017-09-18 10:37:19
@@ -5,7 +6,6 @@
  * @Last Modified time: 2019-11-24 18:14:09
  * @Comment:
  */
-// +build aix darwin dragonfly freebsd linux netbsd openbsd solaris
 
 package utils
 
