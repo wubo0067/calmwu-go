@@ -222,3 +222,36 @@ func toValue(v reflect.Value) *st.Value {
 		}
 	}
 }
+
+func getNativeValue(v *st.Value) (val interface{}) {
+	switch v.Kind.(type) {
+	case *st.Value_NullValue:
+		return nil
+	case *st.Value_NumberValue:
+		return v.GetNumberValue()
+	case *st.Value_StringValue:
+		return v.GetStringValue()
+	case *st.Value_BoolValue:
+		return v.GetBoolValue()
+	case *st.Value_StructValue:
+		// recurse
+		m, _ := GetMap(v.GetStructValue())
+		return m
+	case *st.Value_ListValue:
+		var list []interface{}
+		for _, lv := range v.GetListValue().Values {
+			list = append(list, getNativeValue(lv))
+		}
+		return list
+	}
+	return false
+}
+
+func GetMap(s *st.Struct) (map[string]interface{}, error) {
+	m := make(map[string]interface{})
+	for k, v := range s.Fields {
+		m[k] = getNativeValue(v)
+	}
+	return m, nil
+}
+
