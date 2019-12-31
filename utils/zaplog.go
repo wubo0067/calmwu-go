@@ -127,7 +127,9 @@ func Debugf(template string, args ...interface{}) {
 	if ZLog != nil {
 		ZLog.Debugf(template, args...)
 	} else {
-		log.Printf(template, args...)
+		_, file, line, _ := runtime.Caller(1)
+		prefix := fmt.Sprintf("%v:%v: ", path.Base(file), line)
+		log.Printf(prefix+template, args...)
 	}
 }
 
