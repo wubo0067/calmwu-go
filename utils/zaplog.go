@@ -118,7 +118,11 @@ func Debug(args ...interface{}) {
 	if ZLog != nil {
 		ZLog.Debug(args...)
 	} else {
-		log.Print(args...)
+		_, file, line, _ := runtime.Caller(1)
+		prefix := fmt.Sprintf("%v:%v: ", path.Base(file), line)
+		composeArgs := []interface{}{prefix}
+		composeArgs = append(composeArgs, args...)
+		log.Print(composeArgs...)
 	}
 }
 
@@ -138,7 +142,11 @@ func Info(args ...interface{}) {
 	if ZLog != nil {
 		ZLog.Info(args...)
 	} else {
-		log.Print(args...)
+		_, file, line, _ := runtime.Caller(1)
+		prefix := fmt.Sprintf("%v:%v: ", path.Base(file), line)
+		composeArgs := []interface{}{prefix}
+		composeArgs = append(composeArgs, args...)
+		log.Print(composeArgs...)
 	}
 }
 
@@ -147,7 +155,9 @@ func Infof(template string, args ...interface{}) {
 	if ZLog != nil {
 		ZLog.Infof(template, args...)
 	} else {
-		log.Printf(template, args...)
+		_, file, line, _ := runtime.Caller(1)
+		prefix := fmt.Sprintf("%v:%v: ", path.Base(file), line)
+		log.Printf(prefix+template, args...)
 	}
 }
 
@@ -156,7 +166,11 @@ func Warn(args ...interface{}) {
 	if ZLog != nil {
 		ZLog.Warn(args...)
 	} else {
-		log.Print(args...)
+		_, file, line, _ := runtime.Caller(1)
+		prefix := fmt.Sprintf("%v:%v: ", path.Base(file), line)
+		composeArgs := []interface{}{prefix}
+		composeArgs = append(composeArgs, args...)
+		log.Print(composeArgs...)
 	}
 }
 
@@ -165,7 +179,9 @@ func Warnf(template string, args ...interface{}) {
 	if ZLog != nil {
 		ZLog.Warnf(template, args...)
 	} else {
-		log.Printf(template, args...)
+		_, file, line, _ := runtime.Caller(1)
+		prefix := fmt.Sprintf("%v:%v: ", path.Base(file), line)
+		log.Printf(prefix+template, args...)
 	}
 }
 
@@ -174,7 +190,11 @@ func Error(args ...interface{}) {
 	if ZLog != nil {
 		ZLog.Error(args...)
 	} else {
-		log.Print(args...)
+		_, file, line, _ := runtime.Caller(1)
+		prefix := fmt.Sprintf("%v:%v: ", path.Base(file), line)
+		composeArgs := []interface{}{prefix}
+		composeArgs = append(composeArgs, args...)
+		log.Print(composeArgs...)
 	}
 }
 
@@ -183,7 +203,9 @@ func Errorf(template string, args ...interface{}) {
 	if ZLog != nil {
 		ZLog.Errorf(template, args...)
 	} else {
-		log.Printf(template, args...)
+		_, file, line, _ := runtime.Caller(1)
+		prefix := fmt.Sprintf("%v:%v: ", path.Base(file), line)
+		log.Printf(prefix+template, args...)
 	}
 }
 
@@ -192,7 +214,11 @@ func DPanic(args ...interface{}) {
 	if ZLog != nil {
 		ZLog.DPanic(args...)
 	} else {
-		log.Panic(args...)
+		_, file, line, _ := runtime.Caller(1)
+		prefix := fmt.Sprintf("%v:%v: ", path.Base(file), line)
+		composeArgs := []interface{}{prefix}
+		composeArgs = append(composeArgs, args...)
+		log.Panic(composeArgs...)
 	}
 }
 
@@ -201,7 +227,9 @@ func DPanicf(template string, args ...interface{}) {
 	if ZLog != nil {
 		ZLog.DPanicf(template, args...)
 	} else {
-		log.Panicf(template, args...)
+		_, file, line, _ := runtime.Caller(1)
+		prefix := fmt.Sprintf("%v:%v: ", path.Base(file), line)
+		log.Panicf(prefix+template, args...)
 	}
 }
 
@@ -210,7 +238,11 @@ func Panic(args ...interface{}) {
 	if ZLog != nil {
 		ZLog.Panic(args...)
 	} else {
-		log.Panic(args...)
+		_, file, line, _ := runtime.Caller(1)
+		prefix := fmt.Sprintf("%v:%v: ", path.Base(file), line)
+		composeArgs := []interface{}{prefix}
+		composeArgs = append(composeArgs, args...)
+		log.Panic(composeArgs...)
 	}
 }
 
@@ -219,7 +251,9 @@ func Panicf(template string, args ...interface{}) {
 	if ZLog != nil {
 		ZLog.Panicf(template, args...)
 	} else {
-		log.Panicf(template, args...)
+		_, file, line, _ := runtime.Caller(1)
+		prefix := fmt.Sprintf("%v:%v: ", path.Base(file), line)
+		log.Panicf(prefix+template, args...)
 	}
 }
 
@@ -228,7 +262,11 @@ func Fatal(args ...interface{}) {
 	if ZLog != nil {
 		ZLog.Fatal(args...)
 	} else {
-		log.Fatal(args...)
+		_, file, line, _ := runtime.Caller(1)
+		prefix := fmt.Sprintf("%v:%v: ", path.Base(file), line)
+		composeArgs := []interface{}{prefix}
+		composeArgs = append(composeArgs, args...)
+		log.Fatal(composeArgs...)
 	}
 }
 
