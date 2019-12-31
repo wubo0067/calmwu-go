@@ -2,7 +2,7 @@
  * @Author: calm.wu
  * @Date: 2019-12-30 19:57:35
  * @Last Modified by: calm.wu
- * @Last Modified time: 2019-12-30 20:01:27
+ * @Last Modified time: 2019-12-31 09:31:38
  */
 
 //Package utils for calm golang tools
@@ -15,8 +15,8 @@ import (
 	st "github.com/golang/protobuf/ptypes/struct"
 )
 
-// ToStruct converts a map[string]interface{} to a ptypes.Struct
-func ToStruct(v map[string]interface{}) *st.Struct {
+// ConvertMapToPBStruct converts a map[string]interface{} to a ptypes.Struct
+func ConvertMap2PBStruct(v map[string]interface{}) *st.Struct {
 	size := len(v)
 	if size == 0 {
 		return nil
@@ -247,11 +247,11 @@ func getNativeValue(v *st.Value) (val interface{}) {
 	return false
 }
 
-func GetMap(s *st.Struct) (map[string]interface{}, error) {
+// ConvertPBStruct2Map converts a ptypes.Struct to a map[string]interface{}
+func ConvertPBStruct2Map(s *st.Struct) (map[string]interface{}, error) {
 	m := make(map[string]interface{})
 	for k, v := range s.Fields {
 		m[k] = getNativeValue(v)
 	}
 	return m, nil
 }
-
