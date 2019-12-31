@@ -2,7 +2,7 @@
  * @Author: calm.wu
  * @Date: 2019-12-30 19:57:35
  * @Last Modified by: calm.wu
- * @Last Modified time: 2019-12-31 09:31:38
+ * @Last Modified time: 2019-12-31 09:33:37
  */
 
 //Package utils for calm golang tools
@@ -235,7 +235,7 @@ func getNativeValue(v *st.Value) (val interface{}) {
 		return v.GetBoolValue()
 	case *st.Value_StructValue:
 		// recurse
-		m, _ := GetMap(v.GetStructValue())
+		m, _ := ConvertPBStruct2Map(v.GetStructValue())
 		return m
 	case *st.Value_ListValue:
 		var list []interface{}
