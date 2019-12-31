@@ -16,7 +16,7 @@ import (
 var tableTypeRegistry sync.Map
 
 func RegisterTableObj(tableObj interface{}) {
-	// 得到类型
+	//
 	tableObjType := reflect.Indirect(reflect.ValueOf(tableObj)).Type()
 	tableObjFullName := tableObjType.String()
 	tableObjName := tableObjType.Name()

@@ -24,6 +24,7 @@ import (
 
 var (
 	ZLog *zap.SugaredLogger
+	SLog *log.Logger = NewSimpleLog(nil)
 )
 
 func ShortCallerWithClassFunctionEncoder(caller zapcore.EntryCaller, enc zapcore.PrimitiveArrayEncoder) {
@@ -116,7 +117,7 @@ func Debug(args ...interface{}) {
 	if ZLog != nil {
 		ZLog.Debug(args...)
 	} else {
-		log.Print(args...)
+		SLog.Print(args...)
 	}
 }
 
@@ -125,7 +126,7 @@ func Debugf(template string, args ...interface{}) {
 	if ZLog != nil {
 		ZLog.Debugf(template, args...)
 	} else {
-		log.Printf(template, args...)
+		SLog.Printf(template, args...)
 	}
 }
 
@@ -134,7 +135,7 @@ func Info(args ...interface{}) {
 	if ZLog != nil {
 		ZLog.Info(args...)
 	} else {
-		log.Print(args...)
+		SLog.Print(args...)
 	}
 }
 
@@ -143,7 +144,7 @@ func Infof(template string, args ...interface{}) {
 	if ZLog != nil {
 		ZLog.Infof(template, args...)
 	} else {
-		log.Printf(template, args...)
+		SLog.Printf(template, args...)
 	}
 }
 
@@ -152,7 +153,7 @@ func Warn(args ...interface{}) {
 	if ZLog != nil {
 		ZLog.Warn(args...)
 	} else {
-		log.Print(args...)
+		SLog.Print(args...)
 	}
 }
 
@@ -161,7 +162,7 @@ func Warnf(template string, args ...interface{}) {
 	if ZLog != nil {
 		ZLog.Warnf(template, args...)
 	} else {
-		log.Printf(template, args...)
+		SLog.Printf(template, args...)
 	}
 }
 
@@ -170,7 +171,7 @@ func Error(args ...interface{}) {
 	if ZLog != nil {
 		ZLog.Error(args...)
 	} else {
-		log.Print(args...)
+		SLog.Print(args...)
 	}
 }
 
@@ -179,7 +180,7 @@ func Errorf(template string, args ...interface{}) {
 	if ZLog != nil {
 		ZLog.Errorf(template, args...)
 	} else {
-		log.Printf(template, args...)
+		SLog.Printf(template, args...)
 	}
 }
 
@@ -188,7 +189,7 @@ func DPanic(args ...interface{}) {
 	if ZLog != nil {
 		ZLog.DPanic(args...)
 	} else {
-		log.Panic(args)
+		SLog.Panic(args...)
 	}
 }
 
@@ -197,7 +198,7 @@ func DPanicf(template string, args ...interface{}) {
 	if ZLog != nil {
 		ZLog.DPanicf(template, args...)
 	} else {
-		log.Panicf(template, args...)
+		SLog.Panicf(template, args...)
 	}
 }
 
@@ -206,7 +207,7 @@ func Panic(args ...interface{}) {
 	if ZLog != nil {
 		ZLog.Panic(args...)
 	} else {
-		log.Panic(args)
+		SLog.Panic(args...)
 	}
 }
 
@@ -215,7 +216,7 @@ func Panicf(template string, args ...interface{}) {
 	if ZLog != nil {
 		ZLog.Panicf(template, args...)
 	} else {
-		log.Panicf(template, args...)
+		SLog.Panicf(template, args...)
 	}
 }
 
@@ -224,7 +225,7 @@ func Fatal(args ...interface{}) {
 	if ZLog != nil {
 		ZLog.Fatal(args...)
 	} else {
-		log.Fatal(args...)
+		SLog.Fatal(args...)
 	}
 }
 
@@ -233,6 +234,6 @@ func Fatalf(template string, args ...interface{}) {
 	if ZLog != nil {
 		ZLog.Fatalf(template, args...)
 	} else {
-		log.Fatalf(template, args...)
+		SLog.Fatalf(template, args...)
 	}
 }
