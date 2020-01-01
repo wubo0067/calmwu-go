@@ -41,8 +41,8 @@ func IsInterfaceNil(v interface{}) bool {
 }
 
 var (
-	// ErrJudgement error判断和列出上下文
-	ErrJudgement = errlog.NewLogger(&errlog.Config{
+	// DefaultErrCheck error判断和列出上下文
+	DefaultErrCheck = errlog.NewLogger(&errlog.Config{
 		// PrintFunc is of type `func (format string, data ...interface{})`
 		// so you can easily implement your own logger func.
 		// In this example, logrus is used, but any other logger can be used.
@@ -56,3 +56,20 @@ var (
 		ExitOnDebugSuccess: false, //Exit if err
 	})
 )
+
+func NewDefaultErrCheck(printFunc func(format string, data ...interface{}), printStack bool) {
+	DefaultErrCheck = nil
+	DefaultErrCheck = errlog.NewLogger(&errlog.Config{
+		// PrintFunc is of type `func (format string, data ...interface{})`
+		// so you can easily implement your own logger func.
+		// In this example, logrus is used, but any other logger can be used.
+		// Beware that you should add '\n' at the end of format string when printing.
+		PrintFunc:          printFunc,
+		PrintSource:        true,       //Print the failing source code
+		LinesBefore:        2,          //Print 2 lines before failing line
+		LinesAfter:         1,          //Print 1 line after failing line
+		PrintError:         true,       //Print the error
+		PrintStack:         printStack, //Don't print the stack trace
+		ExitOnDebugSuccess: false,      //Exit if err
+	})
+}
