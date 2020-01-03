@@ -148,12 +148,12 @@ func NewTimeoutHttpClient(connectTimeout time.Duration, readWritetimeout time.Du
 // https://colobu.com/2016/07/01/the-complete-guide-to-golang-net-http-timeouts/
 // https://stackoverflow.com/questions/36773837/best-way-to-use-http-client-in-a-concurrent-application
 // NewBaseHttpClient Clients are safe for concurrent use by multiple goroutines.
-func NewBaseHttpClient(maxIdleConns, maxIdleConnsPerHost int) *http.Client {
+func NewBaseHttpClient(dialTimeout time.Duration, maxIdleConns, maxIdleConnsPerHost int) *http.Client {
 	return &http.Client{
 		Transport: &http.Transport{
 			Dial: (&net.Dialer{
-				Timeout:   30 * time.Second,
-				KeepAlive: 30 * time.Second,
+				Timeout:   dialTimeout,      // 限制建立TCP连接的时间
+				KeepAlive: 30 * time.Second, // If negative, keep-alive probes are disabled. set 0 use default 15s
 			}).Dial,
 			DisableKeepAlives:     false,
 			TLSHandshakeTimeout:   10 * time.Second, // 限制TLS握手使用的时间
