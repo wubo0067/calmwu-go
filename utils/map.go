@@ -2,7 +2,7 @@
  * @Author: calm.wu
  * @Date: 2020-01-16 11:15:48
  * @Last Modified by: calm.wu
- * @Last Modified time: 2020-01-16 11:28:45
+ * @Last Modified time: 2020-01-16 11:43:32
  */
 
  // Package utils for calmwu golang tools
@@ -25,7 +25,7 @@ func MergeMap(a, b map[string]interface{}) map[string]interface{} {
 		if v, ok := v.(map[string]interface{}); ok {
 			if bv, ok := out[k]; ok {
 				if bv, ok := bv.(map[string]interface{}); ok {
-					out[k] = mergeMaps(bv, v)
+					out[k] = MergeMap(bv, v)
 					continue
 				}
 			}
