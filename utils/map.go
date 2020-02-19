@@ -5,7 +5,7 @@
  * @Last Modified time: 2020-01-16 11:43:32
  */
 
- // Package utils for calmwu golang tools
+// Package utils for calmwu golang tools
 package utils
 
 import (
@@ -38,9 +38,6 @@ func MergeMap(a, b map[string]interface{}) map[string]interface{} {
 // ConvertMapToPBStruct converts a map[string]interface{} to a ptypes.Struct
 func ConvertMap2PBStruct(v map[string]interface{}) *st.Struct {
 	size := len(v)
-	if size == 0 {
-		return nil
-	}
 	fields := make(map[string]*st.Value, size)
 	for k, v := range v {
 		fields[k] = ToValue(v)
@@ -275,5 +272,3 @@ func ConvertPBStruct2Map(s *st.Struct) (map[string]interface{}, error) {
 	}
 	return m, nil
 }
-
-
