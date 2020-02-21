@@ -27,6 +27,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/mitchellh/mapstructure"
+	"github.com/pkg/errors"
 )
 
 func UnpackRequest(c *gin.Context) *ProtoRequestS {
@@ -92,16 +93,18 @@ func PostRequest(url string, data []byte) ([]byte, int, error) {
 
 	if res != nil {
 		defer res.Body.Close()
-	}
 
-	resBody, err := ioutil.ReadAll(res.Body)
-	if err != nil {
-		ZLog.Errorf("Read body failed! reason[%s]", err.Error())
-		return nil, 0, err
+		resBody, err := ioutil.ReadAll(res.Body)
+		if err != nil {
+			ZLog.Errorf("Read body failed! reason[%s]", err.Error())
+			return nil, 0, errors.Wrapf(err, "PostRequest read response body failed.")
+		}
+		return resBody, res.StatusCode, nil
 	}
-	return resBody, res.StatusCode, nil
+	return nil, http.StatusBadRequest, errors.New("http response is nil")
 }
 
+// MapstructUnPackByJsonTag使用mapstruct进行解包
 func MapstructUnPackByJsonTag(m interface{}, rawVal interface{}) error {
 	decoder, err := mapstructure.NewDecoder(&mapstructure.DecoderConfig{
 		TagName:  "json",
