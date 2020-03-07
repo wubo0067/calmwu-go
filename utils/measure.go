@@ -15,7 +15,7 @@ import (
 // MeasureFunc 函数的执行耗时测量
 func MeasureFunc() func() {
 	start := time.Now()
-	pc, callFile, callLine, _ := runtime.Caller(2)
+	pc, callFile, callLine, _ := runtime.Caller(1)
 	callFuncName := runtime.FuncForPC(pc).Name()
 	Debugf("Enter function[%s:%d %s]", callFile, callLine, callFuncName)
 

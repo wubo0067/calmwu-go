@@ -136,6 +136,7 @@ func timeoutDialer(connectTimeout time.Duration, readWritetimeout time.Duration)
 	}
 }
 
+// NewTimeoutHttpClient 构造一个dialTimeout对象
 func NewTimeoutHttpClient(connectTimeout time.Duration, readWritetimeout time.Duration) *http.Client {
 	return &http.Client{
 		Transport: &http.Transport{
