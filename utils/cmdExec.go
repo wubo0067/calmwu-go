@@ -44,7 +44,7 @@ func CmdExec(args ...string) (outStr string, errStr string, err error) {
 	return
 }
 
-// 输出 CmdExecCaptureAndShow
+// CmdExecCaptureAndShow 捕获输出
 func CmdExecCaptureAndShow(args ...string) (outStr string, errStr string, err error) {
 	baseCmd := args[0]
 	cmdArgs := args[1:]

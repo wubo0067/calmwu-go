@@ -49,6 +49,7 @@ func timeEncoder(t time.Time, enc zapcore.PrimitiveArrayEncoder) {
 // maxBackups: old file备份数量
 // compress: old file是否压缩tgz
 // logLevel: zapcore.DebugLevel
+// CreateZapLog 创建log对象
 func CreateZapLog(logFullName string, maxSize int, maxAge int, maxBackups int, compress bool,
 	logLevel zapcore.Level, callSkip int) *zap.SugaredLogger {
 
