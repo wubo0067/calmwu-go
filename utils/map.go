@@ -268,7 +268,12 @@ func getNativeValue(v *st.Value) (val interface{}) {
 func ConvertPBStruct2Map(s *st.Struct) (map[string]interface{}, error) {
 	m := make(map[string]interface{})
 	for k, v := range s.Fields {
-		m[k] = getNativeValue(v)
+		if v != nil {
+			m[k] = getNativeValue(v)
+		} else {
+			m[k] = nil
+		}
+
 	}
 	return m, nil
 }

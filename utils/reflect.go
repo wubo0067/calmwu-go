@@ -27,7 +27,7 @@ var ErrNoOne = errors.New("lis.TypeRegister.Get: no one")
 // TypeRegister - type register
 type TypeRegister map[string]reflect.Type
 
-// Ser registers new type
+// Set registers new type
 func (t TypeRegister) Set(i interface{}) {
 	if reflect.ValueOf(i).Kind() != reflect.Ptr {
 		panic(errors.New("TypeRegister.Set() argument must to be a pointer"))
@@ -43,5 +43,5 @@ func (t TypeRegister) Get(name string) (interface{}, error) {
 	return nil, ErrNoOne
 }
 
-// shared type register
+// TypeReg shared type register
 var TypeReg = make(TypeRegister)
