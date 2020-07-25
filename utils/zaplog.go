@@ -49,7 +49,6 @@ func timeEncoder(t time.Time, enc zapcore.PrimitiveArrayEncoder) {
 // maxBackups: old file备份数量
 // compress: old file是否压缩tgz
 // logLevel: zapcore.DebugLevel
-// CreateZapLog 创建log对象
 func CreateZapLog(logFullName string, maxSize int, maxAge int, maxBackups int, compress bool,
 	logLevel zapcore.Level, callSkip int) *zap.SugaredLogger {
 
@@ -65,13 +64,17 @@ func CreateZapLog(logFullName string, maxSize int, maxAge int, maxBackups int, c
 		maxBackups = 0
 	}
 
-	w := zapcore.AddSync(&lumberjack.Logger{
-		Filename:   logFullName,
-		MaxSize:    maxSize, // megabytes
-		MaxBackups: maxBackups,
-		MaxAge:     maxAge, // days
-		Compress:   compress,
-	})
+	// 多个writer，加上stdout，在容器中可以直接logs看
+	writers := []zapcore.WriteSyncer{
+		zapcore.AddSync(&lumberjack.Logger{
+			Filename:   logFullName,
+			MaxSize:    maxSize, // megabytes
+			MaxBackups: maxBackups,
+			MaxAge:     maxAge, // days
+			Compress:   compress,
+		}),
+		zapcore.AddSync(os.Stdout),
+	}
 
 	cfg := zapcore.EncoderConfig{
 		MessageKey:     "M",
@@ -90,7 +93,7 @@ func CreateZapLog(logFullName string, maxSize int, maxAge int, maxBackups int, c
 
 	core := zapcore.NewCore(
 		zapcore.NewConsoleEncoder(cfg),
-		w,
+		zapcore.NewMultiWriteSyncer(writers...),
 		logLevel,
 	)
 
