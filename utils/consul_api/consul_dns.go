@@ -9,12 +9,11 @@
 package consul_api
 
 import (
-	utils "calmwu-go/utils"
 	"fmt"
-	"calmwu-go/utils"
 	"time"
 
 	"github.com/hashicorp/consul/api"
+	"github.com/wubo0067/calmwu-go/utils"
 )
 
 type ConsulServInstS struct {

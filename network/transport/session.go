@@ -16,13 +16,13 @@ import (
 	"io"
 	"net"
 	"runtime"
-	"calmwu-go/utils"
-	"sailcraft/network/protocol"
 	"sync/atomic"
 	"syscall"
 	"time"
 
 	"github.com/golang/protobuf/proto"
+	"github.com/wubo0067/calmwu-go/network/protocol"
+	"github.com/wubo0067/calmwu-go/utils"
 )
 
 type SessionState int

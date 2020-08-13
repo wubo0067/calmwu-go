@@ -8,14 +8,14 @@
 package main
 
 import (
-	utils "calmwu-go/utils"
-	"doyo-server-go/doyo-base-go/consul_api"
 	"fmt"
 	"log"
 	"sync"
 	"time"
 
 	"github.com/hashicorp/consul/api"
+	"github.com/wubo0067/calmwu-go/utils"
+	"github.com/wubo0067/calmwu-go/utils/consul_api"
 )
 
 var wg sync.WaitGroup

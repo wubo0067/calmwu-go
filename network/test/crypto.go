@@ -11,7 +11,8 @@ package main
 import (
 	"encoding/hex"
 	"fmt"
-	"calmwu-go/utils"
+
+	"github.com/wubo0067/calmwu-go/utils"
 )
 
 func main() {

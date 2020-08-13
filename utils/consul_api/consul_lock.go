@@ -8,11 +8,11 @@
 package consul_api
 
 import (
-	utils "calmwu-go/utils"
 	"fmt"
 	"time"
 
 	"github.com/hashicorp/consul/api"
+	"github.com/wubo0067/calmwu-go/utils"
 )
 
 /*

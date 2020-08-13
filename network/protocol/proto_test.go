@@ -9,11 +9,11 @@
 package protocol
 
 import (
-	"calmwu-go/utils"
 	"strings"
 	"testing"
 
 	"github.com/golang/protobuf/proto"
+	"github.com/wubo0067/calmwu-go/utils"
 )
 
 func TestPackUnPack(t *testing.T) {

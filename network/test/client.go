@@ -14,13 +14,13 @@ import (
 	"fmt"
 	"io"
 	"net"
-	"calmwu-go/utils"
-	"sailcraft/network/protocol"
 	"sync"
 	"time"
 
 	"github.com/golang/protobuf/proto"
 	"github.com/monnand/dhkx"
+	"github.com/wubo0067/calmwu-go/network/protocol"
+	"github.com/wubo0067/calmwu-go/utils"
 )
 
 var (

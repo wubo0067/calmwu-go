@@ -12,9 +12,10 @@ import (
 	"os"
 	"runtime"
 	"runtime/pprof"
-	"calmwu-go/utils"
-	"sailcraft/network/transport"
 	"time"
+
+	"github.com/wubo0067/calmwu-go/network/transport"
+	"github.com/wubo0067/calmwu-go/utils"
 )
 
 func main() {

@@ -13,9 +13,8 @@ import (
 	"testing"
 	"time"
 
-	utils "github.com/wubo0067/calmwu-go/utils"
-
 	"github.com/go-redis/redis"
+	"github.com/wubo0067/calmwu-go/utils"
 	"go.uber.org/zap/zapcore"
 )
 

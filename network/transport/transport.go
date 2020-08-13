@@ -10,10 +10,11 @@ package transport
 
 import (
 	"net"
-	"calmwu-go/utils"
 	"sync"
 	"sync/atomic"
 	"time"
+
+	"github.com/wubo0067/calmwu-go/utils"
 )
 
 const (

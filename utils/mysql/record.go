@@ -8,13 +8,13 @@
 package mysql
 
 import (
-	utils "calmwu-go/utils"
 	"fmt"
 	"reflect"
 	"strings"
 
 	"github.com/go-xorm/builder"
 	"github.com/go-xorm/core"
+	"github.com/wubo0067/calmwu-go/utils"
 )
 
 func InsertRecord(engine *DBEngineInfoS, tableName string, object interface{}, omitColumns ...string) (int64, error) {

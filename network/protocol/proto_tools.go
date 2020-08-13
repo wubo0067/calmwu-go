@@ -9,12 +9,13 @@
 package protocol
 
 import (
-	"wubo0067/calm_go/utils"
 	"compress/zlib"
 	"crypto/cipher"
 	"encoding/binary"
 	"fmt"
 	"hash/crc32"
+
+	"github.com/wubo0067/calmwu-go/utils"
 )
 
 // 压缩--->CRC校验--->加密

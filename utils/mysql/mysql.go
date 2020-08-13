@@ -1,11 +1,12 @@
 package mysql
 
 import (
-	utils "calmwu-go/utils"
 	"errors"
 	"fmt"
 	"sailcraft/sysconf"
 	"time"
+
+	"github.com/wubo0067/calmwu-go/utils"
 )
 
 type MysqlManager struct {
