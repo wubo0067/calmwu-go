@@ -36,7 +36,7 @@ func createRedisMgr(t *testing.T) (*RedisMgr, error) {
 
 //go test -v -run TestSetValue
 func TestSetValue(t *testing.T) {
-	utils.InitDefaultZapLog("test.log", zapcore.DebugLevel)
+	utils.InitDefaultZapLog("test.log", zapcore.DebugLevel, 1)
 
 	redisMgr, err := createRedisMgr(t)
 	if err != nil {
@@ -63,7 +63,7 @@ func TestSetValue(t *testing.T) {
 }
 
 func TestScan(t *testing.T) {
-	utils.InitDefaultZapLog("test.log", zapcore.DebugLevel)
+	utils.InitDefaultZapLog("test.log", zapcore.DebugLevel, 1)
 
 	redisMgr, err := createRedisMgr(t)
 	if err != nil {

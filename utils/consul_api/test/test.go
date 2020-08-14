@@ -15,7 +15,7 @@ import (
 
 	"github.com/hashicorp/consul/api"
 	"github.com/wubo0067/calmwu-go/utils"
-	"github.com/wubo0067/calmwu-go/utils/consul_api"
+	consulapi "github.com/wubo0067/calmwu-go/utils/consul_api"
 )
 
 var wg sync.WaitGroup
@@ -66,7 +66,7 @@ func competitiveLock(c *api.Client, lockHeldSecs uint32, id int) {
 
 func main() {
 	logger = utils.NewSimpleLog(nil)
-	consolClient, err := consul_api.NewConsulClient("192.168.2.104")
+	consolClient, err := consulapi.NewConsulClient("192.168.2.104")
 	if err != nil {
 		logger.Printf("New consul client failed! error:%s\n", err.Error())
 	}

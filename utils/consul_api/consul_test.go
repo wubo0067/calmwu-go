@@ -6,7 +6,7 @@
  * @Comment:
  */
 
-package consul_api
+package consulapi
 
 import (
 	"fmt"

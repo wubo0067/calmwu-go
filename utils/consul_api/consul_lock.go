@@ -5,7 +5,7 @@
  * @Last Modified time: 2018-11-30 17:25:57
  * @Comment:
  */
-package consul_api
+package consulapi
 
 import (
 	"fmt"

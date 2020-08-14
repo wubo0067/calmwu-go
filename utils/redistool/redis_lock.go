@@ -8,6 +8,7 @@
 package redistool
 
 import (
+	"context"
 	"errors"
 	"fmt"
 	"time"
@@ -52,7 +53,7 @@ func NewGlobalLock(ownerName string, redisCmd redis.Cmdable, key string, holdDur
 
 	var err error
 	if len(releaseScriptSha) == 0 {
-		releaseScriptSha, err = redisCmd.ScriptLoad(releaseScript).Result()
+		releaseScriptSha, err = redisCmd.ScriptLoad(context.TODO(), releaseScript).Result()
 		if err != nil {
 			utils.ZLog.Errorf("ScriptLoad failed! reason:%s", err.Error())
 			return nil, err
@@ -61,7 +62,7 @@ func NewGlobalLock(ownerName string, redisCmd redis.Cmdable, key string, holdDur
 		}
 	}
 
-	uid := uuid.NewV4()
+	uid, _ := uuid.NewV4()
 
 	globalLock := new(GlobalLock)
 	globalLock.ownerName = ownerName
@@ -97,7 +98,7 @@ func (gl *GlobalLock) DoPreempt(waitingLock bool) (bool, error) {
 	go func() {
 		for {
 			// 开始抢占
-			holdOK, err := gl.redisCmd.SetNX(gl.key, gl.value, gl.ttl).Result()
+			holdOK, err := gl.redisCmd.SetNX(context.TODO(), gl.key, gl.value, gl.ttl).Result()
 			if err != nil {
 				gl.failureErr = fmt.Errorf("owner[%s] setNX key[%s] value[%s] failed! reason:%s",
 					gl.ownerName, gl.key, gl.value, err.Error())
@@ -173,7 +174,7 @@ func (gl *GlobalLock) Release() {
 		return
 	}
 
-	res, err := gl.redisCmd.EvalSha(releaseScriptSha, []string{gl.key}, gl.value).Result()
+	res, err := gl.redisCmd.EvalSha(context.TODO(), releaseScriptSha, []string{gl.key}, gl.value).Result()
 	if err != nil {
 		utils.ZLog.Errorf("owner[%s] Release EvalSha key[%s] failed! reason:%s", gl.ownerName, gl.key, err.Error())
 		return

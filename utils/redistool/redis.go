@@ -9,6 +9,7 @@
 package redistool
 
 import (
+	"context"
 	"fmt"
 	"strconv"
 	"sync"
@@ -58,26 +59,26 @@ func (rm *RedisMgr) Start() error {
 	utils.ZLog.Debugf("redisSvrAddrs:%v", rm.redisSvrAddrs)
 
 	if rm.isCluster {
-		rm.redisClusterClient = redis.NewClusterClient(&redis.ClusterOptions{
-			// Addrs: []string{"192.168.68.228:7000", "192.168.68.228:7001", "192.168.68.229:7002",
-			// 	"192.168.68.229:7003", "192.168.68.230:7004", "192.168.68.230:7005"},
-			Addrs: rm.redisSvrAddrs,
-			OnConnect: func(conn *redis.Conn) error {
-				utils.ZLog.Infof("redis.Conn:%s", conn.String())
-				return nil
+		rm.redisClusterClient = redis.NewClusterClient(
+			&redis.ClusterOptions{
+				IdleTimeout: -1,
+				Addrs:       rm.redisSvrAddrs,
+				OnConnect: func(ctx context.Context, cn *redis.Conn) error {
+					utils.ZLog.Infof("redis.Conn:%s", cn.String())
+					return nil
+				},
+				Password:     rm.password,
+				ReadOnly:     true,
+				PoolSize:     rm.sessionCount,
+				MinIdleConns: rm.sessionCount,
 			},
-			Password:     rm.password,
-			ReadOnly:     true,
-			PoolSize:     rm.sessionCount,
-			MinIdleConns: rm.sessionCount,
-			IdleTimeout:  -1,
-		})
+		)
 		rm.redisCmdable = rm.redisClusterClient
 	} else {
 		rm.redisClient = redis.NewClient(&redis.Options{
 			Addr:     rm.redisSvrAddrs[0],
 			Password: rm.password,
-			OnConnect: func(conn *redis.Conn) error {
+			OnConnect: func(ctx context.Context, conn *redis.Conn) error {
 				utils.ZLog.Infof("redis.Conn:%s", conn.String())
 				return nil
 			},
@@ -99,10 +100,10 @@ func (rm *RedisMgr) Start() error {
 	var err error
 	var res string
 	if rm.isCluster {
-		res, err = rm.redisClusterClient.Ping().Result()
+		res, err = rm.redisClusterClient.Ping(context.TODO()).Result()
 		utils.ZLog.Debugf("redisClusterClient Ping:%s", res)
 	} else {
-		res, err = rm.redisClient.Ping().Result()
+		res, err = rm.redisClient.Ping(context.TODO()).Result()
 		utils.ZLog.Debugf("redisClient Ping:%s", res)
 	}
 
@@ -138,7 +139,7 @@ L:
 			if ok {
 				switch redisCmdData.cmd {
 				case REDIS_GET:
-					val, err := rm.redisCmdable.Get(redisCmdData.key).Result()
+					val, err := rm.redisCmdable.Get(context.TODO(), redisCmdData.key).Result()
 					if err != nil {
 						utils.ZLog.Errorf("Get key[%s] failed! error:%s", redisCmdData.key, err.Error())
 						redisCmdData.replyChan <- &RedisResultS{Ok: false, Result: err}
@@ -148,7 +149,7 @@ L:
 				case REDIS_SET:
 					// 设置key value
 					expiration := time.Duration(redisCmdData.ttl) * time.Second
-					_, err := rm.redisCmdable.Set(redisCmdData.key, redisCmdData.value, expiration).Result()
+					_, err := rm.redisCmdable.Set(context.TODO(), redisCmdData.key, redisCmdData.value, expiration).Result()
 					if err == nil {
 						// set成功
 						redisCmdData.replyChan <- &RedisResultS{Ok: true}
@@ -157,7 +158,7 @@ L:
 						redisCmdData.replyChan <- &RedisResultS{Ok: false, Result: err}
 					}
 				case REDIS_DEL:
-					res, err := rm.redisCmdable.Del(redisCmdData.key).Result()
+					res, err := rm.redisCmdable.Del(context.TODO(), redisCmdData.key).Result()
 					utils.ZLog.Debugf("Del key[%s] res[%d]", redisCmdData.key, res)
 					if err != nil {
 						redisCmdData.replyChan <- &RedisResultS{Ok: false, Result: err}
@@ -167,7 +168,7 @@ L:
 				case REDIS_SETNX:
 					// 设置key value
 					expiration := time.Duration(redisCmdData.ttl) * time.Second
-					_, err := rm.redisCmdable.SetNX(redisCmdData.key, redisCmdData.value, expiration).Result()
+					_, err := rm.redisCmdable.SetNX(context.TODO(), redisCmdData.key, redisCmdData.value, expiration).Result()
 					if err == nil {
 						// set成功
 						redisCmdData.replyChan <- &RedisResultS{Ok: true}
@@ -176,7 +177,7 @@ L:
 						redisCmdData.replyChan <- &RedisResultS{Ok: false, Result: err}
 					}
 				case REDIS_HGETALL:
-					val, err := rm.redisCmdable.HGetAll(redisCmdData.key).Result()
+					val, err := rm.redisCmdable.HGetAll(context.TODO(), redisCmdData.key).Result()
 					if err == nil {
 						// set成功
 						redisCmdData.replyChan <- &RedisResultS{Ok: true, Result: val}
@@ -186,7 +187,7 @@ L:
 					}
 				case REDIS_HMGET:
 				case REDIS_HMSET:
-					res, err := rm.redisCmdable.HMSet(redisCmdData.key, redisCmdData.value.(map[string]interface{})).Result()
+					res, err := rm.redisCmdable.HMSet(context.TODO(), redisCmdData.key, redisCmdData.value.(map[string]interface{})).Result()
 					utils.ZLog.Debugf("HMSET key[%s] res:%v", redisCmdData.key, res)
 					if err == nil {
 						// set成功
@@ -196,7 +197,7 @@ L:
 						redisCmdData.replyChan <- &RedisResultS{Ok: false, Result: err}
 					}
 				case REDIS_HSET:
-					res, err := rm.redisCmdable.HSet(redisCmdData.key, redisCmdData.fieldKey, redisCmdData.value).Result()
+					res, err := rm.redisCmdable.HSet(context.TODO(), redisCmdData.key, redisCmdData.fieldKey, redisCmdData.value).Result()
 					utils.ZLog.Debugf("HSET key[%s] fieldkey[%s] res:%v", redisCmdData.key, redisCmdData.fieldKey, res)
 					if err == nil {
 						// set成功
@@ -208,7 +209,7 @@ L:
 					}
 				case REDIS_HDEL:
 				case REDIS_PIPELINE:
-					cmds, err := rm.redisCmdable.Pipelined(redisCmdData.value.(redisPipelineFn))
+					cmds, err := rm.redisCmdable.Pipelined(context.TODO(), redisCmdData.value.(redisPipelineFn))
 					if err != nil {
 						utils.ZLog.Errorf("Pipelined failed! reason:%s", err.Error())
 					}
@@ -218,7 +219,7 @@ L:
 					// 如果部分成功pipelined会返回err，这里外部去检查每个具体的cmd结果
 					redisCmdData.replyChan <- &RedisResultS{Ok: true, Result: cmds}
 				case REDIS_EXISTS:
-					val, err := rm.redisCmdable.Exists(redisCmdData.key).Result()
+					val, err := rm.redisCmdable.Exists(context.TODO(), redisCmdData.key).Result()
 					if err != nil {
 						redisCmdData.replyChan <- &RedisResultS{Ok: false, Result: err}
 					} else {
@@ -226,7 +227,7 @@ L:
 					}
 				case REDIS_ZINCRBY:
 					// 当 key 不存在，或 member 不是 key 的成员时，相当于zadd
-					val, err := rm.redisCmdable.ZIncrBy(redisCmdData.key, redisCmdData.value.(float64), redisCmdData.fieldKey).Result()
+					val, err := rm.redisCmdable.ZIncrBy(context.TODO(), redisCmdData.key, redisCmdData.value.(float64), redisCmdData.fieldKey).Result()
 					utils.ZLog.Debugf("ZIncrBy key[%s] increment[%v] memberKey[%s] val:%v", redisCmdData.key, redisCmdData.value,
 						redisCmdData.fieldKey, val)
 					if err != nil {
@@ -235,7 +236,7 @@ L:
 						redisCmdData.replyChan <- &RedisResultS{Ok: true, Result: val}
 					}
 				case REDIS_EXPIRE:
-					res, err := rm.redisCmdable.Expire(redisCmdData.key, redisCmdData.value.(time.Duration)).Result()
+					res, err := rm.redisCmdable.Expire(context.TODO(), redisCmdData.key, redisCmdData.value.(time.Duration)).Result()
 					utils.ZLog.Debugf("Expire key[%s] expiration:%v", redisCmdData.key, redisCmdData.value)
 					if err != nil {
 						redisCmdData.replyChan <- &RedisResultS{Ok: false, Result: err}
@@ -243,7 +244,7 @@ L:
 						redisCmdData.replyChan <- &RedisResultS{Ok: true, Result: res}
 					}
 				case REDIS_DBSIZE:
-					res, err := rm.redisCmdable.DBSize().Result()
+					res, err := rm.redisCmdable.DBSize(context.TODO()).Result()
 					utils.ZLog.Debugf("DBSize count:%d", res)
 					if err != nil {
 						redisCmdData.replyChan <- &RedisResultS{Ok: false, Result: err}
@@ -253,7 +254,7 @@ L:
 				case REDIS_SCAN:
 					scanRes := new(RedisScanResult)
 					var err error
-					scanRes.keys, scanRes.cursor, err = rm.redisCmdable.Scan(redisCmdData.args[0].(uint64),
+					scanRes.keys, scanRes.cursor, err = rm.redisCmdable.Scan(context.TODO(), redisCmdData.args[0].(uint64),
 						redisCmdData.args[1].(string),
 						redisCmdData.args[2].(int64)).Result()
 					utils.ZLog.Debugf("Scan keycount[%d] cursor[%d]", len(scanRes.keys), scanRes.cursor)
@@ -266,7 +267,7 @@ L:
 					scanRes := new(RedisScanResult)
 					var err error
 					cmdable := redisCmdData.args[0].(redis.Cmdable)
-					scanRes.keys, scanRes.cursor, err = cmdable.Scan(
+					scanRes.keys, scanRes.cursor, err = cmdable.Scan(context.TODO(),
 						redisCmdData.args[1].(uint64),
 						redisCmdData.args[2].(string),
 						redisCmdData.args[3].(int64)).Result()
@@ -277,7 +278,7 @@ L:
 						redisCmdData.replyChan <- &RedisResultS{Ok: true, Result: scanRes}
 					}
 				case REDIS_SADD:
-					res, err := rm.redisCmdable.SAdd(redisCmdData.key, redisCmdData.args...).Result()
+					res, err := rm.redisCmdable.SAdd(context.TODO(), redisCmdData.key, redisCmdData.args...).Result()
 					utils.ZLog.Debugf("SADD key[%s] res:%d", redisCmdData.key, res)
 					if err != nil {
 						redisCmdData.replyChan <- &RedisResultS{Ok: false, Result: err}
@@ -285,7 +286,7 @@ L:
 						redisCmdData.replyChan <- &RedisResultS{Ok: true, Result: res}
 					}
 				case REDIS_SREM:
-					res, err := rm.redisCmdable.SRem(redisCmdData.key, redisCmdData.args...).Result()
+					res, err := rm.redisCmdable.SRem(context.TODO(), redisCmdData.key, redisCmdData.args...).Result()
 					utils.ZLog.Debugf("SREM key[%s] res:%d", redisCmdData.key, res)
 					if err != nil {
 						redisCmdData.replyChan <- &RedisResultS{Ok: false, Result: err}
@@ -293,7 +294,7 @@ L:
 						redisCmdData.replyChan <- &RedisResultS{Ok: true, Result: res}
 					}
 				case REDIS_SISMEMBER:
-					res, err := rm.redisCmdable.SIsMember(redisCmdData.key, redisCmdData.value).Result()
+					res, err := rm.redisCmdable.SIsMember(context.TODO(), redisCmdData.key, redisCmdData.value).Result()
 					utils.ZLog.Debugf("SISMEMBER key[%s] res:%v", redisCmdData.key, res)
 					if err != nil {
 						redisCmdData.replyChan <- &RedisResultS{Ok: false, Result: err}
