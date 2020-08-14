@@ -92,6 +92,7 @@ func CmdExecCaptureAndShow(args ...string) (outStr string, errStr string, err er
 
 	outStr = stdoutBuf.String()
 	errStr = stderrBuf.String()
+
 	return
 }
 

@@ -21,7 +21,7 @@ var (
 	centerDot = []byte("·")
 	dot       = []byte(".")
 	slash     = []byte("/")
-	reset     = string([]byte{27, 91, 48, 109})
+	//reset     = string([]byte{27, 91, 48, 109})
 )
 
 func GetCallStack() string {

@@ -17,10 +17,6 @@ import (
 	"github.com/wubo0067/calmwu-go/utils"
 )
 
-/*
-waitTime：等待的时间xxs，这个时间不可能超过
-*/
-
 func ConsulGlobalSeq(client *api.Client, seqName string, initSeqNum int, waitTime string) (int, error) {
 
 	start := time.Now()
@@ -109,7 +105,7 @@ func ConsulGlobalSeq(client *api.Client, seqName string, initSeqNum int, waitTim
 			// 设置一个最小的index，这样可以立即返回
 			qOption.WaitIndex = 0
 			pair, meta, err = kv.Get(seqName, qOption)
-			if pair != nil && pair.Session != "" {
+			if err == nil && pair != nil && pair.Session != "" {
 				qOption.WaitIndex = meta.LastIndex
 				continue
 			}

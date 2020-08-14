@@ -32,9 +32,9 @@ type RedisMgr struct {
 	redisRoutineWG     sync.WaitGroup
 }
 
-var (
-	once sync.Once
-)
+// var (
+// 	once sync.Once
+// )
 
 func NewRedisMgr(redisSvrAddrs []string, sessionCount int, isCluster bool, password string) *RedisMgr {
 	redisMgr := new(RedisMgr)

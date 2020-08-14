@@ -11,6 +11,7 @@ package utils
 import (
 	"bytes"
 	"compress/zlib"
+	"context"
 	"crypto/rand"
 	"crypto/rsa"
 	"crypto/tls"
@@ -84,7 +85,16 @@ func SendResponseToClient(c *gin.Context, res *ProtoResponseS) {
 
 // PostRequest post请求返回回应，返回body数据，httpcode，错误
 func PostRequest(url string, data []byte) ([]byte, int, error) {
-	res, err := http.Post(url, "text/plain; charset=utf-8", strings.NewReader(Bytes2String(data)))
+	// https://github.com/sonatard/noctx
+
+	req, err := http.NewRequestWithContext(context.TODO(), http.MethodPost, url, strings.NewReader(Bytes2String(data)))
+
+	if err != nil {
+		return nil, -1, err
+	}
+	req.Header.Set("Content-Type", "text/plain; charset=utf-8")
+
+	res, err := http.DefaultClient.Do(req)
 	if err != nil {
 		ZLog.Errorf("PostRequest to url[%s] Post failed! reason[%s]",
 			url, err.Error())
@@ -104,8 +114,8 @@ func PostRequest(url string, data []byte) ([]byte, int, error) {
 	return nil, http.StatusBadRequest, errors.New("http response is nil")
 }
 
-// MapstructUnPackByJsonTag使用mapstruct进行解包
-func MapstructUnPackByJsonTag(m interface{}, rawVal interface{}) error {
+// MapstructUnPackByJSONTag 使用mapstruct进行解包
+func MapstructUnPackByJSONTag(m interface{}, rawVal interface{}) error {
 	decoder, err := mapstructure.NewDecoder(&mapstructure.DecoderConfig{
 		TagName:  "json",
 		Metadata: nil,
@@ -136,8 +146,8 @@ func timeoutDialer(connectTimeout time.Duration, readWritetimeout time.Duration)
 	}
 }
 
-// NewTimeoutHttpClient 构造一个dialTimeout对象
-func NewTimeoutHttpClient(connectTimeout time.Duration, readWritetimeout time.Duration) *http.Client {
+// NewTimeoutHTTPClient 构造一个dialTimeout对象
+func NewTimeoutHTTPClient(connectTimeout time.Duration, readWritetimeout time.Duration) *http.Client {
 	return &http.Client{
 		Transport: &http.Transport{
 			Dial: timeoutDialer(connectTimeout, readWritetimeout),
@@ -149,9 +159,9 @@ func NewTimeoutHttpClient(connectTimeout time.Duration, readWritetimeout time.Du
 // https://www.tuicool.com/articles/2YrmQjV
 // MaxIdleConn MaxIdleConnsPerHost=2
 
+// NewBaseHttpClient Clients are safe for concurrent use by multiple goroutines.
 // https://colobu.com/2016/07/01/the-complete-guide-to-golang-net-http-timeouts/
 // https://stackoverflow.com/questions/36773837/best-way-to-use-http-client-in-a-concurrent-application
-// NewBaseHttpClient Clients are safe for concurrent use by multiple goroutines.
 func NewBaseHttpClient(dialTimeout time.Duration, maxIdleConns, maxIdleConnsPerHost int) *http.Client {
 	return &http.Client{
 		Transport: &http.Transport{
@@ -170,6 +180,7 @@ func NewBaseHttpClient(dialTimeout time.Duration, maxIdleConns, maxIdleConnsPerH
 	}
 }
 
+// GenerateTLSConfig 生成tls配置
 // https://blog.csdn.net/wangshubo1989/article/details/77508738
 // https://colobu.com/2016/06/07/simple-golang-tls-examples/ InsecureSkipVerify: true,
 func GenerateTLSConfig() *tls.Config {

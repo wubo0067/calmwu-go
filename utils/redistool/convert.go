@@ -18,9 +18,13 @@ import (
 	utils "github.com/wubo0067/calmwu-go/utils"
 )
 
+const (
+	_timeTypeName = "time.Time"
+)
+
 var (
-	c_TIME_DEFAULT time.Time
-	TimeType       = reflect.TypeOf(c_TIME_DEFAULT)
+	_TimeDefault time.Time
+	TimeType     = reflect.TypeOf(_TimeDefault)
 )
 
 func ConvertSliceToRedisList(sliceObj interface{}) ([]string, error) {
@@ -291,7 +295,7 @@ func ConvertObjToStringMap(obj interface{}) (map[string]string, error) {
 		case reflect.Float64:
 			redisHash[fieldName] = strconv.FormatFloat(fieldValue.Float(), 'e', 8, 64)
 		case reflect.Struct:
-			if field.Type.String() == "time.Time" && field.Type.ConvertibleTo(TimeType) {
+			if field.Type.String() == _timeTypeName && field.Type.ConvertibleTo(TimeType) {
 				t := fieldValue.Convert(TimeType).Interface().(time.Time)
 				redisHash[fieldName] = t.Format("2006-01-02 15:04:05 -0700") //strconv.FormatInt(t.Unix(), 10)
 			}

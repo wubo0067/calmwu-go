@@ -45,8 +45,7 @@ type tokenBucketRateLimiter struct {
 	qps     float32
 }
 
-// qps 每秒的请求数量，也就是每秒的令牌生成数量
-// burst 桶的深度
+// NewTokenBucketRateLimiter burst 桶的深度 qps 每秒的请求数量，也就是每秒的令牌生成数量
 func NewTokenBucketRateLimiter(qps float32, burst int) RateLimiter {
 	limiter := rate.NewLimiter(rate.Limit(qps), burst)
 	return &tokenBucketRateLimiter{
@@ -66,7 +65,7 @@ func NewTokenBucketRateLimiterWithClock(qps float32, burst int, c Clock) RateLim
 }
 
 func (t *tokenBucketRateLimiter) TryAccept() bool {
-	return t.TryAccept()
+	return t.limiter.AllowN(t.clock.Now(), 1)
 }
 
 func (t *tokenBucketRateLimiter) Accept() {
