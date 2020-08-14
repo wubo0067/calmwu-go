@@ -1,3 +1,5 @@
+// +build linux
+
 /*
  * @Author: calmwu
  * @Date: 2017-12-01 16:01:45
