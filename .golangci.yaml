@@ -294,3 +294,5 @@ issues:
 #   # Show only new issues: if there are unstaged changes or untracked files,
 #   # only those changes are analyzed, else only changes in HEAD~ are analyzed.
 #   # It's a super-useful option for integration of golangci-lint into existing
+
+# https://github.com/golangci/golangci-lint/blob/master/.golangci.yml
