@@ -157,50 +157,60 @@ linters-settings:
     simple: true
     range-loops: true # Report preallocation suggestions on range loops, true by default
     for-loops: false # Report preallocation suggestions on for loops, false by default
-  # gocritic:
-  #   # Which checks should be enabled; can't be combined with 'disabled-checks';
-  #   # See https://go-critic.github.io/overview#checks-overview
-  #   # To check which checks are enabled run `GL_DEBUG=gocritic golangci-lint run`
-  #   # By default list of stable checks is used.
-  #   enabled-checks:
-  #     - rangeValCopy
+  gocritic:
+    enabled-tags:
+      - diagnostic
+      - experimental
+      - opinionated
+      - performance
+      - style
+    disabled-checks:
+      - dupImport # https://github.com/go-critic/go-critic/issues/845
+      - ifElseChain
+      - octalLiteral
+      - whyNoLint
+      - wrapperFunc
 
-  #   # Which checks should be disabled; can't be combined with 'enabled-checks'; default is empty
-  #   disabled-checks:
-  #     - regexpMust
-
-  #   # Enable multiple checks by tags, run `GL_DEBUG=gocritic golangci-lint` run to see all tags and checks.
-  #   # Empty list by default. See https://github.com/go-critic/go-critic#usage -> section "Tags".
-  #   enabled-tags:
-  #     - performance
-
-  #   settings: # settings passed to gocritic
-  #     captLocal: # must be valid enabled check name
-  #       paramsOnly: true
-  #     rangeValCopy:
-  #       sizeThreshold: 32
 linters:
   enable:
-    - deadcode
-    - govet
-    - ineffassign
-    - staticcheck
-    - structcheck
-    - typecheck
-    - unused
-    - varcheck
     - bodyclose
+    - deadcode
     - depguard
+    - dogsled
     - dupl
+    - errcheck
+    - exhaustive
+    - funlen
+    - gochecknoinits
     - goconst
+    - gocritic
+    - gocyclo
     - gofmt
     - goimports
+    - golint
+    - gomnd
+    - goprintffuncname
     - gosec
+    - gosimple
+    - govet
+    - ineffassign
+    - interfacer
+    - lll
     - misspell
     - nakedret
-    - prealloc
+    - noctx
+    - nolintlint
+    - rowserrcheck
     - scopelint
+    - staticcheck
+    - structcheck
+    - stylecheck
+    - typecheck
     - unconvert
+    - unparam
+    - unused
+    - varcheck
+    - whitespace
   #  - unparam
   # enable-all: true
   disable-all: false

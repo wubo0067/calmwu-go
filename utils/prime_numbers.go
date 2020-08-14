@@ -17,7 +17,7 @@ type numberResult struct {
 
 // Define functions
 
-// IsPrime: validate N number is prime
+// IsPrime validate N number is prime
 func IsPrime(n int64) bool {
 	var i, limit int64
 	if n <= 1 {
