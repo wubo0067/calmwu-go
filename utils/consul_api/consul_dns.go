@@ -2,7 +2,7 @@
  * @Author: calmwu
  * @Date: 2017-11-21 14:51:29
  * @Last Modified by: calmwu
- * @Last Modified time: 2018-11-30 17:25:29
+ * @Last Modified time: 2020-08-15 20:17:54
  * @Comment:
  */
 
@@ -19,25 +19,23 @@ type ConsulServInstS struct {
 	Port int
 }
 
-// ConsulServDns 通过服务名，获取健康的服务实例列表
-func ConsulServDns(client *api.Client, servName string) ([]*ConsulServInstS, error) {
+// ConsulServDNS 通过服务名，获取健康的服务实例列表
+func ConsulServDNS(client *api.Client, servName string) ([]*ConsulServInstS, error) {
 	//servCatalog, _, err := client.Catalog().Services(nil)
 	servEntrys, _, err := client.Health().Service(servName, "", true, nil)
 	if err != nil {
 		utils.ZLog.Errorf(err.Error())
 		return nil, err
-	} else {
-		consulServInstSlice := make([]*ConsulServInstS, len(servEntrys))
-		for index := range servEntrys {
-			consulServInstSlice[index] = &ConsulServInstS{
-				ID:   servEntrys[index].Service.ID,
-				IP:   servEntrys[index].Service.Address,
-				Port: servEntrys[index].Service.Port,
-			}
-		}
-		return consulServInstSlice, nil
 	}
-	//return nil, fmt.Errorf("Query Server[%s] dns info failed! Unknown Error!", servName)
+	consulServInstSlice := make([]*ConsulServInstS, len(servEntrys))
+	for index := range servEntrys {
+		consulServInstSlice[index] = &ConsulServInstS{
+			ID:   servEntrys[index].Service.ID,
+			IP:   servEntrys[index].Service.Address,
+			Port: servEntrys[index].Service.Port,
+		}
+	}
+	return consulServInstSlice, nil
 }
 
 // func PostRequstByConsulDns(uin uint64, interfaceName string, realReq interface{}, client *api.Client, svrName string) (*utils.ProtoResponseS, error) {
@@ -47,7 +45,7 @@ func ConsulServDns(client *api.Client, servName string) ([]*ConsulServInstS, err
 // 		return nil, err
 // 	}
 // 	consulSvrName := fmt.Sprintf("SailCraft-%s", svrName)
-// 	servInsts, err := ConsulServDns(client, consulSvrName)
+// 	servInsts, err := ConsulServDNS(client, consulSvrName)
 // 	if err != nil {
 // 		utils.ZLog.Errorf("Query %s insts from consul failed! reason[%s]", consulSvrName, err.Error())
 // 		return nil, err
@@ -66,7 +64,7 @@ func ConsulServDns(client *api.Client, servName string) ([]*ConsulServInstS, err
 // 	req := utils.ProtoRequestS{
 // 		ProtoRequestHeadS: utils.ProtoRequestHeadS{
 // 			Version:    1,
-// 			EventId:    998,
+// 			EventID:    998,
 // 			TimeStamp:  time.Now().Unix(),
 // 			ChannelUID: "ConsulDns",
 // 			Uin:        int(uin),
@@ -88,7 +86,7 @@ func ConsulServDns(client *api.Client, servName string) ([]*ConsulServInstS, err
 // 		return nil, err
 // 	}
 // 	consulSvrName := fmt.Sprintf("SailCraft-%s", svrName)
-// 	servInsts, err := ConsulServDns(client, consulSvrName)
+// 	servInsts, err := ConsulServDNS(client, consulSvrName)
 // 	if err != nil {
 // 		utils.ZLog.Errorf("Query %s insts from consul failed! reason[%s]", consulSvrName, err.Error())
 // 		return nil, err

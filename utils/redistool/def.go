@@ -2,9 +2,11 @@
  * @Author: calmwu
  * @Date: 2017-10-23 15:01:03
  * @Last Modified by: calmwu
- * @Last Modified time: 2018-11-30 19:37:43
+ * @Last Modified time: 2020-08-15 19:47:41
  * @Comment:
  */
+
+// Package redistool for process with redis
 package redistool
 
 import (

@@ -1,9 +1,17 @@
+/*
+ * @Author: calmwu
+ * @Date: 2020-08-15 16:03:06
+ * @Last Modified by: calmwu
+ * @Last Modified time: 2020-08-15 20:17:34
+ */
+
 // trie.go: use dictionary words to build FSM
 //          with the help of Aho-Corasick algorithm
 //          which is proficient in searching multiple string pattern in text
 //          with small usage of memory and high speed.
 
-package word_filter
+// Package wordfilter 单词过滤
+package wordfilter
 
 import (
 	"container/list"
@@ -12,20 +20,20 @@ import (
 	"unicode/utf8"
 )
 
-// In a trie, each node has many child nodes
+// ChildNodeType In a trie, each node has many child nodes
 type ChildNodeType []*Node
 
-// Implement the interface which is needed by STL sort function
+// Len Implement the interface which is needed by STL sort function
 func (c ChildNodeType) Len() int {
 	return len(c)
 }
 
-// Implement the interface which is needed by STL sort function
+// Swap Implement the interface which is needed by STL sort function
 func (c ChildNodeType) Swap(i, j int) {
 	c[i], c[j] = c[j], c[i]
 }
 
-// Implement the interface which is needed by STL sort function
+// Less Implement the interface which is needed by STL sort function
 func (c ChildNodeType) Less(i, j int) bool {
 	return c[i].Val < c[j].Val
 }
@@ -40,26 +48,26 @@ type Node struct {
 	EOW        bool          // end-of-word tag
 }
 
-// get child node by given val
-func (N *Node) GetChildNodeByVal(val rune) *Node {
-	childNodeNum := len(N.ChildNodes)
+// GetChildNodeByVal get child node by given val
+func (node *Node) GetChildNodeByVal(val rune) *Node {
+	childNodeNum := len(node.ChildNodes)
 	for left := 0; left <= childNodeNum-1; left++ {
-		if N.ChildNodes[left].Val == val {
-			return N.ChildNodes[left]
+		if node.ChildNodes[left].Val == val {
+			return node.ChildNodes[left]
 		}
 	}
 	return nil
 }
 
-// binary search childnodes with given val
-func (N *Node) BinGetChildNodeByVal(val rune) *Node {
-	right := len(N.ChildNodes) - 1
+// BinGetChildNodeByVal binary search childnodes with given val
+func (node *Node) BinGetChildNodeByVal(val rune) *Node {
+	right := len(node.ChildNodes) - 1
 	left := 0
 	mid := 0
 	var midnode *Node
 	for left <= right {
 		mid = (left + right) / 2
-		midnode = N.ChildNodes[mid]
+		midnode = node.ChildNodes[mid]
 		if midnode.Val == val {
 			return midnode
 		} else if midnode.Val < val {
@@ -71,18 +79,18 @@ func (N *Node) BinGetChildNodeByVal(val rune) *Node {
 	return nil
 }
 
-// simplly insert a child node
-func (N *Node) InsertChildNodeByVal(val rune) *Node {
-	node := new(Node)
-	node.Val = val
-	node.Depth = N.Depth + 1
-	node.ParentNode = N
-	node.ChildNodes = nil
-	node.SuffixNode = nil
-	node.EOW = false
-	N.ChildNodes = append(N.ChildNodes, node)
-	//fmt.Printf("build %c---->%c\n", N.Val, node.Val)
-	return node
+// InsertChildNodeByVal simplly insert a child node
+func (node *Node) InsertChildNodeByVal(val rune) *Node {
+	newNode := new(Node)
+	newNode.Val = val
+	newNode.Depth = node.Depth + 1
+	newNode.ParentNode = node
+	newNode.ChildNodes = nil
+	newNode.SuffixNode = nil
+	newNode.EOW = false
+	newNode.ChildNodes = append(node.ChildNodes, node)
+	//fmt.Printf("build %c---->%c\n", node.Val, node.Val)
+	return newNode
 }
 
 // Trie
@@ -90,7 +98,7 @@ type Trie struct {
 	RootNode *Node // root
 }
 
-func (T *Trie) InitRootNode() {
+func (trie *Trie) InitRootNode() {
 	node := new(Node)
 	node.Val = 0
 	node.Depth = 0
@@ -98,17 +106,15 @@ func (T *Trie) InitRootNode() {
 	node.ChildNodes = nil
 	node.SuffixNode = nil
 	node.EOW = false
-	T.RootNode = node
+	trie.RootNode = node
 }
 
-// dump the whole trie which is rooted in node
-func (T *Trie) DumpTrie(node *Node) {
-
+// DumpTrie dump the whole trie which is rooted in node
+func (trie *Trie) DumpTrie(node *Node) {
 	lst := new(list.List)
 	lst.PushBack(node)
 
 	for lst.Len() > 0 {
-
 		node := lst.Remove(lst.Front()).(*Node)
 		pnode := node.ParentNode
 		snode := node.SuffixNode
@@ -147,11 +153,11 @@ func (T *Trie) DumpTrie(node *Node) {
 	}
 }
 
-// trace from a node to root, root and the node are both contained in return
-func (T *Trie) TraceBackToRoot(node *Node) []*Node {
+// TraceBackToRoot trace from a node to root, root and the node are both contained in return
+func (trie *Trie) TraceBackToRoot(node *Node) []*Node {
 	depth := node.Depth
 	nodes := make([]*Node, depth+1)
-	nodes[0] = T.RootNode
+	nodes[0] = trie.RootNode
 	for tmpnode := node; tmpnode != nil; tmpnode = tmpnode.ParentNode {
 		nodes[depth] = tmpnode
 		depth--
@@ -159,9 +165,9 @@ func (T *Trie) TraceBackToRoot(node *Node) []*Node {
 	return nodes
 }
 
-// find a node the path to which can be represented by value of nodes arr
-func (T *Trie) FindNodeByPath(nodes []*Node) *Node { //nodes not contain root node
-	tmpnode := T.RootNode
+// FindNodeByPath find a node the path to which can be represented by value of nodes arr
+func (trie *Trie) FindNodeByPath(nodes []*Node) *Node { //nodes not contain root node
+	tmpnode := trie.RootNode
 	for i, node := range nodes {
 		tmpnode = tmpnode.GetChildNodeByVal(node.Val)
 		if tmpnode == nil || tmpnode.Val != node.Val {
@@ -173,13 +179,13 @@ func (T *Trie) FindNodeByPath(nodes []*Node) *Node { //nodes not contain root no
 	return nil
 }
 
-// build trie by given dictionary,each line in dictionary is a word
-func (T *Trie) BuildTrie(dictionary [][]byte) {
+// BuildTrie build trie by given dictionary,each line in dictionary is a word
+func (trie *Trie) BuildTrie(dictionary [][]byte) {
 	for _, line := range dictionary {
-		if len(line) <= 0 {
+		if len(line) == 0 {
 			continue
 		}
-		parent := T.RootNode //when we handle a word, we start from rootnode
+		parent := trie.RootNode //when we handle a word, we start from rootnode
 		for len(line) > 0 {
 			charactor, length := utf8.DecodeRune(line) //each time get a rune and its size in bytes
 			if length <= 0 {
@@ -192,13 +198,13 @@ func (T *Trie) BuildTrie(dictionary [][]byte) {
 			parent = child
 			line = line[length:]
 		}
-		if parent != T.RootNode {
+		if parent != trie.RootNode {
 			parent.EOW = true // if len(line)>0 and rightly handle at least one charactor, we tag the node as EOW
 		}
 	} // now a trie is built
 
 	lst := new(list.List)
-	lst.PushBack(T.RootNode) // start from root node , we find suffix node of each node
+	lst.PushBack(trie.RootNode) // start from root node , we find suffix node of each node
 
 	for lst.Len() > 0 {
 		node := lst.Remove(lst.Front()).(*Node)
@@ -209,10 +215,10 @@ func (T *Trie) BuildTrie(dictionary [][]byte) {
 			searchDepth := child.Depth //search from child's depth
 			var suffixNode *Node
 			if searchDepth >= startDepth { // only nodes whose depth is bigger or equal to 2 are considered
-				pathToRoot := T.TraceBackToRoot(child) //pathToRoot is root->level1node->level2node->level3node......
+				pathToRoot := trie.TraceBackToRoot(child) //pathToRoot is root->level1node->level2node->level3node......
 				for startDepth <= searchDepth {
-					suffixNode = T.FindNodeByPath(pathToRoot[startDepth : searchDepth+1]) //just start from level2node
-					if suffixNode != nil {                                                //if find,we break,because we just care the longest postfix
+					suffixNode = trie.FindNodeByPath(pathToRoot[startDepth : searchDepth+1]) //just start from level2node
+					if suffixNode != nil {                                                   //if find,we break,because we just care the longest postfix
 						break
 					}
 					startDepth++ //each time we add startDepth the postfix is shortened
@@ -221,9 +227,9 @@ func (T *Trie) BuildTrie(dictionary [][]byte) {
 			if suffixNode != nil {
 				child.SuffixNode = suffixNode // found
 			} else {
-				child.SuffixNode = T.RootNode // if not found or level1 nodes ,root is set, so we can ensure that every node has a suffix node
+				child.SuffixNode = trie.RootNode // if not found or level1 nodes ,root is set, so we can ensure that every node has a suffix node
 			}
 		}
 	}
-	//T.DumpTrie(T.RootNode)
+	//trie.DumpTrie(trie.RootNode)
 }

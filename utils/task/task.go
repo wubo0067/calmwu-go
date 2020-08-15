@@ -1,10 +1,11 @@
 /*
  * @Author: calm.wu
  * @Date: 2019-08-03 15:10:35
- * @Last Modified by: calm.wu
- * @Last Modified time: 2019-08-05 16:47:50
+ * @Last Modified by: calmwu
+ * @Last Modified time: 2020-08-15 20:16:25
  */
 
+// Package task 任务对象
 package task
 
 import (
@@ -124,8 +125,8 @@ func (ti *concreteTask) Run() (result *TaskResult, taskErr error) {
 		ti.taskResult.Result = append(ti.taskResult.Result, stepResult)
 		select {
 		case <-ti.ctx.Done():
-			ti.notifyObserver(fmt.Sprintf("Task:%s was cancelled after step:%d name:%s", ti.name, i, step.Name()))
-			return nil, fmt.Errorf("Task:%s was cancelled after step:%d name:%s", ti.name, i, step.Name())
+			ti.notifyObserver(fmt.Sprintf("Task:%s was canceled after step:%d name:%s", ti.name, i, step.Name()))
+			return nil, fmt.Errorf("task:%s was canceled after step:%d name:%s", ti.name, i, step.Name())
 		default:
 		}
 	}

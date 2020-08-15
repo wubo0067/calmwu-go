@@ -14,11 +14,11 @@ const (
 )
 
 func ErrKeyNotExist(key string) error {
-	return fmt.Errorf("key[%s] not exists!", key)
+	return fmt.Errorf("key[%s] not exists", key)
 }
 
 func ErrTimeOut(key string) error {
-	return fmt.Errorf("key[%s] time out!", key)
+	return fmt.Errorf("key[%s] time out", key)
 }
 
 func ErrUnknown(key string) error {

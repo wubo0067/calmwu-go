@@ -2,7 +2,7 @@
  * @Author: calmwu
  * @Date: 2018-01-30 14:44:39
  * @Last Modified by: calmwu
- * @Last Modified time: 2018-01-30 15:28:05
+ * @Last Modified time: 2020-08-15 19:59:49
  * @Comment:
  */
 
@@ -29,14 +29,14 @@ type ReferenceCountable interface {
 	DecrementReferenceCount()
 }
 
-// 计数对象类型
+// ReferenceCounter 计数对象类型
 type ReferenceCounter struct {
 	Count        *uint32                 `sql:"-" json:"-" yaml:"-"` // 引用计数器
 	Destinantion *sync.Pool              `sql:"-" json:"-" yaml:"-"` // 对象池，用来回收用
 	Released     *uint32                 `sql:"-" json:"-" yaml:"-"` // 统计累计释放对象次数
 	Instance     interface{}             `sql:"-" json:"-" yaml:"-"`
 	Reset        func(interface{}) error `sql:"-" json:"-" yaml:"-"` // 用来清理Instance所有成员
-	Id           uint32                  `sql:"-" json:"-" yaml:"-"`
+	ID           uint32                  `sql:"-" json:"-" yaml:"-"`
 }
 
 func (rc ReferenceCounter) IncrementReferenceCount() {
@@ -74,7 +74,7 @@ type ReferenceCountedPool struct {
 }
 
 // NewReferenceCountedPool 生成一个计数对象池
-func NewReferenceCountedPool(factory FactoryReferenceCountable, Reset ResetReferenceCountable) *ReferenceCountedPool {
+func NewReferenceCountedPool(factory FactoryReferenceCountable, reset ResetReferenceCountable) *ReferenceCountedPool {
 	rcPool := new(ReferenceCountedPool)
 	rcPool.pool = new(sync.Pool)
 	rcPool.pool.New = func() interface{} {
@@ -85,15 +85,15 @@ func NewReferenceCountedPool(factory FactoryReferenceCountable, Reset ResetRefer
 			Count:        new(uint32),
 			Destinantion: rcPool.pool,
 			Released:     &rcPool.returned,
-			Reset:        Reset,
-			Id:           rcPool.allocated, // 计数器作为id
+			Reset:        reset,
+			ID:           rcPool.allocated, // 计数器作为id
 		})
 		return rc
 	}
 	return rcPool
 }
 
-// Get ...
+// Get 获取对象
 func (rcp *ReferenceCountedPool) Get() ReferenceCountable {
 	rc := rcp.pool.Get().(ReferenceCountable)
 	rc.SetInstance(rc)

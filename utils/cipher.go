@@ -2,7 +2,7 @@
  * @Author: calmwu
  * @Date: 2017-11-30 11:15:08
  * @Last Modified by: calmwu
- * @Last Modified time: 2017-12-08 16:54:33
+ * @Last Modified time: 2020-08-15 18:12:09
  */
 
 package utils
@@ -57,7 +57,7 @@ func GenerateEncryptionKey(pub []byte, privateKey *dhkx.DHKey) ([]byte, error) {
 func NewCipherBlock(encryptionKey []byte) (cipher.Block, error) {
 	cipherBlock, err := aes.NewCipher(encryptionKey)
 	if err != nil {
-		return nil, fmt.Errorf("New cipherBlock failed. err[%s]", err.Error())
+		return nil, fmt.Errorf("new cipherBlock failed. err[%s]", err.Error())
 	}
 	return cipherBlock, nil
 }

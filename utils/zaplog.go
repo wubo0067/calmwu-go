@@ -2,7 +2,7 @@
  * @Author: calm.wu
  * @Date: 2018-08-17 12:51:15
  * @Last Modified by: calmwu
- * @Last Modified time: 2018-11-30 15:50:28
+ * @Last Modified time: 2020-08-15 20:06:10
  */
 
 package utils
@@ -28,32 +28,36 @@ var (
 	ZLog *zap.SugaredLogger
 )
 
+const (
+	_logFileMaxGSize = 100
+)
+
 func ShortCallerWithClassFunctionEncoder(caller zapcore.EntryCaller, enc zapcore.PrimitiveArrayEncoder) {
-	path := caller.TrimmedPath()
+	callerPath := caller.TrimmedPath()
 	if f := runtime.FuncForPC(caller.PC); f != nil {
 		name := f.Name()
 		i := strings.LastIndex(name, "/")
 		j := strings.Index(name[i+1:], ".")
-		path += " " + name[i+j+2:]
+		callerPath += " " + name[i+j+2:]
 	}
-	enc.AppendString(path)
+	enc.AppendString(callerPath)
 }
 
 func timeEncoder(t time.Time, enc zapcore.PrimitiveArrayEncoder) {
 	enc.AppendString(t.Format("2006-01-02 15:04:05.000"))
 }
 
+// CreateZapLog 创建log对象
 // logFullName: dir/dir/dir/test.log
 // maxSize: megabytes, default = 100
 // maxAge: 多少天之后变为old file
 // maxBackups: old file备份数量
 // compress: old file是否压缩tgz
 // logLevel: zapcore.DebugLevel
-func CreateZapLog(logFullName string, maxSize int, maxAge int, maxBackups int, compress bool,
-	logLevel zapcore.Level, callSkip int) *zap.SugaredLogger {
-
-	if maxSize < 100 {
-		maxSize = 100
+func CreateZapLog(logFullName string, maxSize, maxAge, maxBackups int, compress bool, logLevel zapcore.LevelEnabler,
+	callSkip int) *zap.SugaredLogger {
+	if maxSize > _logFileMaxGSize {
+		maxSize = _logFileMaxGSize
 	}
 
 	if maxAge < 0 {
@@ -103,7 +107,7 @@ func CreateZapLog(logFullName string, maxSize int, maxAge int, maxBackups int, c
 }
 
 // InitDefaultZapLog 初始化Zap log
-func InitDefaultZapLog(logFullName string, logLevel zapcore.Level, callSkip int) {
+func InitDefaultZapLog(logFullName string, logLevel zapcore.LevelEnabler, callSkip int) {
 	ZLog = CreateZapLog(logFullName, 100, 7, 7, true, logLevel, callSkip)
 }
 

@@ -2,7 +2,7 @@
  * @Author: calmwu
  * @Date: 2018-01-27 16:59:37
  * @Last Modified by: calmwu
- * @Last Modified time: 2018-05-17 13:45:49
+ * @Last Modified time: 2020-08-15 20:04:10
  * @Comment:
  */
 
@@ -20,13 +20,13 @@ import (
 func NewError(args ...interface{}) error {
 	var err error
 	var rawData []interface{}
-	for _, arg := range args {
-		switch arg := arg.(type) {
+	for _, fromArg := range args {
+		switch toArg := fromArg.(type) {
 		case error:
-			err = arg.(error)
+			err = toArg
 			continue
 		default:
-			rawData = append(rawData, arg)
+			rawData = append(rawData, toArg)
 		}
 	}
 	if err == nil {

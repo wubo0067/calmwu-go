@@ -2,7 +2,7 @@
  * @Author: calmwu
  * @Date: 2017-11-23 15:36:57
  * @Last Modified by: calmwu
- * @Last Modified time: 2018-11-30 17:27:16
+ * @Last Modified time: 2020-08-15 20:14:04
  * @Comment:
  */
 
@@ -51,8 +51,8 @@ func ConsulGlobalSeq(client *api.Client, seqName string, initSeqNum int, waitTim
 
 		if elapsed > lockWaitTime {
 			// 等待超时
-			utils.ZLog.Warnf("SeqName[%s] wait timeout!", seqName)
-			return 0, fmt.Errorf("SeqName[%s] wait timeout!", seqName)
+			utils.ZLog.Warnf("seqName[%s] wait timeout!", seqName)
+			return 0, fmt.Errorf("seqName[%s] wait timeout", seqName)
 		}
 
 		qOption.WaitTime -= elapsed

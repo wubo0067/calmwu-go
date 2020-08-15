@@ -2,7 +2,7 @@
  * @Author: calmwu
  * @Date: 2017-09-18 10:36:09
  * @Last Modified by: calmwu
- * @Last Modified time: 2018-11-30 17:27:06
+ * @Last Modified time: 2020-08-15 20:06:46
  * @Comment:
  */
 
@@ -94,7 +94,7 @@ func TimeName(t time.Time) string {
 
 // PrintPerformTimeConsuming 打印消费时间
 func PrintPerformTimeConsuming(funcName string, startTime time.Time) {
-	timeConumeSeconds := time.Now().Sub(startTime).Seconds()
+	timeConumeSeconds := time.Since(startTime).Seconds()
 	ZLog.Debugf("function[%s] using [%f] seconds", funcName, timeConumeSeconds)
 }
 
@@ -153,8 +153,8 @@ func GetMonthName(location *time.Location) int {
 	return int(monthName)
 }
 
-// 计算某年某月的天数
-func GetMonthlyDayCount(year int, month int) int {
+// GetMonthlyDayCount 计算某年某月的天数
+func GetMonthlyDayCount(year, month int) int {
 	var days int
 	if month != 2 {
 		if month == 4 || month == 6 || month == 9 || month == 11 {

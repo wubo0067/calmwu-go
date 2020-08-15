@@ -1,4 +1,11 @@
-package word_filter
+/*
+ * @Author: calmwu
+ * @Date: 2020-08-15 16:04:31
+ * @Last Modified by: calmwu
+ * @Last Modified time: 2020-08-15 20:17:15
+ */
+
+package wordfilter
 
 import (
 	"bytes"
@@ -11,13 +18,15 @@ import (
 	"time"
 )
 
-var dicFileTrie map[string]*Trie = make(map[string]*Trie) //map for dictionary file to trie
-var dicFileTime map[string]int64 = make(map[string]int64) //map for dictionary file to it's built time
+var (
+	_dicFileTrie map[string]*Trie = make(map[string]*Trie)
+	_dicFileTime map[string]int64 = make(map[string]int64)
+)
 
 func LoadDicFiles(dicFiles []string) { //load serveral dictionary file to build tries
 	for _, dicFile := range dicFiles {
-		dicFileTrie[dicFile] = nil
-		dicFileTime[dicFile] = 0
+		_dicFileTrie[dicFile] = nil
+		_dicFileTime[dicFile] = 0
 	}
 	go buildDicFileTrie() //asyn build dictionary file trie,when completed the old trie will be replaced
 }
@@ -26,19 +35,19 @@ func buildDicFileTrie() { //when server start-up the trie will be built automati
 	for {
 		c := make(chan os.Signal, 1)
 		signal.Notify(c, syscall.SIGHUP)
-		for dicFile, _ := range dicFileTrie {
+		for dicFile := range _dicFileTrie {
 			stat, e := os.Stat(dicFile)
-			if e != nil || stat.ModTime().Unix() > dicFileTime[dicFile] { //maybe deleted file or updated file
+			if e != nil || stat.ModTime().Unix() > _dicFileTime[dicFile] { //maybe deleted file or updated file
 				data, e := ioutil.ReadFile(dicFile)
 				if e != nil || len(data) <= 0 { //file not exist or empty
-					dicFileTrie[dicFile] = nil //delete the old trie,maybe concurrency problem
+					_dicFileTrie[dicFile] = nil //delete the old trie,maybe concurrency problem
 				}
 				dictionary := bytes.Split(data, []byte("\n"))
 				var tree Trie
 				tree.InitRootNode()
 				tree.BuildTrie(dictionary)
-				dicFileTrie[dicFile] = &tree             //replace the old trie,maybe concurrency problem
-				dicFileTime[dicFile] = time.Now().Unix() //save the replace time
+				_dicFileTrie[dicFile] = &tree             //replace the old trie,maybe concurrency problem
+				_dicFileTime[dicFile] = time.Now().Unix() //save the replace time
 				fmt.Printf("build completed!\n")
 			}
 		}
@@ -46,7 +55,7 @@ func buildDicFileTrie() { //when server start-up the trie will be built automati
 	}
 }
 
-//separator charactors,if we want to match "abcde" in "abc112312de" ,separator charactors can be set to "123"
+// Seps separator charactors,if we want to match "abcde" in "abc112312de" ,separator charactors can be set to "123"
 type Seps []rune
 
 func (s Seps) Len() int {
@@ -64,10 +73,10 @@ func FindSepC(seps Seps, charactor rune) bool {
 	return i < len(seps) && seps[i] == charactor
 }
 
-// we use a dictionary file to filter text,all separator in text will be bypassed,and matched words will be replace by rep
+// FilterText we use a dictionary file to filter text,all separator in text will be bypassed,and matched words will be replace by rep
 func FilterText(dicFile string, text []rune, seps Seps, rep rune) {
-	T := dicFileTrie[dicFile] //save trie to temporary variable to eliminate concurrency problem
-	if T == nil {             //no matched trie for dictionary file
+	T := _dicFileTrie[dicFile] //save trie to temporary variable to eliminate concurrency problem
+	if T == nil {              //no matched trie for dictionary file
 		return
 	}
 	sort.Sort(seps)                  //sort seps to speed up search process

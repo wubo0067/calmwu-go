@@ -2,7 +2,7 @@
  * @Author: calmwu
  * @Date: 2017-11-06 17:24:24
  * @Last Modified by: calmwu
- * @Last Modified time: 2018-09-17 16:38:28
+ * @Last Modified time: 2020-08-15 19:44:44
  * @Comment:
  */
 
@@ -39,7 +39,7 @@ func GetCallStack() string {
 		f, more = frames.Next()
 		if index = strings.Index(f.File, "src"); index != -1 {
 			// trim GOPATH or GOROOT prifix
-			f.File = string(f.File[index+4:])
+			f.File = f.File[index+4:]
 		}
 		result = fmt.Sprintf("%s%s\n\t%s:%d\n", result, f.Function, f.File, f.Line)
 		if !more {

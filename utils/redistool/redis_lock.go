@@ -2,7 +2,7 @@
  * @Author: calmwu
  * @Date: 2018-10-29 14:06:53
  * @Last Modified by: calmwu
- * @Last Modified time: 2018-11-29 10:44:29
+ * @Last Modified time: 2020-08-15 19:45:01
  */
 
 package redistool
@@ -50,7 +50,6 @@ type GlobalLock struct {
 
 func NewGlobalLock(ownerName string, redisCmd redis.Cmdable, key string, holdDuration time.Duration,
 	retryTimes int, retryIntvalDuration time.Duration) (*GlobalLock, error) {
-
 	var err error
 	if len(releaseScriptSha) == 0 {
 		releaseScriptSha, err = redisCmd.ScriptLoad(context.TODO(), releaseScript).Result()
@@ -88,7 +87,7 @@ func (gl *GlobalLock) DoPreempt(waitingLock bool) (bool, error) {
 	}
 
 	if len(releaseScriptSha) == 0 {
-		err := errors.New("Must load release script")
+		err := errors.New("must load release script")
 		utils.ZLog.Errorf(err.Error())
 		return false, err
 	}
@@ -186,5 +185,4 @@ func (gl *GlobalLock) Release() {
 		gl.isHold = false
 		utils.ZLog.Infof("owner[%s] Release  EvalSha key[%s] successed!", gl.ownerName, gl.key)
 	}
-	return
 }

@@ -2,7 +2,7 @@
  * @Author: calmwu
  * @Date: 2017-10-11 10:31:16
  * @Last Modified by: calmwu
- * @Last Modified time: 2018-06-13 14:23:17
+ * @Last Modified time: 2020-08-15 19:48:02
  * @Comment:
  */
 
@@ -12,7 +12,7 @@ type ProtoReturnCode int
 
 type ProtoRequestHeadS struct {
 	Version    int    `json:"Version"`
-	EventId    int    `json:"EventId"`
+	EventID    int    `json:"EventID"`
 	TimeStamp  int64  `json:"TimeStamp"`
 	CsrfToken  string `json:"CsrfToken"`
 	ChannelUID string `json:"ChannelUID"`
@@ -22,7 +22,7 @@ type ProtoRequestHeadS struct {
 type ProtoResponseHeadS struct {
 	Version    int             `json:"Version"`
 	TimeStamp  int64           `json:"TimeStamp"`
-	EventId    int             `json:"EventId"`
+	EventID    int             `json:"EventID"`
 	ReturnCode ProtoReturnCode `json:"ReturnCode"`
 }
 

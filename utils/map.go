@@ -1,8 +1,8 @@
 /*
  * @Author: calm.wu
  * @Date: 2020-01-16 11:15:48
- * @Last Modified by: calm.wu
- * @Last Modified time: 2020-01-16 11:43:32
+ * @Last Modified by: calmwu
+ * @Last Modified time: 2020-08-15 20:05:04
  */
 
 // Package utils for calmwu golang tools
@@ -193,7 +193,7 @@ func toValue(v reflect.Value) *st.Value {
 		for i := 0; i < size; i++ {
 			name := t.Field(i).Name
 			// Better way?
-			if len(name) > 0 && 'A' <= name[0] && name[0] <= 'Z' {
+			if len(name) > 0 && name[0] >= 'A' && name[0] <= 'Z' {
 				fields[name] = toValue(v.Field(i))
 			}
 		}
@@ -273,7 +273,6 @@ func ConvertPBStruct2Map(s *st.Struct) (map[string]interface{}, error) {
 		} else {
 			m[k] = nil
 		}
-
 	}
 	return m, nil
 }

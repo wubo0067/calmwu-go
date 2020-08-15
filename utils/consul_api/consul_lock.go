@@ -2,9 +2,10 @@
  * @Author: calmwu
  * @Date: 2017-11-21 14:52:04
  * @Last Modified by: calmwu
- * @Last Modified time: 2018-11-30 17:25:57
+ * @Last Modified time: 2020-08-15 19:51:16
  * @Comment:
  */
+
 package consulapi
 
 import (
@@ -15,11 +16,10 @@ import (
 	"github.com/wubo0067/calmwu-go/utils"
 )
 
-/*
-client:			consul api对象
-lockName:		锁名字
-waitLockTime:	得到锁的等待时间，如果超时都没有获得，返回报错 "10s" "100ms"，永久等待就用""
-*/
+// ConsulGlobalLock 获得全局锁
+// client:			consul api对象
+// lockName:		锁名字
+// waitLockTime:	得到锁的等待时间，如果超时都没有获得，返回报错 "10s" "100ms"，永久等待就用""
 func ConsulGlobalLock(client *api.Client, lockName string, waitLockTime string) (*api.Lock, error) {
 	if client == nil {
 		return nil, fmt.Errorf("CAPI: Consul client is nil")
@@ -64,10 +64,8 @@ func ConsulGlobalLock(client *api.Client, lockName string, waitLockTime string) 
 	}
 
 	go func() {
-		select {
-		case <-leaderCh:
-			utils.ZLog.Warnf("Lock %s not leader, must be check!!!")
-		}
+		<-leaderCh
+		utils.ZLog.Warnf("Lock %s not leader, must be check!!!")
 	}()
 
 	return lock, nil

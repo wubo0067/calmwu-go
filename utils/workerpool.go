@@ -2,15 +2,16 @@
  * @Author: calmwu
  * @Date: 2018-12-08 16:06:26
  * @Last Modified by: calmwu
- * @Last Modified time: 2018-12-10 11:47:54
+ * @Last Modified time: 2020-08-15 20:13:51
  */
 
 package utils
 
 import (
-	"fmt"
 	"sync"
 	"time"
+
+	"github.com/pkg/errors"
 )
 
 // WorkerHandler 回调函数类型定义
@@ -59,7 +60,7 @@ func StartWorkerPool(workerFunc WorkerHandler, maxWorkersCount int, maxIdelWorke
 
 func (wp *WorkerPool) start() error {
 	if wp.stopCh != nil {
-		err := fmt.Errorf("WorkerPool already started!")
+		err := errors.New("workerPool already started!")
 		ZLog.Error(err.Error())
 		return err
 	}

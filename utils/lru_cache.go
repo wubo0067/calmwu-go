@@ -1,8 +1,8 @@
 /*
  * @Author: calm.wu
  * @Date: 2019-07-15 09:53:05
- * @Last Modified by: calm.wu
- * @Last Modified time: 2019-07-15 11:04:11
+ * @Last Modified by: calmwu
+ * @Last Modified time: 2020-08-15 20:15:53
  */
 
 package utils
@@ -13,7 +13,7 @@ import (
 	"sync"
 )
 
-// 节点
+// LRUCacheNode 节点
 type LRUCacheNode struct {
 	Key   string
 	Value interface{}
@@ -43,19 +43,18 @@ type LRUCache struct {
 	LRUCacheFunctions
 }
 
-// 构建一个LRUCache对象
+// NewLRUCache 构建一个LRUCache对象
 func NewLRUCache(capacity int) (*LRUCache, error) {
 	if capacity <= 0 {
 		return nil, errors.New("capactiy must be larger than zero")
-	} else {
-		cache := &LRUCache{
-			Capacity:     capacity,
-			CacheStorage: make(map[string]*LRUCacheNode),
-			firstNode:    nil,
-			lastNode:     nil,
-		}
-		return cache, nil
 	}
+	cache := &LRUCache{
+		Capacity:     capacity,
+		CacheStorage: make(map[string]*LRUCacheNode),
+		firstNode:    nil,
+		lastNode:     nil,
+	}
+	return cache, nil
 }
 
 func (lc *LRUCache) pushToHead(key string, value interface{}) {
@@ -104,13 +103,15 @@ func (lc *LRUCache) Get(key string) (interface{}, error) {
 	lc.monitor.Lock()
 	defer lc.monitor.Unlock()
 
-	if cacheNode, exists := lc.CacheStorage[key]; !exists {
+	var cacheNode *LRUCacheNode
+	var exists bool
+
+	if cacheNode, exists = lc.CacheStorage[key]; !exists {
 		return nil, fmt.Errorf("key[%s] is invalid", key)
-	} else {
-		lc.removeNode(key)
-		lc.pushToHead(key, cacheNode.Value)
-		return cacheNode.Value, nil
 	}
+	lc.removeNode(key)
+	lc.pushToHead(key, cacheNode.Value)
+	return cacheNode.Value, nil
 }
 
 func (lc *LRUCache) Set(key string, value interface{}) {
@@ -131,7 +132,7 @@ func (lc *LRUCache) Clear() {
 	lc.monitor.Lock()
 	defer lc.monitor.Unlock()
 
-	for key, _ := range lc.CacheStorage {
+	for key := range lc.CacheStorage {
 		lc.removeNode(key)
 	}
 	lc.firstNode = nil

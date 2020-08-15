@@ -2,7 +2,7 @@
  * @Author: calmwu
  * @Date: 2018-11-29 10:14:06
  * @Last Modified by: calmwu
- * @Last Modified time: 2018-11-29 10:52:00
+ * @Last Modified time: 2020-08-15 19:40:47
  */
 
 // 这里没有使用WaitN，没有使用Context去停止
@@ -18,7 +18,7 @@ import (
 type RateLimiter interface {
 	// TryAccept return true if a token is taken immediately, it return false
 	TryAccept() bool
-	// Accept return once a token becomes avaliable
+	// Accept return once a token becomes available
 	Accept()
 	// QPS return QPS of this rate limiter
 	QPS() float32

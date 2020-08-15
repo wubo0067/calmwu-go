@@ -2,7 +2,7 @@
  * @Author: calmwu
  * @Date: 2020-06-07 21:28:08
  * @Last Modified by: calmwu
- * @Last Modified time: 2020-06-07 21:28:57
+ * @Last Modified time: 2020-08-15 19:43:50
  */
 
 package utils
@@ -43,7 +43,6 @@ func IsPrime(n int64) bool {
 
 // createNrAndValidate: Receive number and validate if is prime, send channel this same
 func createNrAndValidate(n int64, c chan numberResult) {
-
 	result := new(numberResult)
 	result.number = n
 	result.isPrime = IsPrime(n)

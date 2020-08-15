@@ -18,7 +18,7 @@ import (
 type Event struct {
 	ReferenceCounter // 这是个referencecountable对象
 	Name             string
-	Id               uint32
+	ID               uint32
 }
 
 // 对象创建方法
@@ -34,9 +34,9 @@ func ResetEvent(i interface{}) error {
 	if !ok {
 		return fmt.Errorf("illegal object[%s] sent to ResetEvent", reflect.TypeOf(i).String())
 	}
-	fmt.Printf("Reset Event Id=%d\n", ev.Id)
+	fmt.Printf("Reset Event ID=%d\n", ev.ID)
 	ev.Name = ""
-	ev.Id = 0
+	ev.ID = 0
 	return nil
 }
 
@@ -78,7 +78,7 @@ func TestRoutineEventPool(t *testing.T) {
 		ev := AcquireEvent()
 		defer ev.DecrementReferenceCount()
 		ev.Name = fmt.Sprintf("Name_%d", i)
-		ev.Id = uint32(i)
+		ev.ID = uint32(i)
 		// 在放入routine的时候计数递增
 		ev.IncrementReferenceCount()
 		eventChan <- ev

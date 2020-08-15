@@ -2,19 +2,20 @@
  * @Author: calmwu
  * @Date: 2017-10-27 15:37:01
  * @Last Modified by: calmwu
- * @Last Modified time: 2018-11-14 12:00:55
+ * @Last Modified time: 2020-08-15 19:54:27
  * @Comment:
  */
+
 package redistool
 
 import (
-	"errors"
 	"fmt"
 	"reflect"
 	"strconv"
 	"strings"
 	"time"
 
+	"github.com/pkg/errors"
 	utils "github.com/wubo0067/calmwu-go/utils"
 )
 
@@ -88,6 +89,14 @@ func ConvertSliceToRedisList(sliceObj interface{}) ([]string, error) {
 				redisList[i] = strconv.FormatBool(sliceValue.Index(i).Bool())
 				i++
 			}
+		case reflect.Chan, reflect.Complex128, reflect.Complex64, reflect.Func, reflect.UnsafePointer, reflect.Invalid:
+			fallthrough
+		case reflect.Array, reflect.Int16, reflect.Int8, reflect.Interface, reflect.Map, reflect.Ptr, reflect.Slice:
+			fallthrough
+		case reflect.Struct, reflect.Uint16, reflect.Uint8, reflect.Uintptr:
+			fallthrough
+		default:
+			return nil, errors.Errorf("sliceValue.Type.Elem.Kind:%s not support", sliceValue.Type().Elem().Kind().String())
 		}
 
 		return redisList, nil
@@ -114,7 +123,7 @@ func ConvertRedisListToSlice(redisL []string, sliceObj interface{}) error {
 		case reflect.Int:
 			for i < len(redisL) {
 				redisV := redisL[i]
-				if len(redisV) == 0 {
+				if redisV == "" {
 					redisV = "0"
 				}
 				num, err := strconv.ParseInt(redisV, 10, 64)
@@ -127,7 +136,7 @@ func ConvertRedisListToSlice(redisL []string, sliceObj interface{}) error {
 		case reflect.Int32:
 			for i < len(redisL) {
 				redisV := redisL[i]
-				if len(redisV) == 0 {
+				if redisV == "" {
 					redisV = "0"
 				}
 				num, err := strconv.ParseInt(redisV, 10, 32)
@@ -140,7 +149,7 @@ func ConvertRedisListToSlice(redisL []string, sliceObj interface{}) error {
 		case reflect.Int64:
 			for i < len(redisL) {
 				redisV := redisL[i]
-				if len(redisV) == 0 {
+				if redisV == "" {
 					redisV = "0"
 				}
 				num, err := strconv.ParseInt(redisV, 10, 64)
@@ -153,7 +162,7 @@ func ConvertRedisListToSlice(redisL []string, sliceObj interface{}) error {
 		case reflect.Uint:
 			for i < len(redisL) {
 				redisV := redisL[i]
-				if len(redisV) == 0 {
+				if redisV == "" {
 					redisV = "0"
 				}
 				num, err := strconv.ParseUint(redisV, 10, 64)
@@ -166,7 +175,7 @@ func ConvertRedisListToSlice(redisL []string, sliceObj interface{}) error {
 		case reflect.Uint32:
 			for i < len(redisL) {
 				redisV := redisL[i]
-				if len(redisV) == 0 {
+				if redisV == "" {
 					redisV = "0"
 				}
 				num, err := strconv.ParseUint(redisV, 10, 32)
@@ -179,7 +188,7 @@ func ConvertRedisListToSlice(redisL []string, sliceObj interface{}) error {
 		case reflect.Uint64:
 			for i < len(redisL) {
 				redisV := redisL[i]
-				if len(redisV) == 0 {
+				if redisV == "" {
 					redisV = "0"
 				}
 				num, err := strconv.ParseUint(redisV, 10, 64)
@@ -192,7 +201,7 @@ func ConvertRedisListToSlice(redisL []string, sliceObj interface{}) error {
 		case reflect.Float32:
 			for i < len(redisL) {
 				redisV := redisL[i]
-				if len(redisV) == 0 {
+				if redisV == "" {
 					redisV = "0.000"
 				}
 				num, err := strconv.ParseFloat(redisV, 32)
@@ -205,7 +214,7 @@ func ConvertRedisListToSlice(redisL []string, sliceObj interface{}) error {
 		case reflect.Float64:
 			for i < len(redisL) {
 				redisV := redisL[i]
-				if len(redisV) == 0 {
+				if redisV == "" {
 					redisV = "0.000"
 				}
 				num, err := strconv.ParseFloat(redisV, 64)
@@ -218,7 +227,7 @@ func ConvertRedisListToSlice(redisL []string, sliceObj interface{}) error {
 		case reflect.Bool:
 			for i < len(redisL) {
 				redisV := redisL[i]
-				if len(redisV) == 0 {
+				if redisV == "" {
 					redisV = "false"
 				}
 				b, err := strconv.ParseBool(redisV)
@@ -228,6 +237,12 @@ func ConvertRedisListToSlice(redisL []string, sliceObj interface{}) error {
 				sliceValue.Index(i).SetBool(b)
 				i++
 			}
+		case reflect.Array, reflect.Int16, reflect.Int8, reflect.Interface, reflect.Map, reflect.Ptr, reflect.Slice, reflect.Func, reflect.Invalid, reflect.String:
+			fallthrough
+		case reflect.Struct, reflect.Uint16, reflect.Uint8, reflect.Uintptr, reflect.UnsafePointer, reflect.Chan, reflect.Complex128, reflect.Complex64:
+			fallthrough
+		default:
+			return errors.Errorf("slice value elem kind:%s not support", sliceValueElemKind.String())
 		}
 		return nil
 	}
@@ -492,15 +507,14 @@ func ConvertStringMapToObj(hashV map[string]string, objP interface{}) error {
 						}
 					}
 				} else {
-					return fmt.Errorf("field[%s] unexport!", field.Name)
+					return fmt.Errorf("field[%s] unexport", field.Name)
 				}
 			}
 			i++
 		}
 		return nil
-	} else {
-		return fmt.Errorf("objP type.kind is not reflect.Ptr")
 	}
+	return fmt.Errorf("objP type.kind is not reflect.Ptr")
 }
 
 func getNameFromTag(tagStr string) string {

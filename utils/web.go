@@ -2,7 +2,7 @@
  * @Author: calmwu
  * @Date: 2017-11-14 11:11:02
  * @Last Modified by: calmwu
- * @Last Modified time: 2017-12-08 17:28:10
+ * @Last Modified time: 2020-08-15 20:06:38
  */
 
 package utils
@@ -47,7 +47,7 @@ func RegisterWebItfsToGin(router *gin.Engine, webItfMap WebItfMap) {
 }
 
 // RegisterWebItf 接口注册
-func RegisterWebItf(webItfPath string, httpMethodType string, handlerFunc gin.HandlerFunc, webItfMap WebItfMap) {
+func RegisterWebItf(webItfPath, httpMethodType string, handlerFunc gin.HandlerFunc, webItfMap WebItfMap) {
 	if _, ok := webItfMap[webItfPath]; !ok {
 		webItfInfo := &WebInterfaceInfo{
 			HTTPMethodType: httpMethodType,

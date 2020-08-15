@@ -2,7 +2,7 @@
  * @Author: calmwu
  * @Date: 2017-10-23 14:59:25
  * @Last Modified by: calmwu
- * @Last Modified time: 2018-11-30 19:48:37
+ * @Last Modified time: 2020-08-15 20:16:13
  * @Comment:
  */
 
@@ -128,7 +128,7 @@ func redisCmdPerformRoutine(rm *RedisMgr) {
 		if err := recover(); err != nil {
 			// 回收panic，防止整个服务panic
 			stackInfo := utils.CallStack(1)
-			utils.ZLog.Warnw("redisCmdPerformRoutine panic recovered! err", err, "stack", string(stackInfo))
+			utils.ZLog.Warnw("redisCmdPerformRoutine panic recovered! err", err, "stack", stackInfo)
 		}
 	}()
 L:
@@ -302,7 +302,7 @@ L:
 						redisCmdData.replyChan <- &RedisResultS{Ok: true, Result: res}
 					}
 				default:
-					err := fmt.Errorf("Cmd[%s] does not support", redisCmdData.cmd.String())
+					err := fmt.Errorf("cmd[%s] does not support", redisCmdData.cmd.String())
 					utils.ZLog.Errorf(err.Error())
 					redisCmdData.replyChan <- &RedisResultS{Ok: false, Result: err}
 				}
@@ -312,7 +312,6 @@ L:
 		}
 	}
 	utils.ZLog.Warnf("redisCmdPerformRoutine Exit")
-	return
 }
 
 func (rm *RedisMgr) waitResult(reply <-chan *RedisResultS, tag string) (interface{}, error) {
@@ -321,9 +320,8 @@ func (rm *RedisMgr) waitResult(reply <-chan *RedisResultS, tag string) (interfac
 		if ok {
 			if redisRes.Ok {
 				return redisRes.Result, nil
-			} else {
-				return nil, redisRes.Result.(error)
 			}
+			return nil, redisRes.Result.(error)
 		}
 	case <-time.After(2 * time.Second):
 		return nil, ErrTimeOut(tag)
@@ -422,9 +420,8 @@ func (rm *RedisMgr) ListRPush(key string, value []string) (int, error) {
 	if err == nil {
 		if hValue == nil {
 			return 0, fmt.Errorf("value is nil")
-		} else {
-			return hValue.(int), nil
 		}
+		return hValue.(int), nil
 	}
 
 	return 0, err
@@ -443,9 +440,8 @@ func (rm *RedisMgr) ListRPushVariable(key string, value ...string) (int, error) 
 	if err == nil {
 		if hValue == nil {
 			return 0, fmt.Errorf("value is nil")
-		} else {
-			return hValue.(int), nil
 		}
+		return hValue.(int), nil
 	}
 
 	return 0, err
@@ -464,9 +460,8 @@ func (rm *RedisMgr) ListLPushVariable(key string, value ...string) (int, error) 
 	if err == nil {
 		if hValue == nil {
 			return 0, fmt.Errorf("value is nil")
-		} else {
-			return hValue.(int), nil
 		}
+		return hValue.(int), nil
 	}
 
 	return 0, err
@@ -508,9 +503,9 @@ func (rm *RedisMgr) ListLen(key string) (int, error) {
 		replyChan: reply,
 	}
 
-	len, err := rm.waitResult(reply, key)
+	size, err := rm.waitResult(reply, key)
 	if err == nil {
-		return len.(int), nil
+		return size.(int), nil
 	}
 
 	return 0, err
@@ -633,9 +628,8 @@ func (rm *RedisMgr) Incr(key string) (int, error) {
 	if err == nil {
 		if hValue == nil {
 			return 0, fmt.Errorf("value is nil")
-		} else {
-			return hValue.(int), nil
 		}
+		return hValue.(int), nil
 	}
 
 	return 0, err
@@ -654,9 +648,8 @@ func (rm *RedisMgr) ZIncrBy(key, member string, increment int) (int, error) {
 	if err == nil {
 		if hValue == nil {
 			return 0, fmt.Errorf("value is nil")
-		} else {
-			return hValue.(int), nil
 		}
+		return hValue.(int), nil
 	}
 
 	return 0, err
@@ -675,9 +668,8 @@ func (rm *RedisMgr) ZScore(key, member string) (int, error) {
 	if err == nil {
 		if hValue == nil {
 			return 0, fmt.Errorf("member not exist")
-		} else {
-			return hValue.(int), nil
 		}
+		return hValue.(int), nil
 	}
 
 	return 0, err

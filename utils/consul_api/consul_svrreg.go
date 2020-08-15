@@ -2,10 +2,11 @@
  * @Author: calmwu
  * @Date: 2017-11-24 14:52:16
  * @Last Modified by: calmwu
- * @Last Modified time: 2018-09-25 19:55:42
+ * @Last Modified time: 2020-08-15 19:52:25
  * @Comment:
  */
 
+// Package consulapi for process cousul
 package consulapi
 
 import (
@@ -22,26 +23,27 @@ import (
 // 	http.ListenAndServe(fmt.Sprintf("%s:%d", checkIP, checkPort), nil)
 // }
 
-/*
-这个配置和配置文件中提供的一样，example
-{
-    "service" : {
-        "name" : "hello",
-        "tags": ["master"],
-        "address" : "10.186.40.75",
-        "port" : 8990,
-        "checks" : [
-            {
-                "http" : "http://10.186.40.75:8990/health",
-                "interval": "10s"
-            }
-        ]
-    }
-}
-*/
+// 这个配置和配置文件中提供的一样，example
+// {
+//     "service" : {
+//         "name" : "hello",
+//         "tags": ["master"],
+//         "address" : "10.186.40.75",
+//         "port" : 8990,
+//         "checks" : [
+//             {
+//                 "http" : "http://10.186.40.75:8990/health",
+//                 "interval": "10s"
+//             }
+//         ]
+//     }
+// }
+// ]
+//     }
+// }
 
 func ConsulSvrReg(client *api.Client, servName string, servTags []string, servInstName string,
-	servInstListenIP string, servInstListenPort int, healthCheckUrl string) error {
+	servInstListenIP string, servInstListenPort int, healthCheckURL string) error {
 	if client == nil {
 		return errors.New("consul client is nil")
 	}
@@ -53,7 +55,7 @@ func ConsulSvrReg(client *api.Client, servName string, servTags []string, servIn
 	regInfo.Port = servInstListenPort
 	regInfo.ID = servInstName
 	regInfo.Check = &api.AgentServiceCheck{
-		HTTP:                           healthCheckUrl,
+		HTTP:                           healthCheckURL,
 		Interval:                       "3s",
 		Timeout:                        "3s",
 		DeregisterCriticalServiceAfter: "600s", //check失败后多久从consul集群中删除，这样页面就看不到了

@@ -2,7 +2,7 @@
  * @Author: calmwu
  * @Date: 2017-09-20 17:12:00
  * @Last Modified by: calmwu
- * @Last Modified time: 2018-11-23 15:00:04
+ * @Last Modified time: 2020-08-15 20:06:57
  * @Comment:
  */
 
@@ -115,7 +115,7 @@ func PostRequest(url string, data []byte) ([]byte, int, error) {
 }
 
 // MapstructUnPackByJSONTag 使用mapstruct进行解包
-func MapstructUnPackByJSONTag(m interface{}, rawVal interface{}) error {
+func MapstructUnPackByJSONTag(m, rawVal interface{}) error {
 	decoder, err := mapstructure.NewDecoder(&mapstructure.DecoderConfig{
 		TagName:  "json",
 		Metadata: nil,

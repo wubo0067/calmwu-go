@@ -93,7 +93,7 @@ func TestDns(t *testing.T) {
 	client, _ := NewConsulClient("10.10.81.214")
 
 	for i := 0; i < 100; i++ {
-		healthServInsts, _ := ConsulServDns(client, "SailCraft-GuideSvr")
+		healthServInsts, _ := ConsulServDNS(client, "SailCraft-GuideSvr")
 		for index := range healthServInsts {
 			fmt.Printf("healthServInsts:%+v\n", healthServInsts[index])
 		}
@@ -115,13 +115,13 @@ L:
 		case result := <-notifyCh:
 			//fmt.Printf("--------result:%v\n", result)
 			if realErr, ok := result.(error); ok {
-				if realErr == ConsulWatchKeyNotExist {
+				if realErr == ErrConsulWatchKeyNotExist {
 					fmt.Printf("key[%s] does not exist\n", "WatchKey")
 					count--
 					if count == 0 {
 						close(stopCh)
 					}
-				} else if realErr == ConsulWatchExit {
+				} else if realErr == ErrConsulWatchExit {
 					fmt.Printf("Watch exit!\n")
 					break L
 				} else {
