@@ -2,7 +2,7 @@
  * @Author: calmwu
  * @Date: 2019-06-23 11:18:36
  * @Last Modified by: calm.wu
- * @Last Modified time: 2020-09-22 15:16:54
+ * @Last Modified time: 2020-09-22 15:34:20
  */
 
 package utils
@@ -33,7 +33,7 @@ func CmdExec(args ...string) (outStr string, errStr string, err error) {
 	cmd.Stdout = &outb
 	cmd.Stderr = &errb
 	cmd.SysProcAttr = &syscall.SysProcAttr{
-		Setpgid: true,
+		Setpgid: true, // 使子进程拥有自己的 pgid，等同于子进程的 pid，这样子进程就不会继承父进程的进程组
 	}
 
 	err = cmd.Run()
