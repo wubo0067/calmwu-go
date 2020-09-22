@@ -1,8 +1,8 @@
 /*
  * @Author: calmwu
  * @Date: 2019-06-23 11:18:36
- * @Last Modified by: calmwu
- * @Last Modified time: 2020-08-15 19:42:14
+ * @Last Modified by: calm.wu
+ * @Last Modified time: 2020-09-22 15:05:07
  */
 
 package utils
@@ -26,7 +26,7 @@ func CmdExec(args ...string) (outStr string, errStr string, err error) {
 	outStr = ""
 	errStr = ""
 
-	ZLog.Debugf("Exec: %v", args)
+	Debugf("Exec: %v", args)
 
 	var outb, errb bytes.Buffer
 	cmd := exec.Command(baseCmd, cmdArgs...)
@@ -49,7 +49,7 @@ func CmdExecCaptureAndShow(args ...string) (outStr string, errStr string, err er
 	baseCmd := args[0]
 	cmdArgs := args[1:]
 
-	ZLog.Debugf("Exec: %v", args)
+	Debugf("Exec: %v", args)
 
 	var stdoutBuf, stderrBuf bytes.Buffer
 	cmd := exec.Command(baseCmd, cmdArgs...)
@@ -63,7 +63,7 @@ func CmdExecCaptureAndShow(args ...string) (outStr string, errStr string, err er
 
 	err = cmd.Start()
 	if err != nil {
-		ZLog.Errorf("cmd.Start: %v failed! reason:%s", args, err.Error())
+		Errorf("cmd.Start: %v failed! reason:%s", args, err.Error())
 		return
 	}
 
@@ -81,12 +81,12 @@ func CmdExecCaptureAndShow(args ...string) (outStr string, errStr string, err er
 
 	err = cmd.Wait()
 	if err != nil {
-		ZLog.Errorf("cmd.Run: %v failed! reason:%s", args, err.Error())
+		Errorf("cmd.Run: %v failed! reason:%s", args, err.Error())
 		return
 	}
 
 	if errStdout != nil || errStderr != nil {
-		ZLog.Errorf("failed to capture stdout and stderr!")
+		Errorf("failed to capture stdout and stderr!")
 		return
 	}
 
