@@ -2,7 +2,7 @@
  * @Author: calmwu
  * @Date: 2019-06-23 11:18:36
  * @Last Modified by: calm.wu
- * @Last Modified time: 2020-09-22 15:05:07
+ * @Last Modified time: 2020-09-22 15:16:54
  */
 
 package utils
@@ -32,6 +32,9 @@ func CmdExec(args ...string) (outStr string, errStr string, err error) {
 	cmd := exec.Command(baseCmd, cmdArgs...)
 	cmd.Stdout = &outb
 	cmd.Stderr = &errb
+	cmd.SysProcAttr = &syscall.SysProcAttr{
+		Setpgid: true,
+	}
 
 	err = cmd.Run()
 	if err != nil {
