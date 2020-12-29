@@ -1,0 +1,14 @@
+{
+    "service" : {
+        "name" : "hello",
+        "tags": ["master"],
+        "address" : "10.186.40.75",
+        "port" : 8990,
+        "checks" : [
+            {
+                "http" : "http://10.186.40.75:8990/health",
+                "interval": "10s"
+            }
+        ]
+    }
+}
