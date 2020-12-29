@@ -1,0 +1,73 @@
+{
+    "Token" : "02cf14994a3be74301657dbcd9c0a189",
+
+    "VersionConfig" : {        
+        "VersionInfo" : [
+        {       
+            "CurrVersions" : ["1.5.0","1.5.1","1.5.2","1.5.3","1.5.4"],
+            "Channel" : "GooglePlay",
+            "UpdateUrl" : "https://play.google.com/store/apps/details?id=com.taiqigame.sailcraft2"
+        },
+
+        {
+            "CurrVersions" : ["1.5.0","1.5.1","1.5.2","1.5.3","1.5.4"],
+            "Channel" : "AppStore",
+            "UpdateUrl" : "https://itunes.apple.com/us/app/sailcraft/id1250365921"
+        },
+
+        {
+            "CurrVersions" : ["1.5.0","1.5.1","1.5.2","1.5.3","1.5.4"],
+            "Channel" : "TQAnd",
+            "UpdateUrl" : "https://play.google.com/store/apps/details?id=com.taiqigame.sailcraft2"
+        },
+        
+        {
+            "CurrVersions" : ["1.5.0","1.5.1","1.5.2","1.5.3","1.5.4"],
+            "Channel" : "TQiOS",
+            "UpdateUrl" : "https://itunes.apple.com/us/app/sailcraft/id1250365921"
+        }        
+    ]
+    },
+
+    "NavigationConfig" : {
+        "_comment" : "根据版本+渠道判断下发客户端的登陆url",
+
+        "ProductEnv" : {
+            "UrlLoginCheck" : "https://chksvrsc2.uqsoft.com:802",
+            "UrlProxySvr" : "proxysc2.uqsoft.com:8483",
+            "UrlSdkSvr" : "SI-http://sdksvrsc2.uqsoft.com:80/v1/t1/tq/gate/upay",
+            "VersionList" : []
+        },
+
+        "AuditEnv" : {
+            "UrlLoginCheck" : "http://chksvrsc2audit.uqsoft.com:804",
+            "UrlProxySvr" : "proxysc2audit.uqsoft.com:7483",
+            "UrlSdkSvr" : "SI-http://sdksvrsc2audit.uqsoft.com:80/v1/t1/tq/gate/upay",
+            "VersionList" : []       
+        },
+
+        "StageEnv" : {
+            "UrlLoginCheck" : "http://123.59.40.19:800",
+            "UrlProxySvr" : "123.59.40.19:8889",
+            "UrlSdkSvr" : "SI-http://123.59.40.19:13001/v1/t1/tq/gate/upay",
+            "VersionList" : [] 
+        },
+
+        "8885Env" : {
+            "UrlLoginCheck" : "http://192.168.1.201:805",
+            "UrlProxySvr" : "192.168.1.208:8885",
+            "UrlSdkSvr" : "",
+            "VersionList" : ["1.5.0","1.5.1","1.5.2","1.5.3","1.5.4"] 
+        },
+        
+        "8889Env" : {
+            "UrlLoginCheck" : "http://192.168.1.201:809",
+            "UrlProxySvr" : "192.168.1.208:8889",
+            "UrlSdkSvr" : "",
+            "VersionList" : [] 
+        }      
+    },
+
+    "SysConfPath" : "../../../sysconf/dev-8885",
+    "GMKey" : "gm_tool_game_maintain_key"
+}

@@ -1,0 +1,94 @@
+[
+  {
+    "DowngradeCost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "Id": 1,
+    "Quality": "Common",
+    "ResourcesReturnRatio": 50,
+    "SalePrices": {
+      "resources": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    }
+  },
+  {
+    "DowngradeCost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "Id": 2,
+    "Quality": "Rare",
+    "ResourcesReturnRatio": 50,
+    "SalePrices": {
+      "resources": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    }
+  },
+  {
+    "DowngradeCost": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "Id": 3,
+    "Quality": "Epic",
+    "ResourcesReturnRatio": 50,
+    "SalePrices": {
+      "resources": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    }
+  },
+  {
+    "DowngradeCost": {
+      "resources": [
+        {
+          "count": 200,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "Id": 4,
+    "Quality": "Legendary",
+    "ResourcesReturnRatio": 50,
+    "SalePrices": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,3066 @@
+[
+  {
+    "BackgroundColor": "blue",
+    "DescribeKey": "text_magicchestdesc",
+    "Effect": {
+      "battleship_cards": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "protype_id": 3010
+        }
+      ],
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "wood"
+        }
+      ]
+    },
+    "FrameColor": "blue",
+    "GroupLimit": 9999,
+    "Icon": "img_pirate_chest",
+    "IconAtlas": "PropsAtlas",
+    "Id": 10001,
+    "NameKey": "text_magicchestname",
+    "PropType": "Chest",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_chest",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "multiple"
+  },
+  {
+    "BackgroundColor": "blue",
+    "DescribeKey": "text_propdesc_10002",
+    "Effect": {
+      "resources": [
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "wood"
+        },
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "stone"
+        },
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "iron"
+        }
+      ]
+    },
+    "FrameColor": "blue",
+    "GroupLimit": 9999,
+    "Icon": "img_pirate_chest",
+    "IconAtlas": "PropsAtlas",
+    "Id": 10002,
+    "NameKey": "text_propname_10002",
+    "PropType": "Chest",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_chest",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "multiple"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_10003",
+    "Effect": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "gem"
+        },
+        {
+          "count": 500,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "img_gold_chest",
+    "IconAtlas": "PropsAtlas",
+    "Id": 10003,
+    "NameKey": "text_propname_10003",
+    "PropType": "Chest",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_chest",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "enable"
+  },
+  {
+    "BackgroundColor": "blue",
+    "DescribeKey": "text_propdesc_10004",
+    "Effect": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "gem"
+        },
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "wood"
+        },
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "iron"
+        },
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    },
+    "FrameColor": "blue",
+    "GroupLimit": 9999,
+    "Icon": "img_league_chest",
+    "IconAtlas": "PropsAtlas",
+    "Id": 10004,
+    "NameKey": "text_propname_10004",
+    "PropType": "Chest",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_chest",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "enable"
+  },
+  {
+    "BackgroundColor": "blue",
+    "DescribeKey": "text_propdesc_10005",
+    "Effect": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gem"
+        },
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "wood"
+        },
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "iron"
+        },
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    },
+    "FrameColor": "blue",
+    "GroupLimit": 9999,
+    "Icon": "img_league_chest",
+    "IconAtlas": "PropsAtlas",
+    "Id": 10005,
+    "NameKey": "text_propname_10005",
+    "PropType": "Chest",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_chest",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "enable"
+  },
+  {
+    "BackgroundColor": "violet",
+    "DescribeKey": "text_propdesc_10006",
+    "Effect": {
+      "resources": [
+        {
+          "count": 200,
+          "count_type": "constant",
+          "type": "gem"
+        },
+        {
+          "count": 4000,
+          "count_type": "constant",
+          "type": "wood"
+        },
+        {
+          "count": 4000,
+          "count_type": "constant",
+          "type": "iron"
+        },
+        {
+          "count": 4000,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    },
+    "FrameColor": "violet",
+    "GroupLimit": 9999,
+    "Icon": "img_league_chest",
+    "IconAtlas": "PropsAtlas",
+    "Id": 10006,
+    "NameKey": "text_propname_10006",
+    "PropType": "Chest",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_chest",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "enable"
+  },
+  {
+    "BackgroundColor": "violet",
+    "DescribeKey": "text_propdesc_10007",
+    "Effect": {
+      "resources": [
+        {
+          "count": 300,
+          "count_type": "constant",
+          "type": "gem"
+        },
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "wood"
+        },
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "iron"
+        },
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    },
+    "FrameColor": "violet",
+    "GroupLimit": 9999,
+    "Icon": "img_league_chest",
+    "IconAtlas": "PropsAtlas",
+    "Id": 10007,
+    "NameKey": "text_propname_10007",
+    "PropType": "Chest",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_chest",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "enable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_10008",
+    "Effect": {
+      "resources": [
+        {
+          "count": 500,
+          "count_type": "constant",
+          "type": "gem"
+        },
+        {
+          "count": 10000,
+          "count_type": "constant",
+          "type": "wood"
+        },
+        {
+          "count": 10000,
+          "count_type": "constant",
+          "type": "iron"
+        },
+        {
+          "count": 10000,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    },
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "img_league_chest",
+    "IconAtlas": "PropsAtlas",
+    "Id": 10008,
+    "NameKey": "text_propname_10008",
+    "PropType": "Chest",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_chest",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "enable"
+  },
+  {
+    "BackgroundColor": "blue",
+    "DescribeKey": "text_propdesc_10009",
+    "Effect": {
+      "props": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "protype_id": 20001
+        }
+      ],
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "FrameColor": "blue",
+    "GroupLimit": 9999,
+    "Icon": "img_gold_chest",
+    "IconAtlas": "PropsAtlas",
+    "Id": 10009,
+    "NameKey": "text_propname_10009",
+    "PropType": "Chest",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_chest",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "enable"
+  },
+  {
+    "BackgroundColor": "blue",
+    "DescribeKey": "text_propdesc_10010",
+    "Effect": {
+      "props": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "protype_id": 20001
+        }
+      ],
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "FrameColor": "blue",
+    "GroupLimit": 9999,
+    "Icon": "img_silver_chest",
+    "IconAtlas": "PropsAtlas",
+    "Id": 10010,
+    "NameKey": "text_propname_10010",
+    "PropType": "Chest",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_chest",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "enable"
+  },
+  {
+    "BackgroundColor": "blue",
+    "DescribeKey": "text_propdesc_10011",
+    "Effect": {
+      "props": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "protype_id": 20001
+        }
+      ],
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "FrameColor": "blue",
+    "GroupLimit": 9999,
+    "Icon": "img_gold_chest",
+    "IconAtlas": "PropsAtlas",
+    "Id": 10011,
+    "NameKey": "text_propname_10011",
+    "PropType": "Chest",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_chest",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "enable"
+  },
+  {
+    "BackgroundColor": "blue",
+    "DescribeKey": "text_propdesc_10012",
+    "Effect": {
+      "props": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "protype_id": 20001
+        }
+      ],
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "FrameColor": "blue",
+    "GroupLimit": 9999,
+    "Icon": "img_rust_chest",
+    "IconAtlas": "PropsAtlas",
+    "Id": 10012,
+    "NameKey": "text_propname_10012",
+    "PropType": "Chest",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_chest",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "enable"
+  },
+  {
+    "BackgroundColor": "blue",
+    "DescribeKey": "text_propdesc_10013",
+    "Effect": {
+      "props": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "protype_id": 20001
+        }
+      ],
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "FrameColor": "blue",
+    "GroupLimit": 9999,
+    "Icon": "img_steel_chest",
+    "IconAtlas": "PropsAtlas",
+    "Id": 10013,
+    "NameKey": "text_propname_10013",
+    "PropType": "Chest",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_chest",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "enable"
+  },
+  {
+    "BackgroundColor": "blue",
+    "DescribeKey": "text_propdesc_10014",
+    "Effect": {
+      "props": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "protype_id": 20001
+        }
+      ],
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "FrameColor": "blue",
+    "GroupLimit": 9999,
+    "Icon": "img_steel_chest",
+    "IconAtlas": "PropsAtlas",
+    "Id": 10014,
+    "NameKey": "text_propname_10014",
+    "PropType": "Chest",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_chest",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "enable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80101",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_01",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80101,
+    "NameKey": "text_propname_80101",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80102",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_02",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80102,
+    "NameKey": "text_propname_80102",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80103",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_03",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80103,
+    "NameKey": "text_propname_80103",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80104",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_04",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80104,
+    "NameKey": "text_propname_80104",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80201",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_05",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80201,
+    "NameKey": "text_propname_80201",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80202",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_06",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80202,
+    "NameKey": "text_propname_80202",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80203",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_07",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80203,
+    "NameKey": "text_propname_80203",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80204",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_08",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80204,
+    "NameKey": "text_propname_80204",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80301",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_09",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80301,
+    "NameKey": "text_propname_80301",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80302",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_10",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80302,
+    "NameKey": "text_propname_80302",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80303",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_11",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80303,
+    "NameKey": "text_propname_80303",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80304",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_12",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80304,
+    "NameKey": "text_propname_80304",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80401",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_13",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80401,
+    "NameKey": "text_propname_80401",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80402",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_14",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80402,
+    "NameKey": "text_propname_80402",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80403",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_15",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80403,
+    "NameKey": "text_propname_80403",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80404",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_16",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80404,
+    "NameKey": "text_propname_80404",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80501",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_17",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80501,
+    "NameKey": "text_propname_80501",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80502",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_18",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80502,
+    "NameKey": "text_propname_80502",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80503",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_19",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80503,
+    "NameKey": "text_propname_80503",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80504",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_20",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80504,
+    "NameKey": "text_propname_80504",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80601",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_21",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80601,
+    "NameKey": "text_propname_80601",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80602",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_22",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80602,
+    "NameKey": "text_propname_80602",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80603",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_23",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80603,
+    "NameKey": "text_propname_80603",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80604",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_24",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80604,
+    "NameKey": "text_propname_80604",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80701",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_25",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80701,
+    "NameKey": "text_propname_80701",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80702",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_26",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80702,
+    "NameKey": "text_propname_80702",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80703",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_27",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80703,
+    "NameKey": "text_propname_80703",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80704",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_28",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80704,
+    "NameKey": "text_propname_80704",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80801",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_29",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80801,
+    "NameKey": "text_propname_80801",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80802",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_30",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80802,
+    "NameKey": "text_propname_80802",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80803",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_31",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80803,
+    "NameKey": "text_propname_80803",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80804",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_32",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80804,
+    "NameKey": "text_propname_80804",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80901",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_33",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80901,
+    "NameKey": "text_propname_80901",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80902",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_34",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80902,
+    "NameKey": "text_propname_80902",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80903",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_35",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80903,
+    "NameKey": "text_propname_80903",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_80904",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_36",
+    "IconAtlas": "PropsAtlas",
+    "Id": 80904,
+    "NameKey": "text_propname_80904",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_81001",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_37",
+    "IconAtlas": "PropsAtlas",
+    "Id": 81001,
+    "NameKey": "text_propname_81001",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_81002",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_38",
+    "IconAtlas": "PropsAtlas",
+    "Id": 81002,
+    "NameKey": "text_propname_81002",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_81003",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_39",
+    "IconAtlas": "PropsAtlas",
+    "Id": 81003,
+    "NameKey": "text_propname_81003",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_81004",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_40",
+    "IconAtlas": "PropsAtlas",
+    "Id": 81004,
+    "NameKey": "text_propname_81004",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_81101",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_41",
+    "IconAtlas": "PropsAtlas",
+    "Id": 81101,
+    "NameKey": "text_propname_81101",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_81102",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_42",
+    "IconAtlas": "PropsAtlas",
+    "Id": 81102,
+    "NameKey": "text_propname_81102",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_81103",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_43",
+    "IconAtlas": "PropsAtlas",
+    "Id": 81103,
+    "NameKey": "text_propname_81103",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_81104",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_44",
+    "IconAtlas": "PropsAtlas",
+    "Id": 81104,
+    "NameKey": "text_propname_81104",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_81201",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_45",
+    "IconAtlas": "PropsAtlas",
+    "Id": 81201,
+    "NameKey": "text_propname_81201",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_81202",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_46",
+    "IconAtlas": "PropsAtlas",
+    "Id": 81202,
+    "NameKey": "text_propname_81202",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_81203",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_47",
+    "IconAtlas": "PropsAtlas",
+    "Id": 81203,
+    "NameKey": "text_propname_81203",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_81204",
+    "Effect": {},
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "medalfragment_48",
+    "IconAtlas": "PropsAtlas",
+    "Id": 81204,
+    "NameKey": "text_propname_81204",
+    "PropType": "SalvagePiece",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_pieces",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "green",
+    "DescribeKey": "text_propdesc_60001",
+    "Effect": {
+      "PiecesChance": 150,
+      "TimesLower": 0,
+      "TimesUpper": 0
+    },
+    "FrameColor": "green",
+    "GroupLimit": 9999,
+    "Icon": "scroll_01",
+    "IconAtlas": "PropsAtlas",
+    "Id": 60001,
+    "NameKey": "text_propname_60001",
+    "PropType": "Net",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_net",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "blue",
+    "DescribeKey": "text_propdesc_60002",
+    "Effect": {
+      "PiecesChance": 400,
+      "TimesLower": 0,
+      "TimesUpper": 1
+    },
+    "FrameColor": "blue",
+    "GroupLimit": 9999,
+    "Icon": "scroll_02",
+    "IconAtlas": "PropsAtlas",
+    "Id": 60002,
+    "NameKey": "text_propname_60002",
+    "PropType": "Net",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_net",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "violet",
+    "DescribeKey": "text_propdesc_60003",
+    "Effect": {
+      "PiecesChance": 800,
+      "TimesLower": 1,
+      "TimesUpper": 2
+    },
+    "FrameColor": "violet",
+    "GroupLimit": 9999,
+    "Icon": "scroll_03",
+    "IconAtlas": "PropsAtlas",
+    "Id": 60003,
+    "NameKey": "text_propname_60003",
+    "PropType": "Net",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_net",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "blue",
+    "DescribeKey": "text_propdesc_50001",
+    "Effect": {
+      "exp": 10
+    },
+    "FrameColor": "blue",
+    "GroupLimit": 9999,
+    "Icon": "salvage_01",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50001,
+    "NameKey": "text_propname_50001",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "blue",
+    "DescribeKey": "text_propdesc_50002",
+    "Effect": {
+      "exp": 11
+    },
+    "FrameColor": "blue",
+    "GroupLimit": 9999,
+    "Icon": "salvage_02",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50002,
+    "NameKey": "text_propname_50002",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "blue",
+    "DescribeKey": "text_propdesc_50003",
+    "Effect": {
+      "exp": 12
+    },
+    "FrameColor": "blue",
+    "GroupLimit": 9999,
+    "Icon": "salvage_03",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50003,
+    "NameKey": "text_propname_50003",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "blue",
+    "DescribeKey": "text_propdesc_50004",
+    "Effect": {
+      "exp": 13
+    },
+    "FrameColor": "blue",
+    "GroupLimit": 9999,
+    "Icon": "salvage_04",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50004,
+    "NameKey": "text_propname_50004",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "blue",
+    "DescribeKey": "text_propdesc_50005",
+    "Effect": {
+      "exp": 14
+    },
+    "FrameColor": "blue",
+    "GroupLimit": 9999,
+    "Icon": "salvage_05",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50005,
+    "NameKey": "text_propname_50005",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "blue",
+    "DescribeKey": "text_propdesc_50006",
+    "Effect": {
+      "exp": 15
+    },
+    "FrameColor": "blue",
+    "GroupLimit": 9999,
+    "Icon": "salvage_06",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50006,
+    "NameKey": "text_propname_50006",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "green",
+    "DescribeKey": "text_propdesc_50007",
+    "Effect": {
+      "exp": 2
+    },
+    "FrameColor": "green",
+    "GroupLimit": 9999,
+    "Icon": "salvage_07",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50007,
+    "NameKey": "text_propname_50007",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "green",
+    "DescribeKey": "text_propdesc_50008",
+    "Effect": {
+      "exp": 2
+    },
+    "FrameColor": "green",
+    "GroupLimit": 9999,
+    "Icon": "salvage_08",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50008,
+    "NameKey": "text_propname_50008",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "green",
+    "DescribeKey": "text_propdesc_50009",
+    "Effect": {
+      "exp": 2
+    },
+    "FrameColor": "green",
+    "GroupLimit": 9999,
+    "Icon": "salvage_09",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50009,
+    "NameKey": "text_propname_50009",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "green",
+    "DescribeKey": "text_propdesc_50010",
+    "Effect": {
+      "exp": 2
+    },
+    "FrameColor": "green",
+    "GroupLimit": 9999,
+    "Icon": "salvage_10",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50010,
+    "NameKey": "text_propname_50010",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "green",
+    "DescribeKey": "text_propdesc_50011",
+    "Effect": {
+      "exp": 3
+    },
+    "FrameColor": "green",
+    "GroupLimit": 9999,
+    "Icon": "salvage_11",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50011,
+    "NameKey": "text_propname_50011",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "green",
+    "DescribeKey": "text_propdesc_50012",
+    "Effect": {
+      "exp": 3
+    },
+    "FrameColor": "green",
+    "GroupLimit": 9999,
+    "Icon": "salvage_12",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50012,
+    "NameKey": "text_propname_50012",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "green",
+    "DescribeKey": "text_propdesc_50013",
+    "Effect": {
+      "exp": 3
+    },
+    "FrameColor": "green",
+    "GroupLimit": 9999,
+    "Icon": "salvage_13",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50013,
+    "NameKey": "text_propname_50013",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "green",
+    "DescribeKey": "text_propdesc_50014",
+    "Effect": {
+      "exp": 3
+    },
+    "FrameColor": "green",
+    "GroupLimit": 9999,
+    "Icon": "salvage_14",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50014,
+    "NameKey": "text_propname_50014",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "green",
+    "DescribeKey": "text_propdesc_50015",
+    "Effect": {
+      "exp": 3
+    },
+    "FrameColor": "green",
+    "GroupLimit": 9999,
+    "Icon": "salvage_15",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50015,
+    "NameKey": "text_propname_50015",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "green",
+    "DescribeKey": "text_propdesc_50016",
+    "Effect": {
+      "exp": 5
+    },
+    "FrameColor": "green",
+    "GroupLimit": 9999,
+    "Icon": "salvage_16",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50016,
+    "NameKey": "text_propname_50016",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "green",
+    "DescribeKey": "text_propdesc_50017",
+    "Effect": {
+      "exp": 5
+    },
+    "FrameColor": "green",
+    "GroupLimit": 9999,
+    "Icon": "salvage_17",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50017,
+    "NameKey": "text_propname_50017",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "green",
+    "DescribeKey": "text_propdesc_50018",
+    "Effect": {
+      "exp": 5
+    },
+    "FrameColor": "green",
+    "GroupLimit": 9999,
+    "Icon": "salvage_18",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50018,
+    "NameKey": "text_propname_50018",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "green",
+    "DescribeKey": "text_propdesc_50019",
+    "Effect": {
+      "exp": 5
+    },
+    "FrameColor": "green",
+    "GroupLimit": 9999,
+    "Icon": "salvage_19",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50019,
+    "NameKey": "text_propname_50019",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "green",
+    "DescribeKey": "text_propdesc_50020",
+    "Effect": {
+      "exp": 5
+    },
+    "FrameColor": "green",
+    "GroupLimit": 9999,
+    "Icon": "salvage_20",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50020,
+    "NameKey": "text_propname_50020",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "violet",
+    "DescribeKey": "text_propdesc_50021",
+    "Effect": {
+      "exp": 50
+    },
+    "FrameColor": "violet",
+    "GroupLimit": 9999,
+    "Icon": "salvage_21",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50021,
+    "NameKey": "text_propname_50021",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage_advance",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "violet",
+    "DescribeKey": "text_propdesc_50022",
+    "Effect": {
+      "exp": 40
+    },
+    "FrameColor": "violet",
+    "GroupLimit": 9999,
+    "Icon": "salvage_22",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50022,
+    "NameKey": "text_propname_50022",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage_advance",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "violet",
+    "DescribeKey": "text_propdesc_50023",
+    "Effect": {
+      "exp": 30
+    },
+    "FrameColor": "violet",
+    "GroupLimit": 9999,
+    "Icon": "salvage_23",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50023,
+    "NameKey": "text_propname_50023",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage_advance",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "green",
+    "DescribeKey": "text_propdesc_50024",
+    "Effect": {
+      "exp": 3
+    },
+    "FrameColor": "green",
+    "GroupLimit": 9999,
+    "Icon": "salvage_24",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50024,
+    "NameKey": "text_propname_50024",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "green",
+    "DescribeKey": "text_propdesc_50025",
+    "Effect": {
+      "exp": 5
+    },
+    "FrameColor": "green",
+    "GroupLimit": 9999,
+    "Icon": "salvage_25",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50025,
+    "NameKey": "text_propname_50025",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "green",
+    "DescribeKey": "text_propdesc_50026",
+    "Effect": {
+      "exp": 3
+    },
+    "FrameColor": "green",
+    "GroupLimit": 9999,
+    "Icon": "salvage_26",
+    "IconAtlas": "PropsAtlas",
+    "Id": 50026,
+    "NameKey": "text_propname_50026",
+    "PropType": "GuildFriExp",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_salvage",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "disable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_10101",
+    "Effect": {
+      "props": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "protype_id": 20001
+        }
+      ],
+      "resources": [
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "img_gold_chest",
+    "IconAtlas": "PropsAtlas",
+    "Id": 10101,
+    "NameKey": "text_propname_10101",
+    "PropType": "Chest",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_chest",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "enable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_10101",
+    "Effect": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 20003
+        },
+        {
+          "count": 10,
+          "count_type": "constant",
+          "protype_id": 20001
+        }
+      ],
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "img_gold_chest",
+    "IconAtlas": "PropsAtlas",
+    "Id": 10102,
+    "NameKey": "text_propname_10101",
+    "PropType": "Chest",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_chest",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "enable"
+  },
+  {
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_propdesc_10101",
+    "Effect": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 20002
+        },
+        {
+          "count": 50,
+          "count_type": "constant",
+          "protype_id": 20001
+        }
+      ],
+      "resources": [
+        {
+          "count": 10000,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "img_gold_chest",
+    "IconAtlas": "PropsAtlas",
+    "Id": 10103,
+    "NameKey": "text_propname_10101",
+    "PropType": "Chest",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_chest",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 0,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "enable"
+  },
+  {
+    "BackgroundColor": "violet",
+    "DescribeKey": "text_propdesc_101",
+    "Effect": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "FrameColor": "violet",
+    "GroupLimit": 9999,
+    "Icon": "ticket",
+    "IconAtlas": "PropsAtlas",
+    "Id": 101,
+    "NameKey": "text_propname_101",
+    "PropType": "Chest",
+    "SellEnable": 0,
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_prop",
+    "UnitPrice": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "UsageType": "enable"
+  },
+  {
+    "BackgroundColor": "blue",
+    "Content": "gold",
+    "CountLower": 500,
+    "CountUpper": 1000,
+    "DescribeKey": "text_pursedesc",
+    "FrameColor": "blue",
+    "GroupLimit": 9999,
+    "Icon": "img_gold_chest",
+    "IconAtlas": "PropsAtlas",
+    "Id": 40001,
+    "NameKey": "text_pursename",
+    "PropType": "RandChest",
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_chest",
+    "UsageType": "multiple"
+  },
+  {
+    "BackgroundColor": "blue",
+    "Content": "gold",
+    "CountLower": 500,
+    "CountUpper": 800,
+    "DescribeKey": "text_propdesc_40002",
+    "FrameColor": "blue",
+    "GroupLimit": 9999,
+    "Icon": "img_gold_chest",
+    "IconAtlas": "PropsAtlas",
+    "Id": 40002,
+    "NameKey": "text_propname_40002",
+    "PropType": "RandChest",
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_chest",
+    "UsageType": "multiple"
+  },
+  {
+    "BackgroundColor": "blue",
+    "Content": "gem",
+    "CountLower": 500,
+    "CountUpper": 800,
+    "DescribeKey": "text_propdesc_40003",
+    "FrameColor": "blue",
+    "GroupLimit": 9999,
+    "Icon": "img_gold_chest",
+    "IconAtlas": "PropsAtlas",
+    "Id": 40003,
+    "NameKey": "text_propname_40003",
+    "PropType": "RandChest",
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_chest",
+    "UsageType": "multiple"
+  },
+  {
+    "BackgroundColor": "blue",
+    "Content": "wood",
+    "CountLower": 500,
+    "CountUpper": 800,
+    "DescribeKey": "text_propdesc_40004",
+    "FrameColor": "blue",
+    "GroupLimit": 9999,
+    "Icon": "img_gold_chest",
+    "IconAtlas": "PropsAtlas",
+    "Id": 40004,
+    "NameKey": "text_propname_40004",
+    "PropType": "RandChest",
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_chest",
+    "UsageType": "multiple"
+  },
+  {
+    "BackgroundColor": "blue",
+    "Content": "stone",
+    "CountLower": 500,
+    "CountUpper": 800,
+    "DescribeKey": "text_propdesc_40005",
+    "FrameColor": "blue",
+    "GroupLimit": 9999,
+    "Icon": "img_gold_chest",
+    "IconAtlas": "PropsAtlas",
+    "Id": 40005,
+    "NameKey": "text_propname_40005",
+    "PropType": "RandChest",
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_chest",
+    "UsageType": "multiple"
+  },
+  {
+    "BackgroundColor": "blue",
+    "Content": "iron",
+    "CountLower": 500,
+    "CountUpper": 800,
+    "DescribeKey": "text_propdesc_40006",
+    "FrameColor": "blue",
+    "GroupLimit": 9999,
+    "Icon": "img_gold_chest",
+    "IconAtlas": "PropsAtlas",
+    "Id": 40006,
+    "NameKey": "text_propname_40006",
+    "PropType": "RandChest",
+    "StorageLocation": "backpack",
+    "TypeNameKey": "text_pops_typename_chest",
+    "UsageType": "multiple"
+  },
+  {
+    "Appearance": "cardbag_common",
+    "BackgroundColor": "violet",
+    "DescribeKey": "text_cardpackdesc_20001",
+    "DrawCount": 3,
+    "FrameColor": "violet",
+    "GroupLimit": 9999,
+    "Icon": "cardpackage_01",
+    "IconAtlas": "CardpackAtlas",
+    "Id": 20001,
+    "NameKey": "text_cardpackname_20001",
+    "PoolToDraw": [
+      101,
+      102,
+      103
+    ],
+    "PropType": "Cardpack",
+    "SellEnable": 0,
+    "StorageLocation": "cardpack",
+    "TypeNameKey": "text_pops_typename_cardpack",
+    "UsageType": "enable"
+  },
+  {
+    "Appearance": "cardbag_orange_whole",
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_cardpackdesc_20002",
+    "DrawCount": 1,
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "cardpackage_03",
+    "IconAtlas": "CardpackAtlas",
+    "Id": 20002,
+    "NameKey": "text_cardpackname_20002",
+    "PoolToDraw": [
+      301
+    ],
+    "PropType": "Cardpack",
+    "SellEnable": 0,
+    "StorageLocation": "cardpack",
+    "TypeNameKey": "text_pops_typename_cardpack",
+    "UsageType": "enable"
+  },
+  {
+    "Appearance": "cardbag_violet_whole",
+    "BackgroundColor": "violet",
+    "DescribeKey": "text_cardpackdesc_20003",
+    "DrawCount": 1,
+    "FrameColor": "violet",
+    "GroupLimit": 9999,
+    "Icon": "cardpackage_06",
+    "IconAtlas": "CardpackAtlas",
+    "Id": 20003,
+    "NameKey": "text_cardpackname_20003",
+    "PoolToDraw": [
+      401
+    ],
+    "PropType": "Cardpack",
+    "SellEnable": 0,
+    "StorageLocation": "cardpack",
+    "TypeNameKey": "text_pops_typename_cardpack",
+    "UsageType": "enable"
+  },
+  {
+    "Appearance": "cardbag_gift",
+    "BackgroundColor": "blue",
+    "DescribeKey": "text_cardpackdesc_20004",
+    "DrawCount": 2,
+    "FrameColor": "blue",
+    "GroupLimit": 9999,
+    "Icon": "cardpackage_02",
+    "IconAtlas": "CardpackAtlas",
+    "Id": 20004,
+    "NameKey": "text_cardpackname_20004",
+    "PoolToDraw": [
+      201,
+      201
+    ],
+    "PropType": "Cardpack",
+    "SellEnable": 0,
+    "StorageLocation": "cardpack",
+    "TypeNameKey": "text_pops_typename_cardpack",
+    "UsageType": "enable"
+  },
+  {
+    "Appearance": "cardbag_orange",
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_cardpackdesc_20005",
+    "DrawCount": 1,
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "cardpackage_04",
+    "IconAtlas": "CardpackAtlas",
+    "Id": 20005,
+    "NameKey": "text_cardpackname_20005",
+    "PoolToDraw": [
+      501
+    ],
+    "PropType": "Cardpack",
+    "SellEnable": 0,
+    "StorageLocation": "cardpack",
+    "TypeNameKey": "text_pops_typename_cardpack",
+    "UsageType": "enable"
+  },
+  {
+    "Appearance": "cardbag_violet",
+    "BackgroundColor": "violet",
+    "DescribeKey": "text_cardpackdesc_20006",
+    "DrawCount": 1,
+    "FrameColor": "violet",
+    "GroupLimit": 9999,
+    "Icon": "cardpackage_05",
+    "IconAtlas": "CardpackAtlas",
+    "Id": 20006,
+    "NameKey": "text_cardpackname_20006",
+    "PoolToDraw": [
+      601
+    ],
+    "PropType": "Cardpack",
+    "SellEnable": 0,
+    "StorageLocation": "cardpack",
+    "TypeNameKey": "text_pops_typename_cardpack",
+    "UsageType": "enable"
+  },
+  {
+    "Appearance": "cardbag_violet_whole",
+    "BackgroundColor": "violet",
+    "DescribeKey": "text_cardpackdesc_20007",
+    "DrawCount": 1,
+    "FrameColor": "violet",
+    "GroupLimit": 9999,
+    "Icon": "cardpackage_06",
+    "IconAtlas": "CardpackAtlas",
+    "Id": 20007,
+    "NameKey": "text_cardpackname_20007",
+    "PoolToDraw": [
+      701
+    ],
+    "PropType": "Cardpack",
+    "SellEnable": 0,
+    "StorageLocation": "cardpack",
+    "TypeNameKey": "text_pops_typename_cardpack",
+    "UsageType": "enable"
+  },
+  {
+    "Appearance": "cardbag_common",
+    "BackgroundColor": "violet",
+    "DescribeKey": "text_cardpackdesc_20001",
+    "DrawCount": 3,
+    "FrameColor": "violet",
+    "GroupLimit": 9999,
+    "Icon": "cardpackage_01",
+    "IconAtlas": "CardpackAtlas",
+    "Id": 20101,
+    "NameKey": "text_cardpackname_20001",
+    "PoolToDraw": [
+      1001,
+      1002,
+      1003
+    ],
+    "PropType": "Cardpack",
+    "SellEnable": 0,
+    "StorageLocation": "cardpack",
+    "TypeNameKey": "text_pops_typename_cardpack",
+    "UsageType": "enable"
+  },
+  {
+    "Appearance": "cardbag_blue",
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_cardpackdesc_20008",
+    "DrawCount": 3,
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "cardpackage_08",
+    "IconAtlas": "CardpackAtlas",
+    "Id": 20008,
+    "NameKey": "text_cardpackname_20008",
+    "PoolToDraw": [
+      2001,
+      2002,
+      2003
+    ],
+    "PropType": "Cardpack",
+    "SellEnable": 0,
+    "StorageLocation": "cardpack",
+    "TypeNameKey": "text_pops_typename_cardpack",
+    "UsageType": "enable"
+  },
+  {
+    "Appearance": "cardbag_red",
+    "BackgroundColor": "orange",
+    "DescribeKey": "text_cardpackdesc_20009",
+    "DrawCount": 3,
+    "FrameColor": "orange",
+    "GroupLimit": 9999,
+    "Icon": "cardpackage_07",
+    "IconAtlas": "CardpackAtlas",
+    "Id": 20009,
+    "NameKey": "text_cardpackname_20009",
+    "PoolToDraw": [
+      2101,
+      2102,
+      2103
+    ],
+    "PropType": "Cardpack",
+    "SellEnable": 0,
+    "StorageLocation": "cardpack",
+    "TypeNameKey": "text_pops_typename_cardpack",
+    "UsageType": "enable"
+  }
+]

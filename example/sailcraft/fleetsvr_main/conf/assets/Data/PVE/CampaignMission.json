@@ -1,0 +1,56 @@
+[
+  {
+    "DescKey": "text_cmissiondesc_10001",
+    "Id": 10001,
+    "MissionType": "league_pvp_times",
+    "NameKey": "text_cmissionname_10001",
+    "Parameter": {
+      "target": 2
+    }
+  },
+  {
+    "DescKey": "text_cmissiondesc_10002",
+    "Id": 10002,
+    "MissionType": "league_pvp_times",
+    "NameKey": "text_cmissionname_10002",
+    "Parameter": {
+      "target": 3
+    }
+  },
+  {
+    "DescKey": "text_cmissiondesc_20001",
+    "Id": 20001,
+    "MissionType": "league_pvp_win_times",
+    "NameKey": "text_cmissionname_20001",
+    "Parameter": {
+      "target": 1
+    }
+  },
+  {
+    "DescKey": "text_cmissiondesc_20002",
+    "Id": 20002,
+    "MissionType": "league_pvp_win_times",
+    "NameKey": "text_cmissionname_20002",
+    "Parameter": {
+      "target": 3
+    }
+  },
+  {
+    "DescKey": "text_cmissiondesc_30001",
+    "Id": 30001,
+    "MissionType": "league_pvp_sink_battleships",
+    "NameKey": "text_cmissionname_30001",
+    "Parameter": {
+      "target": 15
+    }
+  },
+  {
+    "DescKey": "text_cmissiondesc_30002",
+    "Id": 30002,
+    "MissionType": "league_pvp_sink_battleships",
+    "NameKey": "text_cmissionname_30002",
+    "Parameter": {
+      "target": 30
+    }
+  }
+]

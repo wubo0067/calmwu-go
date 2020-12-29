@@ -1,0 +1,10418 @@
+[
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 250,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11001,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5016
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 1750,
+    "Cost": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11002,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4001
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 1750,
+    "Cost": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11003,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5018
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11004,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4004
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11005,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5011
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11006,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5006
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11007,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5005
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11008,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4005
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11009,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3009
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11010,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3016
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11011,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5014
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11012,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5007
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11013,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4014
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11014,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4006
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11015,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3005
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11016,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3004
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 500,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11017,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5016
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 350,
+    "Cost": {
+      "resources": [
+        {
+          "count": 200,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11018,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4001
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 350,
+    "Cost": {
+      "resources": [
+        {
+          "count": 200,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11019,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5018
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 80,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11020,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4004
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 80,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11021,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5011
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 80,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11022,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5006
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 80,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11023,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5005
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 80,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11024,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4005
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 80,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11025,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3009
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 80,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11026,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3016
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11027,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5014
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11028,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5007
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11029,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4014
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11030,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4006
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11031,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3005
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 11032,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3004
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool1"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21001,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4004
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21002,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5011
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21003,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5006
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21004,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5005
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21005,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4005
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21006,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3009
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21007,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3016
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21008,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5014
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21009,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5007
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21010,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4014
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21011,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4006
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21012,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3005
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21013,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3004
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 80,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21014,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4004
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 80,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21015,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5011
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 80,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21016,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5006
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 80,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21017,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5005
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 80,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21018,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4005
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 80,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21019,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3009
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 80,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21020,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3016
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21021,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5014
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21022,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5007
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21023,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4014
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21024,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4006
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21025,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3005
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 120,
+    "Cost": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21026,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3004
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21027,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21028,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "wood"
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21029,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "iron"
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21030,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21031,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 200,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21032,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 200,
+          "count_type": "constant",
+          "type": "wood"
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21033,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 200,
+          "count_type": "constant",
+          "type": "iron"
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21034,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 30,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21035,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 300,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 30,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21036,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 300,
+          "count_type": "constant",
+          "type": "wood"
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 30,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21037,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 300,
+          "count_type": "constant",
+          "type": "iron"
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 30,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 21038,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 150,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 31001,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool3"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 31002,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "wood"
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool3"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 31003,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "iron"
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool3"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 31004,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 31005,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 200,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 31006,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 200,
+          "count_type": "constant",
+          "type": "wood"
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 31007,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 200,
+          "count_type": "constant",
+          "type": "iron"
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 31008,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 30,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 31009,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 300,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 30,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 31010,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 300,
+          "count_type": "constant",
+          "type": "wood"
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 30,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 31011,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 300,
+          "count_type": "constant",
+          "type": "iron"
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 30,
+          "count_type": "constant",
+          "type": "honor"
+        }
+      ]
+    },
+    "Id": 31012,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 150,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    },
+    "ShopType": "breakoutshop",
+    "SlotPool": "breakoutpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10001,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5001
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10002,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5016
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10003,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5002
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10004,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4015
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10005,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4020
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10006,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4008
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10007,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4021
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10008,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3007
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10009,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3011
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10010,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 2002
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10011,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5009
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10012,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5017
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10013,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5010
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10014,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5013
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10015,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10016,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5018
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10017,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5012
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10018,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4002
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10019,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4009
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10020,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4023
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10021,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4016
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10022,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4019
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10023,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10024,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4001
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10025,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3006
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10026,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3001
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10027,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3013
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10028,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3002
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10029,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 2003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10030,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5001
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10031,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5016
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10032,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5002
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10033,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4015
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10034,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4020
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10035,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4008
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10036,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4021
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10037,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3007
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10038,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3011
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10039,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 2002
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10040,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5009
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10041,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5017
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10042,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5010
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10043,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5013
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10044,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10045,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5018
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10046,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5012
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10047,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4002
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10048,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4009
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10049,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4023
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10050,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4016
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10051,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4019
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10052,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10053,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4001
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10054,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3006
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10055,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3001
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10056,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3013
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10057,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3002
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 10058,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 2003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 12000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10059,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5001
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 12000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10060,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5016
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 12000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10061,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5002
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 12000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10062,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4015
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 12000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10063,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4020
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 12000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10064,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4008
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 12000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10065,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4021
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 12000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10066,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3007
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 12000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10067,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3011
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 12000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10068,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 2002
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10069,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5009
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10070,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5017
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10071,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5010
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10072,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5013
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10073,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10074,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5018
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10075,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5012
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10076,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4002
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10077,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4009
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10078,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4023
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10079,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4016
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10080,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4019
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10081,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10082,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4001
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10083,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3006
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10084,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3001
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10085,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3013
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10086,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3002
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10087,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 2003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10088,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5001
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10089,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5016
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10090,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5002
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10091,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4015
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10092,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4020
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10093,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4008
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10094,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4021
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10095,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3007
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10096,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3011
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10097,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 2002
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10098,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5009
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10099,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5017
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10100,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5010
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10101,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5013
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10102,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10103,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5018
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10104,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5012
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10105,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4002
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10106,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4009
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10107,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4023
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10108,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4016
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10109,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4019
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10110,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10111,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4001
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10112,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3006
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10113,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3001
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10114,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3013
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10115,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3002
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 10116,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 2003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool1"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20001,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5009
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20002,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5017
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20003,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5010
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20004,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5013
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20005,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20006,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5018
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20007,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5012
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20008,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4002
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20009,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4009
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20010,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4023
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20011,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4016
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20012,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4019
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20013,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20014,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4001
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20015,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3006
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20016,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3001
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20017,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3013
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20018,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3002
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20019,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 2003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20020,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 5011
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20021,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 5006
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20022,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 5005
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20023,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4011
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20024,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4012
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20025,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4004
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20026,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4010
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20027,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4005
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20028,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3009
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20029,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3016
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20030,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3008
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20031,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3015
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20032,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20033,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3014
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20034,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 2004
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20035,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5009
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20036,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5017
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20037,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5010
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20038,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5013
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20039,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20040,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5018
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20041,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5012
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20042,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4002
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20043,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4009
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20044,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4023
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20045,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4016
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20046,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4019
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20047,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20048,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4001
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20049,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3006
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20050,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3001
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20051,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3013
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20052,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3002
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20053,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 2003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20054,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5011
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20055,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5006
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20056,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5005
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20057,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4011
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20058,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4012
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20059,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4004
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20060,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4010
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20061,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4005
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20062,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3009
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20063,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3016
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20064,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3008
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20065,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3015
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20066,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20067,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3014
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 20068,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 2004
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20069,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5009
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20070,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5017
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20071,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5010
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20072,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5013
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20073,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20074,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5018
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20075,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5012
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20076,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4002
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20077,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4009
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20078,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4023
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20079,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4016
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20080,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4019
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20081,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20082,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4001
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20083,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3006
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20084,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3001
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20085,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3013
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20086,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3002
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 6000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20087,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 2003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20088,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 5011
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20089,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 5006
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20090,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 5005
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20091,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4011
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20092,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4012
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20093,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4004
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20094,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4010
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20095,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4005
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20096,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3009
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20097,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3016
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20098,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3008
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20099,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3015
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20100,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20101,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3014
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20102,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 2004
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20103,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5009
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20104,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5017
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20105,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5010
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20106,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5013
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20107,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20108,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5018
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20109,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 5012
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20110,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4002
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20111,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4009
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20112,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4023
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20113,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4016
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20114,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4019
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20115,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20116,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4001
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20117,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3006
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20118,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3001
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20119,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3013
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20120,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 3002
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 3000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20121,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 2003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20122,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5011
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20123,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5006
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20124,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5005
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20125,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4011
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20126,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4012
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20127,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4004
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20128,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4010
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20129,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4005
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20130,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3009
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20131,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3016
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20132,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3008
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20133,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3015
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20134,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20135,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3014
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 20136,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 2004
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool2"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30001,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 5011
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30002,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 5006
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30003,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 5005
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30004,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4011
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30005,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4012
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30006,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4004
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30007,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4010
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30008,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4005
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30009,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3009
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30010,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3016
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30011,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3008
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30012,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3015
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30013,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30014,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3014
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 50,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30015,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 2004
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30016,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 5014
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30017,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 5007
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30018,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4014
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30019,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4007
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30020,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4013
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30021,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4006
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30022,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3010
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30023,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3005
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30024,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3004
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 25,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30025,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 2005
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30026,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5011
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30027,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5006
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30028,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5005
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30029,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4011
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30030,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4012
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30031,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4004
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30032,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4010
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30033,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4005
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30034,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3009
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30035,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3016
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30036,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3008
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30037,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3015
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30038,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30039,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3014
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30040,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 2004
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30041,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5014
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30042,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5007
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30043,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4014
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30044,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4007
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30045,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4013
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30046,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4006
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30047,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3010
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30048,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3005
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30049,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3004
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "shipsoul"
+        }
+      ]
+    },
+    "Id": 30050,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 2005
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30051,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 5011
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30052,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 5006
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30053,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 5005
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30054,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4011
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30055,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4012
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30056,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4004
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30057,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4010
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30058,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4005
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30059,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3009
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30060,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3016
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30061,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3008
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30062,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3015
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30063,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30064,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3014
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 100,
+    "Cost": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30065,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 2004
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2500,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30066,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 5014
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2500,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30067,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 5007
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2500,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30068,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4014
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2500,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30069,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4007
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2500,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30070,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4013
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2500,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30071,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4006
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2500,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30072,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3010
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2500,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30073,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3005
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2500,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30074,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3004
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 300,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2500,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30075,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 2005
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30076,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5011
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30077,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5006
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30078,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5005
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30079,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4011
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30080,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4012
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30081,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4004
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30082,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4010
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30083,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4005
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30084,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3009
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30085,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3016
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30086,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3008
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30087,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3015
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30088,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3003
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30089,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3014
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 200,
+    "Cost": {
+      "resources": [
+        {
+          "count": 2000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30090,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 2004
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30091,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5014
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30092,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5007
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30093,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4014
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30094,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4007
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30095,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4013
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30096,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4006
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30097,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3010
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30098,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3005
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30099,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3004
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  },
+  {
+    "Chance": 500,
+    "Cost": {
+      "resources": [
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Id": 30100,
+    "InnerGoods": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 2005
+        }
+      ]
+    },
+    "ShopType": "commonshop",
+    "SlotPool": "commonpool3"
+  }
+]

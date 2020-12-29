@@ -1,0 +1,22 @@
+{
+    "_comment" : "这是内网测试环境的redis",
+
+    "RedisAddressLst" : ["192.168.1.14:7003", "192.168.1.14:7004", "192.168.1.14:7005"],
+    "BucketCount" : 31,
+
+    "Auth" : "nil",
+    
+    "GuildInfo" : {
+        "Keys" : ["id", "guild_name", "creator", "perform_id"],
+        "KeyMatch" : "guild_info.cache."
+    },
+
+    "UserInfo" : {
+        "Keys" : ["uin", "user_name"],
+        "KeyMatch" : "user_info.cache."            
+    },
+
+    "IndexSvrCluster" : ["192.168.1.201"],
+
+    "DirtyWordFile" : "../../../sysconf/SensitiveWordPrecision.txt"
+}

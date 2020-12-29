@@ -1,0 +1,18 @@
+{
+    "Kafka" : {
+        "Brokers" : "192.168.68.230:9094,192.168.68.230:9092,192.168.68.230:9093",
+        "GroupID" : "DoyoRecDataSvr"
+    },
+    "Redis" : {
+        "ServerAddrs" : "192.168.68.228:7000,192.168.68.228:7001,192.168.68.229:7002,192.168.68.229:7003,192.168.68.230:7004,192.168.68.230:7005",
+        "Password" : "",
+        "SessionCount": 100,
+        "IsCluster" : 1
+    },
+    "Countries" : "VN:ID:TH:OTHERS",
+    "HealthCheck" : {
+        "ConsulHost" : "192.168.68.229",
+        "CheckHost" : "192.168.68.228",
+        "CheckPort" : 10101
+    }
+}

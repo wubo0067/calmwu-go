@@ -1,0 +1,402 @@
+[
+  {
+    "Cost": {
+      "resources": [
+        {
+          "count": 60,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "DescKey": "text_desc_resource_type_coin",
+    "Icon": "gold_level_1",
+    "IconAtlas": "ShopResourcesAtlas",
+    "Id": 1001,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "NameKey": "text_shop_gold_level_01"
+  },
+  {
+    "Cost": {
+      "resources": [
+        {
+          "count": 500,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "DescKey": "text_desc_resource_type_coin",
+    "Icon": "gold_level_2",
+    "IconAtlas": "ShopResourcesAtlas",
+    "Id": 1002,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 10000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "NameKey": "text_shop_gold_level_02"
+  },
+  {
+    "Cost": {
+      "resources": [
+        {
+          "count": 2400,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "DescKey": "text_desc_resource_type_coin",
+    "Icon": "gold_level_3",
+    "IconAtlas": "ShopResourcesAtlas",
+    "Id": 1003,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 50000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "NameKey": "text_shop_gold_level_03"
+  },
+  {
+    "Cost": {
+      "resources": [
+        {
+          "count": 4500,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "DescKey": "text_desc_resource_type_coin",
+    "Icon": "gold_level_4",
+    "IconAtlas": "ShopResourcesAtlas",
+    "Id": 1004,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 100000,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "NameKey": "text_shop_gold_level_04"
+  },
+  {
+    "Cost": {
+      "resources": [
+        {
+          "count": 60,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "DescKey": "text_desc_resource_type_wood",
+    "Icon": "wood_level_1",
+    "IconAtlas": "ShopResourcesAtlas",
+    "Id": 2001,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 500,
+          "count_type": "constant",
+          "type": "wood"
+        }
+      ]
+    },
+    "NameKey": "text_shop_wood_level_01"
+  },
+  {
+    "Cost": {
+      "resources": [
+        {
+          "count": 500,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "DescKey": "text_desc_resource_type_wood",
+    "Icon": "wood_level_2",
+    "IconAtlas": "ShopResourcesAtlas",
+    "Id": 2002,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "wood"
+        }
+      ]
+    },
+    "NameKey": "text_shop_wood_level_02"
+  },
+  {
+    "Cost": {
+      "resources": [
+        {
+          "count": 2400,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "DescKey": "text_desc_resource_type_wood",
+    "Icon": "wood_level_3",
+    "IconAtlas": "ShopResourcesAtlas",
+    "Id": 2003,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 25000,
+          "count_type": "constant",
+          "type": "wood"
+        }
+      ]
+    },
+    "NameKey": "text_shop_wood_level_03"
+  },
+  {
+    "Cost": {
+      "resources": [
+        {
+          "count": 4500,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "DescKey": "text_desc_resource_type_wood",
+    "Icon": "wood_level_4",
+    "IconAtlas": "ShopResourcesAtlas",
+    "Id": 2004,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 50000,
+          "count_type": "constant",
+          "type": "wood"
+        }
+      ]
+    },
+    "NameKey": "text_shop_wood_level_04"
+  },
+  {
+    "Cost": {
+      "resources": [
+        {
+          "count": 60,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "DescKey": "text_desc_resource_type_iron",
+    "Icon": "iron_level_1",
+    "IconAtlas": "ShopResourcesAtlas",
+    "Id": 3001,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 500,
+          "count_type": "constant",
+          "type": "iron"
+        }
+      ]
+    },
+    "NameKey": "text_shop_iron_level_01"
+  },
+  {
+    "Cost": {
+      "resources": [
+        {
+          "count": 500,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "DescKey": "text_desc_resource_type_iron",
+    "Icon": "iron_level_2",
+    "IconAtlas": "ShopResourcesAtlas",
+    "Id": 3002,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 5000,
+          "count_type": "constant",
+          "type": "iron"
+        }
+      ]
+    },
+    "NameKey": "text_shop_iron_level_02"
+  },
+  {
+    "Cost": {
+      "resources": [
+        {
+          "count": 2400,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "DescKey": "text_desc_resource_type_iron",
+    "Icon": "iron_level_3",
+    "IconAtlas": "ShopResourcesAtlas",
+    "Id": 3003,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 25000,
+          "count_type": "constant",
+          "type": "iron"
+        }
+      ]
+    },
+    "NameKey": "text_shop_iron_level_03"
+  },
+  {
+    "Cost": {
+      "resources": [
+        {
+          "count": 4500,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "DescKey": "text_desc_resource_type_iron",
+    "Icon": "iron_level_4",
+    "IconAtlas": "ShopResourcesAtlas",
+    "Id": 3004,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 50000,
+          "count_type": "constant",
+          "type": "iron"
+        }
+      ]
+    },
+    "NameKey": "text_shop_iron_level_04"
+  },
+  {
+    "Cost": {
+      "resources": [
+        {
+          "count": 60,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "DescKey": "text_desc_resource_type_stone",
+    "Icon": "stone_level_1",
+    "IconAtlas": "ShopResourcesAtlas",
+    "Id": 4001,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 250,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    },
+    "NameKey": "text_shop_stone_level_01"
+  },
+  {
+    "Cost": {
+      "resources": [
+        {
+          "count": 500,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "DescKey": "text_desc_resource_type_stone",
+    "Icon": "stone_level_2",
+    "IconAtlas": "ShopResourcesAtlas",
+    "Id": 4002,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 2500,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    },
+    "NameKey": "text_shop_stone_level_02"
+  },
+  {
+    "Cost": {
+      "resources": [
+        {
+          "count": 2400,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "DescKey": "text_desc_resource_type_stone",
+    "Icon": "stone_level_3",
+    "IconAtlas": "ShopResourcesAtlas",
+    "Id": 4003,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 12500,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    },
+    "NameKey": "text_shop_stone_level_03"
+  },
+  {
+    "Cost": {
+      "resources": [
+        {
+          "count": 4500,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "DescKey": "text_desc_resource_type_stone",
+    "Icon": "stone_level_4",
+    "IconAtlas": "ShopResourcesAtlas",
+    "Id": 4004,
+    "InnerGoods": {
+      "resources": [
+        {
+          "count": 25000,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    },
+    "NameKey": "text_shop_stone_level_04"
+  }
+]

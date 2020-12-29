@@ -1,0 +1,230 @@
+[
+  {
+    "DescKey": "text_requirement_1009",
+    "Id": 1009,
+    "Parameter": 9,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1010",
+    "Id": 1010,
+    "Parameter": 10,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1011",
+    "Id": 1011,
+    "Parameter": 11,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1012",
+    "Id": 1012,
+    "Parameter": 12,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1013",
+    "Id": 1013,
+    "Parameter": 13,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1014",
+    "Id": 1014,
+    "Parameter": 14,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1015",
+    "Id": 1015,
+    "Parameter": 15,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1016",
+    "Id": 1016,
+    "Parameter": 16,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1017",
+    "Id": 1017,
+    "Parameter": 17,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1018",
+    "Id": 1018,
+    "Parameter": 18,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1019",
+    "Id": 1019,
+    "Parameter": 19,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1020",
+    "Id": 1020,
+    "Parameter": 20,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1021",
+    "Id": 1021,
+    "Parameter": 21,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1022",
+    "Id": 1022,
+    "Parameter": 22,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1023",
+    "Id": 1023,
+    "Parameter": 23,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1024",
+    "Id": 1024,
+    "Parameter": 24,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1025",
+    "Id": 1025,
+    "Parameter": 25,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1026",
+    "Id": 1026,
+    "Parameter": 26,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1027",
+    "Id": 1027,
+    "Parameter": 27,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1028",
+    "Id": 1028,
+    "Parameter": 28,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1029",
+    "Id": 1029,
+    "Parameter": 29,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1030",
+    "Id": 1030,
+    "Parameter": 30,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1031",
+    "Id": 1031,
+    "Parameter": 31,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1032",
+    "Id": 1032,
+    "Parameter": 32,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1033",
+    "Id": 1033,
+    "Parameter": 33,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1034",
+    "Id": 1034,
+    "Parameter": 34,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_1035",
+    "Id": 1035,
+    "Parameter": 35,
+    "RequirementType": "round_count"
+  },
+  {
+    "DescKey": "text_requirement_2001",
+    "Id": 2001,
+    "Parameter": 1,
+    "RequirementType": "sinked_ship_count"
+  },
+  {
+    "DescKey": "text_requirement_2002",
+    "Id": 2002,
+    "Parameter": 2,
+    "RequirementType": "sinked_ship_count"
+  },
+  {
+    "DescKey": "text_requirement_2003",
+    "Id": 2003,
+    "Parameter": 3,
+    "RequirementType": "sinked_ship_count"
+  },
+  {
+    "DescKey": "text_requirement_2004",
+    "Id": 2004,
+    "Parameter": 4,
+    "RequirementType": "sinked_ship_count"
+  },
+  {
+    "DescKey": "text_requirement_2005",
+    "Id": 2005,
+    "Parameter": 5,
+    "RequirementType": "sinked_ship_count"
+  },
+  {
+    "DescKey": "text_requirement_2006",
+    "Id": 2006,
+    "Parameter": 6,
+    "RequirementType": "sinked_ship_count"
+  },
+  {
+    "DescKey": "text_requirement_2007",
+    "Id": 2007,
+    "Parameter": 7,
+    "RequirementType": "sinked_ship_count"
+  },
+  {
+    "DescKey": "text_requirement_2008",
+    "Id": 2008,
+    "Parameter": 8,
+    "RequirementType": "sinked_ship_count"
+  },
+  {
+    "DescKey": "text_requirement_2009",
+    "Id": 2009,
+    "Parameter": 9,
+    "RequirementType": "sinked_ship_count"
+  },
+  {
+    "DescKey": "text_requirement_2010",
+    "Id": 2010,
+    "Parameter": 10,
+    "RequirementType": "sinked_ship_count"
+  },
+  {
+    "DescKey": "text_requirement_2011",
+    "Id": 2011,
+    "Parameter": 11,
+    "RequirementType": "sinked_ship_count"
+  }
+]

@@ -1,0 +1,64 @@
+[
+  {
+    "AreaCode": "CN",
+    "Cards": [
+      {
+        "AreaCode": "CN",
+        "DailyGem": 50,
+        "DescKey": "text_monthcard_desc_1",
+        "Duration": 30,
+        "GemCount": 300,
+        "Id": 1,
+        "NameKey": "text_monthcard_name_1",
+        "Price": 30,
+        "PriceDesc": "￥30",
+        "ProductId": "com.lilithgame.sailcraft.member.t5",
+        "Type": "Ordinary"
+      },
+      {
+        "AreaCode": "CN",
+        "DailyGem": 120,
+        "DescKey": "text_monthcard_desc_2",
+        "Duration": 30,
+        "GemCount": 680,
+        "Id": 2,
+        "NameKey": "text_monthcard_name_2",
+        "Price": 68,
+        "PriceDesc": "￥68",
+        "ProductId": "com.lilithgame.sailcraft.member.t10",
+        "Type": "Luxurious"
+      }
+    ]
+  },
+  {
+    "AreaCode": "US",
+    "Cards": [
+      {
+        "AreaCode": "US",
+        "DailyGem": 50,
+        "DescKey": "text_monthcard_desc_1",
+        "Duration": 30,
+        "GemCount": 300,
+        "Id": 1001,
+        "NameKey": "text_monthcard_name_1",
+        "Price": 4.99,
+        "PriceDesc": "$ 4.99",
+        "ProductId": "com.lilithgame.sailcraft.member.t5",
+        "Type": "Ordinary"
+      },
+      {
+        "AreaCode": "US",
+        "DailyGem": 120,
+        "DescKey": "text_monthcard_desc_2",
+        "Duration": 30,
+        "GemCount": 680,
+        "Id": 1002,
+        "NameKey": "text_monthcard_name_2",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.member.t10",
+        "Type": "Luxurious"
+      }
+    ]
+  }
+]

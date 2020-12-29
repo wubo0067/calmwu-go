@@ -1,0 +1,116 @@
+[
+  {
+    "CommodityDailyBuyCount": 1,
+    "Cost": [
+      10,
+      20,
+      30,
+      40,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50
+    ],
+    "Duration": 12,
+    "MonthlyCardDiscountRate": 90,
+    "Pools": [
+      {
+        "name": "breakoutpool1",
+        "slots": [
+          1,
+          2
+        ]
+      },
+      {
+        "name": "breakoutpool2",
+        "slots": [
+          3,
+          4
+        ]
+      },
+      {
+        "name": "breakoutpool3",
+        "slots": [
+          5,
+          6
+        ]
+      }
+    ],
+    "RefreshTimes": 10,
+    "Resource": "honor",
+    "ShopType": "breakoutshop",
+    "SlotCount": 6,
+    "WeeklyCardDiscountRate": 100
+  },
+  {
+    "CommodityDailyBuyCount": 1,
+    "Cost": [
+      100,
+      200,
+      300,
+      400,
+      500,
+      500,
+      500,
+      500,
+      500,
+      500
+    ],
+    "Duration": 12,
+    "MonthlyCardDiscountRate": 90,
+    "Pools": [
+      {
+        "name": "commonpool1",
+        "slots": [
+          1
+        ]
+      },
+      {
+        "name": "commonpool2",
+        "slots": [
+          2,
+          3
+        ]
+      },
+      {
+        "name": "commonpool3",
+        "slots": [
+          4,
+          5,
+          6
+        ]
+      }
+    ],
+    "RefreshTimes": 10,
+    "Resource": "gold",
+    "ShopType": "commonshop",
+    "SlotCount": 6,
+    "WeeklyCardDiscountRate": 100
+  },
+  {
+    "CommodityDailyBuyCount": 0,
+    "Cost": [],
+    "Duration": 0,
+    "MonthlyCardDiscountRate": 90,
+    "Pools": [],
+    "RefreshTimes": 0,
+    "Resource": "",
+    "ShopType": "resourcesshop",
+    "SlotCount": 0,
+    "WeeklyCardDiscountRate": 100
+  },
+  {
+    "CommodityDailyBuyCount": 0,
+    "Cost": [],
+    "Duration": 0,
+    "MonthlyCardDiscountRate": 90,
+    "Pools": [],
+    "RefreshTimes": 0,
+    "Resource": "",
+    "ShopType": "cardpackshop",
+    "SlotCount": 0,
+    "WeeklyCardDiscountRate": 100
+  }
+]

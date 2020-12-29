@@ -1,0 +1,10 @@
+{
+    "Kafka" : {
+        "Brokers" : "10.1.41.149:9094,10.1.41.149:9092,10.1.41.149:9093",
+        "GroupID" : "DoyoRouterSvr"
+    },
+    "DispatchRoutineCount" : 10,
+    "Consul" : {
+        "ConsulListenAddr" : "10.1.41.150"
+    }
+}

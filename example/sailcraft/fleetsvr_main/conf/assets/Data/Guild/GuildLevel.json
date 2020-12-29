@@ -1,0 +1,52 @@
+[
+  {
+    "Level": 1,
+    "NeedExp": 0,
+    "Sum": 0
+  },
+  {
+    "Level": 2,
+    "NeedExp": 1000,
+    "Sum": 1000
+  },
+  {
+    "Level": 3,
+    "NeedExp": 2000,
+    "Sum": 3000
+  },
+  {
+    "Level": 4,
+    "NeedExp": 4000,
+    "Sum": 7000
+  },
+  {
+    "Level": 5,
+    "NeedExp": 6000,
+    "Sum": 13000
+  },
+  {
+    "Level": 6,
+    "NeedExp": 8000,
+    "Sum": 21000
+  },
+  {
+    "Level": 7,
+    "NeedExp": 10000,
+    "Sum": 31000
+  },
+  {
+    "Level": 8,
+    "NeedExp": 12000,
+    "Sum": 43000
+  },
+  {
+    "Level": 9,
+    "NeedExp": 14000,
+    "Sum": 57000
+  },
+  {
+    "Level": 10,
+    "NeedExp": 16000,
+    "Sum": 73000
+  }
+]

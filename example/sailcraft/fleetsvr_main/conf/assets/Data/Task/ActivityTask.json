@@ -1,0 +1,259 @@
+[
+  {
+    "DescKey": "text_taskdesc_20101",
+    "Icon": "img_battle",
+    "Id": 20101,
+    "LeagueLevelLimit": 1,
+    "LevelLimit": 1,
+    "NameKey": "text_taskname_20101",
+    "Parameter": {
+      "target": 2
+    },
+    "Reward": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "exp"
+        },
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "vitality"
+        }
+      ]
+    },
+    "TaskType": "league_pvp_times"
+  },
+  {
+    "DescKey": "text_taskdesc_20201",
+    "Icon": "img_battleship",
+    "Id": 20201,
+    "LeagueLevelLimit": 1,
+    "LevelLimit": 1,
+    "NameKey": "text_taskname_20201",
+    "Parameter": {
+      "target": 1
+    },
+    "Reward": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "exp"
+        },
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "vitality"
+        }
+      ]
+    },
+    "TaskType": "league_pvp_win_times"
+  },
+  {
+    "DescKey": "text_taskdesc_20102",
+    "Icon": "img_battle",
+    "Id": 20102,
+    "LeagueLevelLimit": 1,
+    "LevelLimit": 1,
+    "NameKey": "text_taskname_20102",
+    "Parameter": {
+      "target": 6
+    },
+    "Reward": {
+      "resources": [
+        {
+          "count": 40,
+          "count_type": "constant",
+          "type": "exp"
+        },
+        {
+          "count": 30,
+          "count_type": "constant",
+          "type": "vitality"
+        }
+      ]
+    },
+    "TaskType": "league_pvp_times"
+  },
+  {
+    "DescKey": "text_taskdesc_20301",
+    "Icon": "img_campaign",
+    "Id": 20301,
+    "LeagueLevelLimit": 3,
+    "LevelLimit": 1,
+    "NameKey": "text_taskname_20301",
+    "Parameter": {
+      "target": 2
+    },
+    "Reward": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "exp"
+        },
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "vitality"
+        }
+      ]
+    },
+    "TaskType": "campaign_battle_times"
+  },
+  {
+    "DescKey": "text_taskdesc_20401",
+    "Icon": "img_legendary",
+    "Id": 20401,
+    "LeagueLevelLimit": 3,
+    "LevelLimit": 1,
+    "NameKey": "text_taskname_20401",
+    "Parameter": {
+      "target": 1
+    },
+    "Reward": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "exp"
+        },
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "vitality"
+        }
+      ]
+    },
+    "TaskType": "campaign_claim_resources_times"
+  },
+  {
+    "DescKey": "text_taskdesc_20501",
+    "Icon": "img_frigate",
+    "Id": 20501,
+    "LeagueLevelLimit": 1,
+    "LevelLimit": 1,
+    "NameKey": "text_taskname_20501",
+    "Parameter": {
+      "target": 30
+    },
+    "Reward": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "exp"
+        },
+        {
+          "count": 30,
+          "count_type": "constant",
+          "type": "vitality"
+        }
+      ]
+    },
+    "TaskType": "league_pvp_sink_battleships"
+  },
+  {
+    "DescKey": "text_taskdesc_20601",
+    "Icon": "img_level",
+    "Id": 20601,
+    "LeagueLevelLimit": 1,
+    "LevelLimit": 1,
+    "NameKey": "text_taskname_20601",
+    "Parameter": {
+      "combo": 6,
+      "target": 1
+    },
+    "Reward": {
+      "resources": [
+        {
+          "count": 30,
+          "count_type": "constant",
+          "type": "exp"
+        },
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "vitality"
+        }
+      ]
+    },
+    "TaskType": "league_pvp_combo_times"
+  },
+  {
+    "DescKey": "text_taskdesc_20701",
+    "Icon": "img_cardpack",
+    "Id": 20701,
+    "LeagueLevelLimit": 1,
+    "LevelLimit": 1,
+    "NameKey": "text_taskname_20701",
+    "Parameter": {
+      "cardpack_id": 20001,
+      "target": 1
+    },
+    "Reward": {
+      "resources": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "exp"
+        },
+        {
+          "count": 20,
+          "count_type": "constant",
+          "type": "vitality"
+        }
+      ]
+    },
+    "TaskType": "shop_buy_cardpacks"
+  },
+  {
+    "DescKey": "text_taskdesc_21001",
+    "Icon": "img_gem",
+    "Id": 21001,
+    "LeagueLevelLimit": 1,
+    "LevelLimit": 1,
+    "NameKey": "text_taskname_21001",
+    "Parameter": {
+      "target": 200
+    },
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "exp"
+        }
+      ]
+    },
+    "TaskType": "consume_gem_count"
+  },
+  {
+    "DescKey": "text_taskdesc_21101",
+    "Icon": "img_battleship",
+    "Id": 21101,
+    "LeagueLevelLimit": 1,
+    "LevelLimit": 1,
+    "NameKey": "text_taskname_21101",
+    "Parameter": {
+      "target": 1
+    },
+    "Reward": {
+      "resources": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "exp"
+        },
+        {
+          "count": 10,
+          "count_type": "constant",
+          "type": "vitality"
+        }
+      ]
+    },
+    "TaskType": "daily_login"
+  }
+]

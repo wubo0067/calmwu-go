@@ -1,0 +1,194 @@
+[
+  {
+    "Id": 1,
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "protype_id": 4019
+        }
+      ],
+      "resources": [
+        {
+          "count": 500,
+          "count_type": "constant",
+          "type": "wood"
+        },
+        {
+          "count": 500,
+          "count_type": "constant",
+          "type": "iron"
+        },
+        {
+          "count": 500,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    },
+    "Target": 1,
+    "TitleKey": "text_first_time_purchase_title_1",
+    "Value": 1000
+  },
+  {
+    "Id": 2,
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "protype_id": 4019
+        }
+      ],
+      "resources": [
+        {
+          "count": 500,
+          "count_type": "constant",
+          "type": "wood"
+        },
+        {
+          "count": 500,
+          "count_type": "constant",
+          "type": "iron"
+        },
+        {
+          "count": 500,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    },
+    "Target": 60,
+    "TitleKey": "text_first_time_purchase_title_2",
+    "Value": 1000
+  },
+  {
+    "Id": 3,
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "protype_id": 4019
+        }
+      ],
+      "resources": [
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "wood"
+        },
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "iron"
+        },
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    },
+    "Target": 300,
+    "TitleKey": "text_first_time_purchase_title_2",
+    "Value": 2200
+  },
+  {
+    "Id": 4,
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "protype_id": 4019
+        }
+      ],
+      "resources": [
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "wood"
+        },
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "iron"
+        },
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    },
+    "Target": 680,
+    "TitleKey": "text_first_time_purchase_title_2",
+    "Value": 2200
+  },
+  {
+    "Id": 5,
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "protype_id": 4019
+        }
+      ],
+      "resources": [
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "wood"
+        },
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "iron"
+        },
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    },
+    "Target": 1280,
+    "TitleKey": "text_first_time_purchase_title_2",
+    "Value": 2200
+  },
+  {
+    "Id": 6,
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "protype_id": 4019
+        }
+      ],
+      "resources": [
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "wood"
+        },
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "iron"
+        },
+        {
+          "count": 1000,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    },
+    "Target": 1980,
+    "TitleKey": "text_first_time_purchase_title_2",
+    "Value": 2200
+  }
+]

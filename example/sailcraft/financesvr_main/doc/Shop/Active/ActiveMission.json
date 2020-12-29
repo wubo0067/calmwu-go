@@ -1,0 +1,510 @@
+[
+  {
+    "Id": 1,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "daily"
+    },
+    "Parameter": {
+      "target": 6
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 101
+        }
+      ]
+    },
+    "TaskType": "league_pvp_times",
+    "TitleKey": "text_task_activity_title_1"
+  },
+  {
+    "Id": 2,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "daily"
+    },
+    "Parameter": {
+      "target": 3
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 101
+        }
+      ]
+    },
+    "TaskType": "league_pvp_win_times",
+    "TitleKey": "text_task_activity_title_2"
+  },
+  {
+    "Id": 3,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "daily"
+    },
+    "Parameter": {
+      "target": 100
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 101
+        }
+      ]
+    },
+    "TaskType": "consume_gem_count",
+    "TitleKey": "text_task_activity_title_10"
+  },
+  {
+    "Id": 4,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "daily"
+    },
+    "Parameter": {
+      "target": 1
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 101
+        }
+      ]
+    },
+    "TaskType": "campaign_claim_resources_times",
+    "TitleKey": "text_task_activity_title_5"
+  },
+  {
+    "Id": 5,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "daily"
+    },
+    "Parameter": {
+      "target": 20
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 101
+        }
+      ]
+    },
+    "TaskType": "league_pvp_sink_battleships",
+    "TitleKey": "text_task_activity_title_6"
+  },
+  {
+    "Id": 6,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "daily"
+    },
+    "Parameter": {
+      "cardpack_id": 20001,
+      "target": 1
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 101
+        }
+      ]
+    },
+    "TaskType": "shop_buy_cardpacks",
+    "TitleKey": "text_task_activity_title_8"
+  },
+  {
+    "Id": 7,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "daily"
+    },
+    "Parameter": {
+      "target": 10
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 101
+        }
+      ]
+    },
+    "TaskType": "campaign_battle_times",
+    "TitleKey": "text_task_activity_title_4"
+  },
+  {
+    "Id": 8,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "daily"
+    },
+    "Parameter": {
+      "combo": 6,
+      "target": 1
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 101
+        }
+      ]
+    },
+    "TaskType": "league_pvp_combo_times",
+    "TitleKey": "text_task_activity_title_7"
+  },
+  {
+    "Id": 9,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "daily"
+    },
+    "Parameter": {
+      "target": 200
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 101
+        }
+      ]
+    },
+    "TaskType": "consume_gem_count",
+    "TitleKey": "text_task_activity_title_10"
+  },
+  {
+    "Id": 10,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "daily"
+    },
+    "Parameter": {
+      "target": 10
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 101
+        }
+      ]
+    },
+    "TaskType": "league_pvp_times",
+    "TitleKey": "text_task_activity_title_1"
+  },
+  {
+    "Id": 11,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "daily"
+    },
+    "Parameter": {
+      "target": 6
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 101
+        }
+      ]
+    },
+    "TaskType": "league_pvp_win_times",
+    "TitleKey": "text_task_activity_title_2"
+  },
+  {
+    "Id": 12,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "daily"
+    },
+    "Parameter": {
+      "cardpack_id": 20001,
+      "target": 1
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 101
+        }
+      ]
+    },
+    "TaskType": "shop_buy_cardpacks",
+    "TitleKey": "text_task_activity_title_8"
+  },
+  {
+    "Id": 51,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "daily"
+    },
+    "Parameter": {
+      "target": 6
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 101
+        }
+      ]
+    },
+    "TaskType": "campaign_battle_times",
+    "TitleKey": "text_task_activity_title_4"
+  },
+  {
+    "Id": 52,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "daily"
+    },
+    "Parameter": {
+      "target": 3
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 101
+        }
+      ]
+    },
+    "TaskType": "league_pvp_win_times",
+    "TitleKey": "text_task_activity_title_2"
+  },
+  {
+    "Id": 53,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "daily"
+    },
+    "Parameter": {
+      "target": 100
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 101
+        }
+      ]
+    },
+    "TaskType": "consume_gem_count",
+    "TitleKey": "text_task_activity_title_10"
+  },
+  {
+    "Id": 61,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "daily"
+    },
+    "Parameter": {
+      "target": 6
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 101
+        }
+      ]
+    },
+    "TaskType": "league_pvp_times",
+    "TitleKey": "text_task_activity_title_1"
+  },
+  {
+    "Id": 62,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "daily"
+    },
+    "Parameter": {
+      "target": 20
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 101
+        }
+      ]
+    },
+    "TaskType": "league_pvp_sink_battleships",
+    "TitleKey": "text_task_activity_title_6"
+  },
+  {
+    "Id": 63,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "daily"
+    },
+    "Parameter": {
+      "target": 100
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 101
+        }
+      ]
+    },
+    "TaskType": "consume_gem_count",
+    "TitleKey": "text_task_activity_title_10"
+  },
+  {
+    "Id": 71,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "daily"
+    },
+    "Parameter": {
+      "target": 10
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 101
+        }
+      ]
+    },
+    "TaskType": "league_pvp_times",
+    "TitleKey": "text_task_activity_title_1"
+  },
+  {
+    "Id": 72,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "daily"
+    },
+    "Parameter": {
+      "combo": 6,
+      "target": 1
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 101
+        }
+      ]
+    },
+    "TaskType": "league_pvp_combo_times",
+    "TitleKey": "text_task_activity_title_7"
+  },
+  {
+    "Id": 73,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "daily"
+    },
+    "Parameter": {
+      "target": 100
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 101
+        }
+      ]
+    },
+    "TaskType": "consume_gem_count",
+    "TitleKey": "text_task_activity_title_10"
+  },
+  {
+    "Id": 81,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "daily"
+    },
+    "Parameter": {
+      "target": 10
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 101
+        }
+      ]
+    },
+    "TaskType": "league_pvp_times",
+    "TitleKey": "text_task_activity_title_1"
+  },
+  {
+    "Id": 82,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "daily"
+    },
+    "Parameter": {
+      "target": 6
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 101
+        }
+      ]
+    },
+    "TaskType": "league_pvp_win_times",
+    "TitleKey": "text_task_activity_title_2"
+  },
+  {
+    "Id": 83,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "daily"
+    },
+    "Parameter": {
+      "target": 100
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 101
+        }
+      ]
+    },
+    "TaskType": "consume_gem_count",
+    "TitleKey": "text_task_activity_title_10"
+  }
+]

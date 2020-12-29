@@ -1,0 +1,98 @@
+[
+  {
+    "IconAtlas": "PropsAtlas",
+    "IconName": "img_pirate_chest",
+    "Id": "bronze",
+    "Reward": {
+      "resources": [
+        {
+          "count": 200,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    },
+    "Score": 30
+  },
+  {
+    "IconAtlas": "PropsAtlas",
+    "IconName": "img_pirate_chest",
+    "Id": "silver",
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 20004
+        }
+      ]
+    },
+    "Score": 60
+  },
+  {
+    "IconAtlas": "PropsAtlas",
+    "IconName": "img_steel_chest",
+    "Id": "gold",
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 20004
+        }
+      ],
+      "resources": [
+        {
+          "count": 200,
+          "count_type": "constant",
+          "type": "wood"
+        }
+      ]
+    },
+    "Score": 90
+  },
+  {
+    "IconAtlas": "PropsAtlas",
+    "IconName": "img_silver_chest",
+    "Id": "crystal",
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 20004
+        }
+      ],
+      "resources": [
+        {
+          "count": 200,
+          "count_type": "constant",
+          "type": "iron"
+        }
+      ]
+    },
+    "Score": 120
+  },
+  {
+    "IconAtlas": "PropsAtlas",
+    "IconName": "img_gold_chest",
+    "Id": "master",
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 20004
+        }
+      ],
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    },
+    "Score": 150
+  }
+]

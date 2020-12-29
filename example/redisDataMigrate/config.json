@@ -1,0 +1,20 @@
+{
+    "MigrateFromServs" : [
+        {
+            "RedisSvrAddr" : "192.168.1.14:6379",
+            "Auth" : "nil"
+        }    
+    ],
+
+    "MigrateToServs" : [
+        {
+            "RedisSvrAddr" : "118.89.34.64:6379",
+            "Auth" : "1234"
+        }
+    ],
+    "ScanCount" : 100,
+    "LScanCount" : 100,
+    "SScanCount" : 100,
+    "HScanCount" : 100,
+    "MigrateWorkerCount" : 1
+}

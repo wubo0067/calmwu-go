@@ -1,0 +1,79 @@
+{
+  "sailcraft_uin_set_3000001_4000000": {
+      "password": "root",
+      "port": 3306,
+      "user": "root",
+      "database": "sailcraft_uin_set_3000001_4000000",
+      "host": "10.10.81.214"
+  },
+  "sailcraft_uin_allocation_set_0": {
+      "password": "root",
+      "port": 3306,
+      "user": "root",
+      "database": "sailcraft_uin_allocation_set_0",
+      "host": "10.10.81.214"
+  },
+  "sailcraft_uin_set_1000001_2000000": {
+      "password": "root",
+      "port": 3306,
+      "user": "root",
+      "database": "sailcraft_uin_set_1000001_2000000",
+      "host": "10.10.81.214"
+  },
+  "sailcraft_uin_set_2000001_3000000": {
+      "password": "root",
+      "port": 3306,
+      "user": "root",
+      "database": "sailcraft_uin_set_2000001_3000000",
+      "host": "10.10.81.214"
+  },
+  "sailcraft_uin_allocation_set_1": {
+      "password": "root",
+      "port": 3306,
+      "user": "root",
+      "database": "sailcraft_uin_allocation_set_1",
+      "host": "10.10.81.214"
+  },
+  "sailcraft_uin_set_1_1000000": {
+      "password": "root",
+      "port": 3306,
+      "user": "root",
+      "database": "sailcraft_uin_set_1_1000000",
+      "host": "10.10.81.214"
+  },
+  "sailcraft_platform_set": {
+      "password": "root",
+      "port": 3306,
+      "user": "root",
+      "database": "sailcraft_platform_set",
+      "host": "10.10.81.214"
+  },
+  "sailcraft_uin_allocation_set_2": {
+      "password": "root",
+      "port": 3306,
+      "user": "root",
+      "database": "sailcraft_uin_allocation_set_2",
+      "host": "10.10.81.214"
+  },
+  "sailcraft_uin_set_4000001_5000000": {
+      "password": "root",
+      "port": 3306,
+      "user": "root",
+      "database": "sailcraft_uin_set_4000001_5000000",
+      "host": "10.10.81.214"
+  },
+  "user_finance": {
+    "password": "root",
+    "port": 3306,
+    "user": "root",
+    "database": "user_finance",
+    "host": "10.10.81.214"
+  },
+  "omsdb": {
+    "password": "root",
+    "port": 3306,
+    "user": "root",
+    "database": "omsdb",
+    "host": "10.10.81.214"
+  }     
+}

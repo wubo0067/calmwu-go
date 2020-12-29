@@ -1,0 +1,4 @@
+{
+    "ClusterRedisAddressList" : ["127.0.0.1:7003","127.0.0.1:7004","127.0.0.1:7005"],
+    "SingletonRedisAddrsss" : "127.0.0.1:6379"
+}

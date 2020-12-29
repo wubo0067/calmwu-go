@@ -1,0 +1,22 @@
+{
+    "_comment" : "这是stage环境的redis",
+
+    "RedisAddressLst" : ["10.10.81.214:7003", "10.10.81.214:7004", "10.10.81.214:7005"],
+    "BucketCount" : 31,
+
+    "Auth" : "nil",
+    
+    "GuildInfo" : {
+        "Keys" : ["id", "guild_name", "creator"],
+        "KeyMatch" : "guild_info.cache."
+    },
+
+    "UserInfo" : {
+        "Keys" : ["uin", "user_name"],
+        "KeyMatch" : "user_info.cache."            
+    },
+
+    "IndexSvrCluster" : ["10.10.81.214"], 
+    
+    "DirtyWordFile" : "../../../sysconf/SensitiveWordPrecision.txt"
+}

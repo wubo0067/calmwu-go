@@ -1,0 +1,74 @@
+[
+  {
+    "DescKey": "text_areadesc_1",
+    "Icon": "area1",
+    "Id": 1,
+    "NameKey": "text_areaname_1",
+    "PlotHead": 0,
+    "ResourceBundle": "pvemap1.assetbundle",
+    "ResourceBundleSmall": "pvemap1.assetbundle",
+    "ResourceId": "prefab_pve_map1",
+    "ResourceIdSmall": "prefab_pve_map1",
+    "UnlockLeague": 1
+  },
+  {
+    "DescKey": "text_areadesc_2",
+    "Icon": "area2",
+    "Id": 2,
+    "NameKey": "text_areaname_2",
+    "PlotHead": 11,
+    "ResourceBundle": "pvemap2.assetbundle",
+    "ResourceBundleSmall": "pvemap2.assetbundle",
+    "ResourceId": "prefab_pve_map2",
+    "ResourceIdSmall": "prefab_pve_map2",
+    "UnlockLeague": 4
+  },
+  {
+    "DescKey": "text_areadesc_3",
+    "Icon": "area3",
+    "Id": 3,
+    "NameKey": "text_areaname_3",
+    "PlotHead": 22,
+    "ResourceBundle": "pvemap3.assetbundle",
+    "ResourceBundleSmall": "pvemap3.assetbundle",
+    "ResourceId": "prefab_pve_map3",
+    "ResourceIdSmall": "prefab_pve_map3",
+    "UnlockLeague": 7
+  },
+  {
+    "DescKey": "text_areadesc_4",
+    "Icon": "area4",
+    "Id": 4,
+    "NameKey": "text_areaname_4",
+    "PlotHead": 33,
+    "ResourceBundle": "pvemap4.assetbundle",
+    "ResourceBundleSmall": "pvemap4.assetbundle",
+    "ResourceId": "prefab_pve_map4",
+    "ResourceIdSmall": "prefab_pve_map4",
+    "UnlockLeague": 11
+  },
+  {
+    "DescKey": "text_areadesc_5",
+    "Icon": "area5",
+    "Id": 5,
+    "NameKey": "text_areaname_5",
+    "PlotHead": 44,
+    "ResourceBundle": "pvemap5.assetbundle",
+    "ResourceBundleSmall": "pvemap5.assetbundle",
+    "ResourceId": "prefab_pve_map5",
+    "ResourceIdSmall": "prefab_pve_map5",
+    "UnlockLeague": 16
+  },
+  {
+    "DescKey": "text_areadesc_6",
+    "Icon": "area6",
+    "Id": 6,
+    "NameKey": "text_areaname_6",
+    "PlotHead": 55,
+    "ResourceBundle": "pvemap6.assetbundle",
+    "ResourceBundleSmall": "pvemap6.assetbundle",
+    "ResourceId": "prefab_pve_map6",
+    "ResourceIdSmall": "prefab_pve_map6",
+    "UnlockLeague": 21
+  }
+]

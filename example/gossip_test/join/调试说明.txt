@@ -1,0 +1,35 @@
+pushpull的节点数据
+	Name: "192.168.12.3",
+	Addr: []uint8 len: 4, cap: 4, [192,168,12,3],
+	Port: 10080,
+	Meta: []uint8 len: 0, cap: 0, [],
+	Incarnation: 1,
+	State: 0,
+	Vsn: []uint8 len: 6, cap: 6, [1,5,2,0,0,0],}
+	
+broadcast的调用堆栈
+0  0x00000000007e4b5b in github.com/hashicorp/memberlist.(*Memberlist).getBroadcasts
+   at /home/calm/Program/go/src/github.com/hashicorp/memberlist/broadcast.go:73
+1  0x00000000008053a4 in github.com/hashicorp/memberlist.(*Memberlist).gossip
+   at /home/calm/Program/go/src/github.com/hashicorp/memberlist/state.go:528
+2  0x000000000080f96f in github.com/hashicorp/memberlist.(*Memberlist).(github.com/hashicorp/memberlist.gossip)-fm
+   at /home/calm/Program/go/src/github.com/hashicorp/memberlist/state.go:115
+3  0x0000000000801ca6 in github.com/hashicorp/memberlist.(*Memberlist).triggerFunc
+   at /home/calm/Program/go/src/github.com/hashicorp/memberlist/state.go:141
+4  0x0000000000459da1 in runtime.goexit
+   at /usr/local/go/src/runtime/asm_amd64.s:2337
+
+一个节点断开后的变迁，过了一段时候才会将状态标识为dead
+2017/11/06 18:56:37 [DEBUG] memberlist: Failed ping: 192.168.12.1 (timeout reached)
+2017/11/06 18:56:47 [INFO] memberlist: Suspect 192.168.12.1 has failed, no acks received
+2017/11/06 18:56:47 [encodeBroadcastNotify] memberlist msgType:[suspectMsg] msg:&{Incarnation:1 Node:192.168.12.1 From:192.168.12.3}
+2017/11/06 18:56:49 [DEBUG] memberlist: Failed ping: 192.168.12.1 (timeout reached)
+2017/11/06 18:56:55 [INFO] memberlist: Marking 192.168.12.1 as failed, suspect timeout reached (0 peer confirmations)
+2017/11/06 18:56:55 [encodeBroadcastNotify] memberlist msgType:[deadMsg] msg:&{Incarnation:1 Node:192.168.12.1 From:192.168.12.3}
+receive event
+	Node:192.168.12.1 leave
+2017/11/06 18:56:59 [INFO] memberlist: Suspect 192.168.12.1 has failed, no acks received
+2017/11/06 18:57:04 [DEBUG] local[192.168.12.3] trigger pushPull
+2017/11/06 18:57:04 [ERR] memberlist[192.168.12.3]: Push/Pull there are no alive nodes
+
+   

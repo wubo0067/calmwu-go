@@ -1,0 +1,40 @@
+{
+    "PushUrlConfig" : {
+        "Test" : [
+            {
+                "Country" : "TH",
+                "Url" : "rtmp://push-fat-th-ws.8686c.com/doyo_test_v1/%d?wsSecret=%s&wsABSTime=%x"
+            },
+            {
+                "Country" : "VN",
+                "Url" : "rtmp://tpush-vn-ws.doyo.tv/doyo_test_v1/%d?vhost=tlive.doyo.tv&auth_key=%s"
+            },
+            {
+                "Country" : "ID",
+                "Url" : "rtmp://tpush-id-ws.doyo.tv/doyo_test_v1/%d?vhostt=tlive.doyo.tv&auth_key=%s"
+            },
+            {
+                "Country" : "Others",
+                "Url" : "rtmp://video-center-sg.alivecdn.com/doyo_test_v1/%d?vhost=tlive.doyo.tv&auth_key=%"
+            }
+        ],
+        "Product" : [
+            {
+                "Country" : "TH",
+                "Url" : "rtmp://push-pro-th-ws.8686c.com/doyo_v1/%d?wsSecret=%s&wsABSTime=%x"
+            },
+            {
+                "Country" : "VN",
+                "Url" : "rtmp://push-vn-ws.doyo.tv/doyo_v1/%d?vhost=live.doyo.tv&auth_key=%s"
+            },
+            {
+                "Country" : "ID",
+                "Url" : "rtmp://push-id-ws.doyo.tv/doyo_v1/%d?vhostt=live.doyo.tv&auth_key=%s"
+            },
+            {
+                "Country" : "Others",
+                "Url" : "rtmp://video-center-sg.alivecdn.com/doyo_v1/%d?vhost=live.doyo.tv&auth_key=%"
+            }            
+        ]
+    }
+}

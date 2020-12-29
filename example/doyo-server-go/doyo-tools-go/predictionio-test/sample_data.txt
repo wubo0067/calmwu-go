@@ -1,0 +1,22 @@
+calmwu,purchase,iPhone 6
+calmwu,purchase,iPhone 6 charging cradle
+calmwu,purchase,iPhone earbuds
+calmwu,purchase,iPhone 6 case
+calmwu,view,Nexus 6p
+calmwu,view,Nexus 6p case
+vivi,purchase,Nexus 6p
+vivi,purchase,USB type-C cable
+vivi,purchase,Nexus 6p case
+jenny,view,iPhone 7
+jenny,view,AirPods
+vivi,purchase,iPhone 7
+vivi,purchase,AirPods
+jenny,purchase,iPhone 7
+jenny,purchase,AirPods
+sean,purchase,iPhone 6
+sean,purchase,iPhone 6 case
+calmwu,purchase,Nexus 6p
+calmwu,purchase,Nexus 6p case
+calmwu,view,USB type-C cable
+yosssi,view,Love
+Iphone-789,$set,Love

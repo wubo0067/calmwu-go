@@ -1,0 +1,222 @@
+按工会名查询
+{
+	"Version" : 1,
+	"EventID" : 1,
+	"TimeStamp" : xxxxxxx,
+	"CsrfToken" : "abcdefg",
+	"Uin" : 232232323,
+	
+	"ReqData" {
+		"InterfaceName" : "FindGuidsByName",
+		"Params" : {
+            "GuildName" : "xxxx",
+			"QueryType" : "like", 		#match
+			"QueryCount" : xx,			#查询条数
+        }
+	}
+}
+
+{
+    "Version":1,
+    "Timestamp":1352121016,
+	"ReturnCode":0,	 #0成功，非0失败
+
+    "ResData":		
+    {
+		"InterfaceName" : "FindGuidsByName",
+		"Params" : {
+			"GuildCount" : xxx,	#
+			"GuildInfos" : [GuildInfo0, GuildInfo1, ...],
+		}
+    }
+
+    #"GuildInfo0" : {
+    #    "ID" : "xxxx",
+    #    "GuildName" : "xxx"
+    #}
+}
+http://chkvsc.uqsoft.com/IndexSvrModule/FindGuidsByName
+
+-----------------------------------------------------------------------------------
+按玩家昵称查询
+{
+	"Version" : 1,
+	"EventID" : 1,
+	"TimeStamp" : xxxxxxx,
+	"CsrfToken" : "abcdefg",
+	"Uin" : 232232323,
+	
+	"ReqData" {
+		"InterfaceName" : "FindUsersByName",
+		"Params" : {
+            "UserName" : "xxxx"，
+			"QueryType" : "like", 		#match
+			"QueryCount" : xx,			#查询条数			
+        }
+	}
+}
+
+{
+    "Version":1,
+    "Timestamp":1352121016,
+	"ReturnCode":0,	 #0成功，非0失败
+
+    "ResData":		
+    {
+		"InterfaceName" : "FindUsersByName",
+		"Params" : {
+			"UserCount" : xxx,	#
+			"UserInfos" : [UserInfo0, UserInfo1, ...],
+		}
+    }
+
+    #"UserInfo0" : {
+    #    "Uin" : "xxxx",
+    #    "UserName" : "xxx"
+    #}
+}
+http://chkvsc.uqsoft.com/IndexSvrModule/FindUsersByName
+
+-----------------------------------------------------------------------------------
+修改索引，修改昵称，工会名称
+{
+	"Version" : 1,
+	"EventID" : 1,
+	"TimeStamp" : xxxxxxx,
+	"CsrfToken" : "abcdefg",
+	"Uin" : 232232323,
+	
+	"ReqData" {
+		"InterfaceName" : "ModifyUserName",
+		"Params" : {
+            "UserName" : "xxxx"，
+			"Uin", "xxx",
+			"NewUserName" : "xxxx"			
+        }
+	}
+}
+
+http://chkvsc.uqsoft.com/IndexSvrModule/ModifyUserName
+
+-----------------------------------------------------------------------------------
+修改索引，工会名称
+{
+	"Version" : 1,
+	"EventID" : 1,
+	"TimeStamp" : xxxxxxx,
+	"CsrfToken" : "abcdefg",
+	"Uin" : 232232323,
+	
+	"ReqData" {
+		"InterfaceName" : "ModifyGuildName",
+		"Params" : {
+            "GuildName" : "xxxx"，
+			"ID", "xxx",
+			"NewGuildName" : "xxxx"			
+        }
+	}
+}
+
+http://chkvsc.uqsoft.com/IndexSvrModule/ModifyGuildName
+
+
+-----------------------------------------------------------------------------------
+删除索引，工会名称、工会id
+{
+	"Version" : 1,
+	"EventID" : 1,
+	"TimeStamp" : xxxxxxx,
+	"CsrfToken" : "abcdefg",
+	"Uin" : 232232323,
+	
+	"ReqData" {
+		"InterfaceName" : "DeleteGuildName",
+		"Params" : {
+            "GuildName" : "xxxx"，
+			"ID", "xxx",
+			"Creator" : "xxx",
+        }
+	}
+}
+
+http://chkvsc.uqsoft.com/IndexSvrModule/DeleteGuildName
+
+
+-----------------------------------------------------------------------------------
+添加索引，添加工会，工会名称、工会id，creator
+{
+	"Version" : 1,
+	"EventID" : 1,
+	"TimeStamp" : xxxxxxx,
+	"CsrfToken" : "abcdefg",
+	"Uin" : 232232323,
+	
+	"ReqData" {
+		"InterfaceName" : "AddGuildIndex",
+		"Params" : {
+            "GuildName" : "xxxx"，
+			"ID", "xxx",
+			"Creator" : "xxx",
+        }
+	}
+}
+
+http://chkvsc.uqsoft.com/IndexSvrModule/AddGuildIndex
+
+
+-----------------------------------------------------------------------------------
+添加索引，添加玩家
+{
+	"Version" : 1,
+	"EventID" : 1,
+	"TimeStamp" : xxxxxxx,
+	"CsrfToken" : "abcdefg",
+	"Uin" : 232232323,
+	
+	"ReqData" {
+		"InterfaceName" : "AddUserIndex",
+		"Params" : {
+            "UserName" : "xxxx"，
+			"Uin", "xxx",
+        }
+	}
+}
+
+-----------------------------------------------------------------------------------
+脏字过滤
+{
+	"Version" : 1,
+	"EventID" : 1,
+	"TimeStamp" : xxxxxxx,
+	"CsrfToken" : "abcdefg",
+	"Uin" : 232232323,
+	
+	"ReqData" {
+		"InterfaceName" : "DirtyWordFilter",
+		"Params" : {
+			"Uin" : xxx,
+			"Content" : "sdasdfadfsdfsdfs"
+        }
+	}
+}
+
+{
+    "Version":1,
+    "Timestamp":1352121016,
+	"ReturnCode":0,	 #0成功，非0失败
+
+    "ResData":		
+    {
+		"InterfaceName" : "DirtyWordFilter",
+		"Params" : {
+			"Uin" : xxx,
+			"FilterContent" : "*****sdsdfsd***"
+        }
+    }
+}
+
+http://chkvsc.uqsoft.com/IndexSvrModule/AddUserIndex
+
+test环境：http://192.168.1.201:505/IndexSvrModule/xxxx
+
+dlv exec ./indexsvr_main -- index --ip=10.10.81.214 --port=5000 --conf=../conf/stage/config.json --cport=5100 --logpath=../log --consul=10.10.81.214

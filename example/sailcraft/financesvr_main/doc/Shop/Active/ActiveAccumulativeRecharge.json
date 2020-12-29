@@ -1,0 +1,650 @@
+[
+  {
+    "Id": 1,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 20001
+        }
+      ]
+    },
+    "Target": 100,
+    "TitleKey": "text_accumulative_purchase_title_1"
+  },
+  {
+    "Id": 2,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4020
+        }
+      ]
+    },
+    "Target": 1000,
+    "TitleKey": "text_accumulative_purchase_title_2"
+  },
+  {
+    "Id": 3,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 3,
+          "count_type": "constant",
+          "protype_id": 4020
+        }
+      ]
+    },
+    "Target": 2000,
+    "TitleKey": "text_accumulative_purchase_title_3"
+  },
+  {
+    "Id": 4,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4020
+        }
+      ]
+    },
+    "Target": 5000,
+    "TitleKey": "text_accumulative_purchase_title_4"
+  },
+  {
+    "Id": 5,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "protype_id": 4020
+        }
+      ]
+    },
+    "Target": 12000,
+    "TitleKey": "text_accumulative_purchase_title_5"
+  },
+  {
+    "Id": 6,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "protype_id": 4020
+        }
+      ]
+    },
+    "Target": 25000,
+    "TitleKey": "text_accumulative_purchase_title_5"
+  },
+  {
+    "Id": 7,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 20001
+        }
+      ]
+    },
+    "Target": 100,
+    "TitleKey": "text_accumulative_purchase_title_1"
+  },
+  {
+    "Id": 8,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 3011
+        }
+      ]
+    },
+    "Target": 1000,
+    "TitleKey": "text_accumulative_purchase_title_2"
+  },
+  {
+    "Id": 9,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 3,
+          "count_type": "constant",
+          "protype_id": 3011
+        }
+      ]
+    },
+    "Target": 2000,
+    "TitleKey": "text_accumulative_purchase_title_3"
+  },
+  {
+    "Id": 10,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 3011
+        }
+      ]
+    },
+    "Target": 5000,
+    "TitleKey": "text_accumulative_purchase_title_4"
+  },
+  {
+    "Id": 11,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "protype_id": 3011
+        }
+      ]
+    },
+    "Target": 12000,
+    "TitleKey": "text_accumulative_purchase_title_5"
+  },
+  {
+    "Id": 12,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "protype_id": 3011
+        }
+      ]
+    },
+    "Target": 25000,
+    "TitleKey": "text_accumulative_purchase_title_5"
+  },
+  {
+    "Id": 51,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 20001
+        }
+      ]
+    },
+    "Target": 100,
+    "TitleKey": "text_accumulative_purchase_title_1"
+  },
+  {
+    "Id": 52,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4020
+        }
+      ]
+    },
+    "Target": 1000,
+    "TitleKey": "text_accumulative_purchase_title_2"
+  },
+  {
+    "Id": 53,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 3,
+          "count_type": "constant",
+          "protype_id": 4020
+        }
+      ]
+    },
+    "Target": 2000,
+    "TitleKey": "text_accumulative_purchase_title_3"
+  },
+  {
+    "Id": 54,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4020
+        }
+      ]
+    },
+    "Target": 5000,
+    "TitleKey": "text_accumulative_purchase_title_4"
+  },
+  {
+    "Id": 55,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "protype_id": 4020
+        }
+      ]
+    },
+    "Target": 12000,
+    "TitleKey": "text_accumulative_purchase_title_5"
+  },
+  {
+    "Id": 56,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "protype_id": 4020
+        }
+      ]
+    },
+    "Target": 25000,
+    "TitleKey": "text_accumulative_purchase_title_5"
+  },
+  {
+    "Id": 61,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 20001
+        }
+      ]
+    },
+    "Target": 100,
+    "TitleKey": "text_accumulative_purchase_title_1"
+  },
+  {
+    "Id": 62,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 5001
+        }
+      ]
+    },
+    "Target": 1000,
+    "TitleKey": "text_accumulative_purchase_title_2"
+  },
+  {
+    "Id": 63,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 3,
+          "count_type": "constant",
+          "protype_id": 5001
+        }
+      ]
+    },
+    "Target": 2000,
+    "TitleKey": "text_accumulative_purchase_title_3"
+  },
+  {
+    "Id": 64,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 5001
+        }
+      ]
+    },
+    "Target": 5000,
+    "TitleKey": "text_accumulative_purchase_title_4"
+  },
+  {
+    "Id": 65,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "protype_id": 5001
+        }
+      ]
+    },
+    "Target": 12000,
+    "TitleKey": "text_accumulative_purchase_title_5"
+  },
+  {
+    "Id": 66,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "protype_id": 5001
+        }
+      ]
+    },
+    "Target": 25000,
+    "TitleKey": "text_accumulative_purchase_title_5"
+  },
+  {
+    "Id": 71,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 20001
+        }
+      ]
+    },
+    "Target": 100,
+    "TitleKey": "text_accumulative_purchase_title_1"
+  },
+  {
+    "Id": 72,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4021
+        }
+      ]
+    },
+    "Target": 1000,
+    "TitleKey": "text_accumulative_purchase_title_2"
+  },
+  {
+    "Id": 73,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 3,
+          "count_type": "constant",
+          "protype_id": 4021
+        }
+      ]
+    },
+    "Target": 2000,
+    "TitleKey": "text_accumulative_purchase_title_3"
+  },
+  {
+    "Id": 74,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4021
+        }
+      ]
+    },
+    "Target": 5000,
+    "TitleKey": "text_accumulative_purchase_title_4"
+  },
+  {
+    "Id": 75,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "protype_id": 4021
+        }
+      ]
+    },
+    "Target": 12000,
+    "TitleKey": "text_accumulative_purchase_title_5"
+  },
+  {
+    "Id": 76,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "protype_id": 4021
+        }
+      ]
+    },
+    "Target": 25000,
+    "TitleKey": "text_accumulative_purchase_title_5"
+  },
+  {
+    "Id": 81,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "props": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 20001
+        }
+      ]
+    },
+    "Target": 100,
+    "TitleKey": "text_accumulative_purchase_title_1"
+  },
+  {
+    "Id": 82,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4008
+        }
+      ]
+    },
+    "Target": 1000,
+    "TitleKey": "text_accumulative_purchase_title_2"
+  },
+  {
+    "Id": 83,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 3,
+          "count_type": "constant",
+          "protype_id": 4008
+        }
+      ]
+    },
+    "Target": 2000,
+    "TitleKey": "text_accumulative_purchase_title_3"
+  },
+  {
+    "Id": 84,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 5,
+          "count_type": "constant",
+          "protype_id": 4008
+        }
+      ]
+    },
+    "Target": 5000,
+    "TitleKey": "text_accumulative_purchase_title_4"
+  },
+  {
+    "Id": 85,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 10,
+          "count_type": "constant",
+          "protype_id": 4008
+        }
+      ]
+    },
+    "Target": 12000,
+    "TitleKey": "text_accumulative_purchase_title_5"
+  },
+  {
+    "Id": 86,
+    "Limit": {
+      "limit_times": 1,
+      "limit_type": "totally"
+    },
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 20,
+          "count_type": "constant",
+          "protype_id": 4008
+        }
+      ]
+    },
+    "Target": 25000,
+    "TitleKey": "text_accumulative_purchase_title_5"
+  }
+]

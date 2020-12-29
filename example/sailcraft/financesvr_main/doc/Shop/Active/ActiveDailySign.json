@@ -1,0 +1,374 @@
+[
+  {
+    "Id": 1001,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1002,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1003,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1004,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "wood"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1005,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "iron"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1006,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1007,
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 1,
+          "count_type": "constant",
+          "protype_id": 4002
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1008,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1009,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1010,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1011,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "wood"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1012,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "iron"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1013,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1014,
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 2,
+          "count_type": "constant",
+          "protype_id": 4002
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1015,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1016,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1017,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1018,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "wood"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1019,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "iron"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1020,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1021,
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 3,
+          "count_type": "constant",
+          "protype_id": 4002
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1022,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1023,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1024,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1025,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "wood"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1026,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "iron"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1027,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1028,
+    "Reward": {
+      "battleship_cards": [
+        {
+          "count": 4,
+          "count_type": "constant",
+          "protype_id": 4002
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1029,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gold"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1030,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "stone"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1031,
+    "Reward": {
+      "resources": [
+        {
+          "count": 100,
+          "count_type": "constant",
+          "type": "gem"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,20 @@
+syntax = "proto3";
+//import "google/protobuf/descriptor.proto";
+package protocol;
+
+message ProtoSyn {
+    bytes VerifyBuf       = 1;        // 使用加密校验的数据
+    bytes DHClientPubKey  = 2;        // 客户端的交换密钥ka
+}
+
+message ProtoAsyn {
+    bytes DHServerPubKey = 1;         // 服务器的交换密钥kb
+}
+
+message ProtoAck {
+    bytes CipherText = 1;             // 客户端对VerifyStr加密后的密文，用于服务器端校验
+}
+
+message ProtoHeartBeat {
+    sfixed64 Timestamp = 1;         // 客户端发送时间戳
+}

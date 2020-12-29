@@ -1,0 +1,39 @@
+{
+    "Services" : [
+        {
+            "ServiceTag" : "SailCraft-GuideSvr",
+            "DomainName" : "SailCraft-GuideSvr.service.consul",
+            "Port" : 8000
+        },
+        {
+            "ServiceTag" : "SailCraft-IndexSvr",
+            "DomainName" : "SailCraft-IndexSvr.service.consul",
+            "Port" : 5000
+        }, 
+        {
+            "ServiceTag" : "SailCraft-LogSvr",
+            "DomainName" : "SailCraft-LogSvr.service.consul",
+            "Port" : 6000
+        },
+        {
+            "ServiceTag" : "SailCraft-CassandraSvr",
+            "DomainName" : "SailCraft-CassandraSvr.service.consul",
+            "Port" : 9000
+        },
+        {
+            "ServiceTag" : "SailCraft-FinanceSvr",
+            "DomainName" : "SailCraft-FinanceSvr.service.consul",
+            "Port" : 4000
+        },
+        {
+            "ServiceTag":"SailCraft-FleetSvr",
+            "DomainName":"SailCraft-FleetSvr.service.consul",
+            "Port":3000
+        }, 
+        {
+            "ServiceTag":"SailCraft-OMSvr",
+            "DomainName":"SailCraft-OMSvr.service.consul",
+            "Port":2000
+        }                     
+    ]
+}

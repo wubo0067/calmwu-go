@@ -1,0 +1,36 @@
+[
+  {
+    "DescKey": "text_guildtask_desc_1",
+    "Icon": "img_battle",
+    "Id": 1,
+    "NameKey": "text_guildtask_name_1",
+    "Parameter": {
+      "target": 1
+    },
+    "Score": 10,
+    "TaskType": "league_pvp_win_times"
+  },
+  {
+    "DescKey": "text_guildtask_desc_2",
+    "Icon": "img_cardpack",
+    "Id": 2,
+    "NameKey": "text_guildtask_name_2",
+    "Parameter": {
+      "cardpack_id": 20001,
+      "target": 1
+    },
+    "Score": 5,
+    "TaskType": "shop_buy_cardpacks"
+  },
+  {
+    "DescKey": "text_guildtask_desc_3",
+    "Icon": "img_battleship",
+    "Id": 3,
+    "NameKey": "text_guildtask_name_3",
+    "Parameter": {
+      "target": 1
+    },
+    "Score": 2,
+    "TaskType": "salvage"
+  }
+]

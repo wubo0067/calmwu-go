@@ -1,0 +1,11 @@
+{
+    "CassandraConf" : {
+        "ClusterHosts" : ["10.161.118.71", "10.161.118.83"],
+        "KeySpaces" : ["ks_statisticmodule"],
+        "WorkerRoutingCount" : 10,
+        "DisableInitialHostLookup" : 0,
+        "_comment" : "Cassandra 一致性策略，不同环境用不同的模式，One=1 Quorum=4",
+        "Consistency" : 1
+    },
+    "GeoIpMmdb" : "../../conf/GeoLite2-Country.mmdb"
+}

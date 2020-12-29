@@ -1,0 +1,140 @@
+2019-08-27 13:55:19.541	DEBUG	callstack_err/test.go:44	call First
+2019-08-27 13:55:19.556	DEBUG	callstack_err/test.go:39	call Second
+2019-08-27 13:55:19.556	DEBUG	callstack_err/test.go:33	call Three
+2019-08-27 13:55:19.556	ERROR	callstack_err/test.go:88	----err---:Create error
+
+main.errorf
+	D:/develope/gopath/src/callstack_err/test.go:29
+main.main
+	D:/develope/gopath/src/callstack_err/test.go:88
+runtime.main
+	D:/Go/src/runtime/proc.go:200
+2019-08-27 13:55:19.558	DEBUG	callstack_err/test.go:67	t is nil
+2019-08-27 13:55:19.558	DEBUG	callstack_err/test.go:101	i is not a nil interface
+2019-08-27 13:55:19.558	DEBUG	callstack_err/test.go:104	t is a nil
+2019-08-27 13:55:52.361	DEBUG	callstack_err/test.go:44	call First
+2019-08-27 13:55:52.375	DEBUG	callstack_err/test.go:39	call Second
+2019-08-27 13:55:52.375	DEBUG	callstack_err/test.go:33	call Three
+2019-08-27 13:55:52.376	ERROR	callstack_err/test.go:88	----err---:Create error
+main.callThree
+	D:/develope/gopath/src/callstack_err/test.go:35
+main.callSecond
+	D:/develope/gopath/src/callstack_err/test.go:40
+main.callFirst
+	D:/develope/gopath/src/callstack_err/test.go:45
+main.main
+	D:/develope/gopath/src/callstack_err/test.go:86
+runtime.main
+	D:/Go/src/runtime/proc.go:200
+runtime.goexit
+	D:/Go/src/runtime/asm_amd64.s:1337
+
+main.errorf
+	D:/develope/gopath/src/callstack_err/test.go:29
+main.main
+	D:/develope/gopath/src/callstack_err/test.go:88
+runtime.main
+	D:/Go/src/runtime/proc.go:200
+2019-08-27 13:55:52.386	DEBUG	callstack_err/test.go:67	t is nil
+2019-08-27 13:55:52.386	DEBUG	callstack_err/test.go:101	i is not a nil interface
+2019-08-27 13:55:52.386	DEBUG	callstack_err/test.go:104	t is a nil
+2019-11-06 10:19:47.641	DEBUG	callstack_err/test.go:44 callFirst	call First
+2019-11-06 10:19:47.657	DEBUG	callstack_err/test.go:39 callSecond	call Second
+2019-11-06 10:19:47.657	DEBUG	callstack_err/test.go:33 callThree	call Three
+2019-11-06 10:19:47.657	ERROR	callstack_err/test.go:95 main	----err---:Create error
+main.callThree
+	D:/develope/gopath/src/callstack_err/test.go:35
+main.callSecond
+	D:/develope/gopath/src/callstack_err/test.go:40
+main.callFirst
+	D:/develope/gopath/src/callstack_err/test.go:45
+main.main
+	D:/develope/gopath/src/callstack_err/test.go:93
+runtime.main
+	D:/Go/src/runtime/proc.go:203
+runtime.goexit
+	D:/Go/src/runtime/asm_amd64.s:1357
+
+2019-11-06 10:19:47.658	DEBUG	callstack_err/test.go:67 backNilInterface	t is nil
+2019-11-06 10:19:47.658	DEBUG	callstack_err/test.go:108 main	i is not a nil interface
+2019-11-06 10:19:47.658	DEBUG	callstack_err/test.go:111 main	t is a nil
+2019-11-06 10:24:21.570	DEBUG	callstack_err/test.go:44 callFirst	call First
+2019-11-06 10:24:21.586	DEBUG	callstack_err/test.go:39 callSecond	call Second
+2019-11-06 10:24:21.586	DEBUG	callstack_err/test.go:33 callThree	call Three
+2019-11-06 10:24:21.586	ERROR	callstack_err/test.go:95 main	----err---:Create error
+main.callThree
+	D:/develope/gopath/src/callstack_err/test.go:35
+main.callSecond
+	D:/develope/gopath/src/callstack_err/test.go:40
+main.callFirst
+	D:/develope/gopath/src/callstack_err/test.go:45
+main.main
+	D:/develope/gopath/src/callstack_err/test.go:93
+runtime.main
+	D:/Go/src/runtime/proc.go:203
+runtime.goexit
+	D:/Go/src/runtime/asm_amd64.s:1357
+
+2019-11-06 10:24:21.588	DEBUG	callstack_err/test.go:67 backNilInterface	t is nil
+2019-11-06 10:24:21.588	DEBUG	callstack_err/test.go:108 main	i is not a nil interface
+2019-11-06 10:24:21.588	DEBUG	callstack_err/test.go:111 main	t is a nil
+2019-11-06 10:24:39.903	DEBUG	callstack_err/test.go:44 callFirst	call First
+2019-11-06 10:24:39.920	DEBUG	callstack_err/test.go:39 callSecond	call Second
+2019-11-06 10:24:39.920	DEBUG	callstack_err/test.go:33 callThree	call Three
+2019-11-06 10:24:39.920	ERROR	callstack_err/test.go:96 main	----err---:Create error
+main.callThree
+	D:/develope/gopath/src/callstack_err/test.go:35
+main.callSecond
+	D:/develope/gopath/src/callstack_err/test.go:40
+main.callFirst
+	D:/develope/gopath/src/callstack_err/test.go:45
+main.main
+	D:/develope/gopath/src/callstack_err/test.go:94
+runtime.main
+	D:/Go/src/runtime/proc.go:203
+runtime.goexit
+	D:/Go/src/runtime/asm_amd64.s:1357
+
+2019-11-06 10:24:39.922	DEBUG	callstack_err/test.go:67 backNilInterface	t is nil
+2019-11-06 10:24:39.922	DEBUG	callstack_err/test.go:109 main	i is not a nil interface
+2019-11-06 10:24:39.922	DEBUG	callstack_err/test.go:112 main	t is a nil
+2019-11-06 10:29:18.818	DEBUG	callstack_err/test.go:44 callFirst	call First
+2019-11-06 10:29:18.834	DEBUG	callstack_err/test.go:39 callSecond	call Second
+2019-11-06 10:29:18.834	DEBUG	callstack_err/test.go:33 callThree	call Three
+2019-11-06 10:29:18.834	ERROR	callstack_err/test.go:96 main	----err---:Create error
+main.callThree
+	D:/develope/gopath/src/callstack_err/test.go:35
+main.callSecond
+	D:/develope/gopath/src/callstack_err/test.go:40
+main.callFirst
+	D:/develope/gopath/src/callstack_err/test.go:45
+main.main
+	D:/develope/gopath/src/callstack_err/test.go:94
+runtime.main
+	D:/Go/src/runtime/proc.go:203
+runtime.goexit
+	D:/Go/src/runtime/asm_amd64.s:1357
+
+2019-11-06 10:29:18.846	DEBUG	callstack_err/test.go:67 backNilInterface	t is nil
+2019-11-06 10:29:18.846	DEBUG	callstack_err/test.go:109 main	i is not a nil interface
+2019-11-06 10:29:18.846	DEBUG	callstack_err/test.go:112 main	t is a nil
+2019-11-06 10:31:38.504	DEBUG	callstack_err/test.go:44 callFirst	call First
+2019-11-06 10:31:38.520	DEBUG	callstack_err/test.go:39 callSecond	call Second
+2019-11-06 10:31:38.520	DEBUG	callstack_err/test.go:33 callThree	call Three
+2019-11-06 10:31:38.520	ERROR	callstack_err/test.go:97 main	----err---:Create error
+main.callThree
+	D:/develope/gopath/src/callstack_err/test.go:35
+main.callSecond
+	D:/develope/gopath/src/callstack_err/test.go:40
+main.callFirst
+	D:/develope/gopath/src/callstack_err/test.go:45
+main.main
+	D:/develope/gopath/src/callstack_err/test.go:95
+runtime.main
+	D:/Go/src/runtime/proc.go:203
+runtime.goexit
+	D:/Go/src/runtime/asm_amd64.s:1357
+
+2019-11-06 10:31:38.532	DEBUG	callstack_err/test.go:67 backNilInterface	t is nil
+2019-11-06 10:31:38.532	DEBUG	callstack_err/test.go:110 main	i is not a nil interface
+2019-11-06 10:31:38.532	DEBUG	callstack_err/test.go:113 main	t is a nil

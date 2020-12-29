@@ -1,0 +1,22 @@
+{
+    "_comment" : "这是product环境的redis",
+
+    "RedisAddressLst" : ["10.161.118.75:7003","10.161.118.112:7004","10.161.118.112:7005"],
+    "BucketCount" : 32,
+
+    "Auth" : "nil",
+    
+    "GuildInfo" : {
+        "Keys" : ["id", "guild_name", "creator"],
+        "KeyMatch" : "guild_info.cache."
+    },
+
+    "UserInfo" : {
+        "Keys" : ["uin", "user_name"],
+        "KeyMatch" : "user_info.cache."            
+    },
+
+    "IndexSvrCluster" : ["10.161.118.71", "10.161.118.83"],
+    
+    "DirtyWordFile" : "../../../sysconf/SensitiveWordPrecision.txt"    
+}

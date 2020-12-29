@@ -1,0 +1,267 @@
+import "google/protobuf/descriptor.proto";
+
+package kp_proto;
+
+enum KPProtoCmd {
+    E_A2S_REGISTER_REQ      = 0;    // agent注册
+    E_S2A_REGISTER_RES      = 1;    // agent注册回应
+
+    E_S2A_ADD_LISTENER_REQ  = 2;    // 添加监听器，为keepalived添加virtual server
+    E_A2S_ADD_LISTENER_RES  = 3;    // 添加结果 
+
+    E_S2A_DEL_LISTENER_REQ  = 4;    // 删除监听器
+    E_A2S_DEL_LISTENER_RES  = 5;    // 删除结果
+
+    E_S2A_BIND_LISTENER_WITH_RS_REQ = 6;    // 监听器和rs绑定
+    E_A2S_BIND_LISTENER_WITH_RS_RES = 7;    // 绑定结果
+
+    E_S2A_UNBIND_LISTENER_WITH_RS_REQ = 8;  // 监听器和rs解绑
+    E_A2S_UNBIND_LISTENER_WITH_RS_RES = 9;  // 解绑结果
+
+    E_A2S_RS_STATUS_NOTIFY = 10; 
+
+    E_A2S_HEARTBEAT_REQ  = 12;    // agent到server的心跳    
+    E_S2A_HEARTBEAT_RES  = 13;    // server到agent的心跳
+    
+    E_S2A_KPRELOAD_REQ  = 14;       // reload
+    E_A2S_KPRELOAD_RES  = 15;       // reload结果
+
+    E_A2S_NETSPEEDMEASURE_NTF = 16;    // 网速的测量，选择一个rs进行测量 
+    E_A2S_NETSTATISTICS_NTF = 17;
+
+    E_S2A_MOD_LISTENER_REQ = 18;  // 修改监听器
+    E_A2S_MOD_LISTENER_RES = 19;
+}
+
+//---------------------------------------------------------------------------
+enum KPErrorCode {
+    E_KPERR_OK                                      = 0;
+    
+    E_KPERR_FAILED_PROXYID_INVALID                  = 1;
+    E_KPERR_FAILED_VRRPROUTERID_INVALID             = 2;
+    E_KPERR_FAILED_ADDVIRTUALSVR_ALREADYEXISTS      = 3;
+    E_KPERR_FAILED_DELVIRTUALSVR_NOTEXISTS          = 4;
+    E_KPERR_FAILED_BINDRS_VIRTUALSVRNOTEXISTS       = 5;
+    E_KPERR_FAILED_UNBINDRS_VIRTUALSVRNOTEXISTS     = 6;    
+    E_KPERR_FAILED_RELOAD                           = 7;    
+    E_KPERR_FAILED_INSIDERROR                       = 8;
+    E_KPERR_FAILED_REGISTER_LOCALIPNOTEXISTS        = 9;
+    E_KPERR_FAILED_REGISTER_DATABASEERROR           = 10;
+    E_KPERR_FAILED_UNMARSHALEFAILED                 = 11;
+    E_KPERR_FAILED_MODLISTENER_VIRTUALSVRNOTEXISTS  = 12;
+}
+
+//---------------------------------------------------------------------------
+enum LinkNodeType {
+    E_LINKNODE_FRONTEND       = 0;   // 前端节点
+    E_LINKNODE_BACKEND        = 1;   // 后端节点
+    E_LINKNODE_INTERMEDIATE   = 2;   // 中间节点
+}
+
+//---------------------------------------------------------------------------
+message A2SRegisterReq {
+    required string agent_localip       = 1;        // 本机ip, 从eth0获取
+    required string dh_key_agent        = 2;        // Diffie-Hellman算法握手ka，16进制数字字符串
+    required bool   is_master           = 3;        // 确定该kpserver是master，之后master才主动推送配置信息
+}
+
+message S2ARegisterRes {
+    required KPErrorCode  result        = 1;        // 注册结果
+    required string proxy_id            = 2;        // 归属的proxy
+    required int32  vrrp_routerid       = 3;        // vrrp virtual routerid
+    required string vrrp_itfname        = 4;        // vrrp interface
+    required string kp_localip          = 5;        // 本地ip
+    required string kp_virtual_ip       = 6;        // 虚ip
+    required string dh_key_server       = 7;        // Diffie-Hellman算法握手kb，10进制数字字符串
+    required string link_node_id        = 8;        // 归属的加速节点
+    required LinkNodeType link_node_type = 9;       // 加速节点类型
+}
+
+//添加监听器------------------------------------------------------------------
+message RealServerInfo {
+    required int32  weight  = 1;
+    required string ip      = 2;    
+}
+
+message S2AAddListenerReq {
+    required string proxy_id            = 1;
+    required string task_id             = 2;        // server任务标识
+    required int32  vrrp_routerid       = 3;
+    required string listener_id         = 4;
+    required string net_protocol_name   = 5;        // 协议 tcp udp
+    required int32  listener_port       = 6;
+    required string scheduler           = 7;        // rr wrr lc
+    required int32  delay_loop          = 8;        // 检查时间间隔
+    // 这时前端代理机要配置后端的代理机的rs，最后一个代理机数据为空
+    repeated RealServerInfo proxy_realsvr_lst = 11;
+}
+
+message A2SAddListenerRes {
+    required string proxy_id            = 1;
+    required string task_id             = 2;
+    required int32  vrrp_routerid       = 3;
+    required string listener_id         = 4;
+    required string net_protocol_name   = 5;        // 协议 TCP UDP
+    required int32  listener_port       = 6;
+    required KPErrorCode  result        = 7;        // 添加结果
+}
+
+//删除监听器------------------------------------------------------------------
+message S2ADelListenerReq {
+    required string proxy_id            = 1;
+    required string task_id             = 2;
+    required int32  vrrp_routerid       = 3;
+    required string listener_id         = 4;
+    required string net_protocol_name   = 5;        // 协议
+    required int32  listener_port       = 6;
+}
+
+message A2SDelListenerRes {
+    required string proxy_id            = 1;
+    required string task_id             = 2;
+    required int32  vrrp_routerid       = 3;
+    required string listener_id         = 4;
+    required string net_protocol_name   = 5;        // 协议 TCP UDP
+    required int32  listener_port       = 6;
+    required KPErrorCode  result        = 7;        //
+}
+
+//修改监听器设置----------------------------------------------------------------
+message S2AModListenerReq {
+    required string proxy_id            = 1;
+    required string task_id             = 2;
+    required int32  vrrp_routerid       = 3;
+    required string listener_id         = 4;
+    required string net_protocol_name   = 5;
+    required int32  listener_port       = 6;
+    required string scheduler           = 7;
+    required int32  delay_loop          = 8;
+}
+
+message A2SModListenerRes {
+    required string proxy_id            = 1;
+    required string task_id             = 2;
+    required int32  vrrp_routerid       = 3;
+    required string listener_id         = 4;
+    required string net_protocol_name   = 5;        // 协议 TCP UDP
+    required int32  listener_port       = 6;
+    required KPErrorCode  result        = 7;        // 添加结果
+}
+
+//监听器和rs绑定----------------------------------------------------------------
+message S2ABindListenerWithRSReq {
+    required string proxy_id                = 1;
+    required string task_id                 = 2;
+    required int32  vrrp_routerid           = 3;
+    required string listener_id             = 4;
+    required string net_protocol_name       = 5;        // 协议 TCP UDP
+    required int32  listener_port           = 6;
+    repeated RealServerInfo realserver_lst  = 7;
+}
+
+message A2SBindListenerWithRSRes {
+    required string proxy_id            = 1;
+    required string task_id             = 2;
+    required int32  vrrp_routerid       = 3;
+    required string listener_id         = 4;
+    required string net_protocol_name   = 5;        // 协议 TCP UDP
+    required int32  listener_port       = 6;
+    required KPErrorCode  result        = 7;
+}
+
+//监听器和rs解绑----------------------------------------------------------------
+message S2AUnBindListenerWithRsReq {
+    required string proxy_id            = 1;
+    required string task_id             = 2;
+    required int32  vrrp_routerid       = 3;
+    required string listener_id         = 4;
+    required string net_protocol_name   = 5;        // 协议 TCP UDP
+    required int32  listener_port       = 6;
+    repeated string realserver_lst      = 7;
+}
+
+message A2SUnBindListenerWithRSRes {
+    required string proxy_id            = 1;
+    required string task_id             = 2;
+    required int32  vrrp_routerid       = 3;
+    required string listener_id         = 4;
+    required string net_protocol_name   = 5;        // 协议 TCP UDP
+    required int32  listener_port       = 6;
+    required KPErrorCode  result        = 7;
+}
+
+//---------------------------------------------------------------------------
+message RSStatus {
+    required int32  rs_port             = 1;  
+    required string rs_ip               = 2;    // ip
+    required string net_protocol_name   = 3;    // 协议 TCP UDP
+    required string listener_id         = 4;
+    required int32  status              = 5;    // 0：down，1：up
+    required int64  time_stamp          = 6;    // 变化的时间
+}
+
+message A2SRSStatusNotify {
+    required string proxy_id            = 1;
+    required int32  vrrp_routerid       = 2;
+    required RSStatus   status_info     = 3;
+}
+
+//---------------------------------------------------------------------------
+message HeartBeat {
+    required int64 time_stamp  = 1;         // 心跳时间戳
+    required string from_host  = 2;         // 心跳来源主机ip
+}
+
+// reload--------------------------------------------------------------------
+message S2AReloadReq {
+    required string proxy_id            = 1;
+    required int32  vrrp_routerid       = 2;
+    required string task_id             = 3;
+}
+
+message A2SReloadRes {
+    required string proxy_id            = 1;
+    required int32  vrrp_routerid       = 2;
+    required KPErrorCode  result        = 3;
+    optional string failed_reason       = 4;
+    required string task_id             = 5;
+}
+
+// --------------------------------------------------------------------------
+message A2SNetSpeedMeasureNtf {
+    required string proxy_id            = 1;  
+    required int32  vrrp_routerid       = 2;
+    required string link_node_id        = 3;        // 归属的加速节点  
+    required int32  speed               = 4;        // ping 速度  example: time=230ms
+    required int64  time_stamp          = 5;        // 时间戳
+}
+
+message NetStatisticsInfo {
+    required uint64 rxpcks              = 1;        // 网卡统计，收包数量
+    required uint64 txpcks              = 2;        // 网卡统计，发包数量
+    required uint64 droppcks            = 3;        // 网卡丢包
+    required uint64 rxbytes             = 4;        // 网卡统计，收字节数量
+    required uint64 txbytes             = 5;        // 网卡统计，发字节数量  
+    required uint64 tcp_passiveopens    = 6;        // 被动连接数， 实现上则是在三次握手成功后会加一
+    required uint64 tcp_currestab       = 7;        // tCP当前连接数
+    required uint64 tcp_insegs          = 8;        // 收到的tcp包
+    required uint64 tcp_outsegs         = 9;        // 发出去的tcp包
+    required uint64 udp_indatarams      = 10;       // 收到的udp包
+    required uint64 udp_outdatarams     = 11;       // 发出的udp包数量
+    required uint32 rxbytes_s           = 12;       // 入流量
+    required uint32 txbytes_s           = 13;       // 出流量
+}
+
+message A2SNetStatisticsNtf {
+    required string proxy_id                = 1;  
+    required int32  vrrp_routerid           = 2;
+    required string link_node_id            = 3;        // 归属的加速节点  
+    required NetStatisticsInfo netstatis    = 4;
+    required int64  time_stamp              = 5;        // 时间戳 
+}
+
+//---------------------------------------------------------------------------
+message KPMessage {
+    required KPProtoCmd     cmd = 1;
+    required bytes          real_message_marshaldata = 2;  // 具体消息序列化后的数据
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "Chance": 100,
+    "DescKey": "",
+    "Id": 1,
+    "NameKey": "text_salvage_point_1",
+    "PiecesPool": 301,
+    "Pools": [
+      101,
+      102,
+      103
+    ],
+    "TimesLower": [
+      1,
+      1,
+      0
+    ],
+    "TimesUpper": [
+      3,
+      1,
+      0
+    ]
+  },
+  {
+    "Chance": 100,
+    "DescKey": "",
+    "Id": 2,
+    "NameKey": "text_salvage_point_2",
+    "PiecesPool": 302,
+    "Pools": [
+      101,
+      102,
+      103
+    ],
+    "TimesLower": [
+      1,
+      1,
+      0
+    ],
+    "TimesUpper": [
+      3,
+      1,
+      0
+    ]
+  },
+  {
+    "Chance": 100,
+    "DescKey": "",
+    "Id": 3,
+    "NameKey": "text_salvage_point_3",
+    "PiecesPool": 303,
+    "Pools": [
+      101,
+      102,
+      103
+    ],
+    "TimesLower": [
+      1,
+      1,
+      0
+    ],
+    "TimesUpper": [
+      3,
+      1,
+      0
+    ]
+  }
+]

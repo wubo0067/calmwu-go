@@ -1,0 +1,4556 @@
+[
+  {
+    "AreaCode": "US",
+    "Gift": [
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1001",
+        "Discount": 50,
+        "FakePrice": 1.98,
+        "FakePriceDesc": "$ 1.98",
+        "Id": 11001,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 300,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 300,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 300,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1001",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 0.99,
+        "PriceDesc": "$ 0.99",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t1",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1003",
+        "Discount": 50,
+        "FakePrice": 9.98,
+        "FakePriceDesc": "$ 9.98",
+        "Id": 11003,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1003",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 4.99,
+        "PriceDesc": "$ 4.99",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t5",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1007",
+        "Discount": 68,
+        "FakePrice": 14.69,
+        "FakePriceDesc": "$ 14.69",
+        "Id": 11007,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 4009
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1007",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.cruisepack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1001",
+        "Discount": 50,
+        "FakePrice": 1.98,
+        "FakePriceDesc": "$ 1.98",
+        "Id": 21001,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 300,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 300,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 300,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1001",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 0.99,
+        "PriceDesc": "$ 0.99",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t1",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1014",
+        "Discount": 90,
+        "FakePrice": 3.32,
+        "FakePriceDesc": "$ 3.32",
+        "Id": 21014,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 1,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 5,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 5,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1014",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 2.99,
+        "PriceDesc": "$ 2.99",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t3",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1006",
+        "Discount": 68,
+        "FakePrice": 14.69,
+        "FakePriceDesc": "$ 14.69",
+        "Id": 21006,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 5017
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1006",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.flagshippack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1002",
+        "Discount": 50,
+        "FakePrice": 5.98,
+        "FakePriceDesc": "$ 5.98",
+        "Id": 31002,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1002",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 2.99,
+        "PriceDesc": "$ 2.99",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t3",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1003",
+        "Discount": 50,
+        "FakePrice": 9.98,
+        "FakePriceDesc": "$ 9.98",
+        "Id": 31003,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1003",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 4.99,
+        "PriceDesc": "$ 4.99",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t5",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1009",
+        "Discount": 68,
+        "FakePrice": 14.69,
+        "FakePriceDesc": "$ 14.69",
+        "Id": 31009,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 2003
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1009",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.sneakpack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1002",
+        "Discount": 50,
+        "FakePrice": 5.98,
+        "FakePriceDesc": "$ 5.98",
+        "Id": 41002,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1002",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 2.99,
+        "PriceDesc": "$ 2.99",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t3",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1015",
+        "Discount": 85,
+        "FakePrice": 11.75,
+        "FakePriceDesc": "$ 11.75",
+        "Id": 41015,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 4,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 20,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 20,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1015",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t10",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1007",
+        "Discount": 68,
+        "FakePrice": 14.69,
+        "FakePriceDesc": "$ 14.69",
+        "Id": 41007,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 4016
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1007",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.cruisepack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1001",
+        "Discount": 50,
+        "FakePrice": 1.98,
+        "FakePriceDesc": "$ 1.98",
+        "Id": 51001,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 300,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 300,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 300,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1001",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 0.99,
+        "PriceDesc": "$ 0.99",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t1",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1014",
+        "Discount": 90,
+        "FakePrice": 3.32,
+        "FakePriceDesc": "$ 3.32",
+        "Id": 51014,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 1,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 5,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 5,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1014",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 2.99,
+        "PriceDesc": "$ 2.99",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t3",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1008",
+        "Discount": 50,
+        "FakePrice": 19.98,
+        "FakePriceDesc": "$ 19.98",
+        "Id": 51108,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 3006
+            }
+          ],
+          "resources": [
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1008",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.breakoutpack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1012",
+        "Discount": 50,
+        "FakePrice": 39.98,
+        "FakePriceDesc": "$ 39.98",
+        "Id": 51112,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 3011
+            }
+          ],
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1012",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 19.99,
+        "PriceDesc": "$ 19.99",
+        "ProductId": "com.lilithgame.sailcraft.breakoutpack.t20",
+        "Type": "LegendaryShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1015",
+        "Discount": 85,
+        "FakePrice": 11.75,
+        "FakePriceDesc": "$ 11.75",
+        "Id": 51015,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 4,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 20,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 20,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1015",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t10",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1003",
+        "Discount": 50,
+        "FakePrice": 9.98,
+        "FakePriceDesc": "$ 9.98",
+        "Id": 51003,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1003",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 4.99,
+        "PriceDesc": "$ 4.99",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t5",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1014",
+        "Discount": 90,
+        "FakePrice": 3.32,
+        "FakePriceDesc": "$ 3.32",
+        "Id": 61014,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 1,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 5,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 5,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1014",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 2.99,
+        "PriceDesc": "$ 2.99",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t3",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1003",
+        "Discount": 50,
+        "FakePrice": 9.98,
+        "FakePriceDesc": "$ 9.98",
+        "Id": 61003,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1003",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 4.99,
+        "PriceDesc": "$ 4.99",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t5",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1006",
+        "Discount": 50,
+        "FakePrice": 19.98,
+        "FakePriceDesc": "$ 19.98",
+        "Id": 61106,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 5009
+            }
+          ],
+          "resources": [
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1006",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.flagshippack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1013",
+        "Discount": 50,
+        "FakePrice": 39.98,
+        "FakePriceDesc": "$ 39.98",
+        "Id": 61113,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 2002
+            }
+          ],
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1013",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 19.99,
+        "PriceDesc": "$ 19.99",
+        "ProductId": "com.lilithgame.sailcraft.sneakpack.t20",
+        "Type": "LegendaryShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1004",
+        "Discount": 50,
+        "FakePrice": 19.98,
+        "FakePriceDesc": "$ 19.98",
+        "Id": 61004,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 3400,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 3400,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 3400,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1004",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t10",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1015",
+        "Discount": 85,
+        "FakePrice": 11.75,
+        "FakePriceDesc": "$ 11.75",
+        "Id": 61015,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 4,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 20,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 20,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1015",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t10",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1002",
+        "Discount": 50,
+        "FakePrice": 5.98,
+        "FakePriceDesc": "$ 5.98",
+        "Id": 71002,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1002",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 2.99,
+        "PriceDesc": "$ 2.99",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t3",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1015",
+        "Discount": 85,
+        "FakePrice": 11.75,
+        "FakePriceDesc": "$ 11.75",
+        "Id": 71015,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 4,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 20,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 20,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1015",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t10",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1007",
+        "Discount": 50,
+        "FakePrice": 19.98,
+        "FakePriceDesc": "$ 19.98",
+        "Id": 71107,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 4001
+            }
+          ],
+          "resources": [
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1007",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.cruisepack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1012",
+        "Discount": 50,
+        "FakePrice": 39.98,
+        "FakePriceDesc": "$ 39.98",
+        "Id": 71112,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 3007
+            }
+          ],
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1012",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 19.99,
+        "PriceDesc": "$ 19.99",
+        "ProductId": "com.lilithgame.sailcraft.breakoutpack.t20",
+        "Type": "LegendaryShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1016",
+        "Discount": 85,
+        "FakePrice": 23.43,
+        "FakePriceDesc": "$ 23.43",
+        "Id": 71016,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 30,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 40,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1016",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 19.99,
+        "PriceDesc": "$ 19.99",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t20",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1004",
+        "Discount": 50,
+        "FakePrice": 19.98,
+        "FakePriceDesc": "$ 19.98",
+        "Id": 71004,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 3400,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 3400,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 3400,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1004",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t10",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1014",
+        "Discount": 90,
+        "FakePrice": 3.32,
+        "FakePriceDesc": "$ 3.32",
+        "Id": 81014,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 1,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 5,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 5,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1014",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 2.99,
+        "PriceDesc": "$ 2.99",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t3",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1003",
+        "Discount": 50,
+        "FakePrice": 9.98,
+        "FakePriceDesc": "$ 9.98",
+        "Id": 81003,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1003",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 4.99,
+        "PriceDesc": "$ 4.99",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t5",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1008",
+        "Discount": 50,
+        "FakePrice": 19.98,
+        "FakePriceDesc": "$ 19.98",
+        "Id": 81108,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 3002
+            }
+          ],
+          "resources": [
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1008",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.breakoutpack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1010",
+        "Discount": 50,
+        "FakePrice": 39.98,
+        "FakePriceDesc": "$ 39.98",
+        "Id": 81110,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 5016
+            }
+          ],
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1010",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 19.99,
+        "PriceDesc": "$ 19.99",
+        "ProductId": "com.lilithgame.sailcraft.flagshippack.t20",
+        "Type": "LegendaryShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1005",
+        "Discount": 50,
+        "FakePrice": 39.98,
+        "FakePriceDesc": "$ 39.98",
+        "Id": 81005,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 6400,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 6400,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 6400,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1005",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 19.99,
+        "PriceDesc": "$ 19.99",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t20",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1015",
+        "Discount": 85,
+        "FakePrice": 11.75,
+        "FakePriceDesc": "$ 11.75",
+        "Id": 81015,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 4,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 20,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 20,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1015",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t10",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1001",
+        "Discount": 50,
+        "FakePrice": 1.98,
+        "FakePriceDesc": "$ 1.98",
+        "Id": 1001,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 300,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 300,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 300,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1001",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 0.99,
+        "PriceDesc": "$ 0.99",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t1",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1002",
+        "Discount": 50,
+        "FakePrice": 5.98,
+        "FakePriceDesc": "$ 5.98",
+        "Id": 1002,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1002",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 2.99,
+        "PriceDesc": "$ 2.99",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t3",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1003",
+        "Discount": 50,
+        "FakePrice": 9.98,
+        "FakePriceDesc": "$ 9.98",
+        "Id": 1003,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1003",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 4.99,
+        "PriceDesc": "$ 4.99",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t5",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1004",
+        "Discount": 50,
+        "FakePrice": 19.98,
+        "FakePriceDesc": "$ 19.98",
+        "Id": 1004,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 3400,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 3400,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 3400,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1004",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t10",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1005",
+        "Discount": 50,
+        "FakePrice": 39.98,
+        "FakePriceDesc": "$ 39.98",
+        "Id": 1005,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 6400,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 6400,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 6400,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1005",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 19.99,
+        "PriceDesc": "$ 19.99",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t20",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1006",
+        "Discount": 68,
+        "FakePrice": 14.69,
+        "FakePriceDesc": "$ 14.69",
+        "Id": 1006,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 5009
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1006",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.flagshippack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1007",
+        "Discount": 68,
+        "FakePrice": 14.69,
+        "FakePriceDesc": "$ 14.69",
+        "Id": 1007,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 4009
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1007",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.cruisepack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1008",
+        "Discount": 68,
+        "FakePrice": 14.69,
+        "FakePriceDesc": "$ 14.69",
+        "Id": 1008,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 3006
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1008",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.breakoutpack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1009",
+        "Discount": 68,
+        "FakePrice": 14.69,
+        "FakePriceDesc": "$ 14.69",
+        "Id": 1009,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 2003
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1009",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.sneakpack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1010",
+        "Discount": 64,
+        "FakePrice": 31.23,
+        "FakePriceDesc": "$ 31.23",
+        "Id": 1010,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 5001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1010",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 19.99,
+        "PriceDesc": "$ 19.99",
+        "ProductId": "com.lilithgame.sailcraft.flagshippack.t20",
+        "Type": "LegendaryShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1011",
+        "Discount": 64,
+        "FakePrice": 31.23,
+        "FakePriceDesc": "$ 31.23",
+        "Id": 1011,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 4020
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1011",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 19.99,
+        "PriceDesc": "$ 19.99",
+        "ProductId": "com.lilithgame.sailcraft.cruisepack.t20",
+        "Type": "LegendaryShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1012",
+        "Discount": 64,
+        "FakePrice": 31.23,
+        "FakePriceDesc": "$ 31.23",
+        "Id": 1012,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 3007
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1012",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 19.99,
+        "PriceDesc": "$ 19.99",
+        "ProductId": "com.lilithgame.sailcraft.breakoutpack.t20",
+        "Type": "LegendaryShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1013",
+        "Discount": 64,
+        "FakePrice": 31.23,
+        "FakePriceDesc": "$ 31.23",
+        "Id": 1013,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 2002
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1013",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 19.99,
+        "PriceDesc": "$ 19.99",
+        "ProductId": "com.lilithgame.sailcraft.sneakpack.t20",
+        "Type": "LegendaryShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1014",
+        "Discount": 90,
+        "FakePrice": 3.32,
+        "FakePriceDesc": "$ 3.32",
+        "Id": 1014,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 1,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 5,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 5,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1014",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 2.99,
+        "PriceDesc": "$ 2.99",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t3",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1015",
+        "Discount": 85,
+        "FakePrice": 11.75,
+        "FakePriceDesc": "$ 11.75",
+        "Id": 1015,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 4,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 20,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 20,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1015",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t10",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1016",
+        "Discount": 85,
+        "FakePrice": 23.43,
+        "FakePriceDesc": "$ 23.43",
+        "Id": 1016,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 30,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 40,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1016",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 19.99,
+        "PriceDesc": "$ 19.99",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t20",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1006",
+        "Discount": 50,
+        "FakePrice": 19.98,
+        "FakePriceDesc": "$ 19.98",
+        "Id": 1106,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 5009
+            }
+          ],
+          "resources": [
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1006",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.flagshippack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1007",
+        "Discount": 50,
+        "FakePrice": 19.98,
+        "FakePriceDesc": "$ 19.98",
+        "Id": 1107,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 4009
+            }
+          ],
+          "resources": [
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1007",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.cruisepack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1008",
+        "Discount": 50,
+        "FakePrice": 19.98,
+        "FakePriceDesc": "$ 19.98",
+        "Id": 1108,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 3006
+            }
+          ],
+          "resources": [
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1008",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.breakoutpack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1009",
+        "Discount": 50,
+        "FakePrice": 19.98,
+        "FakePriceDesc": "$ 19.98",
+        "Id": 1109,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 2003
+            }
+          ],
+          "resources": [
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1009",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 9.99,
+        "PriceDesc": "$ 9.99",
+        "ProductId": "com.lilithgame.sailcraft.sneakpack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1010",
+        "Discount": 50,
+        "FakePrice": 39.98,
+        "FakePriceDesc": "$ 39.98",
+        "Id": 1110,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 5001
+            }
+          ],
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1010",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 19.99,
+        "PriceDesc": "$ 19.99",
+        "ProductId": "com.lilithgame.sailcraft.flagshippack.t20",
+        "Type": "LegendaryShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1011",
+        "Discount": 50,
+        "FakePrice": 39.98,
+        "FakePriceDesc": "$ 39.98",
+        "Id": 1111,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 4020
+            }
+          ],
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1011",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 19.99,
+        "PriceDesc": "$ 19.99",
+        "ProductId": "com.lilithgame.sailcraft.cruisepack.t20",
+        "Type": "LegendaryShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1012",
+        "Discount": 50,
+        "FakePrice": 39.98,
+        "FakePriceDesc": "$ 39.98",
+        "Id": 1112,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 3007
+            }
+          ],
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1012",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 19.99,
+        "PriceDesc": "$ 19.99",
+        "ProductId": "com.lilithgame.sailcraft.breakoutpack.t20",
+        "Type": "LegendaryShip"
+      },
+      {
+        "AreaCode": "US",
+        "DescKey": "text_iapgift_desc_1013",
+        "Discount": 50,
+        "FakePrice": 39.98,
+        "FakePriceDesc": "$ 39.98",
+        "Id": 1113,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 2002
+            }
+          ],
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_1013",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 19.99,
+        "PriceDesc": "$ 19.99",
+        "ProductId": "com.lilithgame.sailcraft.sneakpack.t20",
+        "Type": "LegendaryShip"
+      }
+    ]
+  },
+  {
+    "AreaCode": "CN",
+    "Gift": [
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2001",
+        "Discount": 50,
+        "FakePrice": 12,
+        "FakePriceDesc": "¥ 12",
+        "Id": 12001,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 300,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 300,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 300,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2001",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 6,
+        "PriceDesc": "¥ 6",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t1",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2003",
+        "Discount": 50,
+        "FakePrice": 60,
+        "FakePriceDesc": "¥ 60",
+        "Id": 12003,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2003",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 30,
+        "PriceDesc": "¥ 30",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t5",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2007",
+        "Discount": 68,
+        "FakePrice": 100,
+        "FakePriceDesc": "¥ 100",
+        "Id": 12007,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 4009
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2007",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.cruisepack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2001",
+        "Discount": 50,
+        "FakePrice": 12,
+        "FakePriceDesc": "¥ 12",
+        "Id": 22001,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 300,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 300,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 300,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2001",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 6,
+        "PriceDesc": "¥ 6",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t1",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2014",
+        "Discount": 90,
+        "FakePrice": 20,
+        "FakePriceDesc": "¥ 20",
+        "Id": 22014,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 1,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 5,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 5,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2014",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 18,
+        "PriceDesc": "¥ 18",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t3",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2006",
+        "Discount": 68,
+        "FakePrice": 100,
+        "FakePriceDesc": "¥ 100",
+        "Id": 22006,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 5017
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2006",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.flagshippack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2002",
+        "Discount": 50,
+        "FakePrice": 36,
+        "FakePriceDesc": "¥ 36",
+        "Id": 32002,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2002",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 18,
+        "PriceDesc": "¥ 18",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t3",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2003",
+        "Discount": 50,
+        "FakePrice": 60,
+        "FakePriceDesc": "¥ 60",
+        "Id": 32003,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2003",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 30,
+        "PriceDesc": "¥ 30",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t5",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2009",
+        "Discount": 68,
+        "FakePrice": 100,
+        "FakePriceDesc": "¥ 100",
+        "Id": 32009,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 2003
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2009",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.sneakpack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2002",
+        "Discount": 50,
+        "FakePrice": 36,
+        "FakePriceDesc": "¥ 36",
+        "Id": 42002,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2002",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 18,
+        "PriceDesc": "¥ 18",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t3",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2015",
+        "Discount": 85,
+        "FakePrice": 80,
+        "FakePriceDesc": "¥ 80",
+        "Id": 42015,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 4,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 20,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 20,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2015",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t10",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2007",
+        "Discount": 68,
+        "FakePrice": 100,
+        "FakePriceDesc": "¥ 100",
+        "Id": 42007,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 4016
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2007",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.cruisepack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2001",
+        "Discount": 50,
+        "FakePrice": 12,
+        "FakePriceDesc": "¥ 12",
+        "Id": 52001,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 300,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 300,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 300,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2001",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 6,
+        "PriceDesc": "¥ 6",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t1",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2014",
+        "Discount": 90,
+        "FakePrice": 20,
+        "FakePriceDesc": "¥ 20",
+        "Id": 52014,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 1,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 5,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 5,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2014",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 18,
+        "PriceDesc": "¥ 18",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t3",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2008",
+        "Discount": 50,
+        "FakePrice": 136,
+        "FakePriceDesc": "¥ 136",
+        "Id": 52108,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 3006
+            }
+          ],
+          "resources": [
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2008",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.breakoutpack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2012",
+        "Discount": 50,
+        "FakePrice": 256,
+        "FakePriceDesc": "¥ 256",
+        "Id": 52112,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 3011
+            }
+          ],
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2012",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 128,
+        "PriceDesc": "¥ 128",
+        "ProductId": "com.lilithgame.sailcraft.breakoutpack.t20",
+        "Type": "LegendaryShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2015",
+        "Discount": 85,
+        "FakePrice": 80,
+        "FakePriceDesc": "¥ 80",
+        "Id": 52015,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 4,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 20,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 20,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2015",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t10",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2003",
+        "Discount": 50,
+        "FakePrice": 60,
+        "FakePriceDesc": "¥ 60",
+        "Id": 52003,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2003",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 30,
+        "PriceDesc": "¥ 30",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t5",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2014",
+        "Discount": 90,
+        "FakePrice": 20,
+        "FakePriceDesc": "¥ 20",
+        "Id": 62014,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 1,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 5,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 5,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2014",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 18,
+        "PriceDesc": "¥ 18",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t3",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2003",
+        "Discount": 50,
+        "FakePrice": 60,
+        "FakePriceDesc": "¥ 60",
+        "Id": 62003,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2003",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 30,
+        "PriceDesc": "¥ 30",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t5",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2006",
+        "Discount": 50,
+        "FakePrice": 136,
+        "FakePriceDesc": "¥ 136",
+        "Id": 62106,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 5009
+            }
+          ],
+          "resources": [
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2006",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.flagshippack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2013",
+        "Discount": 50,
+        "FakePrice": 256,
+        "FakePriceDesc": "¥ 256",
+        "Id": 62113,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 2002
+            }
+          ],
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2013",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 128,
+        "PriceDesc": "¥ 128",
+        "ProductId": "com.lilithgame.sailcraft.sneakpack.t20",
+        "Type": "LegendaryShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2004",
+        "Discount": 50,
+        "FakePrice": 136,
+        "FakePriceDesc": "¥ 136",
+        "Id": 62004,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 3400,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 3400,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 3400,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2004",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t10",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2015",
+        "Discount": 85,
+        "FakePrice": 80,
+        "FakePriceDesc": "¥ 80",
+        "Id": 62015,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 4,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 20,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 20,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2015",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t10",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2002",
+        "Discount": 50,
+        "FakePrice": 36,
+        "FakePriceDesc": "¥ 36",
+        "Id": 72002,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2002",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 18,
+        "PriceDesc": "¥ 18",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t3",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2015",
+        "Discount": 85,
+        "FakePrice": 80,
+        "FakePriceDesc": "¥ 80",
+        "Id": 72015,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 4,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 20,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 20,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2015",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t10",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2007",
+        "Discount": 50,
+        "FakePrice": 136,
+        "FakePriceDesc": "¥ 136",
+        "Id": 72107,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 4001
+            }
+          ],
+          "resources": [
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2007",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.cruisepack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2012",
+        "Discount": 50,
+        "FakePrice": 256,
+        "FakePriceDesc": "¥ 256",
+        "Id": 72112,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 3007
+            }
+          ],
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2012",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 128,
+        "PriceDesc": "¥ 128",
+        "ProductId": "com.lilithgame.sailcraft.breakoutpack.t20",
+        "Type": "LegendaryShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2016",
+        "Discount": 85,
+        "FakePrice": 150,
+        "FakePriceDesc": "¥ 150",
+        "Id": 72016,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 30,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 40,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2016",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 128,
+        "PriceDesc": "¥ 128",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t20",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2004",
+        "Discount": 50,
+        "FakePrice": 136,
+        "FakePriceDesc": "¥ 136",
+        "Id": 72004,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 3400,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 3400,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 3400,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2004",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t10",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2014",
+        "Discount": 90,
+        "FakePrice": 20,
+        "FakePriceDesc": "¥ 20",
+        "Id": 82014,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 1,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 5,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 5,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2014",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 18,
+        "PriceDesc": "¥ 18",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t3",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2003",
+        "Discount": 50,
+        "FakePrice": 60,
+        "FakePriceDesc": "¥ 60",
+        "Id": 82003,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2003",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 30,
+        "PriceDesc": "¥ 30",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t5",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2008",
+        "Discount": 50,
+        "FakePrice": 136,
+        "FakePriceDesc": "¥ 136",
+        "Id": 82108,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 3002
+            }
+          ],
+          "resources": [
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2008",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.breakoutpack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2010",
+        "Discount": 50,
+        "FakePrice": 256,
+        "FakePriceDesc": "¥ 256",
+        "Id": 82110,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 5016
+            }
+          ],
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2010",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 128,
+        "PriceDesc": "¥ 128",
+        "ProductId": "com.lilithgame.sailcraft.flagshippack.t20",
+        "Type": "LegendaryShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2005",
+        "Discount": 50,
+        "FakePrice": 256,
+        "FakePriceDesc": "¥ 256",
+        "Id": 82005,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 6400,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 6400,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 6400,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2005",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 128,
+        "PriceDesc": "¥ 128",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t20",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2015",
+        "Discount": 85,
+        "FakePrice": 80,
+        "FakePriceDesc": "¥ 80",
+        "Id": 82015,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 4,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 20,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 20,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2015",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t10",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2001",
+        "Discount": 50,
+        "FakePrice": 12,
+        "FakePriceDesc": "¥ 12",
+        "Id": 2001,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 300,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 300,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 300,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2001",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 6,
+        "PriceDesc": "¥ 6",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t1",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2002",
+        "Discount": 50,
+        "FakePrice": 36,
+        "FakePriceDesc": "¥ 36",
+        "Id": 2002,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2002",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 18,
+        "PriceDesc": "¥ 18",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t3",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2003",
+        "Discount": 50,
+        "FakePrice": 60,
+        "FakePriceDesc": "¥ 60",
+        "Id": 2003,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2003",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 30,
+        "PriceDesc": "¥ 30",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t5",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2004",
+        "Discount": 50,
+        "FakePrice": 136,
+        "FakePriceDesc": "¥ 136",
+        "Id": 2004,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 3400,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 3400,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 3400,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2004",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t10",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2005",
+        "Discount": 50,
+        "FakePrice": 256,
+        "FakePriceDesc": "¥ 256",
+        "Id": 2005,
+        "InnerGoods": {
+          "resources": [
+            {
+              "count": 6400,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 6400,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 6400,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2005",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_default",
+        "Price": 128,
+        "PriceDesc": "¥ 128",
+        "ProductId": "com.lilithgame.sailcraft.supplypack.t20",
+        "Type": "Supply"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2006",
+        "Discount": 68,
+        "FakePrice": 100,
+        "FakePriceDesc": "¥ 100",
+        "Id": 2006,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 5009
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2006",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.flagshippack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2007",
+        "Discount": 68,
+        "FakePrice": 100,
+        "FakePriceDesc": "¥ 100",
+        "Id": 2007,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 4009
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2007",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.cruisepack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2008",
+        "Discount": 68,
+        "FakePrice": 100,
+        "FakePriceDesc": "¥ 100",
+        "Id": 2008,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 3006
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2008",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.breakoutpack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2009",
+        "Discount": 68,
+        "FakePrice": 100,
+        "FakePriceDesc": "¥ 100",
+        "Id": 2009,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 2003
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2009",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.sneakpack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2010",
+        "Discount": 64,
+        "FakePrice": 200,
+        "FakePriceDesc": "¥ 200",
+        "Id": 2010,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 5001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2010",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 128,
+        "PriceDesc": "¥ 128",
+        "ProductId": "com.lilithgame.sailcraft.flagshippack.t20",
+        "Type": "LegendaryShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2011",
+        "Discount": 64,
+        "FakePrice": 200,
+        "FakePriceDesc": "¥ 200",
+        "Id": 2011,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 4020
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2011",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 128,
+        "PriceDesc": "¥ 128",
+        "ProductId": "com.lilithgame.sailcraft.cruisepack.t20",
+        "Type": "LegendaryShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2012",
+        "Discount": 64,
+        "FakePrice": 200,
+        "FakePriceDesc": "¥ 200",
+        "Id": 2012,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 3007
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2012",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 128,
+        "PriceDesc": "¥ 128",
+        "ProductId": "com.lilithgame.sailcraft.breakoutpack.t20",
+        "Type": "LegendaryShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2013",
+        "Discount": 64,
+        "FakePrice": 200,
+        "FakePriceDesc": "¥ 200",
+        "Id": 2013,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 2002
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2013",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 128,
+        "PriceDesc": "¥ 128",
+        "ProductId": "com.lilithgame.sailcraft.sneakpack.t20",
+        "Type": "LegendaryShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2014",
+        "Discount": 90,
+        "FakePrice": 20,
+        "FakePriceDesc": "¥ 20",
+        "Id": 2014,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 1,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 5,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 5,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2014",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 18,
+        "PriceDesc": "¥ 18",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t3",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2015",
+        "Discount": 85,
+        "FakePrice": 80,
+        "FakePriceDesc": "¥ 80",
+        "Id": 2015,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 4,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 20,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 20,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2015",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t10",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2016",
+        "Discount": 85,
+        "FakePrice": 150,
+        "FakePriceDesc": "¥ 150",
+        "Id": 2016,
+        "InnerGoods": {
+          "props": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 60003
+            },
+            {
+              "count": 30,
+              "count_type": "constant",
+              "protype_id": 60002
+            },
+            {
+              "count": 40,
+              "count_type": "constant",
+              "protype_id": 60001
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2016",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_maps",
+        "Price": 128,
+        "PriceDesc": "¥ 128",
+        "ProductId": "com.lilithgame.sailcraft.explorationpack.t20",
+        "Type": "Adventure"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2006",
+        "Discount": 50,
+        "FakePrice": 136,
+        "FakePriceDesc": "¥ 136",
+        "Id": 2106,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 5009
+            }
+          ],
+          "resources": [
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2006",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.flagshippack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2007",
+        "Discount": 50,
+        "FakePrice": 136,
+        "FakePriceDesc": "¥ 136",
+        "Id": 2107,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 4009
+            }
+          ],
+          "resources": [
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2007",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.cruisepack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2008",
+        "Discount": 50,
+        "FakePrice": 136,
+        "FakePriceDesc": "¥ 136",
+        "Id": 2108,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 3006
+            }
+          ],
+          "resources": [
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2008",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.breakoutpack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2009",
+        "Discount": 50,
+        "FakePrice": 136,
+        "FakePriceDesc": "¥ 136",
+        "Id": 2109,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 2003
+            }
+          ],
+          "resources": [
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 900,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2009",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 68,
+        "PriceDesc": "¥ 68",
+        "ProductId": "com.lilithgame.sailcraft.sneakpack.t10",
+        "Type": "EpicShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2010",
+        "Discount": 50,
+        "FakePrice": 256,
+        "FakePriceDesc": "¥ 256",
+        "Id": 2110,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 5001
+            }
+          ],
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2010",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 128,
+        "PriceDesc": "¥ 128",
+        "ProductId": "com.lilithgame.sailcraft.flagshippack.t20",
+        "Type": "LegendaryShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2011",
+        "Discount": 50,
+        "FakePrice": 256,
+        "FakePriceDesc": "¥ 256",
+        "Id": 2111,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 4020
+            }
+          ],
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2011",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 128,
+        "PriceDesc": "¥ 128",
+        "ProductId": "com.lilithgame.sailcraft.cruisepack.t20",
+        "Type": "LegendaryShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2012",
+        "Discount": 50,
+        "FakePrice": 256,
+        "FakePriceDesc": "¥ 256",
+        "Id": 2112,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 3007
+            }
+          ],
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2012",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 128,
+        "PriceDesc": "¥ 128",
+        "ProductId": "com.lilithgame.sailcraft.breakoutpack.t20",
+        "Type": "LegendaryShip"
+      },
+      {
+        "AreaCode": "CN",
+        "DescKey": "text_iapgift_desc_2013",
+        "Discount": 50,
+        "FakePrice": 256,
+        "FakePriceDesc": "¥ 256",
+        "Id": 2113,
+        "InnerGoods": {
+          "battleship_cards": [
+            {
+              "count": 10,
+              "count_type": "constant",
+              "protype_id": 2002
+            }
+          ],
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "stone"
+            }
+          ]
+        },
+        "Limit": {
+          "limit_times": 1,
+          "limit_type": "totally"
+        },
+        "NameKey": "text_iapgift_name_2013",
+        "PosterAssetBundleName": "supergiftposterdefault.assetbundle",
+        "PosterTextureName": "super_gift_poster_ships",
+        "Price": 128,
+        "PriceDesc": "¥ 128",
+        "ProductId": "com.lilithgame.sailcraft.sneakpack.t20",
+        "Type": "LegendaryShip"
+      }
+    ]
+  }
+]

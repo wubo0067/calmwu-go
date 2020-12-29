@@ -1,0 +1,1932 @@
+[
+  {
+    "Id": 1,
+    "Level": [
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 1000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 100,
+        "FleetSeaarea": 600,
+        "Level": 1,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 1,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 1200,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1200,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1200,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 102,
+        "FleetSeaarea": 620,
+        "Level": 2,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 2,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 104,
+        "FleetSeaarea": 640,
+        "Level": 3,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 3,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 1800,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1800,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1800,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 106,
+        "FleetSeaarea": 660,
+        "Level": 4,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 4,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 2300,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 2300,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 2300,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 110,
+        "FleetSeaarea": 680,
+        "Level": 5,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 5,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 2900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 2900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 2900,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 114,
+        "FleetSeaarea": 700,
+        "Level": 6,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 6,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 3500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 3500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 3500,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 118,
+        "FleetSeaarea": 720,
+        "Level": 7,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 7,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 4300,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 4300,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 4300,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 122,
+        "FleetSeaarea": 740,
+        "Level": 8,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 8,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 5100,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 5100,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 5100,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 126,
+        "FleetSeaarea": 770,
+        "Level": 9,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 9,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 6100,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 6100,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 6100,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 132,
+        "FleetSeaarea": 800,
+        "Level": 10,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 10,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 7200,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 7200,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 7200,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 138,
+        "FleetSeaarea": 830,
+        "Level": 11,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 11,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 8300,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 8300,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 8300,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 144,
+        "FleetSeaarea": 860,
+        "Level": 12,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 12,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 9600,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 9600,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 9600,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 150,
+        "FleetSeaarea": 890,
+        "Level": 13,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 13,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 11000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 11000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 11000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 156,
+        "FleetSeaarea": 920,
+        "Level": 14,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 14,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 12000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 12000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 12000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 164,
+        "FleetSeaarea": 960,
+        "Level": 15,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 15,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 14000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 14000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 14000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 172,
+        "FleetSeaarea": 1000,
+        "Level": 16,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 16,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 16000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 16000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 16000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 180,
+        "FleetSeaarea": 1040,
+        "Level": 17,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 17,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 17000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 17000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 17000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 188,
+        "FleetSeaarea": 1080,
+        "Level": 18,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 18,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 19000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 19000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 19000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 196,
+        "FleetSeaarea": 1120,
+        "Level": 19,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 19,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 21000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 21000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 21000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 206,
+        "FleetSeaarea": 1170,
+        "Level": 20,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 20,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 23000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 23000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 23000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 216,
+        "FleetSeaarea": 1220,
+        "Level": 21,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 21,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 25000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 25000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 25000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 226,
+        "FleetSeaarea": 1270,
+        "Level": 22,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 22,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 28000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 28000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 28000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 236,
+        "FleetSeaarea": 1320,
+        "Level": 23,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 23,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 30000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 30000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 30000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 246,
+        "FleetSeaarea": 1370,
+        "Level": 24,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 24,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 33000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 33000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 33000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 256,
+        "FleetSeaarea": 1420,
+        "Level": 25,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 25,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 35000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 35000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 35000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 266,
+        "FleetSeaarea": 1470,
+        "Level": 26,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 26,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 38000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 38000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 38000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 276,
+        "FleetSeaarea": 1520,
+        "Level": 27,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 27,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 40000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 40000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 40000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 286,
+        "FleetSeaarea": 1570,
+        "Level": 28,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 28,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 43000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 43000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 43000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 296,
+        "FleetSeaarea": 1620,
+        "Level": 29,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 29,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 46000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 46000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 46000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 306,
+        "FleetSeaarea": 1670,
+        "Level": 30,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 30,
+        "SpellAmmo": 1
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "Level": [
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 1000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 50,
+        "FleetLuck": 50,
+        "FleetSeaarea": 100,
+        "Level": 1,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 1,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 1200,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1200,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1200,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 50,
+        "FleetLuck": 52,
+        "FleetSeaarea": 120,
+        "Level": 2,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 2,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1500,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 50,
+        "FleetLuck": 54,
+        "FleetSeaarea": 140,
+        "Level": 3,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 3,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 1800,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 1800,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 1800,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 50,
+        "FleetLuck": 56,
+        "FleetSeaarea": 160,
+        "Level": 4,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 4,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 2300,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 2300,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 2300,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 50,
+        "FleetLuck": 60,
+        "FleetSeaarea": 180,
+        "Level": 5,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 5,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 2900,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 2900,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 2900,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 50,
+        "FleetLuck": 64,
+        "FleetSeaarea": 200,
+        "Level": 6,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 6,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 3500,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 3500,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 3500,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 50,
+        "FleetLuck": 68,
+        "FleetSeaarea": 220,
+        "Level": 7,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 7,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 4300,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 4300,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 4300,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 50,
+        "FleetLuck": 72,
+        "FleetSeaarea": 240,
+        "Level": 8,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 8,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 5100,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 5100,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 5100,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 50,
+        "FleetLuck": 76,
+        "FleetSeaarea": 270,
+        "Level": 9,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 9,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 6100,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 6100,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 6100,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 50,
+        "FleetLuck": 82,
+        "FleetSeaarea": 300,
+        "Level": 10,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 10,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 7200,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 7200,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 7200,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 50,
+        "FleetLuck": 88,
+        "FleetSeaarea": 330,
+        "Level": 11,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 11,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 8300,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 8300,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 8300,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 50,
+        "FleetLuck": 94,
+        "FleetSeaarea": 360,
+        "Level": 12,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 12,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 9600,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 9600,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 9600,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 50,
+        "FleetLuck": 100,
+        "FleetSeaarea": 390,
+        "Level": 13,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 13,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 11000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 11000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 11000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 50,
+        "FleetLuck": 106,
+        "FleetSeaarea": 420,
+        "Level": 14,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 14,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 12000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 12000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 12000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 50,
+        "FleetLuck": 114,
+        "FleetSeaarea": 460,
+        "Level": 15,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 15,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 14000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 14000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 14000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 122,
+        "FleetSeaarea": 500,
+        "Level": 16,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 16,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 16000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 16000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 16000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 130,
+        "FleetSeaarea": 540,
+        "Level": 17,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 17,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 17000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 17000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 17000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 138,
+        "FleetSeaarea": 580,
+        "Level": 18,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 18,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 19000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 19000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 19000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 146,
+        "FleetSeaarea": 620,
+        "Level": 19,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 19,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 21000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 21000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 21000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 156,
+        "FleetSeaarea": 670,
+        "Level": 20,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 20,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 23000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 23000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 23000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 166,
+        "FleetSeaarea": 720,
+        "Level": 21,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 21,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 25000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 25000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 25000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 176,
+        "FleetSeaarea": 770,
+        "Level": 22,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 22,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 28000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 28000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 28000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 186,
+        "FleetSeaarea": 820,
+        "Level": 23,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 23,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 30000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 30000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 30000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 196,
+        "FleetSeaarea": 870,
+        "Level": 24,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 24,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 33000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 33000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 33000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 206,
+        "FleetSeaarea": 920,
+        "Level": 25,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 25,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 35000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 35000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 35000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 216,
+        "FleetSeaarea": 970,
+        "Level": 26,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 26,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 38000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 38000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 38000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 226,
+        "FleetSeaarea": 1020,
+        "Level": 27,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 27,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 40000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 40000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 40000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 236,
+        "FleetSeaarea": 1070,
+        "Level": 28,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 28,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 43000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 43000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 43000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 246,
+        "FleetSeaarea": 1120,
+        "Level": 29,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 29,
+        "SpellAmmo": 1
+      },
+      {
+        "Appearance": "frigate",
+        "Cost": {
+          "resources": [
+            {
+              "count": 46000,
+              "count_type": "constant",
+              "type": "wood"
+            },
+            {
+              "count": 46000,
+              "count_type": "constant",
+              "type": "iron"
+            },
+            {
+              "count": 46000,
+              "count_type": "constant",
+              "type": "gold"
+            }
+          ]
+        },
+        "DescKey": "text_fnctnshipdesc_mothership",
+        "EnergyBase": 0,
+        "EnergyMax": 200,
+        "EnergyOutput": 100,
+        "FleetLuck": 256,
+        "FleetSeaarea": 1170,
+        "Level": 30,
+        "NameKey": "text_fnctnship_mothership",
+        "RequirePlayerLevel": 30,
+        "SpellAmmo": 1
+      }
+    ]
+  }
+]

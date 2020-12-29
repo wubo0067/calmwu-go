@@ -1,0 +1,177 @@
+[
+  {
+    "BonusList": {
+      "pve_tribute_bonus": {
+        "enable": 0,
+        "multiple": 1
+      },
+      "pvp_exp_bonus": {
+        "enable": 0,
+        "multiple": 1
+      },
+      "pvp_gold_bonus": {
+        "enable": 1,
+        "multiple": 2
+      }
+    },
+    "DescKey": "text_active_doublereward_desc_1",
+    "DescPos": [
+      -735,
+      385
+    ],
+    "Id": 1,
+    "NameKey": "text_active_doublereward_name_1",
+    "PosterAssetBundleName": "doublerewardposterdefault.assetbundle",
+    "PosterTextureName": "double_reward_poster_default"
+  },
+  {
+    "BonusList": {
+      "pve_tribute_bonus": {
+        "enable": 0,
+        "multiple": 1
+      },
+      "pvp_exp_bonus": {
+        "enable": 1,
+        "multiple": 2
+      },
+      "pvp_gold_bonus": {
+        "enable": 0,
+        "multiple": 1
+      }
+    },
+    "DescKey": "text_active_doublereward_desc_2",
+    "DescPos": [
+      -735,
+      385
+    ],
+    "Id": 2,
+    "NameKey": "text_active_doublereward_name_1",
+    "PosterAssetBundleName": "doublerewardposterdefault.assetbundle",
+    "PosterTextureName": "double_reward_poster_default"
+  },
+  {
+    "BonusList": {
+      "pve_tribute_bonus": {
+        "enable": 0,
+        "multiple": 1
+      },
+      "pvp_exp_bonus": {
+        "enable": 1,
+        "multiple": 2
+      },
+      "pvp_gold_bonus": {
+        "enable": 1,
+        "multiple": 2
+      }
+    },
+    "DescKey": "text_active_doublereward_desc_3",
+    "DescPos": [
+      -735,
+      385
+    ],
+    "Id": 3,
+    "NameKey": "text_active_doublereward_name_1",
+    "PosterAssetBundleName": "doublerewardposterdefault.assetbundle",
+    "PosterTextureName": "double_reward_poster_default"
+  },
+  {
+    "BonusList": {
+      "pve_tribute_bonus": {
+        "enable": 1,
+        "multiple": 1
+      },
+      "pvp_exp_bonus": {
+        "enable": 0,
+        "multiple": 1
+      },
+      "pvp_gold_bonus": {
+        "enable": 0,
+        "multiple": 1
+      }
+    },
+    "DescKey": "text_active_doublereward_desc_4",
+    "DescPos": [
+      -735,
+      385
+    ],
+    "Id": 4,
+    "NameKey": "text_active_doublereward_name_1",
+    "PosterAssetBundleName": "doublerewardposterdefault.assetbundle",
+    "PosterTextureName": "double_reward_poster_default"
+  },
+  {
+    "BonusList": {
+      "pve_tribute_bonus": {
+        "enable": 1,
+        "multiple": 1
+      },
+      "pvp_exp_bonus": {
+        "enable": 0,
+        "multiple": 1
+      },
+      "pvp_gold_bonus": {
+        "enable": 1,
+        "multiple": 2
+      }
+    },
+    "DescKey": "text_active_doublereward_desc_5",
+    "DescPos": [
+      -735,
+      385
+    ],
+    "Id": 5,
+    "NameKey": "text_active_doublereward_name_1",
+    "PosterAssetBundleName": "doublerewardposterdefault.assetbundle",
+    "PosterTextureName": "double_reward_poster_default"
+  },
+  {
+    "BonusList": {
+      "pve_tribute_bonus": {
+        "enable": 1,
+        "multiple": 1
+      },
+      "pvp_exp_bonus": {
+        "enable": 1,
+        "multiple": 2
+      },
+      "pvp_gold_bonus": {
+        "enable": 0,
+        "multiple": 1
+      }
+    },
+    "DescKey": "text_active_doublereward_desc_6",
+    "DescPos": [
+      -735,
+      385
+    ],
+    "Id": 6,
+    "NameKey": "text_active_doublereward_name_1",
+    "PosterAssetBundleName": "doublerewardposterdefault.assetbundle",
+    "PosterTextureName": "double_reward_poster_default"
+  },
+  {
+    "BonusList": {
+      "pve_tribute_bonus": {
+        "enable": 1,
+        "multiple": 1
+      },
+      "pvp_exp_bonus": {
+        "enable": 1,
+        "multiple": 2
+      },
+      "pvp_gold_bonus": {
+        "enable": 1,
+        "multiple": 2
+      }
+    },
+    "DescKey": "text_active_doublereward_desc_7",
+    "DescPos": [
+      -735,
+      385
+    ],
+    "Id": 7,
+    "NameKey": "text_active_doublereward_name_1",
+    "PosterAssetBundleName": "doublerewardposterdefault.assetbundle",
+    "PosterTextureName": "double_reward_poster_default"
+  }
+]

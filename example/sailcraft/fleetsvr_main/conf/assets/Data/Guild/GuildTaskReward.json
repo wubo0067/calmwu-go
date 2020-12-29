@@ -1,0 +1,75 @@
+[
+  {
+    "IconName": "img_pirate_chest",
+    "Id": 1001,
+    "Reward": {
+      "props": [
+        {
+          "count": [
+            3,
+            5
+          ],
+          "count_type": "range",
+          "protype_id": 60001
+        },
+        {
+          "count": [
+            0,
+            1
+          ],
+          "count_type": "range",
+          "protype_id": 60002
+        }
+      ]
+    },
+    "RewardPopDesc": "text_pop_guildactivity_reward_01_desc",
+    "RewardPopName": "text_pop_guildactivity_reward_01_name",
+    "Score": 30
+  },
+  {
+    "IconName": "img_silver_chest",
+    "Id": 1002,
+    "Reward": {
+      "props": [
+        {
+          "count": [
+            5,
+            7
+          ],
+          "count_type": "range",
+          "protype_id": 60001
+        },
+        {
+          "count": [
+            1,
+            2
+          ],
+          "count_type": "range",
+          "protype_id": 60002
+        }
+      ]
+    },
+    "RewardPopDesc": "text_pop_guildactivity_reward_02_desc",
+    "RewardPopName": "text_pop_guildactivity_reward_02_name",
+    "Score": 60
+  },
+  {
+    "IconName": "img_gold_chest",
+    "Id": 1003,
+    "Reward": {
+      "props": [
+        {
+          "count": [
+            2,
+            4
+          ],
+          "count_type": "range",
+          "protype_id": 60002
+        }
+      ]
+    },
+    "RewardPopDesc": "text_pop_guildactivity_reward_03_desc",
+    "RewardPopName": "text_pop_guildactivity_reward_03_name",
+    "Score": 100
+  }
+]
