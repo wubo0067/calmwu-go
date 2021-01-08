@@ -2,7 +2,7 @@
  * @Author: calmwu
  * @Date: 2017-10-23 14:59:25
  * @Last Modified by: calmwu
- * @Last Modified time: 2020-08-15 20:16:13
+ * @Last Modified time: 2020-08-15 20:23:43
  * @Comment:
  */
 
@@ -688,9 +688,8 @@ func (rm *RedisMgr) ZRem(key string, members ...string) (int, error) {
 	if err == nil {
 		if hValue == nil {
 			return 0, nil
-		} else {
-			return hValue.(int), nil
 		}
+		return hValue.(int), nil
 	}
 
 	return 0, err
@@ -709,9 +708,8 @@ func (rm *RedisMgr) ZReverseRank(key string, member string) (int, error) {
 	if err == nil {
 		if hValue == nil {
 			return 0, nil
-		} else {
-			return hValue.(int), nil
 		}
+		return hValue.(int), nil
 	}
 
 	return 0, err
@@ -809,9 +807,8 @@ func (rm *RedisMgr) SAdd(key string, members ...interface{}) (int64, error) {
 	if err == nil {
 		if hValue == nil {
 			return 0, nil
-		} else {
-			return hValue.(int64), nil
 		}
+		return hValue.(int64), nil
 	}
 
 	return 0, err
@@ -830,9 +827,8 @@ func (rm *RedisMgr) SRem(key string, members ...interface{}) (int64, error) {
 	if err == nil {
 		if hValue == nil {
 			return 0, nil
-		} else {
-			return hValue.(int64), nil
 		}
+		return hValue.(int64), nil
 	}
 	return 0, err
 }
