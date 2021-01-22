@@ -2,7 +2,7 @@
  * @Author: CALM.WU
  * @Date: 2021-01-19 16:34:15
  * @Last Modified by: CALM.WU
- * @Last Modified time: 2021-01-19 16:57:01
+ * @Last Modified time: 2021-01-22 11:02:37
  */
 
 package main
@@ -46,6 +46,7 @@ func (s *Server) echoConsoleHandler(w http.ResponseWriter, req *http.Request, _ 
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
+	defer req.Body.Close()
 
 	rdBuf := make([]byte, 4*1024)
 
@@ -65,7 +66,6 @@ func (s *Server) echoConsoleHandler(w http.ResponseWriter, req *http.Request, _ 
 			log.Printf("receive err:%s", err.Error())
 			if err == io.EOF {
 				w.Header().Set("Status", "200 OK, Read Completed")
-				req.Body.Close()
 				log.Println("client closed")
 			}
 			break

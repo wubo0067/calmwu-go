@@ -2,7 +2,7 @@
  * @Author: CALM.WU
  * @Date: 2021-01-19 16:58:07
  * @Last Modified by: CALM.WU
- * @Last Modified time: 2021-01-19 17:42:43
+ * @Last Modified time: 2021-01-22 10:51:21
  */
 
 package main
@@ -76,7 +76,7 @@ func (c *Client) Console(rd io.ReadCloser) {
 		rLen, err := bReader.Read(rBuf)
 		if rLen > 0 {
 			totalBytesReceived += rLen
-			log.Printf("totalBytesReceived:%d, %s", totalBytesReceived, string(rBuf[:rLen]))
+			log.Printf("totalBytesReceived: %d, content: %s", totalBytesReceived, string(rBuf[:rLen]))
 		}
 
 		if err != nil {
@@ -99,7 +99,23 @@ func main() {
 	client.Initialize()
 	go client.Console(rPipe)
 
-	io.Copy(wPipe, os.Stdin)
+	lineBuf := make([]byte, 1024)
+	for {
+		log.Printf("> ")
+		n, err := os.Stdin.Read(lineBuf)
+		log.Printf("[%d %q %v]\n> ", n, lineBuf[:n], err)
+
+		if err == nil {
+			wPipe.Write(lineBuf[:n])
+		} else {
+			if err == io.EOF {
+				log.Printf("Disconnect from the server")
+				wPipe.Close()
+			}
+			break
+		}
+	}
+	//io.Copy(wPipe, os.Stdin)
 
 	time.Sleep(3 * time.Second)
 	log.Println("---client exit---")
