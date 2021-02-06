@@ -14,14 +14,14 @@ import "sync"
 type (
 	// BarrierCalls 并行访问的接口
 	BarrierCalls interface {
-		Do(key string, arg interface{}, fn func(arg interface{}) (interface{}, error)) (interface{}, bool, error)
+		Do(key string, args interface{}, fn func(args interface{}) (interface{}, error)) (interface{}, bool, error)
 	}
 
 	// BCall 每次请求生成的调用对象
 	BCall struct {
-		ch  chan struct{}
-		val interface{}
-		err error
+		ch  chan struct{} // 执行同步对象
+		val interface{}   // 执行的结果
+		err error         // 执行的错误信息
 	}
 
 	barrierCallsGroup struct {
@@ -37,14 +37,14 @@ func NewBarrierCalls() BarrierCalls {
 	}
 }
 
-// Do 执行调用，对相同的key，func穿行调用
-func (bcg *barrierCallsGroup) Do(key string, arg interface{}, fn func(arg interface{}) (interface{}, error)) (interface{}, bool, error) {
+// Do 执行调用，对相同的key，func串行调用
+func (bcg *barrierCallsGroup) Do(key string, args interface{}, fn func(args interface{}) (interface{}, error)) (interface{}, bool, error) {
 	bc, fresh := bcg.newBCall(key)
 	if fresh {
 		return bc.val, false, bc.err
 	}
 
-	bcg.doBCall(bc, key, arg, fn)
+	bcg.doBCall(bc, key, args, fn)
 	return bc.val, true, bc.err
 }
 
@@ -52,7 +52,7 @@ func (bcg *barrierCallsGroup) newBCall(key string) (*BCall, bool) {
 	bcg.mutex.Lock()
 	if bc, exist := bcg.calls[key]; exist {
 		bcg.mutex.Unlock()
-		// 有相同的key操作，等待释放
+		// 有相同的key操作，等待释放，直接使用缓存后的数据
 		<-bc.ch
 		return bc, true
 	}
@@ -64,7 +64,7 @@ func (bcg *barrierCallsGroup) newBCall(key string) (*BCall, bool) {
 	return bc, false
 }
 
-func (bcg *barrierCallsGroup) doBCall(bc *BCall, key string, arg interface{}, fn func(arg interface{}) (interface{}, error)) {
+func (bcg *barrierCallsGroup) doBCall(bc *BCall, key string, args interface{}, fn func(args interface{}) (interface{}, error)) {
 	defer func() {
 		bcg.mutex.Lock()
 		delete(bcg.calls, key)
@@ -73,5 +73,5 @@ func (bcg *barrierCallsGroup) doBCall(bc *BCall, key string, arg interface{}, fn
 		bcg.mutex.Unlock()
 	}()
 
-	bc.val, bc.err = fn(arg)
+	bc.val, bc.err = fn(args)
 }
