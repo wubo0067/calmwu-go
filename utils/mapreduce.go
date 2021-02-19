@@ -212,6 +212,7 @@ func apply(slice, function interface{}, inPlace bool) (interface{}, error) {
 	for i := 0; i < in.Len(); i++ {
 		// 函数输入参数
 		ins[0] = in.Index(i)
+		// 设置elem值
 		out.Index(i).Set(fn.Call(ins[:])[0])
 	}
 	return out.Interface(), nil
