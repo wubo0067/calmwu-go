@@ -64,6 +64,7 @@ var initCmd = cli.Command{
 		}
 
 		cmdArgs := strings.Split(string(msg), " ")
+		log.Printf("cmdArgs: %#v\n", cmdArgs)
 
 		// 第一个是执行程序
 		initCmd, err := exec.LookPath(cmdArgs[0])
@@ -77,7 +78,7 @@ var initCmd = cli.Command{
 		if err := syscall.Exec(initCmd, cmdArgs[0:], []string{}); err != nil {
 			log.Fatalf(err.Error())
 		}
-
+		log.Printf("--------init exit--------\n")
 		return nil
 	},
 }
@@ -129,8 +130,11 @@ func ForkExec(cmdArgs []string, tty bool) error {
 		cmd.Wait()
 		log.Printf("pid:%d child process exit!\n", cmd.Process.Pid)
 	} else {
+		// os.Stdout.Sync()
+		// os.Stderr.Sync()
 		cmd.Process.Release()
 	}
+	log.Printf("--------run exit--------\n")
 	return nil
 }
 
