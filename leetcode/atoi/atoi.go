@@ -89,8 +89,14 @@ func myAtoi(s string) int {
 				isNegative = true
 				preByteType = Minus
 			} else if bNum >= _minNumASCII && bNum <= _maxNumASCII {
-				preByteType = Num
-				nums = append(nums, bNum-_minNumASCII)
+				if b == '0' {
+					//fmt.Printf("----------FirstZero\n")
+					preByteType = FristZero
+				} else {
+					//fmt.Printf("----------add FirstZero bNum = %d\n", bNum)
+					preByteType = Num
+					nums = append(nums, bNum-_minNumASCII)
+				}
 			} else {
 				preByteType = Def
 				return 0
@@ -112,14 +118,28 @@ func myAtoi(s string) int {
 			} else {
 				break
 			}
+		} else if preByteType == FristZero {
+			if b == '+' || b == '-' {
+				return 0
+			} else if bNum >= _minNumASCII && bNum <= _maxNumASCII {
+				if b == '0' {
+					//fmt.Printf("----------FirstZero\n")
+					preByteType = FristZero
+				} else {
+					preByteType = Num
+					nums = append(nums, bNum-_minNumASCII)
+				}
+			} else {
+				preByteType = Def
+				return 0
+			}
 		}
 	}
 
-	fmt.Printf("numWide = %d, nums = {%v}\n", len(nums), nums)
-
-	numWide := len(nums) - 1
+	//fmt.Printf("nums = %v\n", nums)
 
 	var result, temp uint64
+	numWide := len(nums) - 1
 	for _, n := range nums {
 		temp = uint64(n)
 
@@ -128,6 +148,7 @@ func myAtoi(s string) int {
 			break
 		}
 		result = result + temp*uint64((math.Pow10(numWide)))
+		//result = result + temp*_powNum[numWide]
 		numWide--
 	}
 
@@ -146,6 +167,7 @@ func myAtoi(s string) int {
 
 	return int(result)
 }
+
 func main() {
 	fmt.Printf("MaxInt32 = %d MinInt32 = %d MaxUint64=%d\n", MaxInt32, MinInt32, uint64(math.MaxUint64))
 
@@ -156,24 +178,24 @@ func main() {
 	content := "  -42"
 	fmt.Printf("{%s} ===> {%d}\n\n", content, myAtoi(content))
 
-	// content = "4193 with words"
-	// fmt.Printf("{%s} ===> {%d}\n\n", content, myAtoi(content))
+	content = "4193 with words"
+	fmt.Printf("{%s} ===> {%d}\n\n", content, myAtoi(content))
 
-	// content = "words and 987"
-	// fmt.Printf("{%s} ===> {%d}\n\n", content, myAtoi(content))
+	content = "words and 987"
+	fmt.Printf("{%s} ===> {%d}\n\n", content, myAtoi(content))
 
-	// content = "-91283472332"
-	// fmt.Printf("{%s} ===> {%d}\n\n", content, myAtoi(content))
+	content = "-91283472332"
+	fmt.Printf("{%s} ===> {%d}\n\n", content, myAtoi(content))
 
-	// content = "+-12"
-	// fmt.Printf("{%s} ===> {%d}\n\n", content, myAtoi(content))
+	content = "+-12"
+	fmt.Printf("{%s} ===> {%d}\n\n", content, myAtoi(content))
 
-	// content = "00000-42a1234"
-	// fmt.Printf("{%s} ===> {%d}\n\n", content, myAtoi(content))
+	content = "00000-42a1234"
+	fmt.Printf("{%s} ===> {%d}\n\n", content, myAtoi(content))
 
 	content = "  0000000000012345678"
 	fmt.Printf("{%s} ===> {%d}\n\n", content, myAtoi(content))
 
-	// content = "18446744073709551617"
-	// fmt.Printf("{%s} ===> {%d}\n\n", content, myAtoi(content))
+	content = "18446744073709551617"
+	fmt.Printf("{%s} ===> {%d}\n\n", content, myAtoi(content))
 }
