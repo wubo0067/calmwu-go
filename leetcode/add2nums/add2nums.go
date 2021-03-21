@@ -17,7 +17,6 @@ type ListNode struct {
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	res := &ListNode{}
-	//courseNode := res
 	tailNode := &res.Next
 	val := 0
 	isNumCarry := false
@@ -40,17 +39,18 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 			(*tailNode).Val = val
 		}
 
+		// 上级指针的地址，下次给这个赋值就是修改了上级node的next
 		tailNode = &(*tailNode).Next
 
 		l1 = l1.Next
 		l2 = l2.Next
 
-		if l1 == nil {
-			partNode = l2
-		} else if l2 == nil {
-			partNode = l1
-		} else {
+		if l1 != nil && l2 != nil {
 			continue
+		} else if l1 == nil {
+			partNode = l2
+		} else {
+			partNode = l1
 		}
 
 		for partNode != nil {
