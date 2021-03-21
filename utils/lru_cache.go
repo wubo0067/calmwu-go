@@ -85,6 +85,7 @@ func (lc *LRUCache) removeNode(key string) {
 		if node.prevNode != nil {
 			node.prevNode.nextNode = node.nextNode
 		} else {
+			// 更新firstNode指向
 			lc.firstNode = node.nextNode
 		}
 

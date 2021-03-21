@@ -162,8 +162,6 @@ type Backoff struct {
 	Steps    int
 }
 
-
-
 type WaitFunc func(done <-chan struct{}) <-chan struct{}
 
 func Poll(interval, timeout time.Duration, condition ConditionFunc) error {
