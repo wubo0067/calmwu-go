@@ -17,8 +17,8 @@ type ListNode struct {
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	res := &ListNode{}
-	courseNode := res
-	var tailNode *ListNode = nil
+	//courseNode := res
+	tailNode := &res.Next
 	val := 0
 	isNumCarry := false
 	var partNode *ListNode = nil
@@ -30,17 +30,17 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 			val++
 		}
 
+		*tailNode = &ListNode{}
+
 		if val >= 10 {
 			isNumCarry = true
-			courseNode.Val = val - 10
+			(*tailNode).Val = val - 10
 		} else {
 			isNumCarry = false
-			courseNode.Val = val
+			(*tailNode).Val = val
 		}
 
-		tailNode = courseNode
-		tailNode.Next = &ListNode{}
-		courseNode = tailNode.Next
+		tailNode = &(*tailNode).Next
 
 		l1 = l1.Next
 		l2 = l2.Next
@@ -54,60 +54,31 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 		}
 
 		for partNode != nil {
+			*tailNode = &ListNode{}
+
 			if isNumCarry {
-				courseNode.Val = partNode.Val + 1
-				if courseNode.Val >= 10 {
-					courseNode.Val = courseNode.Val - 10
+				(*tailNode).Val = partNode.Val + 1
+				if (*tailNode).Val >= 10 {
+					(*tailNode).Val = (*tailNode).Val - 10
 					isNumCarry = true
 				} else {
 					isNumCarry = false
 				}
 			} else {
 				isNumCarry = false
-				courseNode.Val = partNode.Val
+				(*tailNode).Val = partNode.Val
 			}
 
 			partNode = partNode.Next
-			tailNode = courseNode
-			tailNode.Next = &ListNode{}
-			courseNode = tailNode.Next
+			tailNode = &(*tailNode).Next
 		}
 	}
 
-	// if l1 != nil && l2 == nil {
-	// 	partNode = l1
-	// } else {
-	// 	partNode = l2
-	// }
-
-	// for partNode != nil {
-	// 	if isNumCarry {
-	// 		courseNode.Val = partNode.Val + 1
-	// 		if courseNode.Val >= 10 {
-	// 			courseNode.Val = courseNode.Val - 10
-	// 			isNumCarry = true
-	// 		} else {
-	// 			isNumCarry = false
-	// 		}
-	// 	} else {
-	// 		isNumCarry = false
-	// 		courseNode.Val = partNode.Val
-	// 	}
-
-	// 	partNode = partNode.Next
-	// 	tailNode = courseNode
-	// 	tailNode.Next = &ListNode{}
-	// 	courseNode = tailNode.Next
-	// }
-
 	if isNumCarry {
-		courseNode.Val = 1
-		courseNode.Next = nil
-	} else {
-		tailNode.Next = nil
+		*tailNode = &ListNode{1, nil}
 	}
 
-	return res
+	return res.Next
 }
 
 func printListNodes(l *ListNode) {
