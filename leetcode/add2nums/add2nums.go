@@ -18,9 +18,10 @@ type ListNode struct {
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	res := &ListNode{}
 	courseNode := res
-	isNumCarry := false
 	var tailNode *ListNode = nil
 	val := 0
+	isNumCarry := false
+	var partNode *ListNode = nil
 
 	for l1 != nil && l2 != nil {
 		val = l1.Val + l2.Val
@@ -43,35 +44,61 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 
 		l1 = l1.Next
 		l2 = l2.Next
-	}
 
-	var partNode *ListNode
-
-	if l1 != nil && l2 == nil {
-		partNode = l1
-	} else {
-		partNode = l2
-	}
-
-	for partNode != nil {
-		if isNumCarry {
-			courseNode.Val = partNode.Val + 1
-			if courseNode.Val >= 10 {
-				courseNode.Val = courseNode.Val - 10
-				isNumCarry = true
-			} else {
-				isNumCarry = false
-			}
+		if l1 == nil {
+			partNode = l2
+		} else if l2 == nil {
+			partNode = l1
 		} else {
-			isNumCarry = false
-			courseNode.Val = partNode.Val
+			continue
 		}
 
-		partNode = partNode.Next
-		tailNode = courseNode
-		tailNode.Next = &ListNode{}
-		courseNode = tailNode.Next
+		for partNode != nil {
+			if isNumCarry {
+				courseNode.Val = partNode.Val + 1
+				if courseNode.Val >= 10 {
+					courseNode.Val = courseNode.Val - 10
+					isNumCarry = true
+				} else {
+					isNumCarry = false
+				}
+			} else {
+				isNumCarry = false
+				courseNode.Val = partNode.Val
+			}
+
+			partNode = partNode.Next
+			tailNode = courseNode
+			tailNode.Next = &ListNode{}
+			courseNode = tailNode.Next
+		}
 	}
+
+	// if l1 != nil && l2 == nil {
+	// 	partNode = l1
+	// } else {
+	// 	partNode = l2
+	// }
+
+	// for partNode != nil {
+	// 	if isNumCarry {
+	// 		courseNode.Val = partNode.Val + 1
+	// 		if courseNode.Val >= 10 {
+	// 			courseNode.Val = courseNode.Val - 10
+	// 			isNumCarry = true
+	// 		} else {
+	// 			isNumCarry = false
+	// 		}
+	// 	} else {
+	// 		isNumCarry = false
+	// 		courseNode.Val = partNode.Val
+	// 	}
+
+	// 	partNode = partNode.Next
+	// 	tailNode = courseNode
+	// 	tailNode.Next = &ListNode{}
+	// 	courseNode = tailNode.Next
+	// }
 
 	if isNumCarry {
 		courseNode.Val = 1
