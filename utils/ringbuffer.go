@@ -36,6 +36,37 @@ func NewRingBuffer(initialSize int) *RingBuffer {
 	}
 }
 
+// Read reads up to len(p) bytes to p
+func (r *RingBuffer) Read(p []byte) (n int, err error) {
+	if len(p) == 0 {
+		return 0, nil
+	}
+
+	r.mu.Lock()
+	defer r.mu.Unlock()
+	n, err = r.read(p)
+	return
+}
+
+// ReadByte read a next byte from the buf or return ErrRingBufEmpty
+func (r *RingBuffer) ReadByte() (b byte, err error) {
+	r.mu.Lock()
+	defer r.mu.Unlock()
+
+	if r.wPos == r.rPos && !r.isFull {
+		return 0, ErrRingBufEmpty
+	}
+
+	b = r.buf[r.rPos]
+	r.rPos++
+	if r.rPos == r.size {
+		r.rPos = 0
+	}
+
+	r.isFull = false
+	return b, nil
+}
+
 func (r *RingBuffer) read(p []byte) (n int, err error) {
 	if r.wPos == r.rPos && !r.isFull {
 		return 0, ErrRingBufEmpty
@@ -73,6 +104,47 @@ func (r *RingBuffer) read(p []byte) (n int, err error) {
 	r.rPos = (r.rPos + n) % r.size
 	r.isFull = false
 
+	return n, err
+}
+
+// Write write len p bytes to underlying buf
+func (r *RingBuffer) Write(p []byte) (n int, err error) {
+	r.mu.Lock()
+	defer r.mu.Unlock()
+
+	n, err = r.write(p)
+	return n, err
+}
+
+func (r *RingBuffer) WriteByte(b byte) error {
+	r.mu.Lock()
+	defer r.mu.Unlock()
+
+	if r.wPos == r.rPos && r.isFull {
+		return ErrRingBufFull
+	}
+
+	r.buf[r.wPos] = b
+	r.wPos++
+
+	if r.wPos == r.size {
+		r.wPos = 0
+	}
+
+	if r.wPos == r.rPos {
+		r.isFull = true
+	}
+
+	return nil
+}
+
+// WriteString writes the contents of the string s to buffer, which accepts a slice of bytes.
+func (r *RingBuffer) WriteString(s string) (n int, err error) {
+	bs := String2Bytes(s)
+
+	r.mu.Lock()
+	defer r.mu.Unlock()
+	n, err = r.write(bs)
 	return n, err
 }
 
