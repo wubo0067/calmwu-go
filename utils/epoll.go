@@ -10,7 +10,6 @@
 package utils
 
 import (
-	"errors"
 	"fmt"
 	"net"
 	"reflect"
@@ -88,7 +87,7 @@ func (ep *Epoll) Add(conn, connArg interface{}) (int, error) {
 		econn.SocketFD = GorillaConnSocketFD(realConn)
 		econn.ConnType = EPOLLConnTypeWEBSOCKET
 	default:
-		return -1, errors.New(fmt.Sprintf("conn type:%s is not support\n", reflect.Indirect(reflect.ValueOf(conn)).Type().Name()))
+		return -1, fmt.Errorf("conn type:%s is not support", reflect.Indirect(reflect.ValueOf(conn)).Type().Name())
 	}
 
 	// nonblock

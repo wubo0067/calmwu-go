@@ -39,6 +39,7 @@ func ArrayToString(a []int, delim string) string {
 	//return strings.Trim(strings.Join(strings.Fields(fmt.Sprint(a)), delim), "[]")
 }
 
+// ReverseString reverse string content
 func ReverseString(s string) string {
 	chars := []rune(s)
 	for i, j := 0, len(chars)-1; i < j; i, j = i+1, j-1 {
@@ -83,7 +84,7 @@ func StringPointer(s string) unsafe.Pointer {
 	return unsafe.Pointer(sh.Data)
 }
 
-// BytesPointer
+// BytesPointer convert byte slice to pointer
 func BytesPointer(b []byte) unsafe.Pointer {
 	bh := (*reflect.SliceHeader)(unsafe.Pointer(&b))
 	return unsafe.Pointer(bh.Data)
