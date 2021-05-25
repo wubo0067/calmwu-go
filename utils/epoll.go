@@ -86,6 +86,9 @@ func (ep *Epoll) Add(conn, connArg interface{}) (int, error) {
 	case *websocket.Conn:
 		econn.SocketFD = GorillaConnSocketFD(realConn)
 		econn.ConnType = EPOLLConnTypeWEBSOCKET
+	case *net.Conn:
+		econn.SocketFD = NetConnsocketFD(realConn)
+		econn.ConnType = EPOLLConnTypeWEBSOCKET
 	default:
 		return -1, fmt.Errorf("conn type:%s is not support", reflect.Indirect(reflect.ValueOf(conn)).Type().Name())
 	}
@@ -188,6 +191,20 @@ func GorillaConnSocketFD(conn *websocket.Conn) int {
 	// Elem()从返回的interface中获取真实的对象
 	connVal := reflect.Indirect(reflect.ValueOf(conn)).FieldByName("conn").Elem()
 	tcpConn := reflect.Indirect(connVal).FieldByName("conn")
+	fdVal := tcpConn.FieldByName("fd")
+	pfdVal := reflect.Indirect(fdVal).FieldByName("pfd")
+	return int(pfdVal.FieldByName("Sysfd").Int())
+}
+
+// NetConnsocketFD get fd from net conn
+func NetConnsocketFD(conn *net.Conn) int {
+	//tls := reflect.TypeOf(conn.UnderlyingConn()) == reflect.TypeOf(&tls.Conn{})
+	// Extract the file descriptor associated with the connection
+	//connVal := reflect.Indirect(reflect.ValueOf(conn)).FieldByName("conn").Elem()
+	tcpConn := reflect.Indirect(reflect.ValueOf(conn)).FieldByName("conn").Elem()
+	//if tls {
+	//	tcpConn = reflect.Indirect(tcpConn.Elem())
+	//}
 	fdVal := tcpConn.FieldByName("fd")
 	pfdVal := reflect.Indirect(fdVal).FieldByName("pfd")
 	return int(pfdVal.FieldByName("Sysfd").Int())
