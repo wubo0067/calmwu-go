@@ -86,7 +86,7 @@ func (ep *Epoll) Add(conn, connArg interface{}) (int, error) {
 	case *websocket.Conn:
 		econn.SocketFD = GorillaConnSocketFD(realConn)
 		econn.ConnType = EPOLLConnTypeWEBSOCKET
-	case *net.Conn:
+	case net.Conn:
 		econn.SocketFD = NetConnsocketFD(realConn)
 		econn.ConnType = EPOLLConnTypeWEBSOCKET
 	default:
@@ -197,7 +197,7 @@ func GorillaConnSocketFD(conn *websocket.Conn) int {
 }
 
 // NetConnsocketFD get fd from net conn
-func NetConnsocketFD(conn *net.Conn) int {
+func NetConnsocketFD(conn net.Conn) int {
 	//tls := reflect.TypeOf(conn.UnderlyingConn()) == reflect.TypeOf(&tls.Conn{})
 	// Extract the file descriptor associated with the connection
 	//connVal := reflect.Indirect(reflect.ValueOf(conn)).FieldByName("conn").Elem()
