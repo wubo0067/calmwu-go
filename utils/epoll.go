@@ -10,6 +10,7 @@
 package utils
 
 import (
+	"errors"
 	"fmt"
 	"net"
 	"reflect"
@@ -52,6 +53,7 @@ type Epoll struct {
 	fd          int
 	connections map[int]*EpollConn
 	lock        *sync.RWMutex
+	closed      bool
 }
 
 func NewEpoll() (*Epoll, error) {
@@ -120,6 +122,31 @@ func (ep *Epoll) Add(conn, connArg interface{}) (int, error) {
 	defer ep.lock.Unlock()
 	ep.connections[econn.SocketFD] = econn
 	return econn.SocketFD, nil
+}
+
+// Close close epoll allocate fd and related client fd
+func (ep *Epoll) Close() error {
+	ep.lock.Lock()
+
+	if ep.closed {
+		ep.lock.Unlock()
+		return errors.New("poller instance is closed")
+	}
+
+	if err := unix.Close(ep.fd); err != nil {
+		return err
+	}
+
+	connections := ep.connections
+	ep.connections = nil
+	ep.lock.Unlock()
+
+	// clear map
+	for fd := range connections {
+		connections[fd] = nil
+		//unix.Close(fd)
+	}
+	return nil
 }
 
 func (ep *Epoll) Remove(socketFD int) error {
