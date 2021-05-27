@@ -1,0 +1,12 @@
+# github.com/florianl/go-tc v0.2.0
+## explicit
+github.com/florianl/go-tc
+github.com/florianl/go-tc/core
+github.com/florianl/go-tc/internal/unix
+# github.com/mdlayher/netlink v1.1.0
+github.com/mdlayher/netlink
+github.com/mdlayher/netlink/nlenc
+# golang.org/x/net v0.0.0-20200202094626-16171245cfb2
+golang.org/x/net/bpf
+# golang.org/x/sys v0.0.0-20200320181252-af34d8274f85
+golang.org/x/sys/unix
