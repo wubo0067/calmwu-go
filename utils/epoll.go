@@ -30,22 +30,46 @@ const (
 	EPOLLConnTypeWEBSOCKET
 )
 
-/*
+// EpollEvent represents epoll events configuration bit mask.
+type EpollEvent uint32
+
+// EpollEvents that are mapped to epoll_event.events possible values.
 const (
-	POLLIN    = 0x1
-	POLLPRI   = 0x2
-	POLLOUT   = 0x4
-	POLLRDHUP = 0x2000
-	POLLERR   = 0x8
-	POLLHUP   = 0x10
-	POLLNVAL  = 0x20
+	EPOLLIN      = unix.EPOLLIN
+	EPOLLOUT     = unix.EPOLLOUT
+	EPOLLRDHUP   = unix.EPOLLRDHUP
+	EPOLLPRI     = unix.EPOLLPRI
+	EPOLLERR     = unix.EPOLLERR
+	EPOLLHUP     = unix.EPOLLHUP
+	EPOLLET      = unix.EPOLLET
+	EPOLLONESHOT = unix.EPOLLONESHOT
+
+	// _EPOLLCLOSED is a special EpollEvent value the receipt of which means
+	// that the epoll instance is closed.
+	_EPOLLCLOSED = 0x20
 )
-*/
+
+var (
+	// ErrClosed is returned by Poller methods to indicate that instance is
+	// closed and operation could not be processed.
+	ErrClosed = fmt.Errorf("poller instance is closed")
+
+	// ErrRegistered is returned by Poller Start() method to indicate that
+	// connection with the same underlying file descriptor was already
+	// registered within the poller instance.
+	ErrRegistered = fmt.Errorf("file descriptor is already registered in poller instance")
+
+	// ErrNotRegistered is returned by Poller Stop() and Resume() methods to
+	// indicate that connection with the same underlying file descriptor was
+	// not registered before within the poller instance.
+	ErrNotRegistered = fmt.Errorf("file descriptor was not registered before in poller instance")
+)
+
 type EpollConn struct {
 	ConnHolder    interface{}   // golang各种连接对象
 	ConnArg       interface{}   // 附加参数
 	ConnType      EpollConnType // 连接类型
-	TriggerEvents uint32        // EpollEvent返回的事件类型
+	TriggerEvents EpollEvent    // EpollEvent返回的事件类型
 	SocketFD      int
 }
 
@@ -53,6 +77,7 @@ type Epoll struct {
 	fd          int
 	connections map[int]*EpollConn
 	lock        *sync.RWMutex
+	closed      bool
 }
 
 func NewEpoll() (*Epoll, error) {
@@ -87,8 +112,11 @@ func (ep *Epoll) Add(conn, connArg interface{}) (int, error) {
 	case *websocket.Conn:
 		econn.SocketFD = GorillaConnSocketFD(realConn)
 		econn.ConnType = EPOLLConnTypeWEBSOCKET
+	case net.Conn:
+		econn.SocketFD = NetConnsocketFD(realConn)
+		econn.ConnType = EPOLLConnTypeWEBSOCKET
 	default:
-		return -1, errors.New(fmt.Sprintf("conn type:%s is not support\n", reflect.Indirect(reflect.ValueOf(conn)).Type().Name()))
+		return -1, fmt.Errorf("conn type:%s is not support", reflect.Indirect(reflect.ValueOf(conn)).Type().Name())
 	}
 
 	// nonblock
@@ -106,30 +134,103 @@ func (ep *Epoll) Add(conn, connArg interface{}) (int, error) {
 			EPOLLET:设置关联的fd为ET的工作方式，epoll的默认工作方式是LT。
 			EPOLLONESHOT (since Linux 2.6.2):设置关联的fd为one-shot的工作方式。表示只监听一次事件，如果要再次监听，需要把socket放入到epoll队列中。
 	*/
+	ep.lock.Lock()
+	defer ep.lock.Unlock()
+
+	// 判断是否关闭
+	if ep.closed {
+		return -1, ErrClosed
+	}
+
+	// 判断是否已经注册
+	if _, exist := ep.connections[econn.SocketFD]; exist {
+		return -1, ErrRegistered
+	}
+
 	err := unix.EpollCtl(ep.fd, syscall.EPOLL_CTL_ADD, econn.SocketFD,
 		&unix.EpollEvent{
-			Events: unix.POLLIN | unix.POLLHUP | unix.EPOLLERR,
+			Events: unix.POLLIN | unix.EPOLLRDHUP | unix.EPOLLERR,
 			Fd:     int32(econn.SocketFD),
 		})
 	if err != nil {
 		return -1, err
 	}
-	ep.lock.Lock()
-	defer ep.lock.Unlock()
 	ep.connections[econn.SocketFD] = econn
 	return econn.SocketFD, nil
 }
 
+// Remove remote fd from epoll
 func (ep *Epoll) Remove(socketFD int) error {
-	err := unix.EpollCtl(ep.fd, syscall.EPOLL_CTL_DEL, socketFD, nil)
-	if err != nil {
+	ep.lock.Lock()
+	defer ep.lock.Unlock()
+
+	// 判断是否关闭
+	if ep.closed {
+		return ErrClosed
+	}
+
+	// 判断是否已经注册
+	if _, exist := ep.connections[econn.SocketFD]; ！exist {
+		return -1, ErrNotRegistered
+	}
+
+	delete(ep.connections, socketFD)
+
+	return unix.EpollCtl(ep.fd, syscall.EPOLL_CTL_DEL, socketFD, nil)
+}
+
+// Mod sets to events on fd.
+func (ep *Epoll) Modify(socketFD int, events EpollEvent) error {
+	ep.lock.Lock()
+	defer ep.lock.Unlock()
+
+	// 判断是否关闭
+	if ep.closed {
+		return ErrClosed
+	}
+
+	// 判断是否已经注册
+	if _, exist := ep.connections[econn.SocketFD]; ！exist {
+		return -1, ErrNotRegistered
+	}
+
+	return unix.EpollCtl(ep.fd, syscall.EPOLL_CTL_MOD, socketFD, &unix.EpollEvent{
+		Events: uint32(events),
+		Fd: int32(socketFD),
+	})
+}
+
+// Close close epoll allocate fd and related client fd
+func (ep *Epoll) Close() error {
+	ep.lock.Lock()
+
+	if ep.closed {
+		ep.lock.Unlock()
+		return errors.New("poller instance is closed")
+	}
+
+	if err := unix.Close(ep.fd); err != nil {
 		return err
 	}
 
-	ep.lock.Lock()
-	defer ep.lock.Unlock()
-	delete(ep.connections, socketFD)
+	connections := ep.connections
+	ep.connections = nil
+	ep.lock.Unlock()
+
+	// clear map
+	for fd := range connections {
+		connections[fd] = nil
+		//unix.Close(fd)
+	}
 	return nil
+}
+
+func temporaryErr(err error) bool {
+	errno, ok := err.(syscall.Errno)
+	if !ok {
+		return false
+	}
+	return errno.Temporary()
 }
 
 func (ep *Epoll) Wait(milliseconds int) ([]*EpollConn, error) {
@@ -141,7 +242,7 @@ func (ep *Epoll) Wait(milliseconds int) ([]*EpollConn, error) {
 	for {
 		n, err = unix.EpollWait(ep.fd, events, milliseconds)
 		if err != nil {
-			if err == syscall.EINTR {
+			if temporaryErr(err) {
 				continue
 			} else {
 				return nil, err
@@ -189,6 +290,20 @@ func GorillaConnSocketFD(conn *websocket.Conn) int {
 	// Elem()从返回的interface中获取真实的对象
 	connVal := reflect.Indirect(reflect.ValueOf(conn)).FieldByName("conn").Elem()
 	tcpConn := reflect.Indirect(connVal).FieldByName("conn")
+	fdVal := tcpConn.FieldByName("fd")
+	pfdVal := reflect.Indirect(fdVal).FieldByName("pfd")
+	return int(pfdVal.FieldByName("Sysfd").Int())
+}
+
+// NetConnsocketFD get fd from net conn
+func NetConnsocketFD(conn net.Conn) int {
+	//tls := reflect.TypeOf(conn.UnderlyingConn()) == reflect.TypeOf(&tls.Conn{})
+	// Extract the file descriptor associated with the connection
+	//connVal := reflect.Indirect(reflect.ValueOf(conn)).FieldByName("conn").Elem()
+	tcpConn := reflect.Indirect(reflect.ValueOf(conn)).FieldByName("conn")
+	//if tls {
+	//	tcpConn = reflect.Indirect(tcpConn.Elem())
+	//}
 	fdVal := tcpConn.FieldByName("fd")
 	pfdVal := reflect.Indirect(fdVal).FieldByName("pfd")
 	return int(pfdVal.FieldByName("Sysfd").Int())
