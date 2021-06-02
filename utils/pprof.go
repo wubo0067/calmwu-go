@@ -8,7 +8,6 @@
 package utils
 
 import (
-	"fmt"
 	"net"
 	"net/http"
 	"net/http/httputil"
@@ -44,7 +43,7 @@ func GinLogger() gin.HandlerFunc {
 }
 
 // InstallPProf 安装pprof
-func InstallPProf(port int) error {
+func InstallPProf(address string) error {
 	ginForPProf := gin.New()
 	ginForPProf.Use(GinLogger())
 	ginForPProf.Use(GinRecovery())
@@ -55,7 +54,7 @@ func InstallPProf(port int) error {
 		Handler: ginForPProf,
 	}
 
-	listener, err := net.Listen("tcp", fmt.Sprintf("0.0.0.0:%d", port))
+	listener, err := net.Listen("tcp", address)
 	if err != nil {
 		return err
 	}
