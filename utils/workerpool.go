@@ -243,7 +243,10 @@ func (wp *WorkerPool) clean(scratch *[]*workerChan) {
 	wp.lock.Unlock()
 
 	tmp := *scratch
-	Debugf("WorkerPool release %d wokerChan", len(tmp))
+	if len(tmp) > 0 {
+		Debugf("WorkerPool release %d wokerChan", len(tmp))
+	}
+
 	for i, ch := range tmp {
 		// 通知routine结束
 		ch.ch <- nil
