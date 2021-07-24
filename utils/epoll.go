@@ -120,7 +120,7 @@ func (ep *Epoll) Add(conn, connArg interface{}) (int, error) {
 	}
 
 	// nonblock
-	unix.SetNonblock(econn.SocketFD, true)
+	// unix.SetNonblock(econn.SocketFD, true)
 
 	/*
 		2.6.17 版本内核中增加了 EPOLLRDHUP 事件，代表对端断开连接，关于添加这个事件的理由可以参见 “[Patch][RFC] epoll and half closed TCP connections”。
