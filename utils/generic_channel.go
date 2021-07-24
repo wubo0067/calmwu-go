@@ -9,11 +9,11 @@ package utils
 
 // NOTE: this is how easy it is to define a generic type
 import (
+	"errors"
 	"fmt"
 	"sync"
 
 	"github.com/cheekybits/genny/generic"
-	"github.com/pkg/errors"
 )
 
 // ChannelCustomType channel的类型
@@ -79,7 +79,7 @@ func (cc *ChannelCustomNameChannel) SafeSend(value ChannelCustomType, block bool
 			ok = true
 		default:
 			ok = false
-			err = errors.New("channel is full, so noblock-send failed.")
+			err = errors.New("channel is full, so noblock-send failed")
 		}
 	}
 	closed = false
