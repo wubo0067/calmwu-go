@@ -38,7 +38,7 @@ func (t *Timer) Reset(d time.Duration) {
 		return
 	}
 
-	//
+	// timer is active , not fired, stop always returns true, no problems occurs.
 	if !t.t.Stop() {
 		// Stop返回false不能确定time channel是否被读取过。
 		select {

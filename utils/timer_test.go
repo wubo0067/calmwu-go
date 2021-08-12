@@ -38,13 +38,37 @@ L:
 
 func TestTimerReset(t *testing.T) {
 	nt := NewTimer()
+	stopCh := make(chan struct{})
+
+	go func() {
+		for {
+			select {
+			case <-nt.C:
+				log.Printf("time out")
+			case <-stopCh:
+				log.Printf("time loop exit")
+				return
+			}
+		}
+	}()
+
+	nt.Reset(3 * time.Second)
+	time.Sleep(4 * time.Second)
+	sb := nt.Stop()
+	nt.Logf("expired Stop return :v", sb)
 
 	nt.Reset(5 * time.Second)
 	time.Sleep(2 * time.Second)
-	sb := nt.Stop()
-	nt.Logf("Stop :v", sb)
-	nt.Reset(5 * time.Second)
-	t.Logf("---------2 Reset--------")
-	time.Sleep(2 * time.Second)
 	sb = nt.Stop()
+	nt.Logf("no expired Stop return :v", sb)
+
+	nt.Reset(5 * time.Second)
+	time.Sleep(2 * time.Second)
+	nt.Reset(3 * time.Second)
+	time.Sleep(4 * time.Second)
+	nt.Log("twice reset expire time 6 secs")
+
+	close(stopCh)
+
+	time.Sleep(1 * time.Second)
 }
