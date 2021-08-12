@@ -69,7 +69,7 @@ func TestTimerReset(t *testing.T) {
 	time.Sleep(2 * time.Second)
 	log.Print("start timer-2")
 	nt.Reset(5 * time.Second)
-	time.Sleep(4 * time.Second)
+	time.Sleep(6 * time.Second)
 	log.Printf("twice reset expire time 6 secs")
 
 	close(stopCh)
