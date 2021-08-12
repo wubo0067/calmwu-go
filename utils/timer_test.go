@@ -52,16 +52,19 @@ func TestTimerReset(t *testing.T) {
 		}
 	}()
 
+	log.Print("start timer")
 	nt.Reset(3 * time.Second)
 	time.Sleep(4 * time.Second)
 	sb := nt.Stop()
-	log.Printf("expired Stop return :%v", sb)
+	log.Printf("expired Stop return :%v\n", sb)
 
+	log.Print("start timer")
 	nt.Reset(5 * time.Second)
 	time.Sleep(2 * time.Second)
 	sb = nt.Stop()
-	log.Printf("no expired Stop return :%v", sb)
+	log.Printf("no expired Stop return :%v\n", sb)
 
+	log.Print("start timer")
 	nt.Reset(5 * time.Second)
 	time.Sleep(2 * time.Second)
 	nt.Reset(3 * time.Second)
