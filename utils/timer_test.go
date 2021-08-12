@@ -43,7 +43,7 @@ func TestTimerReset(t *testing.T) {
 	go func() {
 		for {
 			select {
-			case <-nt.C:
+			case <-nt.Chan():
 				log.Printf("time out")
 			case <-stopCh:
 				log.Printf("time loop exit")
@@ -55,18 +55,18 @@ func TestTimerReset(t *testing.T) {
 	nt.Reset(3 * time.Second)
 	time.Sleep(4 * time.Second)
 	sb := nt.Stop()
-	nt.Logf("expired Stop return :v", sb)
+	log.Printf("expired Stop return :v", sb)
 
 	nt.Reset(5 * time.Second)
 	time.Sleep(2 * time.Second)
 	sb = nt.Stop()
-	nt.Logf("no expired Stop return :v", sb)
+	log.Printf("no expired Stop return :v", sb)
 
 	nt.Reset(5 * time.Second)
 	time.Sleep(2 * time.Second)
 	nt.Reset(3 * time.Second)
 	time.Sleep(4 * time.Second)
-	nt.Log("twice reset expire time 6 secs")
+	log.Printf("twice reset expire time 6 secs")
 
 	close(stopCh)
 
