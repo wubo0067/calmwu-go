@@ -31,6 +31,10 @@ func LoadKallSyms() error {
 	_lock.Lock()
 	defer _lock.Unlock()
 
+	if _ksym_cache == nil {
+		_ksym_cache = make(map[string]string)
+	}
+
 	fd, err := os.Open(_kallsyms)
 	if err != nil {
 		return errors.Wrapf(err, "open %s failed", _kallsyms)
