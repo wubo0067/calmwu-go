@@ -9,6 +9,8 @@ package utils
 
 // NOTE: this is how easy it is to define a generic type
 import (
+	"errors"
+	"fmt"
 	"sync"
 
 	"github.com/cheekybits/genny/generic"
@@ -57,22 +59,27 @@ func (cc *ChannelCustomNameChannel) SafeClose() {
 }
 
 // SafeSend 安全的发送数据
-func (cc *ChannelCustomNameChannel) SafeSend(value ChannelCustomType, block bool) (ok, closed bool) {
+func (cc *ChannelCustomNameChannel) SafeSend(value ChannelCustomType, block bool) (ok, closed bool, err error) {
 	defer func() {
-		if recover() != nil {
+		if e := recover(); e != nil {
 			closed = true
 			ok = false
+			err = fmt.Errorf("%v", e)
 		}
 	}()
 
+	err = nil
+
 	if block {
 		cc.C <- value
+		ok = true
 	} else {
 		select {
 		case cc.C <- value:
 			ok = true
 		default:
 			ok = false
+			err = errors.New("channel is full, so noblock-send failed")
 		}
 	}
 	closed = false

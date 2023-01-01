@@ -18,7 +18,6 @@ import (
 
 type Timer struct {
 	t        *time.Timer
-	read     bool
 	deadline time.Time
 }
 
@@ -34,28 +33,26 @@ func (t *Timer) Chan() <-chan time.Time {
 
 func (t *Timer) Reset(d time.Duration) {
 	tempDeadline := time.Now().Add(d)
-	if t.deadline.Equal(tempDeadline) && !t.read {
-		// 如果deadline和设置的相同，且C没有读取
+	if t.deadline.Equal(tempDeadline) {
+		// 如果deadline和设置的相同
 		return
 	}
 
-	//
-	if !t.t.Stop() && !t.read {
-		// 如果已经超时，且C没有读取过，需要手工排干
-		<-t.t.C
+	// timer is active , not fired, stop always returns true, no problems occurs.
+	if !t.t.Stop() {
+		// Stop返回false不能确定time channel是否被读取过。
+		select {
+		case <-t.t.C:
+		default:
+		}
+
 	}
 
 	if !tempDeadline.IsZero() {
 		// 如果绝对超时时间不为0，计算超时的时间间隔，timer重新使用
 		t.t.Reset(d)
 	}
-
-	t.read = false
 	t.deadline = tempDeadline
-}
-
-func (t *Timer) SetRead() {
-	t.read = true
 }
 
 func (t *Timer) Stop() bool {

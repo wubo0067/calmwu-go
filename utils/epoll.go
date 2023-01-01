@@ -120,7 +120,7 @@ func (ep *Epoll) Add(conn, connArg interface{}) (int, error) {
 	}
 
 	// nonblock
-	unix.SetNonblock(econn.SocketFD, true)
+	// unix.SetNonblock(econn.SocketFD, true)
 
 	/*
 		2.6.17 版本内核中增加了 EPOLLRDHUP 事件，代表对端断开连接，关于添加这个事件的理由可以参见 “[Patch][RFC] epoll and half closed TCP connections”。
@@ -170,8 +170,8 @@ func (ep *Epoll) Remove(socketFD int) error {
 	}
 
 	// 判断是否已经注册
-	if _, exist := ep.connections[econn.SocketFD]; ！exist {
-		return -1, ErrNotRegistered
+	if _, exist := ep.connections[socketFD]; !exist {
+		return ErrNotRegistered
 	}
 
 	delete(ep.connections, socketFD)
@@ -190,13 +190,13 @@ func (ep *Epoll) Modify(socketFD int, events EpollEvent) error {
 	}
 
 	// 判断是否已经注册
-	if _, exist := ep.connections[econn.SocketFD]; ！exist {
-		return -1, ErrNotRegistered
+	if _, exist := ep.connections[socketFD]; !exist {
+		return ErrNotRegistered
 	}
 
 	return unix.EpollCtl(ep.fd, syscall.EPOLL_CTL_MOD, socketFD, &unix.EpollEvent{
 		Events: uint32(events),
-		Fd: int32(socketFD),
+		Fd:     int32(socketFD),
 	})
 }
 
@@ -257,7 +257,7 @@ func (ep *Epoll) Wait(milliseconds int) ([]*EpollConn, error) {
 	var connections []*EpollConn
 	for i := 0; i < n; i++ {
 		if conn, exist := ep.connections[int(events[i].Fd)]; exist {
-			conn.TriggerEvents = events[i].Events
+			conn.TriggerEvents = EpollEvent(events[i].Events)
 			connections = append(connections, conn)
 		}
 	}
