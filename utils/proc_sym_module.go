@@ -252,7 +252,11 @@ func (pss *ProcSyms) FindPsym(addr uint64) (string, uint32, string, error) {
 
 	for _, psm := range pss.Modules {
 		if addr >= psm.StartAddr && addr <= psm.EndAddr {
-			return psm.__resolveAddr(addr - psm.StartAddr)
+			if psm.Type == SO {
+				return psm.__resolveAddr(addr - psm.StartAddr)
+			} else if psm.Type == EXEC {
+				return psm.__resolveAddr(addr)
+			}
 		}
 	}
 	return "", 0, "", errors.Errorf("addr:%x not in /proc/%d/maps", addr, pss.Pid)

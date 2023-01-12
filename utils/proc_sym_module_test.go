@@ -51,6 +51,14 @@ func TestNewProcSyms(t *testing.T) {
 	} else {
 		fmt.Printf("addr:0x%x %s+0x%02x [%s]\n\n", addr, name, offset, moduleName)
 	}
+
+	addr = uint64(0x41f3b3)
+	name, offset, moduleName, err = pss.FindPsym(addr)
+	if err != nil {
+		t.Fatal(err.Error())
+	} else {
+		fmt.Printf("addr:0x%x %s+0x%x [%s]\n\n", addr, name, offset, moduleName)
+	}
 }
 
 // env GO111MODULE=off go test -v -run=TestNewProcSyms
