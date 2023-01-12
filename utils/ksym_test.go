@@ -18,7 +18,7 @@ func TestFindKsym(t *testing.T) {
 		t.Fatal(err.Error())
 	}
 
-	fmt.Printf("Ksym count: %d\n", len(_ksym_cache))
+	fmt.Printf("Ksym count: %d\n", len(__ksym_cache))
 
 	addr := uint64(0xffffffffbab2deb1)
 	name, offset, err := FindKsym(addr)
