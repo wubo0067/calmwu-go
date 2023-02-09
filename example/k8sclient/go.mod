@@ -8,7 +8,7 @@ require (
 	github.com/Masterminds/sprig v2.22.0+incompatible // indirect
 	github.com/cheekybits/genny v1.0.0 // indirect
 	github.com/fatih/color v1.7.0
-	github.com/gin-gonic/gin v1.6.3 // indirect
+	github.com/gin-gonic/gin v1.7.7 // indirect
 	github.com/huandu/xstrings v1.2.1 // indirect
 	github.com/mattn/go-colorable v0.1.1 // indirect
 	github.com/monnand/dhkx v0.0.0-20180522003156-9e5b033f1ac4 // indirect
