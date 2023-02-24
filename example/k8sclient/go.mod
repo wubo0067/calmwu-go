@@ -17,7 +17,7 @@ require (
 	github.com/spaolacci/murmur3 v1.1.0 // indirect
 	github.com/urfave/cli v1.20.0
 	github.com/wubo0067/calmwu-go v0.0.0-20200410083741-d348bac27c84
-	golang.org/x/net v0.0.0-20191209160850-c0dbc17a3553 // indirect
+	golang.org/x/net v0.7.0 // indirect
 	google.golang.org/genproto v0.0.0-20191216205247-b31c10ee225f // indirect
 	helm.sh/helm/v3 v3.0.2
 	k8s.io/api v0.18.2
