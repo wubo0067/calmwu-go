@@ -18,7 +18,6 @@ import (
 
 	"github.com/emirpasic/gods/sets/hashset"
 	"github.com/pkg/errors"
-	"github.com/wubo0067/calmwu-go/example/doyo-server-go/vendor/github.com/emirpasic/gods/sets/hashset"
 )
 
 const (
@@ -489,7 +488,7 @@ func FindKsym(addr uint64) (name string, offset uint32, err error) {
 }
 
 // Check if a ksym name exists
-func CheckKsymNameIsExist(name string) bool {
+func KsymNameExists(name string) bool {
 	// Return false if there are no ksym names
 	if __ksym_names == nil {
 		return false
@@ -499,7 +498,7 @@ func CheckKsymNameIsExist(name string) bool {
 }
 
 // Convert an x86_64 syscall number to a string
-func X86_64_SysCallI2S(syscallNR int) (string, error) {
+func ConvertSysCallNR2Str_X86_64(syscallNR int) (string, error) {
 	// Check if the syscall number exists in the table
 	if sysCallStr, ok := __x84_64_syscall_i2s_table[syscallNR]; ok {
 		return sysCallStr, nil
