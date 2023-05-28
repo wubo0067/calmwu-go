@@ -29,7 +29,7 @@ type Ksym struct {
 	name    string
 }
 
-const (
+var (
 	__x84_64_syscall_i2s_table = map[int]string{
 		0:   "read",
 		1:   "write",
