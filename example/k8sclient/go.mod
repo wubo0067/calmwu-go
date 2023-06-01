@@ -8,7 +8,7 @@ require (
 	github.com/Masterminds/sprig v2.22.0+incompatible // indirect
 	github.com/cheekybits/genny v1.0.0 // indirect
 	github.com/fatih/color v1.7.0
-	github.com/gin-gonic/gin v1.6.3 // indirect
+	github.com/gin-gonic/gin v1.9.1 // indirect
 	github.com/huandu/xstrings v1.2.1 // indirect
 	github.com/mattn/go-colorable v0.1.1 // indirect
 	github.com/monnand/dhkx v0.0.0-20180522003156-9e5b033f1ac4 // indirect
@@ -17,7 +17,6 @@ require (
 	github.com/spaolacci/murmur3 v1.1.0 // indirect
 	github.com/urfave/cli v1.20.0
 	github.com/wubo0067/calmwu-go v0.0.0-20200410083741-d348bac27c84
-	golang.org/x/net v0.0.0-20191209160850-c0dbc17a3553 // indirect
 	google.golang.org/genproto v0.0.0-20191216205247-b31c10ee225f // indirect
 	helm.sh/helm/v3 v3.0.2
 	k8s.io/api v0.18.2
