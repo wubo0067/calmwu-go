@@ -58,13 +58,14 @@ func (b *Buffer[T]) Reset() {
 
 func (b *Buffer[T]) tryGrowByReslice(n int) (int, bool) {
 	if l := len(b.buf); n <= cap(b.buf)-l {
-		// 剩余的容量如果满足n的需求，则直接resliced
+		// 剩余的容量如果满足增加n的需求，则直接resliced
 		b.buf = b.buf[:l+n]
 		return l, true
 	}
 	return 0, false
 }
 
+// n是额外增加的元素数量
 func (b *Buffer[T]) grow(n int) int {
 	m := b.Len()
 
@@ -84,10 +85,10 @@ func (b *Buffer[T]) grow(n int) int {
 		// we instead let capacity get twice as large so we
 		// don't spend all our time copying.
 	} else if c > maxInt-c-n {
-		// not enough space anywhere，如果容量加上n超过了maxInt，直接报错
+		// not enough space anywhere，如果2倍的容量加上n超过了maxInt，直接报错
 		panic(ErrTooLarge)
 	} else {
-		// enough space at end
+		// enough space at end，按2倍容量扩容
 		buf := makeSlice[T](2*c + n)
 		copy(buf, b.buf[0:])
 		b.buf = buf
