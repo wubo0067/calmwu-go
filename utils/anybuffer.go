@@ -106,6 +106,7 @@ func (b *Buffer[T]) Grow(n int) {
 }
 
 func (b *Buffer[T]) Extend(n int) {
+	b.extend(n)
 }
 
 func (b *Buffer[T]) extend(n int) int {
