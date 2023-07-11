@@ -1,3 +1,6 @@
+//go:build go1.18 && go1.19 && go1.20
+// +build go1.18,go1.19,go1.20
+
 /*
  * @Author: CALM.WU
  * @Date: 2023-06-06 15:05:42
@@ -88,7 +91,7 @@ func (b *Buffer[T]) grow(n int) int {
 		// not enough space anywhere，如果2倍的容量加上n超过了maxInt，直接报错
 		panic(ErrTooLarge)
 	} else {
-		// enough space at end，按2倍容量扩容
+		// enough space at end，这是能扩展两倍容量的范围
 		buf := makeSlice[T](2*c + n)
 		copy(buf, b.buf[0:])
 		b.buf = buf
