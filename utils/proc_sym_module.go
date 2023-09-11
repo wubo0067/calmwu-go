@@ -206,7 +206,7 @@ func __parseProcMapEntry(line string, pss *ProcSyms) error {
 			errors.Is(err, ErrProcModuleNotSymbolSection) {
 			return err
 		}
-		return errors.Wrapf(err, "parse module '%s' failed.", psm.Pathname)
+		return errors.Wrapf(err, "load module:'%s' failed.", psm.Pathname)
 	}
 
 	pss.Modules = append(pss.Modules, psm)
@@ -235,9 +235,10 @@ func NewProcSyms(pid int) (*ProcSyms, error) {
 	scanner := bufio.NewScanner(procMapsFile)
 
 	for scanner.Scan() {
-		err := __parseProcMapEntry(scanner.Text(), pss)
+		text := scanner.Text()
+		err := __parseProcMapEntry(text, pss)
 		if err != nil {
-			return nil, errors.Wrap(err, "NewProcMap __parseProcMapEntry failed")
+			return nil, errors.Wrapf(err, "parse text:'%s' failed", text)
 		}
 	}
 
