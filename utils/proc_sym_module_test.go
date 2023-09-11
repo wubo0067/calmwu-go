@@ -13,12 +13,14 @@ import (
 )
 
 func TestNewProcSyms(t *testing.T) {
-	pid := 3638918
+	pid := 4607
 
 	pss, err := NewProcSyms(pid)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
+
+	fmt.Printf("pid:'%d' module count:%d", pid, len(pss.Modules))
 
 	for i, psm := range pss.Modules {
 		fmt.Printf("[%d] module: %s\n", i, psm.String())

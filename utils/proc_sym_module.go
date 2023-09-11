@@ -85,7 +85,7 @@ func (psm *ProcSymsModule) __loadProcModule(pid int) error {
 	// 打开elf文件
 	elfFile, err := elf.Open(nsRelativePath)
 	if err != nil {
-		return errors.Wrapf(err, "open elfFile '%s' failed.", nsRelativePath)
+		return errors.Wrapf(err, "open elfFile:'%s' failed.", nsRelativePath)
 	}
 	defer elfFile.Close()
 
@@ -204,6 +204,7 @@ func __parseProcMapEntry(line string, pss *ProcSyms) error {
 	if err := psm.__loadProcModule(pss.Pid); err != nil {
 		if errors.Is(err, ErrProcModuleNotSupport) ||
 			errors.Is(err, ErrProcModuleNotSymbolSection) {
+			fmt.Printf("module:'%s' load failed. err:%s", psm.Pathname, err.Error())
 			return nil
 		}
 		return errors.Wrapf(err, "load module:'%s' failed.", psm.Pathname)
@@ -248,7 +249,7 @@ func NewProcSyms(pid int) (*ProcSyms, error) {
 // Used to find the symbol of the specified address.
 func (pss *ProcSyms) FindPsym(addr uint64) (string, uint32, string, error) {
 	if len(pss.Modules) == 0 {
-		return "", 0, "", errors.New("ProcSyms is not initialized")
+		return "", 0, "", errors.New("proc modules is empty")
 	}
 
 	for _, psm := range pss.Modules {
