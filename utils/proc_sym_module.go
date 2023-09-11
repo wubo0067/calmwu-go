@@ -27,8 +27,8 @@ const (
 type ProcSymModuleType int
 
 var (
-	__errProcModuleNotSupport       = errors.New("proc module not support")
-	__errProcModuleNotSymbolSection = errors.New("proc module not symbol section")
+	ErrProcModuleNotSupport       = errors.New("proc module not support")
+	ErrProcModuleNotSymbolSection = errors.New("proc module not symbol section")
 )
 
 const (
@@ -96,13 +96,13 @@ func (psm *ProcSymsModule) __loadProcModule(pid int) error {
 	case elf.ET_DYN:
 		psm.Type = SO
 	default:
-		return __errProcModuleNotSupport
+		return ErrProcModuleNotSupport
 	}
 
 	// from .text section read symbol and address
 	symbols, err := elfFile.Symbols()
 	if err != nil {
-		return __errProcModuleNotSymbolSection
+		return ErrProcModuleNotSymbolSection
 	}
 
 	for _, symbol := range symbols {
@@ -202,9 +202,9 @@ func __parseProcMapEntry(line string, pss *ProcSyms) error {
 	psm.Dev = unix.Mkdev(uint32(devMajor), uint32(devMinor))
 
 	if err := psm.__loadProcModule(pss.Pid); err != nil {
-		if errors.Is(err, __errProcModuleNotSupport) ||
-			errors.Is(err, __errProcModuleNotSymbolSection) {
-			return nil
+		if errors.Is(err, ErrProcModuleNotSupport) ||
+			errors.Is(err, ErrProcModuleNotSymbolSection) {
+			return err
 		}
 		return errors.Wrapf(err, "parse module '%s' failed.", psm.Pathname)
 	}
