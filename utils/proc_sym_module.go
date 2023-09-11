@@ -204,7 +204,7 @@ func __parseProcMapEntry(line string, pss *ProcSyms) error {
 	if err := psm.__loadProcModule(pss.Pid); err != nil {
 		if errors.Is(err, ErrProcModuleNotSupport) ||
 			errors.Is(err, ErrProcModuleNotSymbolSection) {
-			fmt.Printf("module:'%s' load failed. err:%s", psm.Pathname, err.Error())
+			fmt.Printf("module:'%s' load failed. err:%s\n", psm.Pathname, err.Error())
 			return nil
 		}
 		return errors.Wrapf(err, "load module:'%s' failed.", psm.Pathname)
