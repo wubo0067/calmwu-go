@@ -148,7 +148,7 @@ func (psm *ProcSymsModule) loadProcModule(pid int) error {
 			ps := new(ProcSym)
 			ps.name = symbol.Name
 			ps.pc = symbol.Value
-			fmt.Printf("module:'%s' symbol:'%s' pc:'%d'.\n", psm.Pathname, ps.name, ps.pc)
+			//fmt.Printf("module:'%s' symbol:'%s' pc:'%d'.\n", psm.Pathname, ps.name, ps.pc)
 			psm.procSymTable = append(psm.procSymTable, ps)
 		}
 	}
