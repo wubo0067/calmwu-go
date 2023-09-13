@@ -20,7 +20,6 @@ package utils
 import (
 	"debug/elf"
 	"debug/gosym"
-	"fmt"
 	"os"
 
 	"github.com/pkg/errors"
@@ -84,7 +83,7 @@ func (psm *ProcSymsModule) loadProcGoModule(pid int) error {
 	psm.goSymTable = &GoSymTable{
 		symIndex: tab,
 	}
-	fmt.Printf("loadProcGoModule:'%s' success.\n", psm.Pathname)
+	//fmt.Printf("loadProcGoModule:'%s' success.\n", psm.Pathname)
 	return nil
 }
 

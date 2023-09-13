@@ -216,7 +216,7 @@ func __parseProcMapEntry(line string, pss *ProcSyms) error {
 	fmt.Sscanf(line, "%x-%x %s %x %x:%x %d %s", &psm.StartAddr, &psm.EndAddr, &perms,
 		&psm.Offset, &devMajor, &devMinor, &psm.Inode, &psm.Pathname)
 
-	fmt.Printf("parse line:'%s'\n", line)
+	//fmt.Printf("parse line:'%s'\n", line)
 
 	if len(psm.Pathname) == 0 ||
 		strings.Contains(psm.Pathname, "[vdso]") ||
@@ -250,7 +250,7 @@ func __parseProcMapEntry(line string, pss *ProcSyms) error {
 	if err = psm.loadProcGoModule(pss.Pid); err != nil {
 		if err = psm.loadProcModule(pss.Pid); err != nil {
 			if errors.Is(err, ErrProcModuleNotSupport) {
-				fmt.Printf("module:'%s' not support read symbols.\n", psm.Pathname)
+				//fmt.Printf("module:'%s' not support read symbols.\n", psm.Pathname)
 				return nil
 			}
 			return errors.Wrapf(err, "load module:'%s' failed.", psm.Pathname)
@@ -305,7 +305,7 @@ func (pss *ProcSyms) ResolvePC(pc uint64) (string, uint32, string, error) {
 			if psm.Type == SO {
 				return psm.__resolvePC(pc - psm.StartAddr)
 			} else if psm.Type == EXEC {
-				fmt.Printf("module:'%s' pc:'%x' is executable.\n", psm.Pathname, pc)
+				//fmt.Printf("module:'%s' pc:'%x' is executable.\n", psm.Pathname, pc)
 				if psm.goSymTable != nil {
 					symName, offset, err := psm.goSymTable.__resolveGoPC(pc)
 					if err == nil {
