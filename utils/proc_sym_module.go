@@ -2,7 +2,7 @@
  * @Author: CALM.WU
  * @Date: 2023-01-10 14:20:15
  * @Last Modified by: CALM.WU
- * @Last Modified time: 2023-09-12 18:33:05
+ * @Last Modified time: 2023-09-18 17:40:16
  */
 
 package utils
@@ -12,6 +12,7 @@ import (
 	"debug/elf"
 	"fmt"
 	"os"
+	"path"
 	"sort"
 	"strings"
 	"syscall"
@@ -22,6 +23,7 @@ import (
 
 const (
 	__miniProcMapsEntryDefaultFieldCount = 6
+	__debugLinkSection                   = ".gnu_debuglink"
 )
 
 type ProcSymModuleType int
@@ -69,7 +71,7 @@ type ProcSymsModule struct {
 	Dev uint64
 	// Inode is the inode of current mapping. find / -inum 101417806 or lsof -n -i 'inode=174919'
 	Inode uint64
-	//
+	// 内存段所属的文件的路径名
 	Pathname string
 	//
 	Type ProcSymModuleType
@@ -77,19 +79,21 @@ type ProcSymsModule struct {
 	procSymTable []*ProcSym
 	//
 	goSymTable *GoSymTable
+	//
+	buildID *BuildID
 }
 
-func (psm *ProcSymsModule) open(pid int) (*os.File, *elf.File, error) {
+func (psm *ProcSymsModule) open(appRootFS string) (*os.File, *elf.File, error) {
 	// rootfs: /proc/%d/root
 	var (
 		f    *os.File
 		elfF *elf.File
 		err  error
 	)
-	modulePath := fmt.Sprintf("/proc/%d/root%s", pid, psm.Pathname)
+	modulePath := fmt.Sprintf("%s%s", appRootFS, psm.Pathname)
 	f, err = os.OpenFile(modulePath, os.O_RDONLY, 0)
 	if err != nil {
-		return nil, nil, errors.Wrapf(err, "open module file:'%s'.", modulePath)
+		return nil, nil, errors.Wrapf(err, "open module:'%s'.", modulePath)
 	}
 
 	elfF, err = elf.NewFile(f)
@@ -101,17 +105,121 @@ func (psm *ProcSymsModule) open(pid int) (*os.File, *elf.File, error) {
 	return f, elfF, nil
 }
 
+func cString(bs []byte) string {
+	i := 0
+	for ; i < len(bs); i++ {
+		if bs[i] == 0 {
+			break
+		}
+	}
+	return Bytes2String(bs[:i])
+}
+
+func findDebugFile(buildID, appRootFS, pathName string, elfF *elf.File) string {
+	// 首先在/usr/lib/debug/.build-id目录下根据buildid查找debug文件
+	debugFile := fmt.Sprintf("/usr/lib/debug/.build-id/%s/%s.debug", buildID[:2], buildID[2:])
+	fsDebugFile := fmt.Sprintf("%s%s", appRootFS, debugFile)
+
+	//fmt.Printf("debugFile:'%s', fsDebugFile:'%s'\n", debugFile, fsDebugFile)
+	_, err := os.Stat(fsDebugFile)
+	if err == nil {
+		return debugFile
+	}
+
+	// 读取.gnu_debuglink
+	debugLinkSection := elfF.Section(__debugLinkSection)
+	if debugLinkSection != nil {
+		debugLinkData, err := debugLinkSection.Data()
+		if err == nil {
+			if len(debugLinkData) >= 6 {
+				_ = debugLinkData[len(debugLinkData)-4:]
+				debugLink := cString(debugLinkData)
+				//fmt.Printf("debugLink:'%s' crc:'%s'\n", debugLink, hex.EncodeToString(crc))
+
+				// /usr/bin/ls.debug
+				fsDebugFile := path.Join(appRootFS, path.Dir(pathName), debugLink)
+				//fmt.Printf("fsDebugFile:'%s'\n", fsDebugFile)
+				_, err = os.Stat(fsDebugFile)
+				if err == nil {
+					return fsDebugFile
+				}
+				// /usr/bin/.debug/ls.debug
+				fsDebugFile = path.Join(appRootFS, path.Dir(pathName), ".debug", debugLink)
+				//fmt.Printf("fsDebugFile:'%s'\n", fsDebugFile)
+				_, err = os.Stat(fsDebugFile)
+				if err == nil {
+					return fsDebugFile
+				}
+				// /usr/lib/debug/usr/bin/ls.debug.
+				fsDebugFile = path.Join(appRootFS, "/usr/lib/debug", path.Dir(pathName), debugLink)
+				//fmt.Printf("fsDebugFile:'%s'\n", fsDebugFile)
+				_, err = os.Stat(fsDebugFile)
+				if err == nil {
+					return fsDebugFile
+				}
+			}
+		}
+	}
+
+	return ""
+}
+
+func (psm *ProcSymsModule) buildSymTable(elfF *elf.File) error {
+	// from .text section read symbol and pc
+	symbols, err := elfF.Symbols()
+	if err != nil && !errors.Is(err, elf.ErrNoSymbols) {
+		return errors.Wrapf(err, "read module:'%s' SYMTAB.", psm.Pathname)
+	}
+
+	dynSymbols, err := elfF.DynamicSymbols()
+	if err != nil && !errors.Is(err, elf.ErrNoSymbols) {
+		return errors.Wrapf(err, "read module:'%s' DYNSYM.", psm.Pathname)
+	}
+
+	total := len(symbols) + len(dynSymbols)
+	if total == 0 {
+		return ErrProcModuleNotSymbolSection
+	}
+
+	pfnAddSymbol := func(syms []elf.Symbol) {
+		for _, sym := range syms {
+			if sym.Value != 0 && sym.Info&0xf == byte(elf.STT_FUNC) {
+				ps := new(ProcSym)
+				ps.name = sym.Name
+				ps.pc = sym.Value
+				//fmt.Printf("module:'%s' symbol:'%s' pc:'%d'.\n", psm.Pathname, ps.name, ps.pc)
+				psm.procSymTable = append(psm.procSymTable, ps)
+			}
+		}
+	}
+
+	pfnAddSymbol(symbols)
+	pfnAddSymbol(dynSymbols)
+
+	// 按地址排序，地址相同按名字排序
+	sort.Slice(psm.procSymTable, func(i, j int) bool {
+		if psm.procSymTable[i].pc == psm.procSymTable[j].pc {
+			return psm.procSymTable[i].name < psm.procSymTable[j].name
+		}
+		return psm.procSymTable[i].pc < psm.procSymTable[j].pc
+	})
+
+	return nil
+}
+
 // It reads the contents of /proc/pid/maps, parses each line, and returns a slice of ProcMap entries.
 func (psm *ProcSymsModule) loadProcModule(pid int) error {
 	var (
-		f    *os.File
-		elfF *elf.File
-		err  error
+		f         *os.File
+		elfF      *elf.File
+		elfDebugF *elf.File
+		err       error
+		appRootFS = fmt.Sprintf("/proc/%d/root", pid)
 	)
 
 	// 打开elf文件
-	if f, elfF, err = psm.open(pid); err != nil {
-		return errors.Wrapf(err, "psm open:'/proc/%d/root%s'.", pid, psm.Pathname)
+	if f, elfF, err = psm.open(appRootFS); err != nil {
+		return errors.Wrapf(err, "psm open:'%s%s'.", appRootFS, psm.Pathname)
 	}
 	defer f.Close()
 
@@ -125,43 +233,26 @@ func (psm *ProcSymsModule) loadProcModule(pid int) error {
 		return ErrProcModuleNotSupport
 	}
 
-	// from .text section read symbol and pc
-	symbols, err := elfF.Symbols()
-	if err != nil && !errors.Is(err, elf.ErrNoSymbols) {
-		return errors.Wrapf(err, "read elfFile:'%s' SYMTAB.", psm.Pathname)
+	psm.buildID, err = GetBuildID(elfF)
+	if err != nil {
+		return errors.Wrapf(err, "open module:'%s'", psm.Pathname)
 	}
 
-	dynSymbols, err := elfF.DynamicSymbols()
-	if err != nil && !errors.Is(err, elf.ErrNoSymbols) {
-		return errors.Wrapf(err, "read elfFile:'%s' DYNSYM.", psm.Pathname)
-	}
-
-	total := len(symbols) + len(dynSymbols)
-	if total == 0 {
-		return ErrProcModuleNotSymbolSection
-	}
-
-	for _, symbol := range symbols {
-		if int(symbol.Section) < len(elfF.Sections) &&
-			elfF.Sections[symbol.Section].Name == ".text" &&
-			len(symbol.Name) > 0 {
-			ps := new(ProcSym)
-			ps.name = symbol.Name
-			ps.pc = symbol.Value
-			//fmt.Printf("module:'%s' symbol:'%s' pc:'%d'.\n", psm.Pathname, ps.name, ps.pc)
-			psm.procSymTable = append(psm.procSymTable, ps)
+	// 查找对应debug文件
+	debugFilePath := findDebugFile(psm.buildID.ID, appRootFS, psm.Pathname, elfF)
+	if debugFilePath != "" {
+		// 直接加载debug文件
+		elfDebugF, err = elf.Open(debugFilePath)
+		if err == nil {
+			err = psm.buildSymTable(elfDebugF)
+			defer elfDebugF.Close()
 		}
+	} else {
+		// 直接从elf文件中加载symbol
+		err = psm.buildSymTable(elfF)
 	}
 
-	// 按地址排序，地址相同按名字排序
-	sort.Slice(psm.procSymTable, func(i, j int) bool {
-		if psm.procSymTable[i].pc == psm.procSymTable[j].pc {
-			return psm.procSymTable[i].name < psm.procSymTable[j].name
-		}
-		return psm.procSymTable[i].pc < psm.procSymTable[j].pc
-	})
-
-	return nil
+	return err
 }
 
 // A method of the ProcSymsModule struct. It is used to print the ProcSymsModule struct.

@@ -2,7 +2,7 @@
  * @Author: CALM.WU
  * @Date: 2023-01-10 16:14:02
  * @Last Modified by: CALM.WU
- * @Last Modified time: 2023-09-12 17:47:28
+ * @Last Modified time: 2023-09-18 17:34:54
  */
 
 package utils
@@ -16,7 +16,8 @@ import (
 )
 
 const (
-	__executable = "/mnt/Program/pyroscope/pyroscope"
+	__pyroscope = "/mnt/Program/pyroscope/pyroscope"
+	__fio       = "/usr/bin/fio"
 )
 
 func readUint64(data []byte) uint64 {
@@ -64,7 +65,7 @@ func parse(file string, f *elf.File, t *testing.T) (*elf.File, *gosym.Table) {
 
 // GO111MODULE=off go test -v -run=TestGOSymTab
 func TestGOSymTab(t *testing.T) {
-	f, tab := crack(__executable, t)
+	f, tab := crack(__pyroscope, t)
 	defer f.Close()
 
 	pc := uint64(0x1004f32)
@@ -155,4 +156,82 @@ func TestResolveCApp(t *testing.T) {
 	}
 }
 
-// env GO111MODULE=off go test -v -run=TestNewProcSyms
+// GO111MODULE=off go test -v -run=TestBuildID
+func TestBuildID(t *testing.T) {
+	fFIO, err := elf.Open(__fio)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer fFIO.Close()
+
+	buildID, err := GetBuildID(fFIO)
+	if err != nil {
+		t.Errorf("get %s buildid failed.", err.Error())
+	} else {
+		// = readelf -n /usr/bin/fio
+		t.Logf("%s buildid:'%s', type:%d", __fio, buildID.ID, buildID.Type)
+	}
+	fPyro, err := elf.Open(__fio)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer fFIO.Close()
+
+	buildID, err = GetBuildID(fPyro)
+	if err != nil {
+		t.Errorf("get %s buildid failed.", err.Error())
+	} else {
+		// = go tool buildid /mnt/Program/pyroscope/pyroscope
+		/*
+					readelf -n /mnt/Program/pyroscope/pyroscope
+
+			Displaying notes found in: .note.go.buildid
+			  Owner                 Data size       Description
+			  Go                   0x00000053       Unknown note type: (0x00000004)
+			  description data: 55 45 70 49 34 69 44 37 53 47 67 45 47 66 77 59 4c 55 58 5a 2f 43 58 48 52 57 5f 4c 37 38 76 44 47 58 5a 69 50 6a 74 6f 71 2f 45 65 79 68 57 32 56 6f 33 73 75 65 77 7a 4e 48 56 45 36 6f 2f 53 53 64 59 38 34 77 32 45 44 68 4b 53 75 47 70 5f 6d 39 56
+		*/
+		t.Logf("%s buildid:'%s', type:%d", __pyroscope, buildID.ID, buildID.Type)
+	}
+}
+
+// GO111MODULE=off go test -v -run=TestFindDebugFile
+func TestFindDebugFile(t *testing.T) {
+	fFIO, err := elf.Open(__fio)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer fFIO.Close()
+
+	buildID, err := GetBuildID(fFIO)
+	if err != nil {
+		t.Errorf("get %s buildid failed.", err.Error())
+	} else {
+		// = readelf -n /usr/bin/fio
+		debugFile := findDebugFile(buildID.ID, "/proc/1/root", __fio, fFIO)
+		t.Logf("%s buildid:'%s', type:%d, debugfile:'%s'", __fio, buildID.ID, buildID.Type, debugFile)
+	}
+}
+
+// dnf remove fio-debuginfo.x86_64
+// dnf -y install fio-debuginfo.x86_64
+
+// GO111MODULE=off go test -v -run=TestLoadSymbols
+func TestLoadSymbols(t *testing.T) {
+	fFIO, err := elf.Open(__fio)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer fFIO.Close()
+
+	psm := new(ProcSymsModule)
+	psm.buildSymTable(fFIO)
+
+	t.Logf("%s symbol count:%d", __fio, len(psm.procSymTable))
+
+	for _, sym := range psm.procSymTable {
+		t.Logf("name:'%s', val:'%x'", sym.name, sym.pc)
+
+	}
+
+	// dyn name:'blktrace_lookup_device', val:'8e400', section:'15==>.text'
+}

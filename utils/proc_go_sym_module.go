@@ -2,7 +2,7 @@
  * @Author: CALM.WU
  * @Date: 2023-09-12 14:18:45
  * @Last Modified by: CALM.WU
- * @Last Modified time: 2023-09-12 18:35:10
+ * @Last Modified time: 2023-09-18 15:49:02
  */
 
 /*
@@ -20,6 +20,7 @@ package utils
 import (
 	"debug/elf"
 	"debug/gosym"
+	"fmt"
 	"os"
 
 	"github.com/pkg/errors"
@@ -42,12 +43,13 @@ var (
 
 func (psm *ProcSymsModule) loadProcGoModule(pid int) error {
 	var (
-		f    *os.File
-		elfF *elf.File
-		err  error
+		f         *os.File
+		elfF      *elf.File
+		err       error
+		appRootFS = fmt.Sprintf("/proc/%d/root", pid)
 	)
-	if f, elfF, err = psm.open(pid); err != nil {
-		return errors.Wrapf(err, "psm open:'/proc/%d/root%s'.", pid, psm.Pathname)
+	if f, elfF, err = psm.open(appRootFS); err != nil {
+		return errors.Wrapf(err, "psm open:'%s%s'.", appRootFS, psm.Pathname)
 	}
 	defer f.Close()
 
