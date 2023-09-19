@@ -83,26 +83,20 @@ type ProcSymsModule struct {
 	buildID *BuildID
 }
 
-func (psm *ProcSymsModule) open(appRootFS string) (*os.File, *elf.File, error) {
+func (psm *ProcSymsModule) open(appRootFS string) (*elf.File, error) {
 	// rootfs: /proc/%d/root
 	var (
-		f    *os.File
 		elfF *elf.File
 		err  error
 	)
 	modulePath := fmt.Sprintf("%s%s", appRootFS, psm.Pathname)
-	f, err = os.OpenFile(modulePath, os.O_RDONLY, 0)
+
+	elfF, err = elf.Open(modulePath)
 	if err != nil {
-		return nil, nil, errors.Wrapf(err, "open module:'%s'.", modulePath)
+		return nil, errors.Wrapf(err, "open ELFfile:'%s'.", modulePath)
 	}
 
-	elfF, err = elf.NewFile(f)
-	if err != nil {
-		f.Close()
-		return nil, nil, errors.Wrap(err, "new ELF file.")
-	}
-
-	return f, elfF, nil
+	return elfF, nil
 }
 
 func cString(bs []byte) string {
@@ -132,9 +126,9 @@ func findDebugFile(buildID, appRootFS, pathName string, elfF *elf.File) string {
 		debugLinkData, err := debugLinkSection.Data()
 		if err == nil {
 			if len(debugLinkData) >= 6 {
-				_ = debugLinkData[len(debugLinkData)-4:]
+				//_ = debugLinkData[len(debugLinkData)-4:]
 				debugLink := cString(debugLinkData)
-				//fmt.Printf("debugLink:'%s' crc:'%s'\n", debugLink, hex.EncodeToString(crc))
+				//fmt.Printf("debugLink:'%s'\n", debugLink) //hex.EncodeToString(crc))
 
 				// /usr/bin/ls.debug
 				fsDebugFile := path.Join(appRootFS, path.Dir(pathName), debugLink)
@@ -164,7 +158,7 @@ func findDebugFile(buildID, appRootFS, pathName string, elfF *elf.File) string {
 	return ""
 }
 
-func (psm *ProcSymsModule) buildSymTable(elfF *elf.File) error {
+func (psm *ProcSymsModule) BuildsymTable(elfF *elf.File) error {
 	// from .text section read symbol and pc
 	symbols, err := elfF.Symbols()
 	if err != nil && !errors.Is(err, elf.ErrNoSymbols) {
@@ -208,20 +202,18 @@ func (psm *ProcSymsModule) buildSymTable(elfF *elf.File) error {
 }
 
 // It reads the contents of /proc/pid/maps, parses each line, and returns a slice of ProcMap entries.
-func (psm *ProcSymsModule) loadProcModule(pid int) error {
+func (psm *ProcSymsModule) LoadProcModule(appRootFS string) error {
 	var (
-		f         *os.File
 		elfF      *elf.File
 		elfDebugF *elf.File
 		err       error
-		appRootFS = fmt.Sprintf("/proc/%d/root", pid)
 	)
 
 	// 打开elf文件
-	if f, elfF, err = psm.open(appRootFS); err != nil {
+	if elfF, err = psm.open(appRootFS); err != nil {
 		return errors.Wrapf(err, "psm open:'%s%s'.", appRootFS, psm.Pathname)
 	}
-	defer f.Close()
+	defer elfF.Close()
 
 	// 获取module类型
 	switch elfF.Type {
@@ -244,12 +236,12 @@ func (psm *ProcSymsModule) loadProcModule(pid int) error {
 		// 直接加载debug文件
 		elfDebugF, err = elf.Open(debugFilePath)
 		if err == nil {
-			err = psm.buildSymTable(elfDebugF)
 			defer elfDebugF.Close()
+			err = psm.BuildsymTable(elfDebugF)
 		}
 	} else {
 		// 直接从elf文件中加载symbol
-		err = psm.buildSymTable(elfF)
+		err = psm.BuildsymTable(elfF)
 	}
 
 	return err
@@ -261,7 +253,7 @@ func (psm *ProcSymsModule) String() string {
 		psm.StartAddr, psm.EndAddr, psm.Perms, psm.Offset, psm.Dev, psm.Inode, psm.Pathname, len(psm.procSymTable))
 }
 
-func (psm *ProcSymsModule) __resolvePC(pc uint64) (string, uint32, string, error) {
+func (psm *ProcSymsModule) resolvePC(pc uint64) (string, uint32, string, error) {
 	// 二分查找
 	index := sort.Search(len(psm.procSymTable), func(i int) bool {
 		return psm.procSymTable[i].pc > pc
@@ -287,12 +279,13 @@ type ProcSyms struct {
 }
 
 // It parses a line from the /proc/<pid>/maps file and returns a ProcSymsModule struct
-func __parseProcMapEntry(line string, pss *ProcSyms) error {
+func parseProcMapEntry(line string, pss *ProcSyms) error {
 	// 7ff8be1a5000-7ff8be1c0000 r-xp 00000000 fd:00 570150                     /usr/lib64/libpthread-2.28.so
 	var (
 		err                error
 		perms              string
 		devMajor, devMinor uint64
+		appRootFS          = fmt.Sprintf("/proc/%d/root", pss.Pid)
 	)
 
 	fields := strings.Fields(line)
@@ -338,8 +331,8 @@ func __parseProcMapEntry(line string, pss *ProcSyms) error {
 	psm.Dev = unix.Mkdev(uint32(devMajor), uint32(devMinor))
 
 	// 测试golang程序的load
-	if err = psm.loadProcGoModule(pss.Pid); err != nil {
-		if err = psm.loadProcModule(pss.Pid); err != nil {
+	if err = psm.LoadProcGoModule(appRootFS); err != nil {
+		if err = psm.LoadProcModule(appRootFS); err != nil {
 			if errors.Is(err, ErrProcModuleNotSupport) {
 				//fmt.Printf("module:'%s' not support read symbols.\n", psm.Pathname)
 				return nil
@@ -376,7 +369,7 @@ func NewProcSyms(pid int) (*ProcSyms, error) {
 	for scanner.Scan() {
 		// maps每一行的信息
 		text := scanner.Text()
-		err := __parseProcMapEntry(text, pss)
+		err := parseProcMapEntry(text, pss)
 		if err != nil {
 			return nil, errors.Wrapf(err, "parse text:'%s' failed", text)
 		}
@@ -394,7 +387,7 @@ func (pss *ProcSyms) ResolvePC(pc uint64) (string, uint32, string, error) {
 	for _, psm := range pss.Modules {
 		if pc >= psm.StartAddr && pc <= psm.EndAddr {
 			if psm.Type == SO {
-				return psm.__resolvePC(pc - psm.StartAddr)
+				return psm.resolvePC(pc - psm.StartAddr)
 			} else if psm.Type == EXEC {
 				//fmt.Printf("module:'%s' pc:'%x' is executable.\n", psm.Pathname, pc)
 				if psm.goSymTable != nil {
@@ -403,7 +396,7 @@ func (pss *ProcSyms) ResolvePC(pc uint64) (string, uint32, string, error) {
 						return symName, offset, psm.Pathname, nil
 					}
 				} else {
-					return psm.__resolvePC(pc)
+					return psm.resolvePC(pc)
 				}
 			}
 		}

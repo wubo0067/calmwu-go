@@ -20,8 +20,6 @@ package utils
 import (
 	"debug/elf"
 	"debug/gosym"
-	"fmt"
-	"os"
 
 	"github.com/pkg/errors"
 )
@@ -41,17 +39,15 @@ var (
 	ErrGSTGoSymbolsNotFound = errors.New("gosymtab: no go symbols found")
 )
 
-func (psm *ProcSymsModule) loadProcGoModule(pid int) error {
+func (psm *ProcSymsModule) LoadProcGoModule(appRootFS string) error {
 	var (
-		f         *os.File
-		elfF      *elf.File
-		err       error
-		appRootFS = fmt.Sprintf("/proc/%d/root", pid)
+		elfF *elf.File
+		err  error
 	)
-	if f, elfF, err = psm.open(appRootFS); err != nil {
+	if elfF, err = psm.open(appRootFS); err != nil {
 		return errors.Wrapf(err, "psm open:'%s%s'.", appRootFS, psm.Pathname)
 	}
-	defer f.Close()
+	defer elfF.Close()
 
 	switch elfF.Type {
 	case elf.ET_EXEC:
@@ -85,7 +81,7 @@ func (psm *ProcSymsModule) loadProcGoModule(pid int) error {
 	psm.goSymTable = &GoSymTable{
 		symIndex: tab,
 	}
-	//fmt.Printf("loadProcGoModule:'%s' success.\n", psm.Pathname)
+	//fmt.Printf("LoadProcGoModule:'%s' success.\n", psm.Pathname)
 	return nil
 }
 

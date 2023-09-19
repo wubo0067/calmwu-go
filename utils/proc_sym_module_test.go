@@ -116,7 +116,7 @@ func TestResolveGO(t *testing.T) {
 
 // GO111MODULE=off go test -v -run=TestResolveCApp
 func TestResolveCApp(t *testing.T) {
-	pid := 4607
+	pid := 386185 // x-monitor
 
 	pss, err := NewProcSyms(pid)
 	if err != nil {
@@ -194,26 +194,25 @@ func TestBuildID(t *testing.T) {
 	}
 }
 
-// GO111MODULE=off go test -v -run=TestFindDebugFile
-func TestFindDebugFile(t *testing.T) {
-	fFIO, err := elf.Open(__fio)
-	if err != nil {
-		t.Fatal(err)
-	}
-	defer fFIO.Close()
-
-	buildID, err := GetBuildID(fFIO)
-	if err != nil {
-		t.Errorf("get %s buildid failed.", err.Error())
-	} else {
-		// = readelf -n /usr/bin/fio
-		debugFile := findDebugFile(buildID.ID, "/proc/1/root", __fio, fFIO)
-		t.Logf("%s buildid:'%s', type:%d, debugfile:'%s'", __fio, buildID.ID, buildID.Type, debugFile)
-	}
-}
-
 // dnf remove fio-debuginfo.x86_64
 // dnf -y install fio-debuginfo.x86_64
+// rpm -ql fio-debuginfo-3.19-3.el8.x86_64
+
+// GO111MODULE=off go test -v -run=TestFindDebugFile
+func TestFindDebugFile(t *testing.T) {
+	appRootFS := "/proc/1/root"
+	psm := new(ProcSymsModule)
+	psm.Pathname = __fio
+	err := psm.LoadProcModule(appRootFS)
+	if err != nil {
+		t.Fatal(err)
+	} else {
+		t.Logf("%s have %d symbols", __fio, len(psm.procSymTable))
+		for _, sym := range psm.procSymTable {
+			t.Logf("name:'%s', val:'%x'", sym.name, sym.pc)
+		}
+	}
+}
 
 // GO111MODULE=off go test -v -run=TestLoadSymbols
 func TestLoadSymbols(t *testing.T) {
@@ -224,13 +223,12 @@ func TestLoadSymbols(t *testing.T) {
 	defer fFIO.Close()
 
 	psm := new(ProcSymsModule)
-	psm.buildSymTable(fFIO)
+	psm.BuildsymTable(fFIO)
 
-	t.Logf("%s symbol count:%d", __fio, len(psm.procSymTable))
+	t.Logf("%s have %d symbols", __fio, len(psm.procSymTable))
 
 	for _, sym := range psm.procSymTable {
 		t.Logf("name:'%s', val:'%x'", sym.name, sym.pc)
-
 	}
 
 	// dyn name:'blktrace_lookup_device', val:'8e400', section:'15==>.text'
