@@ -233,3 +233,48 @@ func TestLoadSymbols(t *testing.T) {
 
 	// dyn name:'blktrace_lookup_device', val:'8e400', section:'15==>.text'
 }
+
+// GO111MODULE=off go test -v -run=TestTextSection
+func TestTextSection(t *testing.T) {
+	fFIO, err := elf.Open(__fio)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer fFIO.Close()
+
+	/*
+	   proc_sym_module_test.go:246: .text sectionHeader elf.SectionHeader{Name:".text", Type:elf.SHT_PROGBITS, Flags:elf.SHF_ALLOC+elf.SHF_EXECINSTR, Addr:0x1bfc0, Offset:0x1bfc0, Size:0x73d12, Link:0x0, Info:0x0, Addralign:0x10, Entsize:0x0, FileSize:0x73d12}
+	   proc_sym_module_test.go:261: debug .text sectionHeader elf.SectionHeader{Name:".text", Type:elf.SHT_NOBITS, Flags:elf.SHF_ALLOC+elf.SHF_EXECINSTR, Addr:0x1bfc0, Offset:0x360, Size:0x73d12, Link:0x0, Info:0x0, Addralign:0x10, Entsize:0x0, FileSize:0x73d12}
+	*/
+	txtSec := fFIO.Section(".text")
+	t.Logf(".text sectionHeader %#v", txtSec.SectionHeader)
+
+	buildID, err := GetBuildID(fFIO)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	debugFIO := findDebugFile(buildID.ID, "/proc/1/root", __fio, fFIO)
+	if debugFIO != "" {
+		fDebugFIO, err := elf.Open(debugFIO)
+		if err != nil {
+			t.Fatal(err)
+		}
+
+		debugTxtSec := fDebugFIO.Section(".text")
+		t.Logf("debug .text sectionHeader %#v", debugTxtSec.SectionHeader)
+
+		syms, err := fDebugFIO.Symbols()
+		if err != nil {
+			t.Fatal(err)
+		}
+
+		for _, sym := range syms {
+			if sym.Value != 0 && sym.Info&0xf == byte(elf.STT_FUNC) {
+				t.Logf("sym:'%s' val:0x%x, secionIndex:%d, section:'%s'", sym.Name, sym.Value, sym.Section, fDebugFIO.Sections[sym.Section].Name)
+			}
+		}
+		// sym:'eta_time_within_slack' val:0x41350, secionIndex:15, section:'.text'
+	}
+
+}

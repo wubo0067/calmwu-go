@@ -31,6 +31,7 @@ type ProcSymModuleType int
 var (
 	ErrProcModuleNotSupport       = errors.New("proc module not support")
 	ErrProcModuleNotSymbolSection = errors.New("proc module not symbol section")
+	ErrProcModuleHasNoSymbols     = errors.New("proc module has no symbols")
 )
 
 const (
@@ -77,6 +78,7 @@ type ProcSymsModule struct {
 	Type ProcSymModuleType
 	//
 	procSymTable []*ProcSym
+	SymCount     int
 	//
 	goSymTable *GoSymTable
 	//
@@ -158,7 +160,7 @@ func findDebugFile(buildID, appRootFS, pathName string, elfF *elf.File) string {
 	return ""
 }
 
-func (psm *ProcSymsModule) BuildsymTable(elfF *elf.File) error {
+func (psm *ProcSymsModule) BuildSymTable(elfF *elf.File) error {
 	// from .text section read symbol and pc
 	symbols, err := elfF.Symbols()
 	if err != nil && !errors.Is(err, elf.ErrNoSymbols) {
@@ -170,25 +172,26 @@ func (psm *ProcSymsModule) BuildsymTable(elfF *elf.File) error {
 		return errors.Wrapf(err, "read module:'%s' DYNSYM.", psm.Pathname)
 	}
 
-	total := len(symbols) + len(dynSymbols)
-	if total == 0 {
-		return ErrProcModuleNotSymbolSection
-	}
-
-	pfnAddSymbol := func(syms []elf.Symbol) {
+	pfnAddSymbol := func(m *ProcSymsModule, syms []elf.Symbol) {
 		for _, sym := range syms {
 			if sym.Value != 0 && sym.Info&0xf == byte(elf.STT_FUNC) {
 				ps := new(ProcSym)
 				ps.name = sym.Name
 				ps.pc = sym.Value
-				//fmt.Printf("module:'%s' symbol:'%s' pc:'%d'.\n", psm.Pathname, ps.name, ps.pc)
-				psm.procSymTable = append(psm.procSymTable, ps)
+				m.procSymTable = append(m.procSymTable, ps)
+				m.SymCount = m.SymCount + 1
 			}
 		}
 	}
 
-	pfnAddSymbol(symbols)
-	pfnAddSymbol(dynSymbols)
+	pfnAddSymbol(psm, symbols)
+	pfnAddSymbol(psm, dynSymbols)
+
+	if psm.SymCount == 0 {
+		return ErrProcModuleHasNoSymbols
+	}
+
+	//fmt.Printf("-------------module:'%s' SymCount:%d.\n", psm.Pathname, psm.SymCount)
 
 	// 按地址排序，地址相同按名字排序
 	sort.Slice(psm.procSymTable, func(i, j int) bool {
@@ -237,11 +240,11 @@ func (psm *ProcSymsModule) LoadProcModule(appRootFS string) error {
 		elfDebugF, err = elf.Open(debugFilePath)
 		if err == nil {
 			defer elfDebugF.Close()
-			err = psm.BuildsymTable(elfDebugF)
+			err = psm.BuildSymTable(elfDebugF)
 		}
 	} else {
 		// 直接从elf文件中加载symbol
-		err = psm.BuildsymTable(elfF)
+		err = psm.BuildSymTable(elfF)
 	}
 
 	return err
@@ -254,14 +257,16 @@ func (psm *ProcSymsModule) String() string {
 }
 
 func (psm *ProcSymsModule) resolvePC(pc uint64) (string, uint32, string, error) {
+	//size := len(psm.procSymTable)
 	// 二分查找
-	index := sort.Search(len(psm.procSymTable), func(i int) bool {
+	index := sort.Search(psm.SymCount, func(i int) bool {
 		return psm.procSymTable[i].pc > pc
 	})
 
 	// addr小于所有symbol的最小地址
 	if index == 0 {
-		return "", 0, "", errors.Errorf("can't find symbol in module:'%s'", psm.Pathname)
+		return "", 0, "", errors.Errorf("pc:0x%x not in symtab{0x%x---0x%0x} with module:'%s'",
+			pc, psm.procSymTable[0].pc, psm.procSymTable[psm.SymCount-1].pc, psm.Pathname)
 	}
 
 	// 找到了
@@ -333,8 +338,9 @@ func parseProcMapEntry(line string, pss *ProcSyms) error {
 	// 测试golang程序的load
 	if err = psm.LoadProcGoModule(appRootFS); err != nil {
 		if err = psm.LoadProcModule(appRootFS); err != nil {
-			if errors.Is(err, ErrProcModuleNotSupport) {
-				//fmt.Printf("module:'%s' not support read symbols.\n", psm.Pathname)
+			if errors.Is(err, ErrProcModuleNotSupport) || errors.Is(err, ErrProcModuleHasNoSymbols) {
+				// 不加入，忽略，继续
+				psm = nil
 				return nil
 			}
 			return errors.Wrapf(err, "load module:'%s' failed.", psm.Pathname)
@@ -389,17 +395,16 @@ func (pss *ProcSyms) ResolvePC(pc uint64) (string, uint32, string, error) {
 			if psm.Type == SO {
 				return psm.resolvePC(pc - psm.StartAddr)
 			} else if psm.Type == EXEC {
-				//fmt.Printf("module:'%s' pc:'%x' is executable.\n", psm.Pathname, pc)
 				if psm.goSymTable != nil {
 					symName, offset, err := psm.goSymTable.__resolveGoPC(pc)
 					if err == nil {
 						return symName, offset, psm.Pathname, nil
 					}
 				} else {
-					return psm.resolvePC(pc)
+					return psm.resolvePC(pc - psm.StartAddr)
 				}
 			}
 		}
 	}
-	return "", 0, "", errors.Errorf("pc:%x resolution failure", pc)
+	return "", 0, "", errors.Errorf("pc:0x%x is outside the valid ranges in /proc/%d/maps", pc, pss.Pid)
 }
