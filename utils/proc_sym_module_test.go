@@ -223,7 +223,7 @@ func TestLoadSymbols(t *testing.T) {
 	defer fFIO.Close()
 
 	psm := new(ProcSymsModule)
-	psm.BuildsymTable(fFIO)
+	psm.BuildSymTable(fFIO)
 
 	t.Logf("%s have %d symbols", __fio, len(psm.procSymTable))
 

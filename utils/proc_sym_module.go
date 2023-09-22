@@ -17,6 +17,7 @@ import (
 	"strings"
 	"syscall"
 
+	"github.com/parca-dev/parca-agent/pkg/buildid"
 	"github.com/pkg/errors"
 	"golang.org/x/sys/unix"
 )
@@ -82,7 +83,8 @@ type ProcSymsModule struct {
 	//
 	goSymTable *GoSymTable
 	//
-	buildID *BuildID
+	//buildID *BuildID
+	buildID string
 }
 
 func (psm *ProcSymsModule) open(appRootFS string) (*elf.File, error) {
@@ -228,13 +230,14 @@ func (psm *ProcSymsModule) LoadProcModule(appRootFS string) error {
 		return ErrProcModuleNotSupport
 	}
 
-	psm.buildID, err = GetBuildID(elfF)
+	psm.buildID, err = buildid.FromELF(elfF)
+	//psm.buildID, err = GetBuildID(elfF)
 	if err != nil {
-		return errors.Wrapf(err, "open module:'%s'", psm.Pathname)
+		return errors.Wrapf(err, "failed to get build ID for %s", psm.Pathname)
 	}
 
 	// 查找对应debug文件
-	debugFilePath := findDebugFile(psm.buildID.ID, appRootFS, psm.Pathname, elfF)
+	debugFilePath := findDebugFile(psm.buildID, appRootFS, psm.Pathname, elfF)
 	if debugFilePath != "" {
 		// 直接加载debug文件
 		elfDebugF, err = elf.Open(debugFilePath)
