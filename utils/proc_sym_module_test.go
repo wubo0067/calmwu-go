@@ -13,11 +13,15 @@ import (
 	"encoding/binary"
 	"fmt"
 	"testing"
+
+	"github.com/parca-dev/parca-agent/pkg/stack/unwind"
+	"github.com/xyproto/ainur"
 )
 
 const (
 	__pyroscope = "/mnt/Program/pyroscope/pyroscope"
 	__fio       = "/usr/bin/fio"
+	__stack_bin = "/home/pingan/Program/x-monitor/bin/stack_unwind_cli"
 )
 
 func readUint64(data []byte) uint64 {
@@ -276,5 +280,31 @@ func TestTextSection(t *testing.T) {
 		}
 		// sym:'eta_time_within_slack' val:0x41350, secionIndex:15, section:'.text'
 	}
+}
 
+// GO111MODULE=off go test -v -run=TestHasFramePointer
+func TestHasFramePointer(t *testing.T) {
+	fStack, err := elf.Open(__stack_bin)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer fStack.Close()
+
+	compiler := ainur.Compiler(fStack)
+	// compiler:'GCC 8.5.0'
+	t.Logf("%s compiler:'%s'", __stack_bin, compiler)
+}
+
+// GO111MODULE=off go test -v -run=TestUnwindTable
+func TestUnwindTable(t *testing.T) {
+	tb, machine, err := unwind.GenerateCompactUnwindTable(__stack_bin, "stack_unwind_cli")
+	if err != nil {
+		t.Fatal(err)
+	} else {
+		t.Logf("machine: %s", machine.GoString())
+		for i, _ := range tb {
+			row := &tb[i]
+			t.Logf("%d: %#v", i, row)
+		}
+	}
 }

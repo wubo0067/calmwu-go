@@ -428,6 +428,11 @@ func LoadKallSyms() error {
 			continue
 		}
 
+		if ar[1] == "b" || ar[1] == "B" || ar[1] == "d" ||
+			ar[1] == "D" || ar[1] == "r" || ar[1] == "R" {
+			continue
+		}
+
 		address, _ := strconv.ParseUint(ar[0], 16, 64)
 
 		ksym := new(Ksym)
@@ -446,45 +451,56 @@ func LoadKallSyms() error {
 }
 
 // It uses a binary search to find the symbol name for a given address
-func FindKsym(addr uint64) (name string, offset uint32, err error) {
+func FindKsym(addr uint64) (name string, err error) {
 	if len(__ksym_cache) == 0 {
 		err = fmt.Errorf("ksym cache is empty")
-		return "", 0, err
+		return "", err
 	}
 
 	_lock.RLock()
 	defer _lock.RUnlock()
 
-	// var result int64
-	start := 0
-	end := len(__ksym_cache)
-
-	// fmt.Printf("+++start:%d, end:%d, count:%d\n", start, end, len(__ksym_cache))
-
-	for start < end {
-		mid := start + (end-start)/2
-		// result = (int64)(addr - __ksym_cache[mid].address)
-
-		// fmt.Printf("start:%d, mid:%d, end:%d, __ksym_cache[%d].address:%x\n",
-		// 	start, mid, end, mid, __ksym_cache[mid].address)
-
-		if addr < __ksym_cache[mid].address {
-			end = mid
-		} else if addr > __ksym_cache[mid].address {
-			start = mid + 1
-		} else {
-			return __ksym_cache[mid].name, 0, nil
-		}
+	if addr < __ksym_cache[0].address {
+		err = errors.Errorf("addr:%x is less than __ksym_cache[0].address:%x", addr, __ksym_cache[0].address)
+		return "", err
 	}
 
-	// fmt.Printf("---start:%d, end:%d, count:%d\n", start, end, len(__ksym_cache))
+	i := sort.Search(len(__ksym_cache), func(i int) bool {
+		return addr < __ksym_cache[i].address
+	})
+	i--
+	return __ksym_cache[i].name, nil
 
-	if start >= 1 && __ksym_cache[start-1].address < addr && addr < __ksym_cache[start].address {
-		return __ksym_cache[start-1].name, (uint32)(addr - __ksym_cache[start-1].address), nil
-	}
+	// // var result int64
+	// start := 0
+	// end := len(__ksym_cache)
 
-	err = fmt.Errorf("kernel not found ksym for addr:%x", addr)
-	return "", 0, err
+	// // fmt.Printf("+++start:%d, end:%d, count:%d\n", start, end, len(__ksym_cache))
+
+	// for start < end {
+	// 	mid := start + (end-start)/2
+	// 	// result = (int64)(addr - __ksym_cache[mid].address)
+
+	// 	// fmt.Printf("start:%d, mid:%d, end:%d, __ksym_cache[%d].address:%x\n",
+	// 	// 	start, mid, end, mid, __ksym_cache[mid].address)
+
+	// 	if addr < __ksym_cache[mid].address {
+	// 		end = mid
+	// 	} else if addr > __ksym_cache[mid].address {
+	// 		start = mid + 1
+	// 	} else {
+	// 		return __ksym_cache[mid].name, 0, nil
+	// 	}
+	// }
+
+	// // fmt.Printf("---start:%d, end:%d, count:%d\n", start, end, len(__ksym_cache))
+
+	// if start >= 1 && __ksym_cache[start-1].address < addr && addr < __ksym_cache[start].address {
+	// 	return __ksym_cache[start-1].name, (uint32)(addr - __ksym_cache[start-1].address), nil
+	// }
+
+	// err = fmt.Errorf("kernel not found ksym for addr:%x", addr)
+	// return "", 0, err
 }
 
 // Check if a ksym name exists

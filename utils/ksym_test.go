@@ -8,48 +8,83 @@
 package utils
 
 import (
-	"fmt"
 	"testing"
 )
 
+// GO111MODULE=off go test -v -run=TestFindKsym
 func TestFindKsym(t *testing.T) {
 	err := LoadKallSyms()
 	if err != nil {
 		t.Fatal(err.Error())
 	}
 
-	fmt.Printf("Ksym count: %d\n", len(__ksym_cache))
+	count := len(__ksym_cache)
+	t.Logf("Ksym count: %d\n", count)
 
-	addr := uint64(0xffffffffbab2deb1)
-	name, offset, err := FindKsym(addr)
+	t.Logf("first ksym: %#v", __ksym_cache[0])
+	t.Logf("last ksym: %#v", __ksym_cache[count-1])
+
+	// 0000000000000000 A fixed_percpu_data
+	addr := uint64(0x0000000000000000)
+	name, err := FindKsym(addr)
 	if err != nil {
 		t.Fatal(err.Error())
 	} else {
-		fmt.Printf("addr:0x%x name:%s offset:0x%02x\n\n", addr, name, offset)
+		t.Logf("addr:0x%x name:%s", addr, name)
 	}
 
-	addr = uint64(0xffffffffba804260)
-	name, offset, err = FindKsym(addr)
+	// ffffffffa1b3c5d0 t complete_walk
+	addr = uint64(0xffffffffa1b3c5d0)
+	name, err = FindKsym(addr)
 	if err != nil {
 		t.Fatal(err.Error())
 	} else {
-		fmt.Printf("addr:0x%x name:%s offset:0x%02x\n\n", addr, name, offset)
+		t.Logf("addr:0x%x name:%s", addr, name)
 	}
 
-	addr = uint64(0xffffffffba8042bb)
-	name, offset, err = FindKsym(addr)
+	// ffffffffc03b4480 d fuse_acl_xattr_handlers	[fuse]
+	addr = uint64(0xffffffffc03b4480)
+	name, err = FindKsym(addr)
 	if err != nil {
 		t.Fatal(err.Error())
 	} else {
-		fmt.Printf("addr:0x%x name:%s offset:0x%02x\n\n", addr, name, offset)
+		t.Logf("addr:0x%x name:%s", addr, name)
 	}
 
-	addr = uint64(0xffffffffbb2000ad)
-	name, offset, err = FindKsym(addr)
+	// ffffffffc0124330 t crc_pcl      [crc32c_intel]
+	addr = uint64(0xffffffffc0124330)
+	name, err = FindKsym(addr)
 	if err != nil {
 		t.Fatal(err.Error())
 	} else {
-		fmt.Printf("addr:0x%x name:%s offset:0x%02x\n\n", addr, name, offset)
+		t.Logf("addr:0x%x name:%s", addr, name)
+	}
+
+	//ffffffffc01482c0 t sata_spd_string	[libata]
+	addr = uint64(0xffffffffc01482c0)
+	name, err = FindKsym(addr)
+	if err != nil {
+		t.Fatal(err.Error())
+	} else {
+		t.Logf("addr:0x%x name:%s", addr, name)
+	}
+
+	//ffffffffc0146c00 t ata_platform_remove_one	[libata]
+	addr = uint64(0xffffffffc0146c00)
+	name, err = FindKsym(addr)
+	if err != nil {
+		t.Fatal(err.Error())
+	} else {
+		t.Logf("addr:0x%x name:%s", addr, name)
+	}
+
+	//ffffffffc0146cd0 t ata_pci_device_do_suspend	[libata]
+	addr = uint64(0xffffffffc0146cd0)
+	name, err = FindKsym(addr)
+	if err != nil {
+		t.Fatal(err.Error())
+	} else {
+		t.Logf("addr:0x%x name:%s", addr, name)
 	}
 }
 
