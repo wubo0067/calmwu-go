@@ -220,7 +220,12 @@ func (psm *ProcSymsModule) LoadProcModule(appRootFS string) error {
 	}
 	defer elfF.Close()
 
-	// 获取module类型
+	// 获取module类型，编译使用了-fPIE生成位置无关的执行程序，Type会是ET_DYN，否则就是ET_EXEC
+	// 	?  bin git:(feature-xm-ebpf-collector) ? readelf -h ./x-monitor|grep 'Type:'
+	//   Type:                              EXEC (Executable file)
+	// ?  bin git:(feature-xm-ebpf-collector) ? readelf -h /bin/fio|grep 'Type:'
+	//   Type:                              DYN (Shared object file)
+	// ?  bin git:(feature-xm-ebpf-collector) ? ps -ef|grep ssh
 	switch elfF.Type {
 	case elf.ET_EXEC:
 		psm.Type = EXEC
@@ -404,7 +409,7 @@ func (pss *ProcSyms) ResolvePC(pc uint64) (string, uint32, string, error) {
 						return symName, offset, psm.Pathname, nil
 					}
 				} else {
-					return psm.resolvePC(pc - psm.StartAddr)
+					return psm.resolvePC(pc)
 				}
 			}
 		}
