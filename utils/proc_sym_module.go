@@ -82,7 +82,6 @@ type ProcSymsModule struct {
 	SymCount     int
 	//
 	goSymTable *GoSymTable
-	//
 	//buildID *BuildID
 	buildID string
 }
@@ -162,7 +161,7 @@ func findDebugFile(buildID, appRootFS, pathName string, elfF *elf.File) string {
 	return ""
 }
 
-func (psm *ProcSymsModule) BuildSymTable(elfF *elf.File) error {
+func (psm *ProcSymsModule) buildSymTable(elfF *elf.File) error {
 	// from .text section read symbol and pc
 	symbols, err := elfF.Symbols()
 	if err != nil && !errors.Is(err, elf.ErrNoSymbols) {
@@ -207,7 +206,7 @@ func (psm *ProcSymsModule) BuildSymTable(elfF *elf.File) error {
 }
 
 // It reads the contents of /proc/pid/maps, parses each line, and returns a slice of ProcMap entries.
-func (psm *ProcSymsModule) LoadProcModule(appRootFS string) error {
+func (psm *ProcSymsModule) loadProcModule(appRootFS string) error {
 	var (
 		elfF      *elf.File
 		elfDebugF *elf.File
@@ -248,11 +247,11 @@ func (psm *ProcSymsModule) LoadProcModule(appRootFS string) error {
 		elfDebugF, err = elf.Open(debugFilePath)
 		if err == nil {
 			defer elfDebugF.Close()
-			err = psm.BuildSymTable(elfDebugF)
+			err = psm.buildSymTable(elfDebugF)
 		}
 	} else {
 		// 直接从elf文件中加载symbol
-		err = psm.BuildSymTable(elfF)
+		err = psm.buildSymTable(elfF)
 	}
 
 	return err
@@ -344,8 +343,8 @@ func parseProcMapEntry(line string, pss *ProcSyms) error {
 	psm.Dev = unix.Mkdev(uint32(devMajor), uint32(devMinor))
 
 	// 测试golang程序的load
-	if err = psm.LoadProcGoModule(appRootFS); err != nil {
-		if err = psm.LoadProcModule(appRootFS); err != nil {
+	if err = psm.loadProcGoModule(appRootFS); err != nil {
+		if err = psm.loadProcModule(appRootFS); err != nil {
 			if errors.Is(err, ErrProcModuleNotSupport) || errors.Is(err, ErrProcModuleHasNoSymbols) {
 				// 不加入，忽略，继续
 				psm = nil
@@ -360,7 +359,11 @@ func parseProcMapEntry(line string, pss *ProcSyms) error {
 	return nil
 }
 
-// It reads the contents of /proc/pid/maps, parses each line, and returns a slice of ProcMap entries.
+// NewProcSyms函数返回一个ProcSyms结构体指针和一个错误值。
+// ProcSyms结构体包含了进程的符号表信息。
+// 参数pid是进程的ID。
+// 函数会打开/proc/pid/maps文件和/proc/pid/exe文件，获取进程的内存映射和可执行文件信息。
+// 然后遍历maps文件的每一行，解析出每个内存映射区域的信息，填充到ProcSyms结构体中。
 func NewProcSyms(pid int) (*ProcSyms, error) {
 	procMapsFile, err := os.Open(fmt.Sprintf("/proc/%d/maps", pid))
 	if err != nil {
@@ -392,7 +395,12 @@ func NewProcSyms(pid int) (*ProcSyms, error) {
 	return pss, nil
 }
 
-// Used to find the symbol of the specified pc.
+// ResolvePC 根据程序计数器(PC)解析符号信息
+// 如果 ProcSyms 中的模块为空，则返回错误
+// 如果 PC 在模块的地址范围内，则返回符号名称、偏移量和路径名
+// 如果模块类型为 SO，则返回符号名称、偏移量和路径名
+// 如果模块类型为 EXEC，则返回符号名称、偏移量和路径名
+// 如果在解析过程中出现错误，则返回错误
 func (pss *ProcSyms) ResolvePC(pc uint64) (string, uint32, string, error) {
 	if len(pss.Modules) == 0 {
 		return "", 0, "", errors.New("proc modules is empty")
@@ -415,4 +423,9 @@ func (pss *ProcSyms) ResolvePC(pc uint64) (string, uint32, string, error) {
 		}
 	}
 	return "", 0, "", errors.Errorf("pc:0x%x is outside the valid ranges in /proc/%d/maps", pc, pss.Pid)
+}
+
+// GetModules 返回进程符号表中的所有模块。
+func (pss *ProcSyms) GetModules() []*ProcSymsModule {
+	return pss.Modules
 }

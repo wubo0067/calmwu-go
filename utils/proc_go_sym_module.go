@@ -39,7 +39,7 @@ var (
 	ErrGSTGoSymbolsNotFound = errors.New("gosymtab: no go symbols found")
 )
 
-func (psm *ProcSymsModule) LoadProcGoModule(appRootFS string) error {
+func (psm *ProcSymsModule) loadProcGoModule(appRootFS string) error {
 	var (
 		elfF *elf.File
 		err  error
@@ -81,7 +81,7 @@ func (psm *ProcSymsModule) LoadProcGoModule(appRootFS string) error {
 	psm.goSymTable = &GoSymTable{
 		symIndex: tab,
 	}
-	//fmt.Printf("LoadProcGoModule:'%s' success.\n", psm.Pathname)
+	//fmt.Printf("loadProcGoModule:'%s' success.\n", psm.Pathname)
 	return nil
 }
 

@@ -207,7 +207,7 @@ func TestFindDebugFile(t *testing.T) {
 	appRootFS := "/proc/1/root"
 	psm := new(ProcSymsModule)
 	psm.Pathname = __fio
-	err := psm.LoadProcModule(appRootFS)
+	err := psm.loadProcModule(appRootFS)
 	if err != nil {
 		t.Fatal(err)
 	} else {
@@ -227,7 +227,7 @@ func TestLoadSymbols(t *testing.T) {
 	defer fFIO.Close()
 
 	psm := new(ProcSymsModule)
-	psm.BuildSymTable(fFIO)
+	psm.buildSymTable(fFIO)
 
 	t.Logf("%s have %d symbols", __fio, len(psm.procSymTable))
 
