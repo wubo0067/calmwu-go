@@ -82,8 +82,7 @@ type ProcSymsModule struct {
 	SymCount     int
 	//
 	goSymTable *GoSymTable
-	//buildID *BuildID
-	buildID string
+	BuildID    string
 }
 
 func (psm *ProcSymsModule) open(appRootFS string) (*elf.File, error) {
@@ -234,14 +233,13 @@ func (psm *ProcSymsModule) loadProcModule(appRootFS string) error {
 		return ErrProcModuleNotSupport
 	}
 
-	psm.buildID, err = buildid.FromELF(elfF)
-	//psm.buildID, err = GetBuildID(elfF)
+	psm.BuildID, err = buildid.FromELF(elfF)
 	if err != nil {
 		return errors.Wrapf(err, "failed to get build ID for %s", psm.Pathname)
 	}
 
 	// 查找对应debug文件
-	debugFilePath := findDebugFile(psm.buildID, appRootFS, psm.Pathname, elfF)
+	debugFilePath := findDebugFile(psm.BuildID, appRootFS, psm.Pathname, elfF)
 	if debugFilePath != "" {
 		// 直接加载debug文件
 		elfDebugF, err = elf.Open(debugFilePath)
