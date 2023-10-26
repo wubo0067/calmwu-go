@@ -205,7 +205,7 @@ func TestBuildID(t *testing.T) {
 // GO111MODULE=off go test -v -run=TestFindDebugFile
 func TestFindDebugFile(t *testing.T) {
 	appRootFS := "/proc/1/root"
-	psm := new(ProcSymsModule)
+	psm := new(ProcModule)
 	psm.Pathname = __fio
 	err := psm.loadProcModule(appRootFS)
 	if err != nil {
@@ -226,7 +226,7 @@ func TestLoadSymbols(t *testing.T) {
 	}
 	defer fFIO.Close()
 
-	psm := new(ProcSymsModule)
+	psm := new(ProcModule)
 	psm.buildSymTable(fFIO)
 
 	t.Logf("%s have %d symbols", __fio, len(psm.procSymTable))

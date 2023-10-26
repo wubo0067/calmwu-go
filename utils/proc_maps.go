@@ -2,7 +2,7 @@
  * @Author: CALM.WU
  * @Date: 2023-01-10 14:20:15
  * @Last Modified by: CALM.WU
- * @Last Modified time: 2023-09-18 17:40:16
+ * @Last Modified time: 2023-10-26 14:41:55
  */
 
 package utils
@@ -27,7 +27,7 @@ const (
 	__debugLinkSection                   = ".gnu_debuglink"
 )
 
-type ProcSymModuleType int
+type ProcModuleType int
 
 var (
 	ErrProcModuleNotSupport       = errors.New("proc module not support")
@@ -36,18 +36,18 @@ var (
 )
 
 const (
-	UNKNOWN ProcSymModuleType = iota
+	UNKNOWN ProcModuleType = iota
 	EXEC
 	SO
 	VDSO
 )
 
-type ProcSym struct {
+type ModuleSym struct {
 	pc   uint64
 	name string
 }
 
-type ProcMapPermissions struct {
+type ProcModulePermissions struct {
 	// Readable is true if the mapping is readable.
 	Readable bool
 	// Writable is true if the mapping is writable.
@@ -60,13 +60,13 @@ type ProcMapPermissions struct {
 	Private bool
 }
 
-type ProcSymsModule struct {
+type ProcModule struct {
 	// StartAddr is the starting pc of current mapping.
 	StartAddr uint64
 	// EndAddr is the ending pc of current mapping.
 	EndAddr uint64
 	// Perm is the permission of current mapping.
-	Perms ProcMapPermissions
+	Perms ProcModulePermissions
 	// Offset is the offset of current mapping.
 	Offset uint64
 	// Dev is the device of current mapping.
@@ -76,16 +76,16 @@ type ProcSymsModule struct {
 	// 内存段所属的文件的路径名
 	Pathname string
 	//
-	Type ProcSymModuleType
+	Type ProcModuleType
 	//
-	procSymTable []*ProcSym
+	procSymTable []*ModuleSym
 	SymCount     int
 	//
 	goSymTable *GoSymTable
 	BuildID    string
 }
 
-func (psm *ProcSymsModule) open(appRootFS string) (*elf.File, error) {
+func (psm *ProcModule) open(appRootFS string) (*elf.File, error) {
 	// rootfs: /proc/%d/root
 	var (
 		elfF *elf.File
@@ -160,7 +160,7 @@ func findDebugFile(buildID, appRootFS, pathName string, elfF *elf.File) string {
 	return ""
 }
 
-func (psm *ProcSymsModule) buildSymTable(elfF *elf.File) error {
+func (psm *ProcModule) buildSymTable(elfF *elf.File) error {
 	// from .text section read symbol and pc
 	symbols, err := elfF.Symbols()
 	if err != nil && !errors.Is(err, elf.ErrNoSymbols) {
@@ -172,10 +172,10 @@ func (psm *ProcSymsModule) buildSymTable(elfF *elf.File) error {
 		return errors.Wrapf(err, "read module:'%s' DYNSYM.", psm.Pathname)
 	}
 
-	pfnAddSymbol := func(m *ProcSymsModule, syms []elf.Symbol) {
+	pfnAddSymbol := func(m *ProcModule, syms []elf.Symbol) {
 		for _, sym := range syms {
 			if sym.Value != 0 && sym.Info&0xf == byte(elf.STT_FUNC) {
-				ps := new(ProcSym)
+				ps := new(ModuleSym)
 				ps.name = sym.Name
 				ps.pc = sym.Value
 				m.procSymTable = append(m.procSymTable, ps)
@@ -205,7 +205,7 @@ func (psm *ProcSymsModule) buildSymTable(elfF *elf.File) error {
 }
 
 // It reads the contents of /proc/pid/maps, parses each line, and returns a slice of ProcMap entries.
-func (psm *ProcSymsModule) loadProcModule(appRootFS string) error {
+func (psm *ProcModule) loadProcModule(appRootFS string) error {
 	var (
 		elfF      *elf.File
 		elfDebugF *elf.File
@@ -255,13 +255,13 @@ func (psm *ProcSymsModule) loadProcModule(appRootFS string) error {
 	return err
 }
 
-// A method of the ProcSymsModule struct. It is used to print the ProcSymsModule struct.
-func (psm *ProcSymsModule) String() string {
+// A method of the ProcModule struct. It is used to print the ProcModule struct.
+func (psm *ProcModule) String() string {
 	return fmt.Sprintf("%x-%x %#v %x %x %d %s, symbols:%d",
 		psm.StartAddr, psm.EndAddr, psm.Perms, psm.Offset, psm.Dev, psm.Inode, psm.Pathname, len(psm.procSymTable))
 }
 
-func (psm *ProcSymsModule) resolvePC(pc uint64) (string, uint32, string, error) {
+func (psm *ProcModule) resolvePC(pc uint64) (string, uint32, string, error) {
 	//size := len(psm.procSymTable)
 	// 二分查找
 	index := sort.Search(psm.SymCount, func(i int) bool {
@@ -282,13 +282,13 @@ func (psm *ProcSymsModule) resolvePC(pc uint64) (string, uint32, string, error) 
 type ProcSyms struct {
 	// pid
 	Pid int
-	// ProcSymsModule slice
-	Modules []*ProcSymsModule
+	// ProcModule slice
+	Modules []*ProcModule
 	// inode, Determine whether to refresh
 	InodeID uint64
 }
 
-// It parses a line from the /proc/<pid>/maps file and returns a ProcSymsModule struct
+// It parses a line from the /proc/<pid>/maps file and returns a ProcModule struct
 func parseProcMapEntry(line string, pss *ProcSyms) error {
 	// 7ff8be1a5000-7ff8be1c0000 r-xp 00000000 fd:00 570150                     /usr/lib64/libpthread-2.28.so
 	var (
@@ -304,7 +304,7 @@ func parseProcMapEntry(line string, pss *ProcSyms) error {
 		return nil
 	}
 
-	psm := new(ProcSymsModule)
+	psm := new(ProcModule)
 	psm.Type = UNKNOWN
 
 	fmt.Sscanf(line, "%x-%x %s %x %x:%x %d %s", &psm.StartAddr, &psm.EndAddr, &perms,
@@ -357,11 +357,6 @@ func parseProcMapEntry(line string, pss *ProcSyms) error {
 	return nil
 }
 
-// NewProcSyms函数返回一个ProcSyms结构体指针和一个错误值。
-// ProcSyms结构体包含了进程的符号表信息。
-// 参数pid是进程的ID。
-// 函数会打开/proc/pid/maps文件和/proc/pid/exe文件，获取进程的内存映射和可执行文件信息。
-// 然后遍历maps文件的每一行，解析出每个内存映射区域的信息，填充到ProcSyms结构体中。
 func NewProcSyms(pid int) (*ProcSyms, error) {
 	procMapsFile, err := os.Open(fmt.Sprintf("/proc/%d/maps", pid))
 	if err != nil {
@@ -424,6 +419,6 @@ func (pss *ProcSyms) ResolvePC(pc uint64) (string, uint32, string, error) {
 }
 
 // GetModules 返回进程符号表中的所有模块。
-func (pss *ProcSyms) GetModules() []*ProcSymsModule {
+func (pss *ProcSyms) GetModules() []*ProcModule {
 	return pss.Modules
 }

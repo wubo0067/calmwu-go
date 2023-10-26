@@ -2,7 +2,7 @@
  * @Author: CALM.WU
  * @Date: 2023-09-12 14:18:45
  * @Last Modified by: CALM.WU
- * @Last Modified time: 2023-09-18 15:49:02
+ * @Last Modified time: 2023-10-26 14:39:23
  */
 
 /*
@@ -39,7 +39,7 @@ var (
 	ErrGSTGoSymbolsNotFound = errors.New("gosymtab: no go symbols found")
 )
 
-func (psm *ProcSymsModule) loadProcGoModule(appRootFS string) error {
+func (psm *ProcModule) loadProcGoModule(appRootFS string) error {
 	var (
 		elfF *elf.File
 		err  error
