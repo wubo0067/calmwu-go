@@ -18,6 +18,17 @@ import (
 	"github.com/pkg/errors"
 )
 
+var (
+	ErrGSTTextSectionEmpty  = errors.New("empty .text section")
+	ErrGSTGoPCLNTabNotExist = errors.New("no .gopclntab section")
+	ErrGSTGoSymTabNotExist  = errors.New("no .gosymtab section")
+	ErrGSTGoTooOld          = errors.New("gosymtab: go sym tab too old")
+	ErrGSTGoParseFailed     = errors.New("gosymtab: go sym tab parse failed")
+	ErrGSTGoFailed          = errors.New("gosymtab: go sym tab failed")
+	ErrGSTGoOOB             = errors.New("go table oob")
+	ErrGSTGoSymbolsNotFound = errors.New("gosymtab: no go symbols found")
+)
+
 type ModuleSymbol struct {
 	Name    string
 	Address uint64 // readelf -s ./xxx second column
@@ -32,6 +43,8 @@ type SymbolTable interface {
 	Resolve(addr uint64) (*ResolveSymbol, error) // 解析地址
 	ModuleName() string                          //
 	BuildID() string                             //
+	Count() int                                  //
+	Symbols() []*ModuleSymbol                    //
 }
 
 type ModuleSymbolTbl struct {
@@ -61,8 +74,8 @@ func (nmst *NativeModuleSymbolTbl) Resolve(addr uint64) (*ResolveSymbol, error) 
 
 	// addr小于所有symbol的最小地址
 	if index == 0 {
-		return nil, errors.Errorf("addr:0x%x not in module:'%s', buildID:'%s' symbol table",
-			addr, nmst.moduleName, nmst.buildID)
+		return nil, errors.Errorf("addr:0x%x not in module:'%s', buildID:'%s' symbol table{0x%x---0x%x}",
+			addr, nmst.moduleName, nmst.buildID, nmst.symbolTable[0].Address, nmst.symbolTable[nmst.symbolCount-1].Address)
 	}
 
 	// 找到了
@@ -114,6 +127,14 @@ func (nmst *NativeModuleSymbolTbl) GenerateTbl(elfF *elf.File) error {
 	return nil
 }
 
+func (nmst *NativeModuleSymbolTbl) Count() int {
+	return len(nmst.symbolTable)
+}
+
+func (nmst *NativeModuleSymbolTbl) Symbols() []*ModuleSymbol {
+	return nmst.symbolTable
+}
+
 type GoModuleSymbolTbl struct {
 	ModuleSymbolTbl
 	symIndex *gosym.Table
@@ -145,6 +166,14 @@ func (gomst *GoModuleSymbolTbl) GenerateTbl(goSymTabSection *elf.Section, elfF *
 	}
 
 	gomst.symIndex = tab
+	return nil
+}
+
+func (gomst *GoModuleSymbolTbl) Count() int {
+	return len(gomst.symIndex.Funcs)
+}
+
+func (gomst *GoModuleSymbolTbl) Symbols() []*ModuleSymbol {
 	return nil
 }
 
@@ -181,13 +210,14 @@ func InitModuleSymbolTblMgr(capacity int) error {
 	return err
 }
 
-func __getModuleSymbolTbl(buildID string) (SymbolTable, error) {
+func getModuleSymbolTbl(buildID string) (SymbolTable, error) {
 	var (
 		st SymbolTable
 		ok bool
 	)
 
 	if __singleModuleSymbolTblMgr != nil {
+
 		__singleModuleSymbolTblMgr.lock.Lock()
 		defer __singleModuleSymbolTblMgr.lock.Unlock()
 
@@ -196,13 +226,14 @@ func __getModuleSymbolTbl(buildID string) (SymbolTable, error) {
 			return st, nil
 		}
 	}
-	return nil, errors.Errorf("module symbol table not found by buildID:'%s'", buildID)
+	return nil, errors.Errorf("symbol table not found by buildID:'%s'", buildID)
 }
 
-func __createModuleSymbolTbl(buildID string, moduleName string, elfF *elf.File) (SymbolTable, error) {
+func createModuleSymbolTbl(buildID string, moduleName string, appRootFS string, elfF *elf.File) (SymbolTable, error) {
 	var (
-		st  SymbolTable
-		err error
+		st        SymbolTable
+		err       error
+		elfDebugF *elf.File
 	)
 
 	// 判断是否是golang module
@@ -211,16 +242,30 @@ func __createModuleSymbolTbl(buildID string, moduleName string, elfF *elf.File) 
 		nmst := new(NativeModuleSymbolTbl)
 		nmst.buildID = buildID
 		nmst.moduleName = moduleName
-		if err = nmst.GenerateTbl(elfF); err != nil {
+		// 通过buildID查找对应的debug文件
+		debugFilePath := findDebugFile(buildID, appRootFS, moduleName, elfF)
+		if debugFilePath != "" {
+			// 如果debug文件存在，打开
+			elfDebugF, err = elf.Open(debugFilePath)
+			if err == nil {
+				defer elfDebugF.Close()
+				err = nmst.GenerateTbl(elfDebugF)
+			}
+		} else {
+			err = nmst.GenerateTbl(elfF)
+		}
+		if err == nil {
 			st = nmst
+			__singleModuleSymbolTblMgr.lc.Add(buildID, st)
 		}
 	} else {
 		// is golang module
 		gomst := new(GoModuleSymbolTbl)
 		gomst.buildID = buildID
 		gomst.moduleName = moduleName
-		if err = gomst.GenerateTbl(goSymTab, elfF); err != nil {
+		if err = gomst.GenerateTbl(goSymTab, elfF); err == nil {
 			st = gomst
+			__singleModuleSymbolTblMgr.lc.Add(buildID, st)
 		}
 	}
 

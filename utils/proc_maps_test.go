@@ -11,11 +11,9 @@ import (
 	"debug/elf"
 	"debug/gosym"
 	"encoding/binary"
-	"fmt"
 	"testing"
 
 	"github.com/parca-dev/parca-agent/pkg/stack/unwind"
-	"github.com/xyproto/ainur"
 )
 
 const (
@@ -118,46 +116,64 @@ func TestResolveGO(t *testing.T) {
 	}
 }
 
-// GO111MODULE=off go test -v -run=TestResolveCApp
-func TestResolveCApp(t *testing.T) {
-	pid := 386185 // x-monitor
+// GO111MODULE=off go test -v -run=TestResolvePCXMonitor
+func TestResolvePCXMonitor(t *testing.T) {
+	InitModuleSymbolTblMgr(128)
+	pid := 2533093 // x-monitor
 
 	pss, err := NewProcSyms(pid)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
 
-	addr := uint64(0x00007fa9984962a6)
-	name, offset, moduleName, err := pss.ResolvePC(addr)
-	if err != nil {
-		t.Fatal(err.Error())
-	} else {
-		fmt.Printf("addr:0x%x %s+0x%02x [%s]\n\n", addr, name, offset, moduleName)
+	// addr := uint64(0x00007fa9984962a6)
+	// name, offset, moduleName, err := pss.ResolvePC(addr)
+	// if err != nil {
+	// 	t.Fatal(err.Error())
+	// } else {
+	// 	fmt.Printf("addr:0x%x %s+0x%02x [%s]\n\n", addr, name, offset, moduleName)
+	// }
+
+	// addr = uint64(0x00007fa998495b47)
+	// name, offset, moduleName, err = pss.ResolvePC(addr)
+	// if err != nil {
+	// 	t.Fatal(err.Error())
+	// } else {
+	// 	fmt.Printf("addr:0x%x %s+0x%02x [%s]\n\n", addr, name, offset, moduleName)
+	// }
+
+	// addr = uint64(0x00007fa99848c1df)
+	// name, offset, moduleName, err = pss.ResolvePC(addr)
+	// if err != nil {
+	// 	t.Fatal(err.Error())
+	// } else {
+	// 	fmt.Printf("addr:0x%x %s+0x%02x [%s]\n\n", addr, name, offset, moduleName)
+	// }
+
+	pcList := []uint64{
+		0x424f8b,
+		0x4f3340,
+		0x4b4690,
+		0x449a2f,
+		0x527b40,
 	}
 
-	addr = uint64(0x00007fa998495b47)
-	name, offset, moduleName, err = pss.ResolvePC(addr)
-	if err != nil {
-		t.Fatal(err.Error())
-	} else {
-		fmt.Printf("addr:0x%x %s+0x%02x [%s]\n\n", addr, name, offset, moduleName)
+	for _, addr := range pcList {
+		name, offset, moduleName, err := pss.ResolvePC(addr)
+		if err != nil {
+			t.Error(err.Error())
+		} else {
+			t.Logf("addr:0x%x %s+0x%x [%s]", addr, name, offset, moduleName)
+		}
 	}
 
-	addr = uint64(0x00007fa99848c1df)
-	name, offset, moduleName, err = pss.ResolvePC(addr)
-	if err != nil {
-		t.Fatal(err.Error())
-	} else {
-		fmt.Printf("addr:0x%x %s+0x%02x [%s]\n\n", addr, name, offset, moduleName)
-	}
-
-	addr = uint64(0x41f3b3)
-	name, offset, moduleName, err = pss.ResolvePC(addr)
-	if err != nil {
-		t.Fatal(err.Error())
-	} else {
-		fmt.Printf("addr:0x%x %s+0x%x [%s]\n\n", addr, name, offset, moduleName)
-	}
+	/*
+		proc_maps_test.go:166: addr:0x424f8b fini_collector_proc_schedstat+0x0 [/mnt/Program/x-monitor/bin/x-monitor]
+		proc_maps_test.go:166: addr:0x4f3340 memdup+0x0 [/mnt/Program/x-monitor/bin/x-monitor]
+		proc_maps_test.go:166: addr:0x4b4690 cc_array_iter_index+0x0 [/mnt/Program/x-monitor/bin/x-monitor]
+		proc_maps_test.go:166: addr:0x449a2f __get_all_childpids+0x0 [/mnt/Program/x-monitor/bin/x-monitor]
+		proc_maps_test.go:166: addr:0x527b40 ZSTDv07_loadEntropy+0x0 [/mnt/Program/x-monitor/bin/x-monitor]
+	*/
 }
 
 // GO111MODULE=off go test -v -run=TestBuildID
@@ -202,40 +218,24 @@ func TestBuildID(t *testing.T) {
 // dnf -y install fio-debuginfo.x86_64
 // rpm -ql fio-debuginfo-3.19-3.el8.x86_64
 
-// GO111MODULE=off go test -v -run=TestFindDebugFile
-func TestFindDebugFile(t *testing.T) {
-	appRootFS := "/proc/1/root"
-	psm := new(ProcModule)
-	psm.Pathname = __fio
-	err := psm.loadProcModule(appRootFS)
+// GO111MODULE=off go test -v -run=TestPrintFioSymbols
+func TestPrintFioSymbols(t *testing.T) {
+	InitModuleSymbolTblMgr(128)
+	pmm := new(ProcMapsModule)
+	pmm.Pathname = __fio
+	pmm.RootFS = "/proc/1/root"
+	err := pmm.loadProcModule()
 	if err != nil {
 		t.Fatal(err)
 	} else {
-		t.Logf("%s have %d symbols", __fio, len(psm.procSymTable))
-		for _, sym := range psm.procSymTable {
-			t.Logf("name:'%s', val:'%x'", sym.name, sym.pc)
+		if st, err := getModuleSymbolTbl(pmm.BuildID); err == nil {
+			t.Logf("%s have %d symbols", __fio, st.Count())
+			for _, sym := range st.Symbols() {
+				t.Logf("name:'%-40s', addr:'%#x'", sym.Name, sym.Address)
+			}
 		}
+
 	}
-}
-
-// GO111MODULE=off go test -v -run=TestLoadSymbols
-func TestLoadSymbols(t *testing.T) {
-	fFIO, err := elf.Open(__fio)
-	if err != nil {
-		t.Fatal(err)
-	}
-	defer fFIO.Close()
-
-	psm := new(ProcModule)
-	psm.buildSymTable(fFIO)
-
-	t.Logf("%s have %d symbols", __fio, len(psm.procSymTable))
-
-	for _, sym := range psm.procSymTable {
-		t.Logf("name:'%s', val:'%x'", sym.name, sym.pc)
-	}
-
-	// dyn name:'blktrace_lookup_device', val:'8e400', section:'15==>.text'
 }
 
 // GO111MODULE=off go test -v -run=TestTextSection
@@ -280,19 +280,6 @@ func TestTextSection(t *testing.T) {
 		}
 		// sym:'eta_time_within_slack' val:0x41350, secionIndex:15, section:'.text'
 	}
-}
-
-// GO111MODULE=off go test -v -run=TestHasFramePointer
-func TestHasFramePointer(t *testing.T) {
-	fStack, err := elf.Open(__stack_bin)
-	if err != nil {
-		t.Fatal(err)
-	}
-	defer fStack.Close()
-
-	compiler := ainur.Compiler(fStack)
-	// compiler:'GCC 8.5.0'
-	t.Logf("%s compiler:'%s'", __stack_bin, compiler)
 }
 
 // GO111MODULE=off go test -v -run=TestUnwindTable

@@ -13,7 +13,6 @@ import (
 	"fmt"
 	"os"
 	"path"
-	"sort"
 	"strings"
 	"syscall"
 
@@ -60,7 +59,7 @@ type ProcModulePermissions struct {
 	Private bool
 }
 
-type ProcModule struct {
+type ProcMapsModule struct {
 	// StartAddr is the starting pc of current mapping.
 	StartAddr uint64
 	// EndAddr is the ending pc of current mapping.
@@ -72,26 +71,20 @@ type ProcModule struct {
 	// Dev is the device of current mapping.
 	Dev uint64
 	// Inode is the inode of current mapping. find / -inum 101417806 or lsof -n -i 'inode=174919'
-	Inode uint64
-	// 内存段所属的文件的路径名
-	Pathname string
-	//
-	Type ProcModuleType
-	//
-	procSymTable []*ModuleSym
-	SymCount     int
-	//
-	goSymTable *GoSymTable
-	BuildID    string
+	Inode    uint64
+	Pathname string // 内存段所属的文件的路径名
+	RootFS   string
+	Type     ProcModuleType
+	BuildID  string
 }
 
-func (psm *ProcModule) open(appRootFS string) (*elf.File, error) {
+func (pmm *ProcMapsModule) open() (*elf.File, error) {
 	// rootfs: /proc/%d/root
 	var (
 		elfF *elf.File
 		err  error
 	)
-	modulePath := fmt.Sprintf("%s%s", appRootFS, psm.Pathname)
+	modulePath := fmt.Sprintf("%s%s", pmm.RootFS, pmm.Pathname)
 
 	elfF, err = elf.Open(modulePath)
 	if err != nil {
@@ -160,61 +153,16 @@ func findDebugFile(buildID, appRootFS, pathName string, elfF *elf.File) string {
 	return ""
 }
 
-func (psm *ProcModule) buildSymTable(elfF *elf.File) error {
-	// from .text section read symbol and pc
-	symbols, err := elfF.Symbols()
-	if err != nil && !errors.Is(err, elf.ErrNoSymbols) {
-		return errors.Wrapf(err, "read module:'%s' SYMTAB.", psm.Pathname)
-	}
-
-	dynSymbols, err := elfF.DynamicSymbols()
-	if err != nil && !errors.Is(err, elf.ErrNoSymbols) {
-		return errors.Wrapf(err, "read module:'%s' DYNSYM.", psm.Pathname)
-	}
-
-	pfnAddSymbol := func(m *ProcModule, syms []elf.Symbol) {
-		for _, sym := range syms {
-			if sym.Value != 0 && sym.Info&0xf == byte(elf.STT_FUNC) {
-				ps := new(ModuleSym)
-				ps.name = sym.Name
-				ps.pc = sym.Value
-				m.procSymTable = append(m.procSymTable, ps)
-				m.SymCount = m.SymCount + 1
-			}
-		}
-	}
-
-	pfnAddSymbol(psm, symbols)
-	pfnAddSymbol(psm, dynSymbols)
-
-	if psm.SymCount == 0 {
-		return ErrProcModuleHasNoSymbols
-	}
-
-	//fmt.Printf("-------------module:'%s' SymCount:%d.\n", psm.Pathname, psm.SymCount)
-
-	// 按地址排序，地址相同按名字排序
-	sort.Slice(psm.procSymTable, func(i, j int) bool {
-		if psm.procSymTable[i].pc == psm.procSymTable[j].pc {
-			return psm.procSymTable[i].name < psm.procSymTable[j].name
-		}
-		return psm.procSymTable[i].pc < psm.procSymTable[j].pc
-	})
-
-	return nil
-}
-
 // It reads the contents of /proc/pid/maps, parses each line, and returns a slice of ProcMap entries.
-func (psm *ProcModule) loadProcModule(appRootFS string) error {
+func (pmm *ProcMapsModule) loadProcModule() error {
 	var (
-		elfF      *elf.File
-		elfDebugF *elf.File
-		err       error
+		elfF *elf.File
+		err  error
 	)
 
 	// 打开elf文件
-	if elfF, err = psm.open(appRootFS); err != nil {
-		return errors.Wrapf(err, "psm open:'%s%s'.", appRootFS, psm.Pathname)
+	if elfF, err = pmm.open(); err != nil {
+		return errors.Wrap(err, "pmm open.")
 	}
 	defer elfF.Close()
 
@@ -223,79 +171,54 @@ func (psm *ProcModule) loadProcModule(appRootFS string) error {
 	//   Type:                              EXEC (Executable file)
 	// ?  bin git:(feature-xm-ebpf-collector) ? readelf -h /bin/fio|grep 'Type:'
 	//   Type:                              DYN (Shared object file)
-	// ?  bin git:(feature-xm-ebpf-collector) ? ps -ef|grep ssh
+	// 获取文件类型，在计算address是要根据类型判断是否减去start address
 	switch elfF.Type {
 	case elf.ET_EXEC:
-		psm.Type = EXEC
+		pmm.Type = EXEC
 	case elf.ET_DYN:
-		psm.Type = SO
+		pmm.Type = SO
 	default:
 		return ErrProcModuleNotSupport
 	}
-
-	psm.BuildID, err = buildid.FromELF(elfF)
+	// 获取buildID
+	pmm.BuildID, err = buildid.FromELF(elfF)
 	if err != nil {
-		return errors.Wrapf(err, "failed to get build ID for %s", psm.Pathname)
+		return errors.Wrapf(err, "failed to get build ID for %s", pmm.Pathname)
 	}
 
-	// 查找对应debug文件
-	debugFilePath := findDebugFile(psm.BuildID, appRootFS, psm.Pathname, elfF)
-	if debugFilePath != "" {
-		// 直接加载debug文件
-		elfDebugF, err = elf.Open(debugFilePath)
-		if err == nil {
-			defer elfDebugF.Close()
-			err = psm.buildSymTable(elfDebugF)
-		}
-	} else {
-		// 直接从elf文件中加载symbol
-		err = psm.buildSymTable(elfF)
+	// 判断该buildID是否已经缓存
+	if st, err := getModuleSymbolTbl(pmm.BuildID); st != nil && err == nil {
+		// 已经cache了，不用继续解析了
+		return nil
 	}
+	// 生成符号表
+	_, err = createModuleSymbolTbl(pmm.BuildID, pmm.Pathname, pmm.RootFS, elfF)
 
 	return err
 }
 
-// A method of the ProcModule struct. It is used to print the ProcModule struct.
-func (psm *ProcModule) String() string {
-	return fmt.Sprintf("%x-%x %#v %x %x %d %s, symbols:%d",
-		psm.StartAddr, psm.EndAddr, psm.Perms, psm.Offset, psm.Dev, psm.Inode, psm.Pathname, len(psm.procSymTable))
+// A method of the ProcMapsModule struct. It is used to print the ProcMapsModule struct.
+func (pmm *ProcMapsModule) String() string {
+	return fmt.Sprintf("%x-%x %#v %x %x %d %s",
+		pmm.StartAddr, pmm.EndAddr, pmm.Perms, pmm.Offset, pmm.Dev, pmm.Inode, pmm.Pathname)
 }
 
-func (psm *ProcModule) resolvePC(pc uint64) (string, uint32, string, error) {
-	//size := len(psm.procSymTable)
-	// 二分查找
-	index := sort.Search(psm.SymCount, func(i int) bool {
-		return psm.procSymTable[i].pc > pc
-	})
-
-	// addr小于所有symbol的最小地址
-	if index == 0 {
-		return "", 0, "", errors.Errorf("pc:0x%x not in symtab{0x%x---0x%0x} with module:'%s'",
-			pc, psm.procSymTable[0].pc, psm.procSymTable[psm.SymCount-1].pc, psm.Pathname)
-	}
-
-	// 找到了
-	ps := psm.procSymTable[index-1]
-	return ps.name, uint32(pc - ps.pc), psm.Pathname, nil
-}
-
-type ProcSyms struct {
+type ProcMaps struct {
 	// pid
 	Pid int
-	// ProcModule slice
-	Modules []*ProcModule
+	// ProcMapsModule slice
+	Modules []*ProcMapsModule
 	// inode, Determine whether to refresh
 	InodeID uint64
 }
 
-// It parses a line from the /proc/<pid>/maps file and returns a ProcModule struct
-func parseProcMapEntry(line string, pss *ProcSyms) error {
+// It parses a line from the /proc/<pid>/maps file and returns a ProcMapsModule struct
+func parseProcMapsEntry(line string, pss *ProcMaps) error {
 	// 7ff8be1a5000-7ff8be1c0000 r-xp 00000000 fd:00 570150                     /usr/lib64/libpthread-2.28.so
 	var (
 		err                error
 		perms              string
 		devMajor, devMinor uint64
-		appRootFS          = fmt.Sprintf("/proc/%d/root", pss.Pid)
 	)
 
 	fields := strings.Fields(line)
@@ -304,17 +227,16 @@ func parseProcMapEntry(line string, pss *ProcSyms) error {
 		return nil
 	}
 
-	psm := new(ProcModule)
-	psm.Type = UNKNOWN
+	pmm := new(ProcMapsModule)
+	pmm.Type = UNKNOWN
+	pmm.RootFS = fmt.Sprintf("/proc/%d/root", pss.Pid)
 
-	fmt.Sscanf(line, "%x-%x %s %x %x:%x %d %s", &psm.StartAddr, &psm.EndAddr, &perms,
-		&psm.Offset, &devMajor, &devMinor, &psm.Inode, &psm.Pathname)
+	fmt.Sscanf(line, "%x-%x %s %x %x:%x %d %s", &pmm.StartAddr, &pmm.EndAddr, &perms,
+		&pmm.Offset, &devMajor, &devMinor, &pmm.Inode, &pmm.Pathname)
 
-	//fmt.Printf("parse line:'%s'\n", line)
-
-	if len(psm.Pathname) == 0 ||
-		strings.Contains(psm.Pathname, "[vdso]") ||
-		strings.Contains(psm.Pathname, "[vsyscall]") {
+	if len(pmm.Pathname) == 0 ||
+		strings.Contains(pmm.Pathname, "[vdso]") ||
+		strings.Contains(pmm.Pathname, "[vsyscall]") {
 		return nil
 	}
 
@@ -326,38 +248,35 @@ func parseProcMapEntry(line string, pss *ProcSyms) error {
 	for _, ch := range perms {
 		switch ch {
 		case 'r':
-			psm.Perms.Readable = true
+			pmm.Perms.Readable = true
 		case 'w':
-			psm.Perms.Writable = true
+			pmm.Perms.Writable = true
 		case 'x':
-			psm.Perms.Executable = true
+			pmm.Perms.Executable = true
 		case 's':
-			psm.Perms.Shared = true
+			pmm.Perms.Shared = true
 		case 'p':
-			psm.Perms.Private = true
+			pmm.Perms.Private = true
 		}
 	}
 
-	psm.Dev = unix.Mkdev(uint32(devMajor), uint32(devMinor))
+	pmm.Dev = unix.Mkdev(uint32(devMajor), uint32(devMinor))
 
-	// 测试golang程序的load
-	if err = psm.loadProcGoModule(appRootFS); err != nil {
-		if err = psm.loadProcModule(appRootFS); err != nil {
-			if errors.Is(err, ErrProcModuleNotSupport) || errors.Is(err, ErrProcModuleHasNoSymbols) {
-				// 不加入，忽略，继续
-				psm = nil
-				return nil
-			}
-			return errors.Wrapf(err, "load module:'%s' failed.", psm.Pathname)
+	if err = pmm.loadProcModule(); err != nil {
+		if errors.Is(err, ErrProcModuleNotSupport) || errors.Is(err, ErrProcModuleHasNoSymbols) {
+			// 不加入，忽略，继续
+			pmm = nil
+			return nil
 		}
+		return errors.Wrapf(err, "load module:'%s' failed.", pmm.Pathname)
 	}
 
-	pss.Modules = append(pss.Modules, psm)
+	pss.Modules = append(pss.Modules, pmm)
 
 	return nil
 }
 
-func NewProcSyms(pid int) (*ProcSyms, error) {
+func NewProcSyms(pid int) (*ProcMaps, error) {
 	procMapsFile, err := os.Open(fmt.Sprintf("/proc/%d/maps", pid))
 	if err != nil {
 		return nil, errors.Wrap(err, "NewProcMap open failed")
@@ -370,7 +289,7 @@ func NewProcSyms(pid int) (*ProcSyms, error) {
 	}
 	stat := fileExe.Sys().(*syscall.Stat_t)
 
-	pss := new(ProcSyms)
+	pss := new(ProcMaps)
 	pss.Pid = pid
 	pss.InodeID = stat.Ino
 
@@ -379,7 +298,7 @@ func NewProcSyms(pid int) (*ProcSyms, error) {
 	for scanner.Scan() {
 		// maps每一行的信息
 		text := scanner.Text()
-		err := parseProcMapEntry(text, pss)
+		err := parseProcMapsEntry(text, pss)
 		if err != nil {
 			return nil, errors.Wrapf(err, "parse text:'%s' failed", text)
 		}
@@ -389,28 +308,47 @@ func NewProcSyms(pid int) (*ProcSyms, error) {
 }
 
 // ResolvePC 根据程序计数器(PC)解析符号信息
-// 如果 ProcSyms 中的模块为空，则返回错误
+// 如果 ProcMaps 中的模块为空，则返回错误
 // 如果 PC 在模块的地址范围内，则返回符号名称、偏移量和路径名
 // 如果模块类型为 SO，则返回符号名称、偏移量和路径名
 // 如果模块类型为 EXEC，则返回符号名称、偏移量和路径名
 // 如果在解析过程中出现错误，则返回错误
-func (pss *ProcSyms) ResolvePC(pc uint64) (string, uint32, string, error) {
+func (pss *ProcMaps) ResolvePC(pc uint64) (string, uint32, string, error) {
+	var (
+		st   SymbolTable
+		rs   *ResolveSymbol
+		err  error
+		addr uint64
+		elfF *elf.File
+	)
 	if len(pss.Modules) == 0 {
 		return "", 0, "", errors.New("proc modules is empty")
 	}
 
-	for _, psm := range pss.Modules {
-		if pc >= psm.StartAddr && pc <= psm.EndAddr {
-			if psm.Type == SO {
-				return psm.resolvePC(pc - psm.StartAddr)
-			} else if psm.Type == EXEC {
-				if psm.goSymTable != nil {
-					symName, offset, err := psm.goSymTable.__resolveGoPC(pc)
-					if err == nil {
-						return symName, offset, psm.Pathname, nil
-					}
+	for _, pmm := range pss.Modules {
+		if pc >= pmm.StartAddr && pc <= pmm.EndAddr {
+			// 根据module类型计算地址
+			if pmm.Type == SO {
+				addr = pc - pmm.StartAddr
+			} else if pmm.Type == EXEC {
+				addr = pc
+			}
+			// 根据buildID找到module的SymbolTable
+			st, err = getModuleSymbolTbl(pmm.BuildID)
+			if st == nil && err != nil {
+				// 如果符号表不存在，创建符号表
+				if elfF, err = pmm.open(); err == nil {
+					st, err = createModuleSymbolTbl(pmm.BuildID, pmm.Pathname, pmm.RootFS, elfF)
+				}
+			}
+
+			if st != nil && err == nil {
+				if rs, err = st.Resolve(addr); err == nil {
+					// 解析ok
+					return rs.Name, rs.Offset, pmm.Pathname, nil
 				} else {
-					return psm.resolvePC(pc)
+					// 解析失败
+					return "", 0, "", err
 				}
 			}
 		}
@@ -419,6 +357,6 @@ func (pss *ProcSyms) ResolvePC(pc uint64) (string, uint32, string, error) {
 }
 
 // GetModules 返回进程符号表中的所有模块。
-func (pss *ProcSyms) GetModules() []*ProcModule {
+func (pss *ProcMaps) GetModules() []*ProcMapsModule {
 	return pss.Modules
 }
