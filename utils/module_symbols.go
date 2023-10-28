@@ -210,6 +210,9 @@ func InitModuleSymbolTblMgr(capacity int) error {
 	return err
 }
 
+// getModuleSymbolTbl returns the symbol table for a given build ID.
+// If the symbol table is found, it is returned along with a nil error.
+// If the symbol table is not found, a nil table and an error are returned.
 func getModuleSymbolTbl(buildID string) (SymbolTable, error) {
 	var (
 		st SymbolTable
@@ -229,6 +232,9 @@ func getModuleSymbolTbl(buildID string) (SymbolTable, error) {
 	return nil, errors.Errorf("symbol table not found by buildID:'%s'", buildID)
 }
 
+// createModuleSymbolTbl creates a symbol table for a given module.
+// It takes in the buildID, moduleName, appRootFS, and elfF as parameters.
+// It returns a SymbolTable and an error.
 func createModuleSymbolTbl(buildID string, moduleName string, appRootFS string, elfF *elf.File) (SymbolTable, error) {
 	var (
 		st        SymbolTable
@@ -273,4 +279,15 @@ func createModuleSymbolTbl(buildID string, moduleName string, appRootFS string, 
 	}
 
 	return st, err
+}
+
+// deleteModuleSymbolTbl deletes the module symbol table for the given build ID.
+func deleteModuleSymbolTbl(buildID string) {
+	if __singleModuleSymbolTblMgr != nil {
+
+		__singleModuleSymbolTblMgr.lock.Lock()
+		defer __singleModuleSymbolTblMgr.lock.Unlock()
+
+		__singleModuleSymbolTblMgr.lc.Remove(buildID)
+	}
 }
