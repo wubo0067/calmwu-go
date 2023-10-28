@@ -116,14 +116,35 @@ func TestResolveGO(t *testing.T) {
 	}
 }
 
-// GO111MODULE=off go test -v -run=TestResolvePCXMonitor
-func TestResolvePCXMonitor(t *testing.T) {
+// GO111MODULE=off go test -v -run=TestSymbolTblReuse -v -logtostderr
+func TestSymbolTblReuse(t *testing.T) {
 	InitModuleSymbolTblMgr(128)
+
+	pid := 2533093
+	xm_pss, _ := NewProcSyms(pid)
+	t.Logf("pid:%d module count:%d", pid, len(xm_pss.Modules()))
+
+	pid = 1
+	first_pss, _ := NewProcSyms(pid)
+	t.Logf("pid:%d module count:%d", pid, len(first_pss.Modules()))
+
+	t.Logf("module symbol table cache count:%d", __singleModuleSymbolTblMgr.lc.Len())
+}
+
+// GO111MODULE=off go test -v -run=TestResolvePCXMonitor -v -logtostderr
+func TestResolvePCXMonitor(t *testing.T) {
+	// 容量为4，会导致lru淘汰前面的
+	InitModuleSymbolTblMgr(4)
 	pid := 2533093 // x-monitor
 
 	pss, err := NewProcSyms(pid)
 	if err != nil {
 		t.Fatal(err.Error())
+	}
+
+	ms := pss.Modules()
+	for i, m := range ms {
+		t.Logf("%d: %s", i, m.String())
 	}
 
 	// addr := uint64(0x00007fa9984962a6)
@@ -158,6 +179,7 @@ func TestResolvePCXMonitor(t *testing.T) {
 		0x527b40,
 	}
 
+	// 会重新加载x-monitor
 	for _, addr := range pcList {
 		name, offset, moduleName, err := pss.ResolvePC(addr)
 		if err != nil {
@@ -166,6 +188,8 @@ func TestResolvePCXMonitor(t *testing.T) {
 			t.Logf("addr:0x%x %s+0x%x [%s]", addr, name, offset, moduleName)
 		}
 	}
+
+	t.Logf("module symbol table cache count:%d", __singleModuleSymbolTblMgr.lc.Len())
 
 	/*
 		proc_maps_test.go:166: addr:0x424f8b fini_collector_proc_schedstat+0x0 [/mnt/Program/x-monitor/bin/x-monitor]
@@ -214,12 +238,37 @@ func TestBuildID(t *testing.T) {
 	}
 }
 
+// GO111MODULE=off go test -v -run=TestPrintGOAppSymbols -v -logtostderr
+func TestPrintGOAppSymbols(t *testing.T) {
+	InitModuleSymbolTblMgr(128)
+
+	pid := 4607 // pyroscope
+
+	pss, err := NewProcSyms(pid)
+	if err != nil {
+		t.Fatal(err.Error())
+	}
+
+	ms := pss.Modules()
+	for _, m := range ms {
+		st, err := getModuleSymbolTbl(m.BuildID)
+		if st != nil {
+			funcs := st.(*GoModuleSymbolTbl).symIndex.Funcs
+			for _, f := range funcs {
+				t.Logf("name:'%s', entry:0x%x, end:0x%x", f.Name, f.Entry, f.End)
+			}
+		} else {
+			t.Log(err.Error())
+		}
+	}
+}
+
 // dnf remove fio-debuginfo.x86_64
 // dnf -y install fio-debuginfo.x86_64
 // rpm -ql fio-debuginfo-3.19-3.el8.x86_64
 
-// GO111MODULE=off go test -v -run=TestPrintFioSymbols
-func TestPrintFioSymbols(t *testing.T) {
+// GO111MODULE=off go test -v -run=TestFioDebugSymbols -v -logtostderr
+func TestFioDebugSymbols(t *testing.T) {
 	InitModuleSymbolTblMgr(128)
 	pmm := new(ProcMapsModule)
 	pmm.Pathname = __fio
@@ -234,7 +283,6 @@ func TestPrintFioSymbols(t *testing.T) {
 				t.Logf("name:'%-40s', addr:'%#x'", sym.Name, sym.Address)
 			}
 		}
-
 	}
 }
 

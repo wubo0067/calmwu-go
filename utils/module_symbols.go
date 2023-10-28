@@ -246,6 +246,7 @@ func createModuleSymbolTbl(buildID string, moduleName string, appRootFS string, 
 		debugFilePath := findDebugFile(buildID, appRootFS, moduleName, elfF)
 		if debugFilePath != "" {
 			// 如果debug文件存在，打开
+			glog.Infof("found debug file:'%s' for module:'%s'", debugFilePath, moduleName)
 			elfDebugF, err = elf.Open(debugFilePath)
 			if err == nil {
 				defer elfDebugF.Close()
@@ -257,6 +258,7 @@ func createModuleSymbolTbl(buildID string, moduleName string, appRootFS string, 
 		if err == nil {
 			st = nmst
 			__singleModuleSymbolTblMgr.lc.Add(buildID, st)
+			glog.Infof("native module:'%s' buildID:'%s' create symbol table ok.", moduleName, buildID)
 		}
 	} else {
 		// is golang module
@@ -266,6 +268,7 @@ func createModuleSymbolTbl(buildID string, moduleName string, appRootFS string, 
 		if err = gomst.GenerateTbl(goSymTab, elfF); err == nil {
 			st = gomst
 			__singleModuleSymbolTblMgr.lc.Add(buildID, st)
+			glog.Infof("go module:'%s' buildID:'%s' create symbol table ok.", moduleName, buildID)
 		}
 	}
 

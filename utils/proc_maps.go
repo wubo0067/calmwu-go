@@ -16,6 +16,7 @@ import (
 	"strings"
 	"syscall"
 
+	"github.com/golang/glog"
 	"github.com/parca-dev/parca-agent/pkg/buildid"
 	"github.com/pkg/errors"
 	"golang.org/x/sys/unix"
@@ -189,6 +190,7 @@ func (pmm *ProcMapsModule) loadProcModule() error {
 	// 判断该buildID是否已经缓存
 	if st, err := getModuleSymbolTbl(pmm.BuildID); st != nil && err == nil {
 		// 已经cache了，不用继续解析了
+		glog.Infof("module:'%s' buildID:'%s' has cached.", pmm.Pathname, pmm.BuildID)
 		return nil
 	}
 	// 生成符号表
@@ -207,7 +209,7 @@ type ProcMaps struct {
 	// pid
 	Pid int
 	// ProcMapsModule slice
-	Modules []*ProcMapsModule
+	ModuleList []*ProcMapsModule
 	// inode, Determine whether to refresh
 	InodeID uint64
 }
@@ -271,7 +273,7 @@ func parseProcMapsEntry(line string, pss *ProcMaps) error {
 		return errors.Wrapf(err, "load module:'%s' failed.", pmm.Pathname)
 	}
 
-	pss.Modules = append(pss.Modules, pmm)
+	pss.ModuleList = append(pss.ModuleList, pmm)
 
 	return nil
 }
@@ -321,11 +323,11 @@ func (pss *ProcMaps) ResolvePC(pc uint64) (string, uint32, string, error) {
 		addr uint64
 		elfF *elf.File
 	)
-	if len(pss.Modules) == 0 {
+	if len(pss.ModuleList) == 0 {
 		return "", 0, "", errors.New("proc modules is empty")
 	}
 
-	for _, pmm := range pss.Modules {
+	for _, pmm := range pss.ModuleList {
 		if pc >= pmm.StartAddr && pc <= pmm.EndAddr {
 			// 根据module类型计算地址
 			if pmm.Type == SO {
@@ -339,6 +341,7 @@ func (pss *ProcMaps) ResolvePC(pc uint64) (string, uint32, string, error) {
 				// 如果符号表不存在，创建符号表
 				if elfF, err = pmm.open(); err == nil {
 					st, err = createModuleSymbolTbl(pmm.BuildID, pmm.Pathname, pmm.RootFS, elfF)
+					elfF.Close()
 				}
 			}
 
@@ -357,6 +360,6 @@ func (pss *ProcMaps) ResolvePC(pc uint64) (string, uint32, string, error) {
 }
 
 // GetModules 返回进程符号表中的所有模块。
-func (pss *ProcMaps) GetModules() []*ProcMapsModule {
-	return pss.Modules
+func (pss *ProcMaps) Modules() []*ProcMapsModule {
+	return pss.ModuleList
 }
