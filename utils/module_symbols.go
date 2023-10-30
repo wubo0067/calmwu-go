@@ -72,7 +72,7 @@ func (nmst *NativeModuleSymbolTbl) Resolve(addr uint64) (*ResolveSymbol, error) 
 		return nmst.symbolTable[i].Address > addr
 	})
 
-	// addr小于所有symbol的最小地址
+	// addr 小于所有 symbol 的最小地址
 	if index == 0 {
 		return nil, errors.Errorf("addr:0x%x not in module:'%s', buildID:'%s' symbol table{0x%x---0x%x}",
 			addr, nmst.moduleName, nmst.buildID, nmst.symbolTable[0].Address, nmst.symbolTable[nmst.symbolCount-1].Address)
@@ -178,7 +178,7 @@ func (gomst *GoModuleSymbolTbl) Symbols() []*ModuleSymbol {
 }
 
 type ModuleSymbolTblMgr struct {
-	lc   *lru.Cache[string, SymbolTable] // 管理所有module的符号表
+	lc   *lru.Cache[string, SymbolTable] // 管理所有 module 的符号表
 	lock sync.Mutex
 }
 
@@ -242,16 +242,16 @@ func createModuleSymbolTbl(buildID string, moduleName string, appRootFS string, 
 		elfDebugF *elf.File
 	)
 
-	// 判断是否是golang module
+	// 判断是否是 golang module
 	if goSymTab := elfF.Section(".gosymtab"); goSymTab == nil {
 		// is native module
 		nmst := new(NativeModuleSymbolTbl)
 		nmst.buildID = buildID
 		nmst.moduleName = moduleName
-		// 通过buildID查找对应的debug文件
+		// 通过 buildID 查找对应的 debug 文件
 		debugFilePath := findDebugFile(buildID, appRootFS, moduleName, elfF)
 		if debugFilePath != "" {
-			// 如果debug文件存在，打开
+			// 如果 debug 文件存在，打开
 			glog.Infof("found debug file:'%s' for module:'%s'", debugFilePath, moduleName)
 			elfDebugF, err = elf.Open(debugFilePath)
 			if err == nil {
@@ -281,13 +281,12 @@ func createModuleSymbolTbl(buildID string, moduleName string, appRootFS string, 
 	return st, err
 }
 
-// deleteModuleSymbolTbl deletes the module symbol table for the given build ID.
-func deleteModuleSymbolTbl(buildID string) {
+// DeleteModuleSymbolTbl deletes the module symbol table for the given build ID.
+func DeleteModuleSymbolTbl(buildID string) {
 	if __singleModuleSymbolTblMgr != nil {
 
 		__singleModuleSymbolTblMgr.lock.Lock()
-		defer __singleModuleSymbolTblMgr.lock.Unlock()
-
 		__singleModuleSymbolTblMgr.lc.Remove(buildID)
+		__singleModuleSymbolTblMgr.lock.Unlock()
 	}
 }
