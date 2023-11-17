@@ -26,19 +26,30 @@ const (
 	__debugLinkSection                   = ".gnu_debuglink"
 )
 
-type ProcModuleType int
+// module 的 elf 类型
+type ProcModuleELFType int
+
+const (
+	UNKNOWN ProcModuleELFType = iota
+	EXEC
+	SO
+	VDSO
+)
+
+// module 的语言类型
+type ProcModuleLangType int
+
+const (
+	NativeLangType = iota
+	GoLangType
+	JavaLangType
+	PythonLangType
+)
 
 var (
 	ErrProcModuleNotSupport       = errors.New("proc module not support")
 	ErrProcModuleNotSymbolSection = errors.New("proc module not symbol section")
 	ErrProcModuleHasNoSymbols     = errors.New("proc module has no symbols")
-)
-
-const (
-	UNKNOWN ProcModuleType = iota
-	EXEC
-	SO
-	VDSO
 )
 
 type ModuleSym struct {
@@ -72,10 +83,11 @@ type ProcMapsModule struct {
 	Dev uint64
 	// Inode is the inode of current mapping. find / -inum 101417806 or lsof -n -i 'inode=174919'
 	Inode    uint64
-	Pathname string // 内存段所属的文件的路径名
-	RootFS   string
-	Type     ProcModuleType
-	BuildID  string
+	Pathname string             // 内存段所属的文件的路径名
+	RootFS   string             //
+	Type     ProcModuleELFType  //
+	LangType ProcModuleLangType //
+	BuildID  string             //
 }
 
 func (pmm *ProcMapsModule) open() (*elf.File, error) {
@@ -184,6 +196,11 @@ func (pmm *ProcMapsModule) loadProcModule() error {
 	pmm.BuildID, err = buildid.FromELF(elfF)
 	if err != nil {
 		return errors.Wrapf(err, "failed to get build ID for %s", pmm.Pathname)
+	}
+
+	pmm.LangType = NativeLangType
+	if elfF.Section(".gosymtab") != nil {
+		pmm.LangType = GoLangType
 	}
 
 	// 判断该 buildID 是否已经缓存
