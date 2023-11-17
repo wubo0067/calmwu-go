@@ -133,7 +133,7 @@ func TestSymbolTblReuse(t *testing.T) {
 
 // GO111MODULE=off go test -v -run=TestResolvePCXMonitor -v -logtostderr
 func TestResolvePCXMonitor(t *testing.T) {
-	// 容量为4，会导致lru淘汰前面的
+	// 容量为 4，会导致 lru 淘汰前面的
 	InitModuleSymbolTblMgr(4)
 	pid := 2533093 // x-monitor
 
@@ -179,7 +179,7 @@ func TestResolvePCXMonitor(t *testing.T) {
 		0x527b40,
 	}
 
-	// 会重新加载x-monitor
+	// 会重新加载 x-monitor
 	for _, addr := range pcList {
 		name, offset, moduleName, err := pss.ResolvePC(addr)
 		if err != nil {
