@@ -11,6 +11,7 @@ import (
 	"debug/elf"
 	"debug/gosym"
 	"encoding/binary"
+	"os"
 	"testing"
 
 	"github.com/parca-dev/parca-agent/pkg/stack/unwind"
@@ -340,6 +341,44 @@ func TestUnwindTable(t *testing.T) {
 		for i, _ := range tb {
 			row := &tb[i]
 			t.Logf("%d: %#v", i, row)
+		}
+	}
+}
+
+// GO111MODULE=off go test -v -run=TestCheckInterpreterBin
+func TestCheckInterpreterBin(t *testing.T) {
+	InterpreterBinList := []string{
+		"/usr/libexec/platform-python",
+		"/usr/bin/python3.6",
+		"/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.362.b09-4.el9.x86_64/jre/bin/java",
+		"/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-2.el8_5.x86_64/jre/bin/java",
+	}
+
+	for _, interpreter := range InterpreterBinList {
+		_, err := os.Stat(interpreter)
+		if err == nil {
+			f, err := elf.Open(interpreter)
+			if err == nil {
+				t.Logf("===>check '%s'", interpreter)
+				symbols, err := f.DynamicSymbols()
+				if err == nil {
+					for _, sym := range symbols {
+						t.Logf("sym:'%s'", sym.Name)
+						if v, ok := interpreterTags[sym.Name]; ok {
+							t.Logf("'%s' type is '%s'<===", interpreter, func() string {
+								switch v {
+								case PythonLangType:
+									return "python"
+								case JavaLangType:
+									return "java"
+								}
+								return "unknown"
+							}())
+							break
+						}
+					}
+				}
+			}
 		}
 	}
 }

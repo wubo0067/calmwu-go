@@ -37,13 +37,21 @@ const (
 )
 
 // module 的语言类型
-type ProcModuleLangType int
+type ProcLangType int
 
 const (
-	NativeLangType = iota
+	NativeLangType ProcLangType = iota // c & c++
 	GoLangType
 	JavaLangType
 	PythonLangType
+)
+
+var (
+	interpreterTags = map[string]ProcLangType{
+		"Py_Main":         PythonLangType,
+		"Py_BytesMain":    PythonLangType,
+		"SUNWprivate_1.1": JavaLangType,
+	}
 )
 
 var (
@@ -83,11 +91,10 @@ type ProcMapsModule struct {
 	Dev uint64
 	// Inode is the inode of current mapping. find / -inum 101417806 or lsof -n -i 'inode=174919'
 	Inode    uint64
-	Pathname string             // 内存段所属的文件的路径名
-	RootFS   string             //
-	Type     ProcModuleELFType  //
-	LangType ProcModuleLangType //
-	BuildID  string             //
+	Pathname string            // 内存段所属的文件的路径名
+	RootFS   string            //
+	Type     ProcModuleELFType //
+	BuildID  string            //
 }
 
 func (pmm *ProcMapsModule) open() (*elf.File, error) {
@@ -198,11 +205,6 @@ func (pmm *ProcMapsModule) loadProcModule() error {
 		return errors.Wrapf(err, "failed to get build ID for %s", pmm.Pathname)
 	}
 
-	pmm.LangType = NativeLangType
-	if elfF.Section(".gosymtab") != nil {
-		pmm.LangType = GoLangType
-	}
-
 	// 判断该 buildID 是否已经缓存
 	if st, err := getModuleSymbolTbl(pmm.BuildID); st != nil && err == nil {
 		// 已经 cache 了，不用继续解析了
@@ -228,6 +230,8 @@ type ProcMaps struct {
 	ModuleList []*ProcMapsModule
 	// inode, Determine whether to refresh
 	InodeID uint64
+	//
+	LangType ProcLangType
 }
 
 // It parses a line from the /proc/<pid>/maps file and returns a ProcMapsModule struct
@@ -294,6 +298,29 @@ func parseProcMapsEntry(line string, pss *ProcMaps) error {
 	return nil
 }
 
+func checkProcLangType(pss *ProcMaps) {
+	pss.LangType = NativeLangType
+	if len(pss.ModuleList) > 0 {
+		firstModule := pss.ModuleList[0]
+
+		modulePath := fmt.Sprintf("%s%s", firstModule.RootFS, firstModule.Pathname)
+		if elfF, err := elf.Open(modulePath); err == nil {
+			if elfF.Section(".gosymtab") != nil {
+				pss.LangType = GoLangType
+			} else {
+				if symbols, err := elfF.DynamicSymbols(); err == nil {
+					for _, sym := range symbols {
+						if t, ok := interpreterTags[sym.Name]; ok {
+							pss.LangType = t
+							break
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 func NewProcSyms(pid int) (*ProcMaps, error) {
 	procMapsFile, err := os.Open(fmt.Sprintf("/proc/%d/maps", pid))
 	if err != nil {
@@ -321,6 +348,8 @@ func NewProcSyms(pid int) (*ProcMaps, error) {
 			return nil, errors.Wrapf(err, "parse text:'%s' failed", text)
 		}
 	}
+
+	checkProcLangType(pss)
 
 	return pss, nil
 }
