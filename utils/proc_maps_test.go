@@ -15,6 +15,7 @@ import (
 	"testing"
 
 	"github.com/parca-dev/parca-agent/pkg/stack/unwind"
+	"github.com/pkg/errors"
 )
 
 const (
@@ -349,6 +350,7 @@ func TestUnwindTable(t *testing.T) {
 func TestCheckInterpreterBin(t *testing.T) {
 	InterpreterBinList := []string{
 		"/usr/libexec/platform-python",
+		"/usr/libexec/platform-python3.6",
 		"/usr/bin/python3.6",
 		"/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.362.b09-4.el9.x86_64/jre/bin/java",
 		"/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-2.el8_5.x86_64/jre/bin/java",
@@ -379,6 +381,20 @@ func TestCheckInterpreterBin(t *testing.T) {
 					}
 				}
 			}
+		}
+	}
+}
+
+// GO111MODULE=off go test -v -run=TestPidNotExistError
+func TestPidNotExistError(t *testing.T) {
+	_, err := NewProcSyms(-1)
+	err = errors.Wrapf(err, "new pid:%d symbols", -1)
+	if err != nil {
+		var errPidNotExist *PidNotExistError
+		if errors.As(err, &errPidNotExist) {
+			t.Errorf("PidNotExistError %s", err.Error())
+		} else {
+			t.Fatal(err.Error())
 		}
 	}
 }
