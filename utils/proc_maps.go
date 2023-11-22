@@ -321,28 +321,16 @@ func checkProcLangType(pss *ProcMaps) {
 	}
 }
 
-type PidNotExistError struct {
-	pid      int
-	innerErr error
-}
-
-func (e *PidNotExistError) Error() string {
-	return fmt.Sprintf("/proc/%d not exist. err:%s", e.pid, e.innerErr.Error())
-}
-
 func NewProcSyms(pid int) (*ProcMaps, error) {
 	procMapsFile, err := os.Open(fmt.Sprintf("/proc/%d/maps", pid))
 	if err != nil {
-		return nil, &PidNotExistError{
-			pid:      pid,
-			innerErr: err,
-		}
+		return nil, errors.Wrapf(err, "open /proc/%d/maps", pid)
 	}
 	defer procMapsFile.Close()
 
 	fileExe, err := os.Stat(fmt.Sprintf("/proc/%d/exe", pid))
 	if err != nil {
-		return nil, &PidNotExistError{pid: pid, innerErr: err}
+		return nil, errors.Wrapf(err, "stat /proc/%d/exe", pid)
 	}
 	stat := fileExe.Sys().(*syscall.Stat_t)
 

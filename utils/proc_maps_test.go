@@ -388,13 +388,19 @@ func TestCheckInterpreterBin(t *testing.T) {
 // GO111MODULE=off go test -v -run=TestPidNotExistError
 func TestPidNotExistError(t *testing.T) {
 	_, err := NewProcSyms(-1)
-	err = errors.Wrapf(err, "new pid:%d symbols", -1)
+	err = errors.Wrap(err, "1")
+	err = errors.Wrap(err, "2")
+	err = errors.Wrap(err, "3")
 	if err != nil {
-		var errPidNotExist *PidNotExistError
-		if errors.As(err, &errPidNotExist) {
-			t.Errorf("PidNotExistError %s", err.Error())
-		} else {
-			t.Fatal(err.Error())
+		// var errPidNotExist *PidNotExistError
+		// if errors.As(err, &errPidNotExist) {
+		// 	t.Errorf("PidNotExistError %s", err.Error())
+		t.Error(err.Error())
+
+		if os.IsNotExist(errors.Cause(err)) {
+			t.Errorf("os.IsNotExist %s", err.Error())
 		}
+	} else {
+		t.Fatal(err.Error())
 	}
 }
