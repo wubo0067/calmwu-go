@@ -16,7 +16,6 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/golang/glog"
 	"github.com/parca-dev/parca-agent/pkg/buildid"
 	"github.com/pkg/errors"
 	"golang.org/x/sys/unix"
@@ -27,19 +26,38 @@ const (
 	__debugLinkSection                   = ".gnu_debuglink"
 )
 
-type ProcModuleType int
+// module 的 elf 类型
+type ProcModuleELFType int
+
+const (
+	UNKNOWN ProcModuleELFType = iota
+	EXEC
+	SO
+	VDSO
+)
+
+// module 的语言类型
+type ProcLangType int
+
+const (
+	NativeLangType ProcLangType = iota // c & c++
+	GoLangType
+	JavaLangType
+	PythonLangType
+)
+
+var (
+	interpreterTags = map[string]ProcLangType{
+		"Py_Main":         PythonLangType,
+		"Py_BytesMain":    PythonLangType,
+		"SUNWprivate_1.1": JavaLangType,
+	}
+)
 
 var (
 	ErrProcModuleNotSupport       = errors.New("proc module not support")
 	ErrProcModuleNotSymbolSection = errors.New("proc module not symbol section")
 	ErrProcModuleHasNoSymbols     = errors.New("proc module has no symbols")
-)
-
-const (
-	UNKNOWN ProcModuleType = iota
-	EXEC
-	SO
-	VDSO
 )
 
 type ModuleSym struct {
@@ -73,10 +91,10 @@ type ProcMapsModule struct {
 	Dev uint64
 	// Inode is the inode of current mapping. find / -inum 101417806 or lsof -n -i 'inode=174919'
 	Inode    uint64
-	Pathname string // 内存段所属的文件的路径名
-	RootFS   string
-	Type     ProcModuleType
-	BuildID  string
+	Pathname string            // 内存段所属的文件的路径名
+	RootFS   string            //
+	Type     ProcModuleELFType //
+	BuildID  string            //
 }
 
 func (pmm *ProcMapsModule) open() (*elf.File, error) {
@@ -190,7 +208,7 @@ func (pmm *ProcMapsModule) loadProcModule() error {
 	// 判断该 buildID 是否已经缓存
 	if st, err := getModuleSymbolTbl(pmm.BuildID); st != nil && err == nil {
 		// 已经 cache 了，不用继续解析了
-		glog.Infof("module:'%s' buildID:'%s' has cached.", pmm.Pathname, pmm.BuildID)
+		//glog.Infof("module:'%s' buildID:'%s' has cached.", pmm.Pathname, pmm.BuildID)
 		return nil
 	}
 	// 生成符号表
@@ -212,6 +230,8 @@ type ProcMaps struct {
 	ModuleList []*ProcMapsModule
 	// inode, Determine whether to refresh
 	InodeID uint64
+	//
+	LangType ProcLangType
 }
 
 // It parses a line from the /proc/<pid>/maps file and returns a ProcMapsModule struct
@@ -278,16 +298,39 @@ func parseProcMapsEntry(line string, pss *ProcMaps) error {
 	return nil
 }
 
+func checkProcLangType(pss *ProcMaps) {
+	pss.LangType = NativeLangType
+	if len(pss.ModuleList) > 0 {
+		firstModule := pss.ModuleList[0]
+
+		modulePath := fmt.Sprintf("%s%s", firstModule.RootFS, firstModule.Pathname)
+		if elfF, err := elf.Open(modulePath); err == nil {
+			if elfF.Section(".gosymtab") != nil {
+				pss.LangType = GoLangType
+			} else {
+				if symbols, err := elfF.DynamicSymbols(); err == nil {
+					for _, sym := range symbols {
+						if t, ok := interpreterTags[sym.Name]; ok {
+							pss.LangType = t
+							break
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 func NewProcSyms(pid int) (*ProcMaps, error) {
 	procMapsFile, err := os.Open(fmt.Sprintf("/proc/%d/maps", pid))
 	if err != nil {
-		return nil, errors.Wrap(err, "NewProcMap open failed")
+		return nil, errors.Wrapf(err, "open /proc/%d/maps", pid)
 	}
 	defer procMapsFile.Close()
 
 	fileExe, err := os.Stat(fmt.Sprintf("/proc/%d/exe", pid))
 	if err != nil {
-		return nil, errors.Wrap(err, "stat execute file failed.")
+		return nil, errors.Wrapf(err, "stat /proc/%d/exe", pid)
 	}
 	stat := fileExe.Sys().(*syscall.Stat_t)
 
@@ -305,6 +348,8 @@ func NewProcSyms(pid int) (*ProcMaps, error) {
 			return nil, errors.Wrapf(err, "parse text:'%s' failed", text)
 		}
 	}
+
+	checkProcLangType(pss)
 
 	return pss, nil
 }
