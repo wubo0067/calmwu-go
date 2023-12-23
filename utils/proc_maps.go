@@ -106,7 +106,7 @@ func cString(bs []byte) string {
 }
 
 func findDebugFile(buildID, appRootFS, pathName string, elfF *elf.File) string {
-	// 首先在/usr/lib/debug/.build-id目录下根据buildid查找debug文件
+	// 首先在/usr/lib/debug/.build-id 目录下根据 buildid 查找 debug 文件
 	debugFile := fmt.Sprintf("/usr/lib/debug/.build-id/%s/%s.debug", buildID[:2], buildID[2:])
 	fsDebugFile := fmt.Sprintf("%s%s", appRootFS, debugFile)
 
@@ -161,18 +161,18 @@ func (pmm *ProcMapsModule) loadProcModule() error {
 		err  error
 	)
 
-	// 打开elf文件
+	// 打开 elf 文件
 	if elfF, err = pmm.open(); err != nil {
 		return errors.Wrap(err, "pmm open.")
 	}
 	defer elfF.Close()
 
-	// 获取module类型，编译使用了-fPIE生成位置无关的执行程序，Type会是ET_DYN，否则就是ET_EXEC
+	// 获取 module 类型，编译使用了-fPIE 生成位置无关的执行程序，Type 会是 ET_DYN，否则就是 ET_EXEC
 	// 	?  bin git:(feature-xm-ebpf-collector) ? readelf -h ./x-monitor|grep 'Type:'
 	//   Type:                              EXEC (Executable file)
 	// ?  bin git:(feature-xm-ebpf-collector) ? readelf -h /bin/fio|grep 'Type:'
 	//   Type:                              DYN (Shared object file)
-	// 获取文件类型，在计算address是要根据类型判断是否减去start address
+	// 获取文件类型，在计算 address 是要根据类型判断是否减去 start address
 	switch elfF.Type {
 	case elf.ET_EXEC:
 		pmm.Type = EXEC
@@ -181,15 +181,15 @@ func (pmm *ProcMapsModule) loadProcModule() error {
 	default:
 		return ErrProcModuleNotSupport
 	}
-	// 获取buildID
+	// 获取 buildID
 	pmm.BuildID, err = buildid.FromELF(elfF)
 	if err != nil {
 		return errors.Wrapf(err, "failed to get build ID for %s", pmm.Pathname)
 	}
 
-	// 判断该buildID是否已经缓存
+	// 判断该 buildID 是否已经缓存
 	if st, err := getModuleSymbolTbl(pmm.BuildID); st != nil && err == nil {
-		// 已经cache了，不用继续解析了
+		// 已经 cache 了，不用继续解析了
 		glog.Infof("module:'%s' buildID:'%s' has cached.", pmm.Pathname, pmm.BuildID)
 		return nil
 	}
@@ -265,15 +265,15 @@ func parseProcMapsEntry(line string, pss *ProcMaps) error {
 	pmm.Dev = unix.Mkdev(uint32(devMajor), uint32(devMinor))
 
 	if err = pmm.loadProcModule(); err != nil {
-		if errors.Is(err, ErrProcModuleNotSupport) || errors.Is(err, ErrProcModuleHasNoSymbols) {
-			// 不加入，忽略，继续
-			pmm = nil
-			return nil
+		if !errors.Is(err, ErrProcModuleNotSupport) && !errors.Is(err, ErrProcModuleHasNoSymbols) {
+			return errors.Wrapf(err, "load module:'%s' failed.", pmm.Pathname)
 		}
-		return errors.Wrapf(err, "load module:'%s' failed.", pmm.Pathname)
 	}
 
-	pss.ModuleList = append(pss.ModuleList, pmm)
+	if err == nil || errors.Is(err, ErrProcModuleHasNoSymbols) {
+		// 如果 module 没有符号表，也将其加入到 ModuleList 中，因为可以从模块中读取到 eh_frame 信息
+		pss.ModuleList = append(pss.ModuleList, pmm)
+	}
 
 	return nil
 }
@@ -298,7 +298,7 @@ func NewProcSyms(pid int) (*ProcMaps, error) {
 	scanner := bufio.NewScanner(procMapsFile)
 
 	for scanner.Scan() {
-		// maps每一行的信息
+		// maps 每一行的信息
 		text := scanner.Text()
 		err := parseProcMapsEntry(text, pss)
 		if err != nil {
@@ -309,7 +309,7 @@ func NewProcSyms(pid int) (*ProcMaps, error) {
 	return pss, nil
 }
 
-// ResolvePC 根据程序计数器(PC)解析符号信息
+// ResolvePC 根据程序计数器 (PC) 解析符号信息
 // 如果 ProcMaps 中的模块为空，则返回错误
 // 如果 PC 在模块的地址范围内，则返回符号名称、偏移量和路径名
 // 如果模块类型为 SO，则返回符号名称、偏移量和路径名
@@ -329,13 +329,13 @@ func (pss *ProcMaps) ResolvePC(pc uint64) (string, uint32, string, error) {
 
 	for _, pmm := range pss.ModuleList {
 		if pc >= pmm.StartAddr && pc <= pmm.EndAddr {
-			// 根据module类型计算地址
+			// 根据 module 类型计算地址
 			if pmm.Type == SO {
 				addr = pc - pmm.StartAddr
 			} else if pmm.Type == EXEC {
 				addr = pc
 			}
-			// 根据buildID找到module的SymbolTable
+			// 根据 buildID 找到 module 的 SymbolTable
 			st, err = getModuleSymbolTbl(pmm.BuildID)
 			if st == nil && err != nil {
 				// 如果符号表不存在，创建符号表
@@ -347,7 +347,7 @@ func (pss *ProcMaps) ResolvePC(pc uint64) (string, uint32, string, error) {
 
 			if st != nil && err == nil {
 				if rs, err = st.Resolve(addr); err == nil {
-					// 解析ok
+					// 解析 ok
 					return rs.Name, rs.Offset, pmm.Pathname, nil
 				} else {
 					// 解析失败
