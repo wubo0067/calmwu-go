@@ -19,8 +19,9 @@ import (
 )
 
 var (
-	ErrGSTTextSectionEmpty  = errors.New("empty .text section")
+	ErrGSTTextSectionEmpty  = errors.New(".text section is empty")
 	ErrGSTGoPCLNTabNotExist = errors.New("no .gopclntab section")
+	ErrGSTGoPCLNTabEmpty    = errors.New(".gopclntab section is empty")
 	ErrGSTGoSymTabNotExist  = errors.New("no .gosymtab section")
 	ErrGSTGoTooOld          = errors.New("gosymtab: go sym tab too old")
 	ErrGSTGoParseFailed     = errors.New("gosymtab: go sym tab parse failed")
@@ -110,6 +111,9 @@ func (nmst *NativeModuleSymbolTbl) GenerateTbl(elfF *elf.File) error {
 	pfnAddSymbol(nmst, symbols)
 	pfnAddSymbol(nmst, dynSymbols)
 
+	symbols = nil
+	dynSymbols = nil
+
 	if nmst.symbolCount == 0 {
 		return ErrProcModuleHasNoSymbols
 	}
@@ -148,24 +152,41 @@ func (gomst *GoModuleSymbolTbl) Resolve(addr uint64) (*ResolveSymbol, error) {
 	return nil, ErrGSTGoSymbolsNotFound
 }
 
-func (gomst *GoModuleSymbolTbl) GenerateTbl(goSymTabSection *elf.Section, elfF *elf.File) error {
-	goSymTabData, err := goSymTabSection.Data()
-	if err != nil {
-		return errors.Wrapf(err, "read %s gosymtab section data.", gomst.moduleName)
+func (gomst *GoModuleSymbolTbl) GenerateTbl(goSymTabSec *elf.Section, elfF *elf.File) error {
+	var (
+		err           error
+		gosymtabData  []byte
+		gopclntabData []byte
+	)
+
+	if sec := elfF.Section(".gopclntab"); sec != nil {
+		if sec.Type == elf.SHT_NOBITS {
+			// 如果没有 meta 数据，返回
+			return errors.Wrapf(err, ".gopclntab section has no bits", gomst.moduleName)
+		}
+
+		gopclntabData, err = sec.Data()
+		if err != nil {
+			return errors.Wrapf(err, "read %s gopclntab section.", gomst.moduleName)
+		}
+	}
+	if len(gopclntabData) <= 0 {
+		return ErrGSTGoPCLNTabEmpty
 	}
 
-	pclndat, err := elfF.Section(".gopclntab").Data()
-	if err != nil {
-		return errors.Wrapf(err, "read %s gopclntab section data.", gomst.moduleName)
-	}
+	gosymtabData, _ = goSymTabSec.Data()
+	// if err != nil {
+	// 	return errors.Wrapf(err, "read %s gosymtab section.", gomst.moduleName)
+	// }
 
-	pcln := gosym.NewLineTable(pclndat, elfF.Section(".text").Addr)
-	tab, err := gosym.NewTable(goSymTabData, pcln)
+	lineTab := gosym.NewLineTable(gopclntabData, elfF.Section(".text").Addr)
+	tab, err := gosym.NewTable(gosymtabData, lineTab)
 	if err != nil {
-		return errors.Wrapf(err, "parsing %s gosymtab.", gomst.moduleName)
+		return errors.Wrapf(err, "build symtab or pclinetab for %s.", gomst.moduleName)
 	}
 
 	gomst.symIndex = tab
+	gosymtabData = nil
 	return nil
 }
 
@@ -200,7 +221,19 @@ func InitModuleSymbolTblMgr(capacity int) error {
 		__singleModuleSymbolTblMgr = &ModuleSymbolTblMgr{}
 
 		__singleModuleSymbolTblMgr.lc, err = lru.NewWithEvict[string, SymbolTable](capacity, func(k string, v SymbolTable) {
-			glog.Warningf("evicted module symbol table:'%s', buildID:'%s'", v.ModuleName(), k)
+			// 做个类型转换，释放内存
+			switch t := v.(type) {
+			case *GoModuleSymbolTbl:
+				if t != nil {
+					glog.Warningf("evicted GoModule symbol table:'%s', buildID:'%s'", v.ModuleName(), k)
+					t.symIndex = nil
+					t = nil
+				}
+			case *NativeModuleSymbolTbl:
+				glog.Warningf("evicted NativeModule symbol table:'%s', buildID:'%s'", v.ModuleName(), k)
+				t.symbolTable = nil
+				t = nil
+			}
 		})
 
 		if err != nil {
@@ -243,7 +276,7 @@ func createModuleSymbolTbl(buildID string, moduleName string, appRootFS string, 
 	)
 
 	// 判断是否是 golang module
-	if goSymTab := elfF.Section(".gosymtab"); goSymTab == nil {
+	if sec := elfF.Section(".gosymtab"); sec == nil {
 		// is native module
 		nmst := new(NativeModuleSymbolTbl)
 		nmst.buildID = buildID
@@ -271,13 +304,15 @@ func createModuleSymbolTbl(buildID string, moduleName string, appRootFS string, 
 		gomst := new(GoModuleSymbolTbl)
 		gomst.buildID = buildID
 		gomst.moduleName = moduleName
-		if err = gomst.GenerateTbl(goSymTab, elfF); err == nil {
+		if err = gomst.GenerateTbl(sec, elfF); err == nil {
 			st = gomst
 			__singleModuleSymbolTblMgr.lc.Add(buildID, st)
 			glog.Infof("go module:'%s' buildID:'%s' create symbol table ok.", moduleName, buildID)
 		}
 	}
-
+	if err != nil {
+		glog.Errorf("create module:'%s' buildID:'%s' symbol table failed. err:%s", moduleName, buildID, err.Error())
+	}
 	return st, err
 }
 
