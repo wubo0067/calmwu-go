@@ -12,6 +12,8 @@ import (
 	"debug/gosym"
 	"encoding/binary"
 	"os"
+	"path/filepath"
+	"strings"
 	"testing"
 
 	"github.com/parca-dev/parca-agent/pkg/stack/unwind"
@@ -348,7 +350,7 @@ func TestUnwindTable(t *testing.T) {
 
 // GO111MODULE=off go test -v -run=TestCheckInterpreterBin
 func TestCheckInterpreterBin(t *testing.T) {
-	InterpreterBinList := []string{
+	binPaths := []string{
 		"/usr/libexec/platform-python",
 		"/usr/libexec/platform-python3.6",
 		"/usr/bin/python3.6",
@@ -356,31 +358,20 @@ func TestCheckInterpreterBin(t *testing.T) {
 		"/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-2.el8_5.x86_64/jre/bin/java",
 	}
 
-	for _, interpreter := range InterpreterBinList {
-		_, err := os.Stat(interpreter)
+	for i, bin := range binPaths {
+		_, err := os.Stat(bin)
 		if err == nil {
-			f, err := elf.Open(interpreter)
-			if err == nil {
-				t.Logf("===>check '%s'", interpreter)
-				symbols, err := f.DynamicSymbols()
-				if err == nil {
-					for _, sym := range symbols {
-						t.Logf("sym:'%s'", sym.Name)
-						if v, ok := interpreterTags[sym.Name]; ok {
-							t.Logf("'%s' type is '%s'<===", interpreter, func() string {
-								switch v {
-								case PythonLangType:
-									return "python"
-								case JavaLangType:
-									return "java"
-								}
-								return "unknown"
-							}())
-							break
-						}
-					}
-				}
+			dir, file := filepath.Split(bin)
+			t.Logf("%d: dir:%s, file:%s", i, dir, file)
+			if strings.Contains(file, "python") {
+				t.Logf("'%s' is python", bin)
+			} else if strings.Contains(file, "java") {
+				t.Logf("'%s' is java", bin)
+			} else {
+				t.Logf("'%s' is unknown", bin)
 			}
+		} else {
+			t.Errorf("%d '%s' not exist", i, bin)
 		}
 	}
 }

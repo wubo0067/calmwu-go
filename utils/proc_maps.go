@@ -13,6 +13,7 @@ import (
 	"fmt"
 	"os"
 	"path"
+	"path/filepath"
 	"strings"
 	"syscall"
 
@@ -308,13 +309,11 @@ func checkProcLangType(pss *ProcMaps) {
 			if elfF.Section(".gosymtab") != nil {
 				pss.LangType = GoLangType
 			} else {
-				if symbols, err := elfF.DynamicSymbols(); err == nil {
-					for _, sym := range symbols {
-						if t, ok := interpreterTags[sym.Name]; ok {
-							pss.LangType = t
-							break
-						}
-					}
+				_, bin := filepath.Split(modulePath)
+				if strings.Contains(bin, "python") {
+					pss.LangType = PythonLangType
+				} else if strings.Contains(bin, "java") {
+					pss.LangType = JavaLangType
 				}
 			}
 		}
