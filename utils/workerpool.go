@@ -36,7 +36,7 @@ type WorkerPool struct {
 	workerChanPool sync.Pool
 }
 
-// 外界和routine沟通的通道，传入参数或者终止符
+// 外界和 routine 沟通的通道，传入参数或者终止符
 type workerChan struct {
 	lastUseTime time.Time
 	ch          chan interface{}
@@ -99,7 +99,7 @@ func (wp *WorkerPool) Stop() {
 	// 清晰的标识出释放的对象
 	Infof("WorkerPool stop %d workerChan", len(ready))
 	for i, ch := range ready {
-		// 给所有工作中的routine退出，close(ch.ch)
+		// 给所有工作中的 routine 退出，close(ch.ch)
 		ch.ch <- nil
 		ready[i] = nil
 	}
@@ -132,10 +132,10 @@ func (wp *WorkerPool) getWorkerChan() *workerChan {
 
 	wp.lock.Lock()
 	ready := wp.ready
-	// nil对象也可以用len
+	// nil 对象也可以用 len
 	n := len(ready) - 1
 	if n < 0 {
-		// 没有空闲的routine
+		// 没有空闲的 routine
 		if wp.workersCount < wp.maxWorkersCount {
 			// 判断是否可以创建新的
 			createWorker = true
@@ -156,7 +156,7 @@ func (wp *WorkerPool) getWorkerChan() *workerChan {
 			// 达到上限无法创建
 			return nil
 		}
-		// workerChan对象从pool中创建
+		// workerChan 对象从 pool 中创建
 		vch := wp.workerChanPool.Get()
 		if vch == nil {
 			vch = &workerChan{
@@ -164,7 +164,7 @@ func (wp *WorkerPool) getWorkerChan() *workerChan {
 			}
 		}
 		wch = vch.(*workerChan)
-		// 启动routine
+		// 启动 routine
 		go func() {
 			// 传入通道
 			wp.workerFunc(wch)
@@ -195,7 +195,7 @@ func (wp *WorkerPool) workerFunc(wch *workerChan) {
 
 	// 退出
 	wp.lock.Lock()
-	// 具体的工作routine数量递减
+	// 具体的工作 routine 数量递减
 	wp.workersCount--
 	wp.lock.Unlock()
 }
@@ -209,13 +209,13 @@ func (wp *WorkerPool) release(wch *workerChan) bool {
 		wp.lock.Unlock()
 		return false
 	}
-	// 加入空闲ready队列尾部
+	// 加入空闲 ready 队列尾部
 	wp.ready = append(wp.ready, wch)
 	wp.lock.Unlock()
 	return true
 }
 
-// 回收空闲的wokerChan
+// 回收空闲的 wokerChan
 func (wp *WorkerPool) clean(scratch *[]*workerChan) {
 	maxIdleWorkerDuration := wp.getMaxIdleWorkerDuration()
 
@@ -226,11 +226,11 @@ func (wp *WorkerPool) clean(scratch *[]*workerChan) {
 	ready := wp.ready
 	n := len(ready)
 	i := 0
-	// 从头查找所有超时的对象，尾部是最新的，前面是idle很久的
+	// 从头查找所有超时的对象，尾部是最新的，前面是 idle 很久的
 	for i < n && currentTime.Sub(ready[i].lastUseTime) > maxIdleWorkerDuration {
 		i++
 	}
-	// 将清理对象插入scratch中
+	// 将清理对象插入 scratch 中
 	*scratch = append((*scratch)[:0], ready[:i]...)
 	if i > 0 {
 		// 排干
@@ -248,7 +248,7 @@ func (wp *WorkerPool) clean(scratch *[]*workerChan) {
 	}
 
 	for i, ch := range tmp {
-		// 通知routine结束
+		// 通知 routine 结束
 		ch.ch <- nil
 		tmp[i] = nil
 	}

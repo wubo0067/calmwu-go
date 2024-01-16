@@ -50,7 +50,7 @@ type TaskObserver interface {
 	OnNotify(*TaskEvent)
 }
 
-// Task 任务对象，管理Step
+// Task 任务对象，管理 Step
 type Task interface {
 	// Name 任务名
 	Name() string
@@ -79,7 +79,7 @@ type concreteTask struct {
 	nc            utils.NoCopy
 }
 
-// MakeTask 构造一个Task对象
+// MakeTask 构造一个 Task 对象
 func MakeTask(ctx context.Context, name string, observer TaskObserver, taskArg interface{}, steps ...Step) (Task, error) {
 	if taskArg == nil || len(steps) == 0 {
 		return nil, errors.New("input parameters is invalid")

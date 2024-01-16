@@ -51,7 +51,7 @@ func Forever(f func(), period time.Duration) {
 	Until(f, period, NerverStop)
 }
 
-// 一直周期调用，直到stop chan被close
+// 一直周期调用，直到 stop chan 被 close
 func Until(f func(), period time.Duration, stopCh <-chan struct{}) {
 	JitterUntil(f, period, 0.0, true, stopCh)
 }
@@ -63,7 +63,7 @@ func UntilWithContext(ctx context.Context, f func(context.Context), period time.
 
 // 在执行后开始计算超时
 func JitterUntilWithContext(ctx context.Context, f func(context.Context), period time.Duration, jitterFactor float64, sliding bool) {
-	// 这个func wrapper和ctx.Done()真是赞，学到了，前者统一为一个方法，闭包好啊
+	// 这个 func wrapper 和 ctx.Done() 真是赞，学到了，前者统一为一个方法，闭包好啊
 	JitterUntil(func() { f(ctx) }, period, jitterFactor, sliding, ctx.Done())
 }
 
@@ -142,7 +142,7 @@ func resetOrReuseTimer(t *time.Timer, d time.Duration, sawTimeout bool) *time.Ti
 	}
 
 	if !t.Stop() && !sawTimeout {
-		// timer超时但没有读取，手工排干
+		// timer 超时但没有读取，手工排干
 		<-t.C
 	}
 	// reuse
@@ -183,7 +183,7 @@ func PollInfinite(interval time.Duration, condition ConditionFunc) error {
 func WaitFor(wait WaitFunc, fn ConditionFunc, done <-chan struct{}) error {
 	c := wait(done)
 	for {
-		// open判断c是否被关闭
+		// open 判断 c 是否被关闭
 		_, open := <-c
 		// 执行条件函数
 		ok, err := fn()
@@ -202,7 +202,7 @@ func WaitFor(wait WaitFunc, fn ConditionFunc, done <-chan struct{}) error {
 	return ErrWaitTimeout
 }
 
-// 定时间隔在channel发送一个信号
+// 定时间隔在 channel 发送一个信号
 func poller(interval, timeout time.Duration) WaitFunc {
 	return WaitFunc(func(done <-chan struct{}) <-chan struct{} {
 		ch := make(chan struct{})

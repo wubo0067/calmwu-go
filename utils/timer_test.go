@@ -31,7 +31,7 @@ L:
 		}
 	}
 
-	// 这里必然返回false
+	// 这里必然返回 false
 	ret := myTimer.Stop()
 	log.Printf("Stop ret:%v\n", ret)
 }
