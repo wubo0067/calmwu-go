@@ -199,8 +199,7 @@ func (gomst *GoModuleSymbolTbl) Symbols() []*ModuleSymbol {
 }
 
 type ModuleSymbolTblMgr struct {
-	lc   *lru.Cache[string, SymbolTable] // 管理所有 module 的符号表
-	lock sync.Mutex
+	lc *lru.Cache[string, SymbolTable] // 管理所有 module 的符号表
 }
 
 var (
@@ -225,7 +224,8 @@ func InitModuleSymbolTblMgr(capacity int) error {
 			switch t := v.(type) {
 			case *GoModuleSymbolTbl:
 				if t != nil {
-					glog.Warningf("evicted GoModule symbol table:'%s', buildID:'%s'", v.ModuleName(), k)
+					glog.Warningf("GoModule symbol table:'%s', buildID:'%s' is evicted.",
+						v.ModuleName(), k)
 					t.symIndex = nil
 					t = nil
 				}
@@ -253,10 +253,6 @@ func getModuleSymbolTbl(buildID string) (SymbolTable, error) {
 	)
 
 	if __singleModuleSymbolTblMgr != nil {
-
-		__singleModuleSymbolTblMgr.lock.Lock()
-		defer __singleModuleSymbolTblMgr.lock.Unlock()
-
 		st, ok = __singleModuleSymbolTblMgr.lc.Get(buildID)
 		if ok && st != nil {
 			return st, nil
@@ -297,7 +293,8 @@ func createModuleSymbolTbl(buildID string, moduleName string, appRootFS string, 
 		if err == nil {
 			st = nmst
 			__singleModuleSymbolTblMgr.lc.Add(buildID, st)
-			glog.Infof("native module:'%s' buildID:'%s' create symbol table ok.", moduleName, buildID)
+			glog.Infof("native module:'%s' buildID:'%s' create symbol table ok. current have %d modules in LRUCache",
+				moduleName, buildID, __singleModuleSymbolTblMgr.lc.Len())
 		}
 	} else {
 		// is golang module
@@ -307,7 +304,8 @@ func createModuleSymbolTbl(buildID string, moduleName string, appRootFS string, 
 		if err = gomst.GenerateTbl(sec, elfF); err == nil {
 			st = gomst
 			__singleModuleSymbolTblMgr.lc.Add(buildID, st)
-			glog.Infof("go module:'%s' buildID:'%s' create symbol table ok.", moduleName, buildID)
+			glog.Infof("go module:'%s' buildID:'%s' create symbol table ok. current have %d modules in LRUCache",
+				moduleName, buildID, __singleModuleSymbolTblMgr.lc.Len())
 		}
 	}
 	if err != nil {
@@ -319,9 +317,8 @@ func createModuleSymbolTbl(buildID string, moduleName string, appRootFS string, 
 // DeleteModuleSymbolTbl deletes the module symbol table for the given build ID.
 func DeleteModuleSymbolTbl(buildID string) {
 	if __singleModuleSymbolTblMgr != nil {
-
-		__singleModuleSymbolTblMgr.lock.Lock()
+		// Remove is thread safe
 		__singleModuleSymbolTblMgr.lc.Remove(buildID)
-		__singleModuleSymbolTblMgr.lock.Unlock()
+		glog.Info("delete module symbol table by buildID:'%s'. current have %d modules in LRUCache", buildID)
 	}
 }
