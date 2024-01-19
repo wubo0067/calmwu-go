@@ -318,7 +318,9 @@ func createModuleSymbolTbl(buildID string, moduleName string, appRootFS string, 
 func DeleteModuleSymbolTbl(buildID string) {
 	if __singleModuleSymbolTblMgr != nil {
 		// Remove is thread safe
-		__singleModuleSymbolTblMgr.lc.Remove(buildID)
-		glog.Info("delete module symbol table by buildID:'%s'. current have %d modules in LRUCache", buildID)
+		if __singleModuleSymbolTblMgr.lc.Remove(buildID) {
+			glog.Infof("delete module symbol table by buildID:'%s'. current have %d modules in LRUCache",
+				buildID, __singleModuleSymbolTblMgr.lc.Len())
+		}
 	}
 }
