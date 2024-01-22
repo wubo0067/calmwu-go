@@ -97,7 +97,7 @@ func TestGOSymTab(t *testing.T) {
 func TestResolveGO(t *testing.T) {
 	pid := 4607
 
-	pss, err := NewProcSyms(pid)
+	pss, err := NewProcMaps(pid)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
@@ -125,11 +125,11 @@ func TestSymbolTblReuse(t *testing.T) {
 	InitModuleSymbolTblMgr(128)
 
 	pid := 2533093
-	xm_pss, _ := NewProcSyms(pid)
+	xm_pss, _ := NewProcMaps(pid)
 	t.Logf("pid:%d module count:%d", pid, len(xm_pss.Modules()))
 
 	pid = 1
-	first_pss, _ := NewProcSyms(pid)
+	first_pss, _ := NewProcMaps(pid)
 	t.Logf("pid:%d module count:%d", pid, len(first_pss.Modules()))
 
 	t.Logf("module symbol table cache count:%d", __singleModuleSymbolTblMgr.lc.Len())
@@ -141,7 +141,7 @@ func TestResolvePCXMonitor(t *testing.T) {
 	InitModuleSymbolTblMgr(4)
 	pid := 2533093 // x-monitor
 
-	pss, err := NewProcSyms(pid)
+	pss, err := NewProcMaps(pid)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
@@ -248,7 +248,7 @@ func TestPrintGOAppSymbols(t *testing.T) {
 
 	pid := 4607 // pyroscope
 
-	pss, err := NewProcSyms(pid)
+	pss, err := NewProcMaps(pid)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
@@ -378,7 +378,7 @@ func TestCheckInterpreterBin(t *testing.T) {
 
 // GO111MODULE=off go test -v -run=TestPidNotExistError
 func TestPidNotExistError(t *testing.T) {
-	_, err := NewProcSyms(-1)
+	_, err := NewProcMaps(-1)
 	err = errors.Wrap(err, "1")
 	err = errors.Wrap(err, "2")
 	err = errors.Wrap(err, "3")

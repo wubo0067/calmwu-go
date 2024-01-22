@@ -320,7 +320,7 @@ func checkProcLangType(pss *ProcMaps) {
 	}
 }
 
-func NewProcSyms(pid int) (*ProcMaps, error) {
+func NewProcMaps(pid int) (*ProcMaps, error) {
 	procMapsFile, err := os.Open(fmt.Sprintf("/proc/%d/maps", pid))
 	if err != nil {
 		return nil, errors.Wrapf(err, "open /proc/%d/maps", pid)
