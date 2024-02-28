@@ -1,10 +1,11 @@
+//go:build linux
 // +build linux
 
 /*
  * @Author: calmwu
  * @Date: 2017-09-18 10:37:19
- * @Last Modified by: calmwu
- * @Last Modified time: 2019-11-24 18:14:09
+ * @Last Modified by: CALM.WUU
+ * @Last Modified time: 2024-02-28 11:23:15
  * @Comment:
  */
 
@@ -35,7 +36,7 @@ const (
 
 var reusePort = 0x0F
 
-// GetIPByIfname 即通过接口名字获取IP
+// GetIPByIfname 即通过接口名字获取 IP
 func GetIPByIfname(ifname string) (string, error) {
 	localIP := "UnknownIP"
 	ifaceLst, err := net.Interfaces()
@@ -68,9 +69,9 @@ func SetRecvBuf(c *net.TCPConn, recvBufSize int) error {
 }
 
 /*
-SetKeepAlive 设置KeepAlive
+SetKeepAlive 设置 KeepAlive
 tcp_keepalive_time：间隔多久没有发送数据后，就发送一个心跳包
-tcp_keepalive_intvl：发送的心跳包如果没有收到ack，间隔多久后，重新发送
+tcp_keepalive_intvl：发送的心跳包如果没有收到 ack，间隔多久后，重新发送
 tcp_keepalive_probes：最多发送多少个心跳包没有收到回复后，认为对方挂掉了
 https://mcll.top/2019/07/20/tcp-keepalive-in-go/
 */
@@ -78,15 +79,15 @@ func SetKeepAlive(fd, secs int) error {
 	if err := syscall.SetsockoptInt(fd, syscall.SOL_SOCKET, syscall.SO_KEEPALIVE, 1); err != nil {
 		return err
 	}
-	// 设置tcp_keepalive_intvl
+	// 设置 tcp_keepalive_intvl
 	if err := syscall.SetsockoptInt(fd, syscall.IPPROTO_TCP, syscall.TCP_KEEPINTVL, secs); err != nil {
 		return err
 	}
-	// 设置tcp_keepalive_probes
+	// 设置 tcp_keepalive_probes
 	return syscall.SetsockoptInt(fd, syscall.IPPROTO_TCP, syscall.TCP_KEEPCNT, secs)
 }
 
-// SetReuseAddrAndPort 设置SO_REUSEADDR 和reusePort
+// SetReuseAddrAndPort 设置 SO_REUSEADDR 和 reusePort
 func SetReuseAddrAndPort(socketFD int) error {
 	var err error
 	if err = syscall.SetsockoptInt(socketFD, syscall.SOL_SOCKET, syscall.SO_REUSEADDR, 1); err != nil {
@@ -99,7 +100,7 @@ func SetReuseAddrAndPort(socketFD int) error {
 	return nil
 }
 
-// MaxListenerBacklog 设置Listen队列长度
+// MaxListenerBacklog 设置 Listen 队列长度
 func MaxListenerBacklog() int {
 	fd, err := os.Open("/proc/sys/net/core/somaxconn")
 	if err != nil {

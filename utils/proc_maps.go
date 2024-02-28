@@ -2,7 +2,7 @@
  * @Author: CALM.WU
  * @Date: 2023-01-10 14:20:15
  * @Last Modified by: CALM.WU
- * @Last Modified time: 2023-10-26 14:41:55
+ * @Last Modified time: 2024-02-28 11:23:27
  */
 
 package utils
@@ -245,7 +245,7 @@ func parseProcMapsEntry(line string, pss *ProcMaps) error {
 	)
 
 	fields := strings.Fields(line)
-	field_count := len(fields)
+	field_count := len(fields
 	if field_count != __miniProcMapsEntryDefaultFieldCount {
 		return nil
 	}
