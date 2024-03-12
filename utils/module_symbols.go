@@ -224,15 +224,15 @@ func InitModuleSymbolTblMgr(capacity int) error {
 			switch t := v.(type) {
 			case *GoModuleSymbolTbl:
 				if t != nil {
-					glog.Warningf("GoModule symbol table:'%s', buildID:'%s' is evicted.",
-						v.ModuleName(), k)
 					t.symIndex = nil
 					t = nil
+					glog.Warningf("GoModule symbol table:'%s', buildID:'%s' evicted.",
+						v.ModuleName(), k)
 				}
 			case *NativeModuleSymbolTbl:
-				glog.Warningf("evicted NativeModule symbol table:'%s', buildID:'%s'", v.ModuleName(), k)
 				t.symbolTable = nil
 				t = nil
+				glog.Warningf("NativeModule symbol table:'%s', buildID:'%s' evicted", v.ModuleName(), k)
 			}
 		})
 
@@ -318,9 +318,6 @@ func createModuleSymbolTbl(buildID string, moduleName string, appRootFS string, 
 func DeleteModuleSymbolTbl(buildID string) {
 	if __singleModuleSymbolTblMgr != nil {
 		// Remove is thread safe
-		if __singleModuleSymbolTblMgr.lc.Remove(buildID) {
-			glog.Infof("delete module symbol table by buildID:'%s'. current have %d modules in LRUCache",
-				buildID, __singleModuleSymbolTblMgr.lc.Len())
-		}
+		__singleModuleSymbolTblMgr.lc.Remove(buildID)
 	}
 }
