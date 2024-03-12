@@ -244,9 +244,7 @@ func parseProcMapsEntry(line string, pss *ProcMaps) error {
 		devMajor, devMinor uint64
 	)
 
-	fields := strings.Fields(line)
-	field_count := len(fields
-	if field_count != __miniProcMapsEntryDefaultFieldCount {
+	if len(strings.Fields(line)) != __miniProcMapsEntryDefaultFieldCount {
 		return nil
 	}
 
