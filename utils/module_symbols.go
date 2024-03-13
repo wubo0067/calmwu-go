@@ -162,7 +162,7 @@ func (gomst *GoModuleSymbolTbl) GenerateTbl(goSymTabSec *elf.Section, elfF *elf.
 	if sec := elfF.Section(".gopclntab"); sec != nil {
 		if sec.Type == elf.SHT_NOBITS {
 			// 如果没有 meta 数据，返回
-			return errors.Wrapf(err, ".gopclntab section has no bits", gomst.moduleName)
+			return errors.Wrapf(err, "%s .gopclntab section has no bits", gomst.moduleName)
 		}
 
 		gopclntabData, err = sec.Data()

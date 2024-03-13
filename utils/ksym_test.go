@@ -9,6 +9,8 @@ package utils
 
 import (
 	"testing"
+
+	"github.com/emirpasic/gods/sets/hashset"
 )
 
 // GO111MODULE=off go test -v -run=TestFindKsym
@@ -18,11 +20,11 @@ func TestFindKsym(t *testing.T) {
 		t.Fatal(err.Error())
 	}
 
-	count := len(__ksym_cache)
+	count := len(ksymCache)
 	t.Logf("Ksym count: %d\n", count)
 
-	t.Logf("first ksym: %#v", __ksym_cache[0])
-	t.Logf("last ksym: %#v", __ksym_cache[count-1])
+	t.Logf("first ksym: %#v", ksymCache[0])
+	t.Logf("last ksym: %#v", ksymCache[count-1])
 
 	// 0000000000000000 A fixed_percpu_data
 	addr := uint64(0x0000000000000000)
@@ -42,8 +44,8 @@ func TestFindKsym(t *testing.T) {
 		t.Logf("addr:0x%x name:%s", addr, name)
 	}
 
-	// ffffffffc03b4480 d fuse_acl_xattr_handlers	[fuse]
-	addr = uint64(0xffffffffc03b4480)
+	// ffffffffc0a45970 t nfs_file_open	[nfs]
+	addr = uint64(0xffffffffc0a45970)
 	name, err = FindKsym(addr)
 	if err != nil {
 		t.Fatal(err.Error())
@@ -60,8 +62,8 @@ func TestFindKsym(t *testing.T) {
 		t.Logf("addr:0x%x name:%s", addr, name)
 	}
 
-	//ffffffffc01482c0 t sata_spd_string	[libata]
-	addr = uint64(0xffffffffc01482c0)
+	//fffffffc02f67f0 t xfs_btree_overlapped_query_range	[xfs]
+	addr = uint64(0xfffffffc02f67f0)
 	name, err = FindKsym(addr)
 	if err != nil {
 		t.Fatal(err.Error())
@@ -94,3 +96,63 @@ func TestFindKsym(t *testing.T) {
         ffffffffba8042bb do_syscall_64+0x5b [kernel]
         ffffffffbb2000ad entry_SYSCALL_64_after_hwframe+0x65 [kernel]
 */
+
+// GO111MODULE=off go test -v -run=TestKernelSymbols
+func TestKernelSymbols(t *testing.T) {
+	err := LoadKallSyms()
+	if err != nil {
+		t.Fatal(err.Error())
+	}
+
+	set := hashset.New("nfs_file_open",
+		"ext4_punch_hole",
+		"__tracepoint_xfs_btree_overlapped_query_range",
+		"xfs_btree_overlapped_query_range",
+		"fuse_acl_xattr_handlers",
+		"uncore_down_prepare",
+		"__x64_sys_sendmsg",
+		"__x64_sys_mmap",
+		"__x64_sys_memfd_create",
+		"__x64_sys_pwritev",
+		"__x64_sys_madvise",
+	)
+
+	// ksymCache sort by address
+	for i, ksym := range ksymCache {
+		if set.Contains(ksym.name) {
+			t.Logf("ksym: %#v, next ksym: %#v", ksym, ksymCache[i+1])
+
+			if symbol, err := FindKsym(ksym.address); err == nil {
+				t.Logf("addr:0x%x name:%s", ksym.address, symbol)
+			} else {
+				t.Fatalf("addr:0x%x, err:%s", ksym.address, err.Error())
+			}
+		}
+	}
+
+	t.Log("-----------------")
+	// addr:0xffffffff9880a1c0 name:uncore_down_prepare
+	address := uint64(0xffffffff9880a1c1)
+	if symbol, err := FindKsym(address); err == nil {
+		t.Logf("addr:0x%x name:%s", address, symbol)
+	} else {
+		t.Fatalf("addr:0x%x err:%s", address, err)
+	}
+
+	address = uint64(0xffffffffc0a45980)
+	if symbol, err := FindKsym(address); err == nil {
+		t.Logf("addr:0x%x name:%s", address, symbol)
+	} else {
+		t.Fatalf("addr:0x%x err:%s", address, err)
+	}
+
+	t.Log("-----------------")
+
+	for _, ksymName := range set.Values() {
+		if KsymNameExists(ksymName.(string)) {
+			t.Logf("%s in /proc/kallsyms", ksymName)
+		} else {
+			t.Logf("%s not in /proc/kallsyms", ksymName)
+		}
+	}
+}

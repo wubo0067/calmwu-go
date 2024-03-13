@@ -11,9 +11,9 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"regexp"
 	"sort"
 	"strconv"
-	"strings"
 	"sync"
 
 	"github.com/emirpasic/gods/sets/hashset"
@@ -21,7 +21,7 @@ import (
 )
 
 const (
-	_kallsyms = "/proc/kallsyms"
+	procKallsyms = "/proc/kallsyms"
 )
 
 type Ksym struct {
@@ -397,33 +397,37 @@ var (
 )
 
 var (
-	_lock        sync.RWMutex
-	__ksym_cache []*Ksym
-	__ksym_names *hashset.Set
+	lock      sync.RWMutex
+	ksymCache []*Ksym
+	ksymNames *hashset.Set
 )
 
 // It reads the /proc/kallsyms file and stores the symbol name and address in a map
 func LoadKallSyms() error {
-	_lock.Lock()
-	defer _lock.Unlock()
+	lock.Lock()
+	defer lock.Unlock()
 
-	if __ksym_cache != nil {
-		return errors.Errorf("%s has been loaded", _kallsyms)
+	if ksymCache != nil {
+		// Clear the ksym cache
+		ksymCache = make([]*Ksym, 0)
+		ksymNames.Clear()
+	} else {
+		ksymNames = hashset.New()
 	}
 
-	fd, err := os.Open(_kallsyms)
+	fd, err := os.Open(procKallsyms)
 	if err != nil {
-		return errors.Wrapf(err, "open %s failed", _kallsyms)
+		return errors.Wrapf(err, "open %s failed", procKallsyms)
 	}
-
 	defer fd.Close()
 
-	__ksym_names = hashset.New()
+	sep := "[ \t]"
+	r := regexp.MustCompile(sep)
 
 	scanner := bufio.NewScanner(fd)
 	for scanner.Scan() {
 		line := scanner.Text()
-		ar := strings.Split(line, " ")
+		ar := r.Split(line, -1)
 		if len(ar) < 3 {
 			continue
 		}
@@ -439,12 +443,12 @@ func LoadKallSyms() error {
 		ksym.address = address
 		ksym.name = ar[2]
 
-		__ksym_cache = append(__ksym_cache, ksym)
-		__ksym_names.Add(ksym.name)
+		ksymCache = append(ksymCache, ksym)
+		ksymNames.Add(ksym.name)
 	}
 
-	sort.Slice(__ksym_cache, func(i, j int) bool {
-		return __ksym_cache[i].address < __ksym_cache[j].address
+	sort.Slice(ksymCache, func(i, j int) bool {
+		return ksymCache[i].address < ksymCache[j].address
 	})
 
 	return nil
@@ -452,51 +456,51 @@ func LoadKallSyms() error {
 
 // It uses a binary search to find the symbol name for a given address
 func FindKsym(addr uint64) (name string, err error) {
-	if len(__ksym_cache) == 0 {
+	if len(ksymCache) == 0 {
 		err = fmt.Errorf("ksym cache is empty")
 		return "", err
 	}
 
-	_lock.RLock()
-	defer _lock.RUnlock()
+	lock.RLock()
+	defer lock.RUnlock()
 
-	if addr < __ksym_cache[0].address {
-		err = errors.Errorf("addr:%x is less than __ksym_cache[0].address:%x", addr, __ksym_cache[0].address)
+	if addr < ksymCache[0].address {
+		err = errors.Errorf("addr:%x is less than ksymCache[0].address:%x", addr, ksymCache[0].address)
 		return "", err
 	}
 
-	i := sort.Search(len(__ksym_cache), func(i int) bool {
-		return addr < __ksym_cache[i].address
+	i := sort.Search(len(ksymCache), func(i int) bool {
+		return addr < ksymCache[i].address
 	})
 	i--
-	return __ksym_cache[i].name, nil
+	return ksymCache[i].name, nil
 
 	// // var result int64
 	// start := 0
-	// end := len(__ksym_cache)
+	// end := len(ksymCache)
 
-	// // fmt.Printf("+++start:%d, end:%d, count:%d\n", start, end, len(__ksym_cache))
+	// // fmt.Printf("+++start:%d, end:%d, count:%d\n", start, end, len(ksymCache))
 
 	// for start < end {
 	// 	mid := start + (end-start)/2
-	// 	// result = (int64)(addr - __ksym_cache[mid].address)
+	// 	// result = (int64)(addr - ksymCache[mid].address)
 
-	// 	// fmt.Printf("start:%d, mid:%d, end:%d, __ksym_cache[%d].address:%x\n",
-	// 	// 	start, mid, end, mid, __ksym_cache[mid].address)
+	// 	// fmt.Printf("start:%d, mid:%d, end:%d, ksymCache[%d].address:%x\n",
+	// 	// 	start, mid, end, mid, ksymCache[mid].address)
 
-	// 	if addr < __ksym_cache[mid].address {
+	// 	if addr < ksymCache[mid].address {
 	// 		end = mid
-	// 	} else if addr > __ksym_cache[mid].address {
+	// 	} else if addr > ksymCache[mid].address {
 	// 		start = mid + 1
 	// 	} else {
-	// 		return __ksym_cache[mid].name, 0, nil
+	// 		return ksymCache[mid].name, 0, nil
 	// 	}
 	// }
 
-	// // fmt.Printf("---start:%d, end:%d, count:%d\n", start, end, len(__ksym_cache))
+	// // fmt.Printf("---start:%d, end:%d, count:%d\n", start, end, len(ksymCache))
 
-	// if start >= 1 && __ksym_cache[start-1].address < addr && addr < __ksym_cache[start].address {
-	// 	return __ksym_cache[start-1].name, (uint32)(addr - __ksym_cache[start-1].address), nil
+	// if start >= 1 && ksymCache[start-1].address < addr && addr < ksymCache[start].address {
+	// 	return ksymCache[start-1].name, (uint32)(addr - ksymCache[start-1].address), nil
 	// }
 
 	// err = fmt.Errorf("kernel not found ksym for addr:%x", addr)
@@ -506,11 +510,11 @@ func FindKsym(addr uint64) (name string, err error) {
 // Check if a ksym name exists
 func KsymNameExists(name string) bool {
 	// Return false if there are no ksym names
-	if __ksym_names == nil {
+	if ksymNames == nil {
 		return false
 	}
 	// Otherwise, check if the ksym names contain the given name
-	return __ksym_names.Contains(name)
+	return ksymNames.Contains(name)
 }
 
 // Convert an x86_64 syscall number to a string

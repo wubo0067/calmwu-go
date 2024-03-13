@@ -56,14 +56,14 @@ func ReverseWords(s string) string {
 	return strings.Join(words, " ")
 }
 
-// Bytes2String 不要在使用[]byte(string) 或 string([]byte)这类类型转换
+// Bytes2String 不要在使用 []byte(string) 或 string([]byte) 这类类型转换
 // http://www.flysnow.org/2017/07/06/go-in-action-unsafe-pointer.html
 // https://studygolang.com/articles/2909
 // unsafe.Pointer 类似 void*
 func Bytes2String(b []byte) string {
-	// string 实际是reflect.StringHeader结构体和这个结构体所指向的内存
-	// slice 实际是reflect.SliceHeader结构体和这个结构体中Data字段所指向的内存
-	// slice 和 string reflect.StringHeader和reflect.SliceHeader的结构体只相差末尾一个字段，两者的内存是对其的，没必要再取Data字段了
+	// string 实际是 reflect.StringHeader 结构体和这个结构体所指向的内存
+	// slice 实际是 reflect.SliceHeader 结构体和这个结构体中 Data 字段所指向的内存
+	// slice 和 string reflect.StringHeader 和 reflect.SliceHeader 的结构体只相差末尾一个字段，两者的内存是对其的，没必要再取 Data 字段了
 	return *(*string)(unsafe.Pointer(&b))
 }
 
@@ -78,7 +78,7 @@ func String2Bytes(s string) []byte {
 	return *(*[]byte)(unsafe.Pointer(&bh))
 }
 
-// StringPointer 将string转变为Pointer
+// StringPointer 将 string 转变为 Pointer
 func StringPointer(s string) unsafe.Pointer {
 	sh := (*reflect.StringHeader)(unsafe.Pointer(&s))
 	return unsafe.Pointer(sh.Data)
